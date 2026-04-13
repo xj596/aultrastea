@@ -1,0 +1,23 @@
+backend:
+  name: git-gateway
+  branch: main  
+media_folder: "images"  
+public_folder: "/images"
+media_library:
+  name: uploads
+  folder: "videos"  
+  public_folder: "/videos"
+
+
+collections:
+  - name: "news"
+    label: "新闻动态"
+    folder: "content/news"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "新闻标题", name: "title", widget: "string"}
+      - {label: "发布日期", name: "date", widget: "datetime"}
+      - {label: "封面图片", name: "image", widget: "image"}
+      - {label: "相关视频（选填）", name: "video", widget: "file"}
+      - {label: "新闻内容", name: "body", widget: "markdown"}
