@@ -3,23 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AultrasTea 新闻管理后台</title>
-  <!-- 1. 先加载依赖JS -->
-  <script src="https://cdn.jsdelivr.net/npm/netlify-identity-widget@1.9.2/build/netlify-identity-widget.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/netlify-cms@2.10.197/dist/netlify-cms.min.js"></script>
+  <title>网站后台</title>
+  <script src="https://cdn.jsdelivr.net/npm/netlify-cms@2.10.192/dist/netlify-cms.js"></script>
 </head>
 <body>
-  <!-- 2. 最后执行初始化代码 -->
-  <script>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", user => {
-        if (!user) {
-          window.netlifyIdentity.on("login", () => {
-            document.location.href = "/admin/";
-          });
-        }
-      });
-    }
-  </script>
 </body>
 </html>
