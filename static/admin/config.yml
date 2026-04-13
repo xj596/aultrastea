@@ -1,21 +1,47 @@
 backend:
-  name: github
-  repo: xj596/aultrastea
-  branch: main
-  base_url: https://api.netlify.com
-  auth_endpoint: auth
+  name: git-gateway
+  branch: main  # 这里如果你的主分支是master就改master
 
-media_folder: static/images
-public_folder: /images
+# 图片/视频上传设置
+media_folder: "images"  # 图片会存在仓库的images文件夹
+public_folder: "/images"
+media_library:
+  name: uploads
+  folder: "videos"  # 视频会存在仓库的videos文件夹
+  public_folder: "/videos"
 
-# 最简功能，先确保后台能正常打开
+# 这里定义后台功能
 collections:
+  # 1. 新闻管理
   - name: "news"
-    label: "新闻动态管理"
-    folder: "news"
+    label: "新闻动态"
+    folder: "content/news"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - {label: "新闻标题", name: "title", widget: "string", required: true}
-      - {label: "发布日期", name: "date", widget: "datetime", required: true}
-      - {label: "新闻正文", name: "body", widget: "markdown", required: true}
+      - {label: "新闻标题", name: "title", widget: "string"}
+      - {label: "发布日期", name: "date", widget: "datetime"}
+      - {label: "封面图片", name: "image", widget: "image"}
+      - {label: "相关视频（选填）", name: "video", widget: "file", media_library: {config: {folder: "videos"}}}
+      - {label: "新闻内容", name: "body", widget: "markdown"}
+
+  # 2. 图片/视频库（直接在这里上传替换文件）
+  - name: "media"
+    label: "媒体库"
+    files:
+      - name: "images"
+        label: "网站图片"
+        file: "content/images.json"
+        fields:
+          - label: "图片列表"
+            name: "gallery"
+            widget: "list"
+            field: {label: "图片", name: "image", widget: "image"}
+      - name: "videos"
+        label: "网站视频"
+        file: "content/videos.json"
+        fields:
+          - label: "视频列表"
+            name: "videos"
+            widget: "list"
+            field: {label: "视频", name: "video", widget: "file", media_library: {config: {folder: "videos"}}}
