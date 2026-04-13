@@ -1,0 +1,20 @@
+# 后端配置（Netlify专用，必须正确）
+backend:
+  name: git-gateway
+  branch: main # 这里必须改成你的Git仓库的主分支名！比如仓库主分支是master就写master，是main就写main，大小写完全一致
+
+# 媒体文件存储路径（可直接用，无需修改）
+media_folder: static/images/uploads
+public_folder: /images/uploads
+
+# 内容集合配置（新闻管理的核心字段，可后续扩展）
+collections:
+  - name: "news"
+    label: "新闻管理"
+    folder: "content/news"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "新闻标题", name: "title", widget: "string", required: true}
+      - {label: "发布日期", name: "date", widget: "datetime", required: true}
+      - {label: "新闻正文", name: "body", widget: "markdown", required: true}
