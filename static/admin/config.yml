@@ -8,6 +8,7 @@ backend:
 media_folder: static/images
 public_folder: /images
 
+# 最简功能，先确保后台能正常打开
 collections:
   - name: "news"
     label: "新闻动态管理"
@@ -17,12 +18,4 @@ collections:
     fields:
       - {label: "新闻标题", name: "title", widget: "string", required: true}
       - {label: "发布日期", name: "date", widget: "datetime", required: true}
-      - {label: "新闻封面图", name: "cover", widget: "image", required: false}
       - {label: "新闻正文", name: "body", widget: "markdown", required: true}
-      - {label: "宣传视频链接", name: "video", widget: "string", required: false}
-
-  - name: "home-images"
-    label: "首页图片替换"
-    file: "index.html"
-    fields:
-      - {label: "首页主图", name: "hero_image", widget: "image", choose_url: true}
