@@ -1,35 +1,31 @@
 backend:
-  name: git-gateway
-  branch: main # 如果您的默认分支是master，请改为master
+  name: github # 使用 GitHub 作为数据库
+  repo: 你的GitHub用户名/你的仓库名 # ⚠️ 必须修改这里：填你的 GitHub 用户名和仓库名
+  branch: main # 如果你的主分支叫 master，这里就改 master
 
-publish_mode: editorial_workflow
+media_folder: "assets/images/uploads" # 图片上传后存放的文件夹路径
+public_folder: "/assets/images/uploads" # 网站访问图片的路径
 
-media_folder: "images/uploads" # 上传的图片将存储在这里
-public_folder: "/images/uploads" # 网站中引用图片的公共路径
-
+# --- 下面是定义你的网站内容 ---
 collections:
-  - name: "news"
-    label: "新闻"
-    folder: "_posts/news"
-    create: true
-    fields:
-      - {label: "日期", name: "date", widget: "datetime"}
-      - {label: "标题", name: "title", widget: "string"}
-      - {label: "内容", name: "body", widget: "markdown"}
-
-  - name: "pages"
-    label: "页面"
+  # 1. 设置首页或通用页面的配置（比如改个首页大图）
+  - name: "settings"
+    label: "网站设置"
     files:
-      - file: "index.html"
-        label: "首页"
-        name: "home"
+      - name: "home"
+        label: "首页大图"
+        file: "index.html" # 对应你的文件名
         fields:
-          - label: "头部图片"
-            name: "header_image"
-            widget: "image"
-            required: false
-          - label: "视频URL"
-            name: "video_url"
-            widget: "string"
-            required: false
-          - label: "页面内容", name: "body", widget: "markdown", required: false
+          - { name: "title", label: "网站标题", widget: "string" }
+          # ⚠️ 注意：直接编辑 HTML 文件的特定标签对小白很难，建议主要用下面的“新闻”功能
+
+  # 2. 设置新闻/文章发布功能
+  - name: "news"
+    label: "公司新闻"
+    folder: "_posts" # 新闻会生成在这个文件夹里
+    create: true # 允许创建新文章
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # 文件名格式
+    fields: # 定义文章有哪些内容
+      - { name: "title", label: "文章标题", widget: "string" }
+      - { name: "date", label: "发布日期", widget: "datetime" }
+      - { name: "body", label: "文章内容", widget: "markdown" } # 支持图文混排
