@@ -4,17 +4,13 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AultrasTea 新闻管理后台</title>
-  <!-- 1. 国内稳定的Netlify CMS核心JS -->
-  <script src="https://cdn.bootcdn.net/ajax/libs/netlify-cms/2.10.197/netlify-cms.min.js"></script>
-  <!-- 2. 核心缺失的Netlify Identity身份认证JS（登录框必须的脚本） -->
-  <script src="https://cdn.bootcdn.net/ajax/libs/netlify-identity-widget/1.9.2/netlify-identity-widget.min.js"></script>
+  <!-- 1. 先加载依赖JS -->
+  <script src="https://cdn.jsdelivr.net/npm/netlify-identity-widget@1.9.2/build/netlify-identity-widget.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/netlify-cms@2.10.197/dist/netlify-cms.min.js"></script>
 </head>
 <body>
-  <!-- 必须的页面容器，确保CMS能正常渲染 -->
-  <div id="nc-root"></div>
-  <!-- 初始化身份认证和CMS -->
+  <!-- 2. 最后执行初始化代码 -->
   <script>
-    // 初始化身份认证
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on("init", user => {
         if (!user) {
@@ -24,8 +20,6 @@
         }
       });
     }
-    // 初始化CMS
-    window.CMS.init();
   </script>
 </body>
 </html>
