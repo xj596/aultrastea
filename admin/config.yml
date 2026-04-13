@@ -1,23 +1,35 @@
 backend:
   name: git-gateway
-  branch: main  
-media_folder: "images"  
-public_folder: "/images"
-media_library:
-  name: uploads
-  folder: "videos"  
-  public_folder: "/videos"
+  branch: main # 如果您的默认分支是master，请改为master
 
+publish_mode: editorial_workflow
+
+media_folder: "images/uploads" # 上传的图片将存储在这里
+public_folder: "/images/uploads" # 网站中引用图片的公共路径
 
 collections:
   - name: "news"
-    label: "新闻动态"
-    folder: "content/news"
+    label: "新闻"
+    folder: "_posts/news"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - {label: "新闻标题", name: "title", widget: "string"}
-      - {label: "发布日期", name: "date", widget: "datetime"}
-      - {label: "封面图片", name: "image", widget: "image"}
-      - {label: "相关视频（选填）", name: "video", widget: "file"}
-      - {label: "新闻内容", name: "body", widget: "markdown"}
+      - {label: "日期", name: "date", widget: "datetime"}
+      - {label: "标题", name: "title", widget: "string"}
+      - {label: "内容", name: "body", widget: "markdown"}
+
+  - name: "pages"
+    label: "页面"
+    files:
+      - file: "index.html"
+        label: "首页"
+        name: "home"
+        fields:
+          - label: "头部图片"
+            name: "header_image"
+            widget: "image"
+            required: false
+          - label: "视频URL"
+            name: "video_url"
+            widget: "string"
+            required: false
+          - label: "页面内容", name: "body", widget: "markdown", required: false
