@@ -1,0 +1,35 @@
+# 已经适配你的仓库，不用改任何内容
+backend:
+  name: github
+  repo: xj596/aultrastea
+  branch: main
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
+
+# 图片上传配置，自动存到仓库里
+media_folder: static/images
+public_folder: /images
+
+# 后台功能模块，新闻发布+图片替换，直接用
+collections:
+  # 1. 新闻动态管理（核心功能）
+  - name: "news"
+    label: "新闻动态管理"
+    folder: "news"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "新闻标题", name: "title", widget: "string", required: true}
+      - {label: "发布日期", name: "date", widget: "datetime", required: true}
+      - {label: "新闻封面图", name: "cover", widget: "image", required: false}
+      - {label: "新闻正文", name: "body", widget: "markdown", required: true}
+      - {label: "宣传视频链接", name: "video", widget: "string", required: false, hint: "粘贴X（推特）/Facebook视频链接"}
+
+  # 2. 首页图片快速替换
+  - name: "home-images"
+    label: "首页图片替换"
+    file: "index.html"
+    fields:
+      - {label: "首页主图", name: "hero_image", widget: "image", choose_url: true}
+      - {label: "产品展示图1", name: "product1_image", widget: "image", choose_url: true}
+      - {label: "产品展示图2", name: "product2_image", widget: "image", choose_url: true}
