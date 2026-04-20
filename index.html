@@ -3,24 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- SEO外贸核心优化 -->
   <title data-lang="meta_title">AultrasTea | Premium Tea Supplier From China | Organic Tea Wholesale</title>
   <meta name="description" content="AultrasTea, professional Chinese tea manufacturer & exporter, supply organic green tea, black tea, white tea, oolong tea, puerh tea. Global wholesale, welcome to cooperate." data-lang="meta_desc">
   <meta name="keywords" content="AultrasTea, Chinese tea, organic tea, green tea, black tea, white tea, oolong tea, tea wholesale, tea exporter">
-  <!-- 引入核心资源 -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
-  <!-- Tailwind配置 -->
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            primary: '#0F4C3A', // 茶绿主色，外贸高端质感
-            secondary: '#D4AF37', // 金色辅助色，凸显品质
-            light: '#F8F5F0', // 米白背景
-            dark: '#1A1A1A', // 深灰文字
+            primary: '#0F4C3A',
+            secondary: '#D4AF37',
+            light: '#F8F5F0',
+            dark: '#1A1A1A',
           },
           fontFamily: {
             sans: ['Inter', 'sans-serif'],
@@ -30,7 +27,6 @@
       }
     }
   </script>
-  <!-- 自定义工具类 -->
   <style type="text/tailwindcss">
     @layer utilities {
       .content-auto { content-visibility: auto; }
@@ -39,7 +35,6 @@
       .fade-in.visible { opacity: 1; transform: translateY(0); }
     }
   </style>
-  <!-- 全局样式 -->
   <style>
     html { scroll-behavior: smooth; }
     body { overflow-x: hidden; background-color: #F8F5F0; color: #1A1A1A; font-family: "Inter", sans-serif; }
@@ -55,13 +50,10 @@
   <header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-500 py-3 bg-light/95 backdrop-blur-md shadow-sm">
     <div class="container mx-auto px-4 md:px-6">
       <nav class="flex items-center justify-between">
-        <!-- Logo -->
         <a href="#home" class="text-2xl font-bold text-primary flex items-center gap-2">
           <i class="fas fa-leaf"></i>
           <span>AultrasTea</span>
         </a>
-
-        <!-- 桌面端导航 -->
         <ul class="hidden md:flex items-center gap-8">
           <li><a href="#home" class="nav-link text-dark hover:text-primary transition-colors font-medium" data-lang="nav_home">Home</a></li>
           <li><a href="#about" class="nav-link text-dark hover:text-primary transition-colors font-medium" data-lang="nav_about">About Us</a></li>
@@ -70,25 +62,18 @@
           <li><a href="#exhibitions" class="nav-link text-dark hover:text-primary transition-colors font-medium" data-lang="nav_exhibitions">Exhibitions</a></li>
           <li><a href="#contact" class="nav-link text-dark hover:text-primary transition-colors font-medium" data-lang="nav_contact">Contact Us</a></li>
         </ul>
-
-        <!-- 语言切换 + 移动端菜单 -->
         <div class="flex items-center gap-4">
-          <!-- 四语切换 -->
           <select id="langSelect" class="px-3 py-1.5 rounded-lg border border-primary/30 text-primary bg-white font-medium outline-none">
             <option value="en">English</option>
             <option value="zh">中文</option>
             <option value="ru">Русский</option>
             <option value="de">Deutsch</option>
           </select>
-
-          <!-- 移动端汉堡按钮 -->
           <button id="menuToggle" class="md:hidden text-2xl text-primary">
             <i class="fas fa-bars"></i>
           </button>
         </div>
       </nav>
-
-      <!-- 移动端下拉菜单 -->
       <div id="mobileMenu" class="md:hidden hidden bg-white mt-4 rounded-xl border border-primary/10 p-6 absolute left-4 right-4 shadow-lg">
         <ul class="flex flex-col gap-5">
           <li><a href="#home" class="block py-2 text-dark hover:text-primary transition-colors font-medium" data-lang="nav_home">Home</a></li>
@@ -102,11 +87,10 @@
     </div>
   </header>
 
-  <!-- 首页Hero区 -->
+  <!-- Hero -->
   <section id="home" class="min-h-screen flex items-center pt-20 pb-16 relative overflow-hidden">
-    <!-- 背景图 -->
     <div class="absolute inset-0 z-0">
-      <img src="https://picsum.photos/id/225/1920/1080" alt="Tea Garden" class="w-full h-full object-cover opacity-20">
+      <img id="img_hero_bg" src="" alt="Tea Garden" class="w-full h-full object-cover opacity-20">
     </div>
     <div class="container mx-auto px-4 md:px-6 relative z-10">
       <div class="grid md:grid-cols-2 gap-12 items-center">
@@ -127,7 +111,6 @@
               <span data-lang="hero_btn2">Contact Us</span>
             </a>
           </div>
-          <!-- 首页直接展示核心联系方式 -->
           <div class="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div class="flex items-center gap-3">
               <i class="fas fa-envelope text-primary text-xl"></i>
@@ -145,7 +128,7 @@
         </div>
         <div class="fade-in delay-200 relative">
           <div class="relative rounded-2xl overflow-hidden shadow-2xl">
-            <img src="https://picsum.photos/id/430/800/1000" alt="Premium Tea Products" class="w-full h-full object-cover">
+            <img id="img_hero_main" src="" alt="Premium Tea Products" class="w-full h-full object-cover">
           </div>
         </div>
       </div>
@@ -162,132 +145,98 @@
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <div class="fade-in relative order-2 md:order-1">
           <div class="grid grid-cols-2 gap-4">
-            <img src="https://picsum.photos/id/304/400/500" alt="Tea Plantation" class="rounded-lg shadow-lg">
-            <img src="https://picsum.photos/id/493/400/300" alt="Tea Production" class="rounded-lg shadow-lg mt-8">
-            <img src="https://picsum.photos/id/287/400/300" alt="Tea Tasting" class="rounded-lg shadow-lg">
-            <img src="https://picsum.photos/id/488/400/500" alt="Tea Export" class="rounded-lg shadow-lg mt-8">
+            <img id="img_about_1" src="" alt="Tea Plantation" class="rounded-lg shadow-lg">
+            <img id="img_about_2" src="" alt="Tea Production" class="rounded-lg shadow-lg mt-8">
+            <img id="img_about_3" src="" alt="Tea Tasting" class="rounded-lg shadow-lg">
+            <img id="img_about_4" src="" alt="Tea Export" class="rounded-lg shadow-lg mt-8">
           </div>
         </div>
         <div class="fade-in delay-200 order-1 md:order-2">
           <p class="text-dark/70 mb-6 leading-relaxed" data-lang="about_p1">
-            Guizhou Aultras Tea Co., Ltd. is a professional tea enterprise integrating tea planting, production, processing and export. We are affiliated to Xiangfeng Tea Group, one of the largest tea enterprises in China, with more than 20 years of experience in tea production and international trade.
+            Guizhou Aultras Tea Co., Ltd. is a professional tea enterprise integrating tea planting, production, processing and export.
           </p>
           <p class="text-dark/70 mb-6 leading-relaxed" data-lang="about_p2">
-            We have our own organic tea plantations in Guizhou and Hunan, with a complete production system and strict quality control system. Our products have passed EU organic, US organic, HACCP, ISO and other international certifications, and are exported to more than 70 countries and regions around the world.
+            We have our own organic tea plantations in Guizhou and Hunan, with a complete production system and strict quality control system.
           </p>
           <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 mb-8">
-            <div class="text-center">
-              <h4 class="text-3xl font-bold text-primary mb-2">20+</h4>
-              <p class="text-dark/60" data-lang="about_year">Years Experience</p>
-            </div>
-            <div class="text-center">
-              <h4 class="text-3xl font-bold text-primary mb-2">70+</h4>
-              <p class="text-dark/60" data-lang="about_country">Countries Exported</p>
-            </div>
-            <div class="text-center">
-              <h4 class="text-3xl font-bold text-primary mb-2">10+</h4>
-              <p class="text-dark/60" data-lang="about_cert">International Certificates</p>
-            </div>
-            <div class="text-center">
-              <h4 class="text-3xl font-bold text-primary mb-2">50+</h4>
-              <p class="text-dark/60" data-lang="about_product">Tea Products</p>
-            </div>
+            <div class="text-center"><h4 class="text-3xl font-bold text-primary mb-2">20+</h4><p class="text-dark/60" data-lang="about_year">Years Experience</p></div>
+            <div class="text-center"><h4 class="text-3xl font-bold text-primary mb-2">70+</h4><p class="text-dark/60" data-lang="about_country">Countries Exported</p></div>
+            <div class="text-center"><h4 class="text-3xl font-bold text-primary mb-2">10+</h4><p class="text-dark/60" data-lang="about_cert">International Certificates</p></div>
+            <div class="text-center"><h4 class="text-3xl font-bold text-primary mb-2">50+</h4><p class="text-dark/60" data-lang="about_product">Tea Products</p></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 产品中心（直观展示） -->
+  <!-- 产品中心 -->
   <section id="products" class="py-20 bg-light">
     <div class="container mx-auto px-4 md:px-6">
       <div class="text-center mb-16 fade-in">
         <h2 class="text-[clamp(1.8rem,5vw,3rem)] font-bold mb-4 text-primary" data-lang="products_title">Our Products</h2>
-        <p class="text-dark/70 max-w-2xl mx-auto mb-4" data-lang="products_desc">We provide a full range of tea products, support customized packaging and private labeling, welcome wholesale and bulk orders.</p>
+        <p class="text-dark/70 max-w-2xl mx-auto mb-4" data-lang="products_desc">We provide a full range of tea products, support customized packaging and private labeling.</p>
         <div class="w-24 h-1 bg-secondary mx-auto"></div>
       </div>
-      <!-- 产品卡片网格 -->
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- 绿茶 -->
         <div class="product-card bg-white rounded-xl overflow-hidden shadow-md fade-in">
           <div class="relative h-60 overflow-hidden">
-            <img src="https://picsum.photos/id/493/600/400" alt="Green Tea" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
+            <img id="img_product_green" src="" alt="Green Tea" class="w-full h-full object-cover transition-all duration-500">
           </div>
           <div class="p-6">
             <h3 class="text-xl font-bold mb-3 text-primary" data-lang="product_green">Green Tea</h3>
             <p class="text-dark/70 mb-4" data-lang="product_green_desc">Chunmee, Gunpowder, Dragon Well, Sencha, Mao Feng, Green Tea Fannings etc.</p>
-            <a href="#contact" class="text-secondary font-medium flex items-center gap-2 hover:gap-3 transition-all">
-              <span data-lang="product_inquiry">Inquiry Now</span>
-              <i class="fas fa-arrow-right"></i>
-            </a>
+            <a href="#contact" class="text-secondary font-medium flex items-center gap-2 hover:gap-3 transition-all"><span data-lang="product_inquiry">Inquiry Now</span><i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
-        <!-- 红茶 -->
         <div class="product-card bg-white rounded-xl overflow-hidden shadow-md fade-in delay-100">
           <div class="relative h-60 overflow-hidden">
-            <img src="https://picsum.photos/id/312/600/400" alt="Black Tea" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
+            <img id="img_product_black" src="" alt="Black Tea" class="w-full h-full object-cover transition-all duration-500">
           </div>
           <div class="p-6">
             <h3 class="text-xl font-bold mb-3 text-primary" data-lang="product_black">Black Tea</h3>
             <p class="text-dark/70 mb-4" data-lang="product_black_desc">CTC Black Tea, Golden Snail, Black Fannings, Black BOP, Mao Feng Black Tea etc.</p>
-            <a href="#contact" class="text-secondary font-medium flex items-center gap-2 hover:gap-3 transition-all">
-              <span data-lang="product_inquiry">Inquiry Now</span>
-              <i class="fas fa-arrow-right"></i>
-            </a>
+            <a href="#contact" class="text-secondary font-medium flex items-center gap-2 hover:gap-3 transition-all"><span data-lang="product_inquiry">Inquiry Now</span><i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
-        <!-- 白茶 -->
         <div class="product-card bg-white rounded-xl overflow-hidden shadow-md fade-in delay-200">
           <div class="relative h-60 overflow-hidden">
-            <img src="https://picsum.photos/id/488/600/400" alt="White Tea" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
+            <img id="img_product_white" src="" alt="White Tea" class="w-full h-full object-cover transition-all duration-500">
           </div>
           <div class="p-6">
             <h3 class="text-xl font-bold mb-3 text-primary" data-lang="product_white">White Tea</h3>
             <p class="text-dark/70 mb-4" data-lang="product_white_desc">White Peony, Silver Needle, Yunnan White Peony, White Tea Fannings etc.</p>
-            <a href="#contact" class="text-secondary font-medium flex items-center gap-2 hover:gap-3 transition-all">
-              <span data-lang="product_inquiry">Inquiry Now</span>
-              <i class="fas fa-arrow-right"></i>
-            </a>
+            <a href="#contact" class="text-secondary font-medium flex items-center gap-2 hover:gap-3 transition-all"><span data-lang="product_inquiry">Inquiry Now</span><i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
-        <!-- 乌龙茶 -->
         <div class="product-card bg-white rounded-xl overflow-hidden shadow-md fade-in">
           <div class="relative h-60 overflow-hidden">
-            <img src="https://picsum.photos/id/225/600/400" alt="Oolong Tea" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
+            <img id="img_product_oolong" src="" alt="Oolong Tea" class="w-full h-full object-cover transition-all duration-500">
           </div>
           <div class="p-6">
             <h3 class="text-xl font-bold mb-3 text-primary" data-lang="product_oolong">Oolong Tea</h3>
             <p class="text-dark/70 mb-4" data-lang="product_oolong_desc">Da Hong Pao, Tie Guan Yin, Milk Oolong, Ginseng Oolong, Oolong Fannings etc.</p>
-            <a href="#contact" class="text-secondary font-medium flex items-center gap-2 hover:gap-3 transition-all">
-              <span data-lang="product_inquiry">Inquiry Now</span>
-              <i class="fas fa-arrow-right"></i>
-            </a>
+            <a href="#contact" class="text-secondary font-medium flex items-center gap-2 hover:gap-3 transition-all"><span data-lang="product_inquiry">Inquiry Now</span><i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
-        <!-- 普洱/特种茶 -->
         <div class="product-card bg-white rounded-xl overflow-hidden shadow-md fade-in delay-100">
           <div class="relative h-60 overflow-hidden">
-            <img src="https://picsum.photos/id/431/600/400" alt="Puerh Tea" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
+            <img id="img_product_special" src="" alt="Puerh Tea" class="w-full h-full object-cover transition-all duration-500">
           </div>
           <div class="p-6">
             <h3 class="text-xl font-bold mb-3 text-primary" data-lang="product_special">Special Tea</h3>
             <p class="text-dark/70 mb-4" data-lang="product_special_desc">Puerh Tea, Blooming Tea, Jasmine Tea, Matcha, Jasmine Pearls, Jasmine Silver Needle etc.</p>
-            <a href="#contact" class="text-secondary font-medium flex items-center gap-2 hover:gap-3 transition-all">
-              <span data-lang="product_inquiry">Inquiry Now</span>
-              <i class="fas fa-arrow-right"></i>
-            </a>
+            <a href="#contact" class="text-secondary font-medium flex items-center gap-2 hover:gap-3 transition-all"><span data-lang="product_inquiry">Inquiry Now</span><i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
-        <!-- 油管视频嵌入卡片 -->
+        <!-- 视频卡片 -->
         <div class="product-card bg-white rounded-xl overflow-hidden shadow-md fade-in delay-200">
           <div class="relative h-60 overflow-hidden bg-dark">
-            <!-- 油管视频嵌入，替换src里的链接即可 -->
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="AultrasTea Product Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="absolute inset-0"></iframe>
+            <iframe id="video_youtube" width="100%" height="100%" src="" title="AultrasTea Product Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="absolute inset-0"></iframe>
           </div>
           <div class="p-6">
             <h3 class="text-xl font-bold mb-3 text-primary" data-lang="product_video">Our Production Process</h3>
             <p class="text-dark/70 mb-4" data-lang="product_video_desc">Watch our tea production process and tea garden tour on YouTube, learn more about our quality control.</p>
-            <a href="#" target="_blank" class="text-secondary font-medium flex items-center gap-2 hover:gap-3 transition-all">
+            <a id="link_youtube" href="#" target="_blank" class="text-secondary font-medium flex items-center gap-2 hover:gap-3 transition-all">
               <span data-lang="product_youtube">View on YouTube</span>
               <i class="fas fa-external-link-alt"></i>
             </a>
@@ -297,41 +246,25 @@
     </div>
   </section>
 
-  <!-- 公司资质 -->
+  <!-- 资质证书 -->
   <section id="certificates" class="py-20 bg-white">
     <div class="container mx-auto px-4 md:px-6">
       <div class="text-center mb-16 fade-in">
         <h2 class="text-[clamp(1.8rem,5vw,3rem)] font-bold mb-4 text-primary" data-lang="cert_title">Our Certificates</h2>
-        <p class="text-dark/70 max-w-2xl mx-auto mb-4" data-lang="cert_desc">Our products have passed multiple international certifications, ensuring the quality and safety of every batch of tea.</p>
+        <p class="text-dark/70 max-w-2xl mx-auto mb-4" data-lang="cert_desc">Our products have passed multiple international certifications.</p>
         <div class="w-24 h-1 bg-secondary mx-auto"></div>
       </div>
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 fade-in">
-        <div class="text-center p-4 border border-primary/10 rounded-lg hover:border-primary/30 transition-all">
-          <i class="fas fa-certificate text-4xl text-primary mb-3"></i>
-          <p class="font-medium" data-lang="cert_eu">EU Organic</p>
-        </div>
-        <div class="text-center p-4 border border-primary/10 rounded-lg hover:border-primary/30 transition-all">
-          <i class="fas fa-certificate text-4xl text-primary mb-3"></i>
-          <p class="font-medium" data-lang="cert_us">US Organic</p>
-        </div>
-        <div class="text-center p-4 border border-primary/10 rounded-lg hover:border-primary/30 transition-all">
-          <i class="fas fa-certificate text-4xl text-primary mb-3"></i>
-          <p class="font-medium" data-lang="cert_haccp">HACCP</p>
-        </div>
-        <div class="text-center p-4 border border-primary/10 rounded-lg hover:border-primary/30 transition-all">
-          <i class="fas fa-certificate text-4xl text-primary mb-3"></i>
-          <p class="font-medium" data-lang="cert_iso">ISO 9001</p>
-        </div>
-        <div class="text-center p-4 border border-primary/10 rounded-lg hover:border-primary/30 transition-all">
-          <i class="fas fa-certificate text-4xl text-primary mb-3"></i>
-          <p class="font-medium" data-lang="cert_fairtrade">Fair Trade</p>
-        </div>
+        <div class="text-center p-4 border border-primary/10 rounded-lg hover:border-primary/30 transition-all"><i class="fas fa-certificate text-4xl text-primary mb-3"></i><p class="font-medium" data-lang="cert_eu">EU Organic</p></div>
+        <div class="text-center p-4 border border-primary/10 rounded-lg hover:border-primary/30 transition-all"><i class="fas fa-certificate text-4xl text-primary mb-3"></i><p class="font-medium" data-lang="cert_us">US Organic</p></div>
+        <div class="text-center p-4 border border-primary/10 rounded-lg hover:border-primary/30 transition-all"><i class="fas fa-certificate text-4xl text-primary mb-3"></i><p class="font-medium" data-lang="cert_haccp">HACCP</p></div>
+        <div class="text-center p-4 border border-primary/10 rounded-lg hover:border-primary/30 transition-all"><i class="fas fa-certificate text-4xl text-primary mb-3"></i><p class="font-medium" data-lang="cert_iso">ISO 9001</p></div>
+        <div class="text-center p-4 border border-primary/10 rounded-lg hover:border-primary/30 transition-all"><i class="fas fa-certificate text-4xl text-primary mb-3"></i><p class="font-medium" data-lang="cert_fairtrade">Fair Trade</p></div>
       </div>
-      <!-- 资质证书图片展示 -->
       <div class="grid md:grid-cols-3 gap-6 mt-12 fade-in delay-100">
-        <img src="https://picsum.photos/id/237/400/300" alt="Certificate 1" class="rounded-lg shadow-md w-full h-48 object-cover border border-gray-200">
-        <img src="https://picsum.photos/id/239/400/300" alt="Certificate 2" class="rounded-lg shadow-md w-full h-48 object-cover border border-gray-200">
-        <img src="https://picsum.photos/id/240/400/300" alt="Certificate 3" class="rounded-lg shadow-md w-full h-48 object-cover border border-gray-200">
+        <img id="img_cert_1" src="" alt="Certificate 1" class="rounded-lg shadow-md w-full h-48 object-cover border border-gray-200">
+        <img id="img_cert_2" src="" alt="Certificate 2" class="rounded-lg shadow-md w-full h-48 object-cover border border-gray-200">
+        <img id="img_cert_3" src="" alt="Certificate 3" class="rounded-lg shadow-md w-full h-48 object-cover border border-gray-200">
       </div>
     </div>
   </section>
@@ -341,49 +274,11 @@
     <div class="container mx-auto px-4 md:px-6">
       <div class="text-center mb-16 fade-in">
         <h2 class="text-[clamp(1.8rem,5vw,3rem)] font-bold mb-4 text-primary" data-lang="exh_title">Upcoming Exhibitions</h2>
-        <p class="text-dark/70 max-w-2xl mx-auto mb-4" data-lang="exh_desc">We sincerely invite you to visit our booth at the exhibitions, communicate and cooperate with us face to face.</p>
+        <p class="text-dark/70 max-w-2xl mx-auto mb-4" data-lang="exh_desc">We sincerely invite you to visit our booth at the exhibitions.</p>
         <div class="w-24 h-1 bg-secondary mx-auto"></div>
       </div>
-      <div class="grid md:grid-cols-3 gap-8">
-        <!-- 展会1 -->
-        <div class="bg-white rounded-xl overflow-hidden shadow-md fade-in">
-          <div class="p-6">
-            <div class="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">1 - 3 April 2026</div>
-            <h3 class="text-xl font-bold mb-3 text-dark">UzFood 2026</h3>
-            <p class="text-dark/70 mb-4"><i class="fas fa-map-marker-alt text-primary mr-2"></i> Uzexpocentre NEC, Tashkent, Uzbekistan</p>
-            <p class="text-dark/70 mb-6"><i class="fas fa-door-open text-primary mr-2"></i> <span data-lang="exh_booth">Booth No.</span> F92</p>
-            <a href="#contact" class="text-secondary font-medium flex items-center gap-2 hover:gap-3 transition-all">
-              <span data-lang="exh_contact">Make an Appointment</span>
-              <i class="fas fa-arrow-right"></i>
-            </a>
-          </div>
-        </div>
-        <!-- 展会2 -->
-        <div class="bg-white rounded-xl overflow-hidden shadow-md fade-in delay-100">
-          <div class="p-6">
-            <div class="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">Coming Soon</div>
-            <h3 class="text-xl font-bold mb-3 text-dark">BIOFACH 2026</h3>
-            <p class="text-dark/70 mb-4"><i class="fas fa-map-marker-alt text-primary mr-2"></i> Nuremberg, Germany</p>
-            <p class="text-dark/70 mb-6"><i class="fas fa-door-open text-primary mr-2"></i> <span data-lang="exh_booth">Booth No.</span> TBA</p>
-            <a href="#contact" class="text-secondary font-medium flex items-center gap-2 hover:gap-3 transition-all">
-              <span data-lang="exh_contact">Make an Appointment</span>
-              <i class="fas fa-arrow-right"></i>
-            </a>
-          </div>
-        </div>
-        <!-- 展会3 -->
-        <div class="bg-white rounded-xl overflow-hidden shadow-md fade-in delay-200">
-          <div class="p-6">
-            <div class="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">Coming Soon</div>
-            <h3 class="text-xl font-bold mb-3 text-dark">Gulfood 2026</h3>
-            <p class="text-dark/70 mb-4"><i class="fas fa-map-marker-alt text-primary mr-2"></i> Dubai, UAE</p>
-            <p class="text-dark/70 mb-6"><i class="fas fa-door-open text-primary mr-2"></i> <span data-lang="exh_booth">Booth No.</span> TBA</p>
-            <a href="#contact" class="text-secondary font-medium flex items-center gap-2 hover:gap-3 transition-all">
-              <span data-lang="exh_contact">Make an Appointment</span>
-              <i class="fas fa-arrow-right"></i>
-            </a>
-          </div>
-        </div>
+      <div id="exhibitions-container" class="grid md:grid-cols-3 gap-8">
+        <!-- 动态渲染 -->
       </div>
     </div>
   </section>
@@ -397,66 +292,33 @@
         <div class="w-24 h-1 bg-secondary mx-auto"></div>
       </div>
       <div class="grid md:grid-cols-1 gap-12">
-        <!-- 联系方式详情 -->
         <div class="fade-in flex flex-col justify-center">
           <h3 class="text-2xl font-bold mb-8 text-primary" data-lang="contact_info">Contact Information</h3>
           <div class="space-y-6 mb-10">
             <div class="flex items-start gap-4">
-              <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                <i class="fas fa-building text-primary text-xl"></i>
-              </div>
-              <div>
-                <p class="text-dark/60 text-sm mb-1" data-lang="contact_company">Company Name</p>
-                <p class="font-medium text-dark">GUIZHOU AULTRAS TEA CO.,LTD.</p>
-              </div>
+              <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0"><i class="fas fa-building text-primary text-xl"></i></div>
+              <div><p class="text-dark/60 text-sm mb-1" data-lang="contact_company">Company Name</p><p class="font-medium text-dark">GUIZHOU AULTRAS TEA CO.,LTD.</p></div>
             </div>
             <div class="flex items-start gap-4">
-              <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                <i class="fas fa-envelope text-primary text-xl"></i>
-              </div>
-              <div>
-                <p class="text-dark/60 text-sm mb-1" data-lang="contact_email">Email</p>
-                <p class="font-medium text-dark">admin@aultrastea.com</p>
-                <p class="font-medium text-dark">tea@xf-tea.com</p>
-              </div>
+              <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0"><i class="fas fa-envelope text-primary text-xl"></i></div>
+              <div><p class="text-dark/60 text-sm mb-1" data-lang="contact_email">Email</p><p class="font-medium text-dark">admin@aultrastea.com</p><p class="font-medium text-dark">tea@xf-tea.com</p></div>
             </div>
             <div class="flex items-start gap-4">
-              <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                <i class="fas fa-phone text-primary text-xl"></i>
-              </div>
-              <div>
-                <p class="text-dark/60 text-sm mb-1" data-lang="contact_phone">Phone / WhatsApp</p>
-                <p class="font-medium text-dark">+86 731 8465 2476</p>
-                <p class="font-medium text-dark">+86 731 8465 2208</p>
-              </div>
+              <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0"><i class="fas fa-phone text-primary text-xl"></i></div>
+              <div><p class="text-dark/60 text-sm mb-1" data-lang="contact_phone">Phone / WhatsApp</p><p class="font-medium text-dark">+86 731 8465 2476</p><p class="font-medium text-dark">+86 731 8465 2208</p></div>
             </div>
             <div class="flex items-start gap-4">
-              <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                <i class="fas fa-map-marker-alt text-primary text-xl"></i>
-              </div>
-              <div>
-                <p class="text-dark/60 text-sm mb-1" data-lang="contact_address">Address</p>
-                <p class="font-medium text-dark">Changsha, Hunan Province, China</p>
-                <p class="font-medium text-dark">Anshun, Guizhou Province, China</p>
-              </div>
+              <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0"><i class="fas fa-map-marker-alt text-primary text-xl"></i></div>
+              <div><p class="text-dark/60 text-sm mb-1" data-lang="contact_address">Address</p><p class="font-medium text-dark">Changsha, Hunan Province, China</p><p class="font-medium text-dark">Anshun, Guizhou Province, China</p></div>
             </div>
           </div>
-          <!-- 社交链接 -->
           <div>
             <p class="text-dark/60 mb-4 font-medium" data-lang="contact_social">Follow Us</p>
             <div class="flex gap-4">
-              <a href="#" target="_blank" class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
-                <i class="fab fa-youtube"></i>
-              </a>
-              <a href="#" target="_blank" class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
-                <i class="fab fa-linkedin"></i>
-              </a>
-              <a href="#" target="_blank" class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
-                <i class="fab fa-whatsapp"></i>
-              </a>
-              <a href="#" target="_blank" class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
-                <i class="fab fa-weixin"></i>
-              </a>
+              <a href="#" target="_blank" class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"><i class="fab fa-youtube"></i></a>
+              <a href="#" target="_blank" class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"><i class="fab fa-linkedin"></i></a>
+              <a href="#" target="_blank" class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"><i class="fab fa-whatsapp"></i></a>
+              <a href="#" target="_blank" class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"><i class="fab fa-weixin"></i></a>
             </div>
           </div>
         </div>
@@ -469,9 +331,7 @@
     <div class="container mx-auto px-4 md:px-6">
       <div class="grid md:grid-cols-4 gap-8 mb-8">
         <div>
-          <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
-            <i class="fas fa-leaf"></i> AultrasTea
-          </h3>
+          <h3 class="text-xl font-bold mb-4 flex items-center gap-2"><i class="fas fa-leaf"></i> AultrasTea</h3>
           <p class="text-white/70 mb-4" data-lang="footer_desc">Professional Chinese tea manufacturer and exporter, supply premium organic tea to the world.</p>
         </div>
         <div>
@@ -507,344 +367,137 @@
     </div>
   </footer>
 
-  <!-- 回到顶部按钮 -->
   <button id="backToTop" class="fixed bottom-6 right-6 w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center opacity-0 invisible transition-all z-40 hover:bg-secondary shadow-lg">
     <i class="fas fa-arrow-up"></i>
   </button>
 
-  <!-- 四语语言包 -->
+  <!-- 语言包 -->
   <script>
     const langPack = {
-      en: {
-        meta_title: "AultrasTea | Premium Tea Supplier From China | Organic Tea Wholesale",
-        meta_desc: "AultrasTea, professional Chinese tea manufacturer and exporter, supply organic green tea, black tea, white tea, oolong tea, puerh tea. Global wholesale, welcome to cooperate.",
-        nav_home: "Home",
-        nav_about: "About Us",
-        nav_products: "Products",
-        nav_certificates: "Certificates",
-        nav_exhibitions: "Exhibitions",
-        nav_contact: "Contact Us",
-        hero_subtitle: "GUIZHOU AULTRAS TEA CO.,LTD",
-        hero_title1: "Premium Tea",
-        hero_title2: "From China To The World",
-        hero_desc: "Professional tea manufacturer and exporter with over 20 years of experience. We supply organic green tea, black tea, white tea, oolong tea and more to 70+ countries worldwide.",
-        hero_btn1: "View Products",
-        hero_btn2: "Contact Us",
-        about_title: "About AultrasTea",
-        about_p1: "Guizhou Aultras Tea Co., Ltd. is a professional tea enterprise integrating tea planting, production, processing and export. We are affiliated to Xiangfeng Tea Group, one of the largest tea enterprises in China, with more than 20 years of experience in tea production and international trade.",
-        about_p2: "We have our own organic tea plantations in Guizhou and Hunan, with a complete production system and strict quality control system. Our products have passed EU organic, US organic, HACCP, ISO and other international certifications, and are exported to more than 70 countries and regions around the world.",
-        about_year: "Years Experience",
-        about_country: "Countries Exported",
-        about_cert: "International Certificates",
-        about_product: "Tea Products",
-        products_title: "Our Products",
-        products_desc: "We provide a full range of tea products, support customized packaging and private labeling, welcome wholesale and bulk orders.",
-        product_green: "Green Tea",
-        product_green_desc: "Chunmee, Gunpowder, Dragon Well, Sencha, Mao Feng, Green Tea Fannings etc.",
-        product_black: "Black Tea",
-        product_black_desc: "CTC Black Tea, Golden Snail, Black Fannings, Black BOP, Mao Feng Black Tea etc.",
-        product_white: "White Tea",
-        product_white_desc: "White Peony, Silver Needle, Yunnan White Peony, White Tea Fannings etc.",
-        product_oolong: "Oolong Tea",
-        product_oolong_desc: "Da Hong Pao, Tie Guan Yin, Milk Oolong, Ginseng Oolong, Oolong Fannings etc.",
-        product_special: "Special Tea",
-        product_special_desc: "Puerh Tea, Blooming Tea, Jasmine Tea, Matcha, Jasmine Pearls, Jasmine Silver Needle etc.",
-        product_inquiry: "Inquiry Now",
-        product_video: "Our Production Process",
-        product_video_desc: "Watch our tea production process and tea garden tour on YouTube, learn more about our quality control.",
-        product_youtube: "View on YouTube",
-        cert_title: "Our Certificates",
-        cert_desc: "Our products have passed multiple international certifications, ensuring the quality and safety of every batch of tea.",
-        cert_eu: "EU Organic",
-        cert_us: "US Organic",
-        cert_haccp: "HACCP",
-        cert_iso: "ISO 9001",
-        cert_fairtrade: "Fair Trade",
-        exh_title: "Upcoming Exhibitions",
-        exh_desc: "We sincerely invite you to visit our booth at the exhibitions, communicate and cooperate with us face to face.",
-        exh_booth: "Booth No.",
-        exh_contact: "Make an Appointment",
-        contact_title: "Contact Us",
-        contact_desc: "If you have any inquiry about our products, please feel free to contact us, we will reply you within 24 hours.",
-        contact_info: "Contact Information",
-        contact_company: "Company Name",
-        contact_email: "Email",
-        contact_phone: "Phone / WhatsApp",
-        contact_address: "Address",
-        contact_social: "Follow Us",
-        form_name: "Name",
-        form_email: "Email",
-        form_subject: "Product / Subject",
-        form_message: "Message",
-        form_btn: "Send Inquiry",
-        footer_desc: "Professional Chinese tea manufacturer and exporter, supply premium organic tea to the world.",
-        footer_quick: "Quick Links",
-        footer_product: "Product Categories",
-        footer_contact: "Contact",
-        footer_disclaimer: "Disclaimer: This website is for product display and international trade communication only."
-      },
-      zh: {
-        meta_title: "AultrasTea | 中国优质茶叶供应商 | 有机茶叶批发",
-        meta_desc: "AultrasTea，专业茶叶生产出口商，供应有机绿茶、红茶、白茶、乌龙茶、普洱茶，全球批发，欢迎合作。",
-        nav_home: "首页",
-        nav_about: "关于我们",
-        nav_products: "产品中心",
-        nav_certificates: "公司资质",
-        nav_exhibitions: "展会动态",
-        nav_contact: "联系我们",
-        hero_subtitle: "贵州湘丰瀑布茶业有限公司",
-        hero_title1: "优质好茶",
-        hero_title2: "从中国走向世界",
-        hero_desc: "拥有20余年行业经验的专业茶叶生产出口商，我们为全球70多个国家供应有机绿茶、红茶、白茶、乌龙茶等全品类茶叶产品。",
-        hero_btn1: "查看产品",
-        hero_btn2: "联系我们",
-        about_title: "关于AultrasTea",
-        about_p1: "贵州湘丰瀑布茶业有限公司是一家集茶叶种植、生产、加工、出口于一体的专业茶叶企业，隶属于中国大型茶叶企业湘丰茶业集团，拥有20余年茶叶生产与国际贸易经验。",
-        about_p2: "我们在贵州、湖南拥有自有有机茶园，完整的生产体系和严格的品控体系，产品通过欧盟有机、美国有机、HACCP、ISO等多项国际认证，出口全球70多个国家和地区。",
-        about_year: "年行业经验",
-        about_country: "出口国家",
-        about_cert: "国际认证",
-        about_product: "茶叶产品",
-        products_title: "我们的产品",
-        products_desc: "我们提供全品类茶叶产品，支持定制包装和自有品牌，欢迎批发和大宗订单咨询。",
-        product_green: "绿茶",
-        product_green_desc: "珍眉、珠茶、龙井茶、煎茶、毛峰、绿茶片等",
-        product_black: "红茶",
-        product_black_desc: "CTC红茶、金螺、红茶片、BOP红茶、毛峰红茶等",
-        product_white: "白茶",
-        product_white_desc: "白牡丹、白毫银针、云南白牡丹、白茶片等",
-        product_oolong: "乌龙茶",
-        product_oolong_desc: "大红袍、铁观音、奶香乌龙、人参乌龙、乌龙片等",
-        product_special: "特种茶",
-        product_special_desc: "普洱茶、工艺花茶、茉莉花茶、抹茶、茉莉龙珠、茉莉银针等",
-        product_inquiry: "立即咨询",
-        product_video: "我们的生产流程",
-        product_video_desc: "在YouTube观看我们的茶叶生产流程和茶园探访，深入了解我们的品控体系。",
-        product_youtube: "在YouTube查看",
-        cert_title: "我们的资质",
-        cert_desc: "产品通过多项国际认证，确保每一批茶叶的品质与安全。",
-        cert_eu: "欧盟有机认证",
-        cert_us: "美国有机认证",
-        cert_haccp: "HACCP认证",
-        cert_iso: "ISO 9001认证",
-        cert_fairtrade: "公平贸易认证",
-        exh_title: "即将参加的展会",
-        exh_desc: "我们诚挚邀请您莅临展会展位，与我们面对面交流合作。",
-        exh_booth: "展位号",
-        exh_contact: "预约见面",
-        contact_title: "联系我们",
-        contact_desc: "如果您对我们的产品有任何咨询，欢迎随时联系我们，我们将在24小时内给您回复。",
-        contact_info: "联系方式",
-        contact_company: "公司名称",
-        contact_email: "邮箱",
-        contact_phone: "电话 / WhatsApp",
-        contact_address: "地址",
-        contact_social: "关注我们",
-        form_name: "姓名",
-        form_email: "邮箱",
-        form_subject: "产品 / 主题",
-        form_message: "留言内容",
-        form_btn: "发送咨询",
-        footer_desc: "专业的中国茶叶生产出口商，为全球供应优质有机茶叶。",
-        footer_quick: "快速导航",
-        footer_product: "产品分类",
-        footer_contact: "联系我们",
-        footer_disclaimer: "免责声明：本网站仅用于产品展示与国际贸易沟通使用。"
-      },
-      ru: {
-        meta_title: "AultrasTea | Поставщик чая из Китая | Оптовая продажа органического чая",
-        meta_desc: "AultrasTea, профессиональный производитель и экспортер чая из Китая, поставляем органический зеленый, черный, белый, улун чай. Оптовая продажа по всему миру, приглашаем к сотрудничеству.",
-        nav_home: "Главная",
-        nav_about: "О нас",
-        nav_products: "Продукция",
-        nav_certificates: "Сертификаты",
-        nav_exhibitions: "Выставки",
-        nav_contact: "Контакты",
-        hero_subtitle: "ГУЙЧЖОУ АУЛЬТРАС ЧАЙ КО.,ЛТД",
-        hero_title1: "Премиальный чай",
-        hero_title2: "Из Китая по всему миру",
-        hero_desc: "Профессиональный производитель и экспортер чая с более чем 20-летним опытом. Мы поставляем органический зеленый, черный, белый, улун чай в более чем 70 стран мира.",
-        hero_btn1: "Посмотреть продукцию",
-        hero_btn2: "Связаться с нами",
-        about_title: "О компании AultrasTea",
-        about_p1: "Guizhou Aultras Tea Co., Ltd. — профессиональное чайное предприятие, объединяющее выращивание, производство, переработку и экспорт чая. Мы являемся частью группы Xiangfeng Tea Group, одного из крупнейших чайных предприятий Китая, с более чем 20-летним опытом в производстве чая и международной торговле.",
-        about_p2: "У нас есть собственные органические чайные плантации в Гуйчжоу и Хунани, полная производственная система и строгая система контроля качества. Наша продукция прошла международные сертификации: органический ЕС, органический США, HACCP, ISO и другие, экспортируется в более чем 70 стран и регионов мира.",
-        about_year: "Лет опыта",
-        about_country: "Стран экспорта",
-        about_cert: "Международные сертификаты",
-        about_product: "Виды чая",
-        products_title: "Наша продукция",
-        products_desc: "Мы предлагаем полный ассортимент чайной продукции, поддерживаем индивидуальную упаковку и частные марки, приветствуем оптовые заказы.",
-        product_green: "Зеленый чай",
-        product_green_desc: "Чунмэй, Ганпаудер, Драконий колодец, Сенча, Мао Фэн, крошка зеленого чая и др.",
-        product_black: "Черный чай",
-        product_black_desc: "Черный чай CTC, Золотая улитка, крошка черного чая, черный чай BOP, Мао Фэн черный чай и др.",
-        product_white: "Белый чай",
-        product_white_desc: "Белый пион, Серебряная игла, Юньнань белый пион, крошка белого чая и др.",
-        product_oolong: "Улун",
-        product_oolong_desc: "Да Хун Пао, Те Гуань Инь, молочный улун, женьшеневый улун, крошка улуна и др.",
-        product_special: "Специальный чай",
-        product_special_desc: "Пуэр, цветущий чай, жасминовый чай, матча, жасминовые жемчужины, жасминовая серебряная игла и др.",
-        product_inquiry: "Запросить цену",
-        product_video: "Наш производственный процесс",
-        product_video_desc: "Посмотрите наш производственный процесс и экскурсию по чайным плантациям на YouTube, узнайте больше о нашем контроле качества.",
-        product_youtube: "Посмотреть на YouTube",
-        cert_title: "Наши сертификаты",
-        cert_desc: "Наша продукция прошла множество международных сертификаций, гарантируя качество и безопасность каждой партии чая.",
-        cert_eu: "Органический ЕС",
-        cert_us: "Органический США",
-        cert_haccp: "HACCP",
-        cert_iso: "ISO 9001",
-        cert_fairtrade: "Справедливая торговля",
-        exh_title: "Предстоящие выставки",
-        exh_desc: "Мы искренне приглашаем вас посетить наш стенд на выставках, пообщаться и сотрудничать с нами лично.",
-        exh_booth: "Номер стенда",
-        exh_contact: "Записаться на встречу",
-        contact_title: "Связаться с нами",
-        contact_desc: "Если у вас есть какие-либо вопросы о нашей продукции, пожалуйста, свяжитесь с нами, мы ответим вам в течение 24 часов.",
-        contact_info: "Контактная информация",
-        contact_company: "Название компании",
-        contact_email: "Электронная почта",
-        contact_phone: "Телефон / WhatsApp",
-        contact_address: "Адрес",
-        contact_social: "Подписывайтесь на нас",
-        form_name: "Имя",
-        form_email: "Электронная почта",
-        form_subject: "Продукт / Тема",
-        form_message: "Сообщение",
-        form_btn: "Отправить запрос",
-        footer_desc: "Профессиональный производитель и экспортер чая из Китая, поставляющий премиальный органический чай по всему миру.",
-        footer_quick: "Быстрые ссылки",
-        footer_product: "Категории продукции",
-        footer_contact: "Контакты",
-        footer_disclaimer: "Дисклеймер: Этот сайт предназначен только для демонстрации продукции и коммуникации по международной торговле."
-      },
-      de: {
-        meta_title: "AultrasTea | Premium Tee Lieferant aus China | Bio Tee Großhandel",
-        meta_desc: "AultrasTea, professioneller Tee Hersteller und Exporteur aus China, liefert Bio Grüntee, Schwarztee, Weißtee, Oolong Tee, Pu Erh Tee. Weltweiter Großhandel, willkommen zur Zusammenarbeit.",
-        nav_home: "Startseite",
-        nav_about: "Über Uns",
-        nav_products: "Produkte",
-        nav_certificates: "Zertifikate",
-        nav_exhibitions: "Messen",
-        nav_contact: "Kontakt",
-        hero_subtitle: "GUIZHOU AULTRAS TEA CO.,LTD",
-        hero_title1: "Premium Tee",
-        hero_title2: "Aus China in die Welt",
-        hero_desc: "Professioneller Tee Hersteller und Exporteur mit über 20 Jahren Erfahrung. Wir liefern Bio Grüntee, Schwarztee, Weißtee, Oolong Tee und mehr in über 70 Länder weltweit.",
-        hero_btn1: "Produkte Ansehen",
-        hero_btn2: "Kontakt Aufnehmen",
-        about_title: "Über AultrasTea",
-        about_p1: "Guizhou Aultras Tea Co., Ltd. ist ein professionelles Tee-Unternehmen, das Teeanbau, Produktion, Verarbeitung und Export kombiniert. Wir gehören zur Xiangfeng Tea Group, einem der größten Tee-Unternehmen Chinas, mit über 20 Jahren Erfahrung in Teeproduktion und internationalem Handel.",
-        about_p2: "Wir haben eigene Bio-Teeplantagen in Guizhou und Hunan, mit einem kompletten Produktionssystem und strengem Qualitätskontrollsystem. Unsere Produkte haben EU Bio-, US Bio-, HACCP-, ISO- und weitere internationale Zertifizierungen bestanden und werden in über 70 Länder und Regionen weltweit exportiert.",
-        about_year: "Jahre Erfahrung",
-        about_country: "Exportländer",
-        about_cert: "Internationale Zertifikate",
-        about_product: "Teesorten",
-        products_title: "Unsere Produkte",
-        products_desc: "Wir bieten ein komplettes Sortiment an Tee-Produkten, unterstützen individuelle Verpackungen und Private Labels, willkommen bei Groß- und Sammelbestellungen.",
-        product_green: "Grüntee",
-        product_green_desc: "Chunmee, Gunpowder, Dragon Well, Sencha, Mao Feng, Grüntee Staub usw.",
-        product_black: "Schwarztee",
-        product_black_desc: "CTC Schwarztee, Goldene Schnecke, Schwarztee Staub, Schwarztee BOP, Mao Feng Schwarztee usw.",
-        product_white: "Weißtee",
-        product_white_desc: "Weiße Pfingstrose, Silberne Nadel, Yunnan Weiße Pfingstrose, Weißtee Staub usw.",
-        product_oolong: "Oolong Tee",
-        product_oolong_desc: "Da Hong Pao, Tie Guan Yin, Milch Oolong, Ginseng Oolong, Oolong Tee Staub usw.",
-        product_special: "Spezialtee",
-        product_special_desc: "Pu Erh Tee, Blühender Tee, Jasmintee, Matcha, Jasmin Perlen, Jasmin Silberne Nadel usw.",
-        product_inquiry: "Jetzt Anfragen",
-        product_video: "Unser Produktionsprozess",
-        product_video_desc: "Sehen Sie sich unseren Teeproduktionsprozess und Teeplantagen-Tour auf YouTube an und erfahren Sie mehr über unsere Qualitätskontrolle.",
-        product_youtube: "Auf YouTube Ansehen",
-        cert_title: "Unsere Zertifikate",
-        cert_desc: "Unsere Produkte haben mehrere internationale Zertifizierungen bestanden, um die Qualität und Sicherheit jeder Tee-Charge zu gewährleisten.",
-        cert_eu: "EU Bio",
-        cert_us: "US Bio",
-        cert_haccp: "HACCP",
-        cert_iso: "ISO 9001",
-        cert_fairtrade: "Fairer Handel",
-        exh_title: "Anstehende Messen",
-        exh_desc: "Wir laden Sie herzlich ein, unseren Stand auf den Messen zu besuchen und persönlich mit uns zu kommunizieren und zusammenzuarbeiten.",
-        exh_booth: "Standnummer",
-        exh_contact: "Termin Vereinbaren",
-        contact_title: "Kontaktieren Sie Uns",
-        contact_desc: "Wenn Sie Fragen zu unseren Produkten haben, zögern Sie bitte nicht, uns zu kontaktieren. Wir antworten Ihnen innerhalb von 24 Stunden.",
-        contact_info: "Kontaktinformationen",
-        contact_company: "Firmenname",
-        contact_email: "E-Mail",
-        contact_phone: "Telefon / WhatsApp",
-        contact_address: "Adresse",
-        contact_social: "Folgen Sie Uns",
-        form_name: "Name",
-        form_email: "E-Mail",
-        form_subject: "Produkt / Betreff",
-        form_message: "Nachricht",
-        form_btn: "Anfrage Senden",
-        footer_desc: "Professioneller Tee Hersteller und Exporteur aus China, liefert Premium Bio Tee in die ganze Welt.",
-        footer_quick: "Schnellzugriff",
-        footer_product: "Produktkategorien",
-        footer_contact: "Kontakt",
-        footer_disclaimer: "Haftungsausschluss: Diese Website dient nur der Produktpräsentation und Kommunikation im internationalen Handel."
-      }
+      en: { meta_title:"AultrasTea | Premium Tea Supplier From China | Organic Tea Wholesale",meta_desc:"AultrasTea, professional Chinese tea manufacturer and exporter.",nav_home:"Home",nav_about:"About Us",nav_products:"Products",nav_certificates:"Certificates",nav_exhibitions:"Exhibitions",nav_contact:"Contact Us",hero_subtitle:"GUIZHOU AULTRAS TEA CO.,LTD",hero_title1:"Premium Tea",hero_title2:"From China To The World",hero_desc:"Professional tea manufacturer and exporter with over 20 years of experience. We supply organic green tea, black tea, white tea, oolong tea and more to 70+ countries worldwide.",hero_btn1:"View Products",hero_btn2:"Contact Us",about_title:"About AultrasTea",about_p1:"Guizhou Aultras Tea Co., Ltd. is a professional tea enterprise integrating tea planting, production, processing and export. We are affiliated to Xiangfeng Tea Group, one of the largest tea enterprises in China, with more than 20 years of experience in tea production and international trade.",about_p2:"We have our own organic tea plantations in Guizhou and Hunan, with a complete production system and strict quality control system. Our products have passed EU organic, US organic, HACCP, ISO and other international certifications, and are exported to more than 70 countries and regions around the world.",about_year:"Years Experience",about_country:"Countries Exported",about_cert:"International Certificates",about_product:"Tea Products",products_title:"Our Products",products_desc:"We provide a full range of tea products, support customized packaging and private labeling, welcome wholesale and bulk orders.",product_green:"Green Tea",product_green_desc:"Chunmee, Gunpowder, Dragon Well, Sencha, Mao Feng, Green Tea Fannings etc.",product_black:"Black Tea",product_black_desc:"CTC Black Tea, Golden Snail, Black Fannings, Black BOP, Mao Feng Black Tea etc.",product_white:"White Tea",product_white_desc:"White Peony, Silver Needle, Yunnan White Peony, White Tea Fannings etc.",product_oolong:"Oolong Tea",product_oolong_desc:"Da Hong Pao, Tie Guan Yin, Milk Oolong, Ginseng Oolong, Oolong Fannings etc.",product_special:"Special Tea",product_special_desc:"Puerh Tea, Blooming Tea, Jasmine Tea, Matcha, Jasmine Pearls, Jasmine Silver Needle etc.",product_inquiry:"Inquiry Now",product_video:"Our Production Process",product_video_desc:"Watch our tea production process and tea garden tour on YouTube.",product_youtube:"View on YouTube",cert_title:"Our Certificates",cert_desc:"Our products have passed multiple international certifications.",cert_eu:"EU Organic",cert_us:"US Organic",cert_haccp:"HACCP",cert_iso:"ISO 9001",cert_fairtrade:"Fair Trade",exh_title:"Upcoming Exhibitions",exh_desc:"We sincerely invite you to visit our booth at the exhibitions.",exh_booth:"Booth No.",exh_contact:"Make an Appointment",contact_title:"Contact Us",contact_desc:"If you have any inquiry about our products, please feel free to contact us, we will reply you within 24 hours.",contact_info:"Contact Information",contact_company:"Company Name",contact_email:"Email",contact_phone:"Phone / WhatsApp",contact_address:"Address",contact_social:"Follow Us",footer_desc:"Professional Chinese tea manufacturer and exporter, supply premium organic tea to the world.",footer_quick:"Quick Links",footer_product:"Product Categories",footer_contact:"Contact",footer_disclaimer:"Disclaimer: This website is for product display and international trade communication only." },
+      zh: { meta_title:"AultrasTea | 中国优质茶叶供应商 | 有机茶叶批发",meta_desc:"AultrasTea，专业茶叶生产出口商。",nav_home:"首页",nav_about:"关于我们",nav_products:"产品中心",nav_certificates:"公司资质",nav_exhibitions:"展会动态",nav_contact:"联系我们",hero_subtitle:"贵州湘丰瀑布茶业有限公司",hero_title1:"优质好茶",hero_title2:"从中国走向世界",hero_desc:"拥有20余年行业经验的专业茶叶生产出口商，我们为全球70多个国家供应有机绿茶、红茶、白茶、乌龙茶等全品类茶叶产品。",hero_btn1:"查看产品",hero_btn2:"联系我们",about_title:"关于AultrasTea",about_p1:"贵州湘丰瀑布茶业有限公司是一家集茶叶种植、生产、加工、出口于一体的专业茶叶企业，隶属于中国大型茶叶企业湘丰茶业集团，拥有20余年茶叶生产与国际贸易经验。",about_p2:"我们在贵州、湖南拥有自有有机茶园，完整的生产体系和严格的品控体系，产品通过欧盟有机、美国有机、HACCP、ISO等多项国际认证，出口全球70多个国家和地区。",about_year:"年行业经验",about_country:"出口国家",about_cert:"国际认证",about_product:"茶叶产品",products_title:"我们的产品",products_desc:"我们提供全品类茶叶产品，支持定制包装和自有品牌，欢迎批发和大宗订单咨询。",product_green:"绿茶",product_green_desc:"珍眉、珠茶、龙井茶、煎茶、毛峰、绿茶片等",product_black:"红茶",product_black_desc:"CTC红茶、金螺、红茶片、BOP红茶、毛峰红茶等",product_white:"白茶",product_white_desc:"白牡丹、白毫银针、云南白牡丹、白茶片等",product_oolong:"乌龙茶",product_oolong_desc:"大红袍、铁观音、奶香乌龙、人参乌龙、乌龙片等",product_special:"特种茶",product_special_desc:"普洱茶、工艺花茶、茉莉花茶、抹茶、茉莉龙珠、茉莉银针等",product_inquiry:"立即咨询",product_video:"我们的生产流程",product_video_desc:"在YouTube观看我们的茶叶生产流程和茶园探访。",product_youtube:"在YouTube查看",cert_title:"我们的资质",cert_desc:"产品通过多项国际认证，确保每一批茶叶的品质与安全。",cert_eu:"欧盟有机认证",cert_us:"美国有机认证",cert_haccp:"HACCP认证",cert_iso:"ISO 9001认证",cert_fairtrade:"公平贸易认证",exh_title:"即将参加的展会",exh_desc:"我们诚挚邀请您莅临展会展位，与我们面对面交流合作。",exh_booth:"展位号",exh_contact:"预约见面",contact_title:"联系我们",contact_desc:"如果您对我们的产品有任何咨询，欢迎随时联系我们，我们将在24小时内给您回复。",contact_info:"联系方式",contact_company:"公司名称",contact_email:"邮箱",contact_phone:"电话 / WhatsApp",contact_address:"地址",contact_social:"关注我们",footer_desc:"专业的中国茶叶生产出口商，为全球供应优质有机茶叶。",footer_quick:"快速导航",footer_product:"产品分类",footer_contact:"联系我们",footer_disclaimer:"免责声明：本网站仅用于产品展示与国际贸易沟通使用。" },
+      ru: { meta_title:"AultrasTea | Поставщик чая из Китая",meta_desc:"AultrasTea, профессиональный производитель и экспортер чая.",nav_home:"Главная",nav_about:"О нас",nav_products:"Продукция",nav_certificates:"Сертификаты",nav_exhibitions:"Выставки",nav_contact:"Контакты",hero_subtitle:"ГУЙЧЖОУ АУЛЬТРАС ЧАЙ КО.,ЛТД",hero_title1:"Премиальный чай",hero_title2:"Из Китая по всему миру",hero_desc:"Профессиональный производитель и экспортер чая с более чем 20-летним опытом.",hero_btn1:"Посмотреть продукцию",hero_btn2:"Связаться с нами",about_title:"О компании AultrasTea",about_p1:"Guizhou Aultras Tea Co., Ltd. — профессиональное чайное предприятие.",about_p2:"У нас есть собственные органические чайные плантации в Гуйчжоу и Хунани.",about_year:"Лет опыта",about_country:"Стран экспорта",about_cert:"Международные сертификаты",about_product:"Виды чая",products_title:"Наша продукция",products_desc:"Полный ассортимент чайной продукции.",product_green:"Зеленый чай",product_green_desc:"Чунмэй, Ганпаудер, Драконий колодец, Сенча и др.",product_black:"Черный чай",product_black_desc:"Черный чай CTC, Золотая улитка и др.",product_white:"Белый чай",product_white_desc:"Белый пион, Серебряная игла и др.",product_oolong:"Улун",product_oolong_desc:"Да Хун Пао, Те Гуань Инь и др.",product_special:"Специальный чай",product_special_desc:"Пуэр, цветущий чай, жасминовый чай и др.",product_inquiry:"Запросить цену",product_video:"Наш производственный процесс",product_video_desc:"Посмотрите производственный процесс на YouTube.",product_youtube:"Посмотреть на YouTube",cert_title:"Наши сертификаты",cert_desc:"Международные сертификации качества.",cert_eu:"Органический ЕС",cert_us:"Органический США",cert_haccp:"HACCP",cert_iso:"ISO 9001",cert_fairtrade:"Справедливая торговля",exh_title:"Предстоящие выставки",exh_desc:"Приглашаем посетить наш стенд.",exh_booth:"Номер стенда",exh_contact:"Записаться на встречу",contact_title:"Связаться с нами",contact_desc:"Свяжитесь с нами, мы ответим в течение 24 часов.",contact_info:"Контактная информация",contact_company:"Название компании",contact_email:"Электронная почта",contact_phone:"Телефон / WhatsApp",contact_address:"Адрес",contact_social:"Подписывайтесь на нас",footer_desc:"Профессиональный производитель и экспортер чая из Китая.",footer_quick:"Быстрые ссылки",footer_product:"Категории продукции",footer_contact:"Контакты",footer_disclaimer:"Этот сайт предназначен только для демонстрации продукции." },
+      de: { meta_title:"AultrasTea | Premium Tee aus China",meta_desc:"AultrasTea, professioneller Tee Hersteller und Exporteur.",nav_home:"Startseite",nav_about:"Über Uns",nav_products:"Produkte",nav_certificates:"Zertifikate",nav_exhibitions:"Messen",nav_contact:"Kontakt",hero_subtitle:"GUIZHOU AULTRAS TEA CO.,LTD",hero_title1:"Premium Tee",hero_title2:"Aus China in die Welt",hero_desc:"Professioneller Tee Hersteller und Exporteur mit über 20 Jahren Erfahrung.",hero_btn1:"Produkte Ansehen",hero_btn2:"Kontakt Aufnehmen",about_title:"Über AultrasTea",about_p1:"Guizhou Aultras Tea Co., Ltd. ist ein professionelles Tee-Unternehmen.",about_p2:"Wir haben eigene Bio-Teeplantagen in Guizhou und Hunan.",about_year:"Jahre Erfahrung",about_country:"Exportländer",about_cert:"Internationale Zertifikate",about_product:"Teesorten",products_title:"Unsere Produkte",products_desc:"Vollständiges Sortiment an Tee-Produkten.",product_green:"Grüntee",product_green_desc:"Chunmee, Gunpowder, Dragon Well usw.",product_black:"Schwarztee",product_black_desc:"CTC Schwarztee, Goldene Schnecke usw.",product_white:"Weißtee",product_white_desc:"Weiße Pfingstrose, Silberne Nadel usw.",product_oolong:"Oolong Tee",product_oolong_desc:"Da Hong Pao, Tie Guan Yin usw.",product_special:"Spezialtee",product_special_desc:"Pu Erh Tee, Jasmintee, Matcha usw.",product_inquiry:"Jetzt Anfragen",product_video:"Unser Produktionsprozess",product_video_desc:"Sehen Sie sich unseren Produktionsprozess auf YouTube an.",product_youtube:"Auf YouTube Ansehen",cert_title:"Unsere Zertifikate",cert_desc:"Internationale Zertifizierungen.",cert_eu:"EU Bio",cert_us:"US Bio",cert_haccp:"HACCP",cert_iso:"ISO 9001",cert_fairtrade:"Fairer Handel",exh_title:"Anstehende Messen",exh_desc:"Besuchen Sie unseren Stand auf den Messen.",exh_booth:"Standnummer",exh_contact:"Termin Vereinbaren",contact_title:"Kontaktieren Sie Uns",contact_desc:"Kontaktieren Sie uns, wir antworten innerhalb von 24 Stunden.",contact_info:"Kontaktinformationen",contact_company:"Firmenname",contact_email:"E-Mail",contact_phone:"Telefon / WhatsApp",contact_address:"Adresse",contact_social:"Folgen Sie Uns",footer_desc:"Professioneller Tee Hersteller und Exporteur aus China.",footer_quick:"Schnellzugriff",footer_product:"Produktkategorien",footer_contact:"Kontakt",footer_disclaimer:"Diese Website dient nur der Produktpräsentation." }
     };
 
-    // 语言切换逻辑
-    const langSelect = document.getElementById("langSelect");
+    // ===== 从 data.json 动态加载内容 =====
+    async function loadSiteData() {
+      try {
+        const res = await fetch('./data.json?t=' + Date.now());
+        const data = await res.json();
+
+        // 图片
+        const imgs = data.images;
+        const setImg = (id, src) => { const el = document.getElementById(id); if(el && src) el.src = src; };
+        setImg('img_hero_bg', imgs.hero_bg);
+        setImg('img_hero_main', imgs.hero_main);
+        setImg('img_about_1', imgs.about_1);
+        setImg('img_about_2', imgs.about_2);
+        setImg('img_about_3', imgs.about_3);
+        setImg('img_about_4', imgs.about_4);
+        setImg('img_product_green', imgs.product_green);
+        setImg('img_product_black', imgs.product_black);
+        setImg('img_product_white', imgs.product_white);
+        setImg('img_product_oolong', imgs.product_oolong);
+        setImg('img_product_special', imgs.product_special);
+        setImg('img_cert_1', imgs.cert_1);
+        setImg('img_cert_2', imgs.cert_2);
+        setImg('img_cert_3', imgs.cert_3);
+
+        // 视频
+        if(data.video) {
+          const iframe = document.getElementById('video_youtube');
+          if(iframe && data.video.youtube_embed) iframe.src = data.video.youtube_embed;
+          const link = document.getElementById('link_youtube');
+          if(link && data.video.youtube_link) link.href = data.video.youtube_link;
+        }
+
+        // 展会
+        const container = document.getElementById('exhibitions-container');
+        if(container && data.exhibitions) {
+          container.innerHTML = data.exhibitions.map((exh, i) => `
+            <div class="bg-white rounded-xl overflow-hidden shadow-md fade-in${i > 0 ? ' delay-' + (i * 100) : ''}">
+              <div class="p-6">
+                <div class="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">${exh.date}</div>
+                <h3 class="text-xl font-bold mb-3 text-dark">${exh.name}</h3>
+                <p class="text-dark/70 mb-4"><i class="fas fa-map-marker-alt text-primary mr-2"></i>${exh.location}</p>
+                <p class="text-dark/70 mb-6"><i class="fas fa-door-open text-primary mr-2"></i><span data-lang="exh_booth">Booth No.</span> ${exh.booth}</p>
+                <a href="#contact" class="text-secondary font-medium flex items-center gap-2 hover:gap-3 transition-all">
+                  <span data-lang="exh_contact">Make an Appointment</span>
+                  <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          `).join('');
+          // 重新绑定观察器
+          container.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        }
+      } catch(e) {
+        console.warn('data.json 加载失败，使用默认内容', e);
+      }
+    }
+
+    // ===== 语言切换 =====
+    const langSelect = document.getElementById('langSelect');
     function switchLang(lang) {
-      document.querySelectorAll("[data-lang]").forEach(el => {
-        const key = el.getAttribute("data-lang");
-        if (langPack[lang][key]) el.textContent = langPack[lang][key];
+      document.querySelectorAll('[data-lang]').forEach(el => {
+        const key = el.getAttribute('data-lang');
+        if(langPack[lang] && langPack[lang][key]) el.textContent = langPack[lang][key];
       });
       document.title = langPack[lang].meta_title;
-      document.querySelector("meta[name='description']").setAttribute("content", langPack[lang].meta_desc);
+      document.querySelector("meta[name='description']").setAttribute('content', langPack[lang].meta_desc);
       document.documentElement.lang = lang;
     }
-    langSelect.addEventListener("change", () => switchLang(langSelect.value));
+    langSelect.addEventListener('change', () => switchLang(langSelect.value));
 
-    // 导航栏滚动效果
-    const navbar = document.getElementById("navbar");
-    window.addEventListener("scroll", () => {
-      navbar.classList.toggle("py-2", window.scrollY > 50);
-      navbar.classList.toggle("py-3", !window.scrollY > 50);
-      navbar.classList.toggle("shadow-md", window.scrollY > 50);
+    // ===== 导航滚动 =====
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('py-2', window.scrollY > 50);
+      navbar.classList.toggle('shadow-md', window.scrollY > 50);
     });
 
-    // 移动端菜单
-    const menuToggle = document.getElementById("menuToggle");
-    const mobileMenu = document.getElementById("mobileMenu");
-    menuToggle.addEventListener("click", () => {
-      mobileMenu.classList.toggle("hidden");
-      const icon = menuToggle.querySelector("i");
-      icon.classList.toggle("fa-bars");
-      icon.classList.toggle("fa-times");
+    // ===== 移动端菜单 =====
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      const icon = menuToggle.querySelector('i');
+      icon.classList.toggle('fa-bars');
+      icon.classList.toggle('fa-times');
     });
-    document.querySelectorAll("#mobileMenu a").forEach(link => {
-      link.addEventListener("click", () => {
-        mobileMenu.classList.add("hidden");
-        const icon = menuToggle.querySelector("i");
-        icon.classList.add("fa-bars");
-        icon.classList.remove("fa-times");
+    document.querySelectorAll('#mobileMenu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuToggle.querySelector('i').className = 'fas fa-bars';
       });
     });
 
-    // 滚动渐入动画
-    const fadeElements = document.querySelectorAll(".fade-in");
+    // ===== 渐入动画 =====
+    const fadeElements = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => entry.isIntersecting && entry.target.classList.add("visible"));
+      entries.forEach(entry => entry.isIntersecting && entry.target.classList.add('visible'));
     }, { threshold: 0.1 });
     fadeElements.forEach(el => observer.observe(el));
 
-    // 回到顶部按钮
-    const backToTop = document.getElementById("backToTop");
-    window.addEventListener("scroll", () => {
-      backToTop.classList.toggle("opacity-100 visible", window.scrollY > 300);
-      backToTop.classList.toggle("opacity-0 invisible", !window.scrollY > 300);
+    // ===== 回到顶部 =====
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if(window.scrollY > 300) {
+        backToTop.classList.remove('opacity-0', 'invisible');
+        backToTop.classList.add('opacity-100', 'visible');
+      } else {
+        backToTop.classList.add('opacity-0', 'invisible');
+        backToTop.classList.remove('opacity-100', 'visible');
+      }
     });
-    backToTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+    backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-    // 版权年份
-    document.getElementById("year").textContent = new Date().getFullYear();
+    // ===== 年份 =====
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // ===== 初始化 =====
+    loadSiteData();
   </script>
 </body>
 </html>
