@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AultrasTea 后台管理系统</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f0f4f8; }
+    .tab-btn.active { background: #0F4C3A; color: white; }
+    .img-preview { max-height: 80px; object-fit: cover; border-radius: 6px; margin-top: 6px; }
+    .section-card { background: white; border-radius: 12px; padding: 24px; margin-bottom: 20px; box-shadow: 0 1px 8px rgba(0,0,0,0.07); }
+    input[type=text], input[type=url], textarea {
+      width: 100%; border: 1px solid #d1d5db; border-radius: 8px; padding: 8px 12px;
+      font-size: 14px; transition: border 0.2s; outline: none;
+    }
+    input[type=text]:focus, input[type=url]:focus, textarea:focus { border-color: #0F4C3A; box-shadow: 0 0 0 3px rgba(15,76,58,0.1); }
+    .btn-primary { background: #0F4C3A; color: white; padding: 10px 24px; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.2s; border: none; }
+    .btn-primary:hover { background: #0a3428; }
+    .btn-danger { background: #ef4444; color: white; padding: 6px 14px; border-radius: 6px; font-size: 13px; cursor: pointer; border: none; }
+    .btn-add { background: #D4AF37; color: white; padding: 8px 18px; border-radius: 8px; font-weight: 600; cursor: pointer; border: none; }
+    .toast { position: fixed; top: 24px; right: 24px; z-index: 9999; padding: 14px 24px; border-radius: 10px; font-weight: 600; color: white; transition: all 0.3s; transform: translateX(120%); }
+    .toast.show { transform: translateX(0); }
+    .toast.success { background: #16a34a; }
+    .toast.error { background: #ef4444; }
+    .toast.loading { background: #0F4C3A; }
+    .badge-confirm { background: #dcfce7; color: #15803d; padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+    .badge-upcoming { background: #fef9c3; color: #a16207; padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+    .field-label { font-size: 13px; font-weight: 600; color: #374151; margin-bottom: 4px; }
+  </style>
+</head>
+<body>
+
+<!-- Toast提示 -->
+<div id="toast" class="toast">Loading...</div>
+
+<!-- 登录界面 -->
+<div id="loginPage" class="min-h-screen flex items-center justify-center">
+  <div class="bg-white rounded-2xl shadow-xl p-10 w-full max-w-md">
+    <div class="text-center mb-8">
+      <div class="w-16 h-16 bg-green-900 rounded-2xl flex items-center justify-center mx-auto mb-4">
+        <i class="fas fa-leaf text-white text-2xl"></i>
+      </div>
+      <h1 class="text-2xl font-bold text-gray-800">AultrasTea 后台管理</h1>
+      <p class="text-gray-500 text-sm mt-1">填写 GitHub 信息以开始管理网站内容</p>
+    </div>
+
+    <div class="space-y-4">
+      <div>
+        <div class="field-label">GitHub 用户名</div>
+        <input type="text" id="githubOwner" placeholder="例如: aultrastea" />
+      </div>
+      <div>
+        <div class="field-label">仓库名称</div>
+        <input type="text" id="githubRepo" placeholder="例如: aultrastea.github.io" />
+      </div>
+      <div>
+        <div class="field-label">GitHub Token（Fine-grained，需要 Contents 读写权限）</div>
+        <input type="text" id="githubToken" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" />
+        <p class="text-xs text-gray-400 mt-1">Token 仅保存在您的浏览器本地，不会上传任何服务器</p>
+      </div>
+      <div>
+        <div class="field-label">data.json 路径（通常为 data.json）</div>
+        <input type="text" id="dataPath" value="data.json" />
+      </div>
+      <button onclick="doLogin()" class="btn-primary w-full mt-2 text-center">
+        <i class="fas fa-sign-in-alt mr-2"></i> 连接并进入管理后台
+      </button>
+    </div>
+
+    <div class="mt-6 p-4 bg-amber-50 rounded-lg border border-amber-200 text-xs text-amber-800">
+      <strong>⚠️ 如何获取 Token？</strong><br>
+      GitHub → Settings → Developer settings → Fine-grained tokens → Generate new token<br>
+      权限选择：选择你的仓库 → Contents → Read and write
+    </div>
+  </div>
+</div>
+
+<!-- 主管理界面 -->
+<div id="adminPage" class="hidden min-h-screen">
+  <!-- 顶部导航 -->
+  <header class="bg-white shadow-sm sticky top-0 z-40">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 bg-green-900 rounded-lg flex items-center justify-center">
+          <i class="fas fa-leaf text-white text-sm"></i>
+        </div>
+        <span class="font-bold text-gray-800 text-lg">AultrasTea 后台</span>
+        <span id="repoTag" class="text-xs bg-gray-100 text-gray-500 px-2 py-1 rounded-full ml-1"></span>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="#" id="previewLink" target="_blank" class="text-sm text-blue-600 hover:underline flex items-center gap-1">
+          <i class="fas fa-external-link-alt text-xs"></i> 预览网站
+        </a>
+        <button onclick="doLogout()" class="text-sm text-gray-500 hover:text-red-500 transition-colors">
+          <i class="fas fa-sign-out-alt mr-1"></i>退出
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Tab导航 -->
+  <div class="max-w-6xl mx-auto px-6 pt-6">
+    <div class="flex gap-2 bg-white rounded-xl p-1.5 shadow-sm mb-6 w-fit">
+      <button class="tab-btn active px-5 py-2.5 rounded-lg font-medium text-sm transition-all" onclick="switchTab('images')">
+        <i class="fas fa-images mr-1.5"></i> 图片管理
+      </button>
+      <button class="tab-btn px-5 py-2.5 rounded-lg font-medium text-sm transition-all text-gray-600 hover:bg-gray-100" onclick="switchTab('video')">
+        <i class="fab fa-youtube mr-1.5"></i> 视频链接
+      </button>
+      <button class="tab-btn px-5 py-2.5 rounded-lg font-medium text-sm transition-all text-gray-600 hover:bg-gray-100" onclick="switchTab('exhibitions')">
+        <i class="fas fa-calendar-alt mr-1.5"></i> 展会信息
+      </button>
+    </div>
+
+    <!-- ===== 图片管理 Tab ===== -->
+    <div id="tab-images" class="tab-content">
+      <div class="grid md:grid-cols-2 gap-6">
+
+        <!-- Hero区 -->
+        <div class="section-card">
+          <h3 class="font-bold text-gray-800 mb-4 flex items-center gap-2"><span class="w-2 h-2 bg-green-700 rounded-full inline-block"></span> 首页 Hero 区</h3>
+          <div class="space-y-4">
+            <div>
+              <div class="field-label">背景图片链接</div>
+              <input type="url" id="img_hero_bg" placeholder="https://..." />
+              <img id="prev_hero_bg" class="img-preview hidden" />
+            </div>
+            <div>
+              <div class="field-label">右侧主图链接</div>
+              <input type="url" id="img_hero_main" placeholder="https://..." />
+              <img id="prev_hero_main" class="img-preview hidden" />
+            </div>
+          </div>
+        </div>
+
+        <!-- 关于我们 -->
+        <div class="section-card">
+          <h3 class="font-bold text-gray-800 mb-4 flex items-center gap-2"><span class="w-2 h-2 bg-blue-600 rounded-full inline-block"></span> 关于我们（4张图）</h3>
+          <div class="space-y-3">
+            <div>
+              <div class="field-label">图片1（茶园）</div>
+              <input type="url" id="img_about_1" placeholder="https://..." />
+              <img id="prev_about_1" class="img-preview hidden" />
+            </div>
+            <div>
+              <div class="field-label">图片2（生产）</div>
+              <input type="url" id="img_about_2" placeholder="https://..." />
+              <img id="prev_about_2" class="img-preview hidden" />
+            </div>
+            <div>
+              <div class="field-label">图片3（品茶）</div>
+              <input type="url" id="img_about_3" placeholder="https://..." />
+              <img id="prev_about_3" class="img-preview hidden" />
+            </div>
+            <div>
+              <div class="field-label">图片4（出口）</div>
+              <input type="url" id="img_about_4" placeholder="https://..." />
+              <img id="prev_about_4" class="img-preview hidden" />
+            </div>
+          </div>
+        </div>
+
+        <!-- 产品图片 -->
+        <div class="section-card md:col-span-2">
+          <h3 class="font-bold text-gray-800 mb-4 flex items-center gap-2"><span class="w-2 h-2 bg-yellow-500 rounded-full inline-block"></span> 产品图片（5张）</h3>
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div>
+              <div class="field-label">绿茶图片</div>
+              <input type="url" id="img_product_green" placeholder="https://..." />
+              <img id="prev_product_green" class="img-preview hidden" />
+            </div>
+            <div>
+              <div class="field-label">红茶图片</div>
+              <input type="url" id="img_product_black" placeholder="https://..." />
+              <img id="prev_product_black" class="img-preview hidden" />
+            </div>
+            <div>
+              <div class="field-label">白茶图片</div>
+              <input type="url" id="img_product_white" placeholder="https://..." />
+              <img id="prev_product_white" class="img-preview hidden" />
+            </div>
+            <div>
+              <div class="field-label">乌龙茶图片</div>
+              <input type="url" id="img_product_oolong" placeholder="https://..." />
+              <img id="prev_product_oolong" class="img-preview hidden" />
+            </div>
+            <div>
+              <div class="field-label">特种茶图片</div>
+              <input type="url" id="img_product_special" placeholder="https://..." />
+              <img id="prev_product_special" class="img-preview hidden" />
+            </div>
+          </div>
+        </div>
+
+        <!-- 证书图片 -->
+        <div class="section-card md:col-span-2">
+          <h3 class="font-bold text-gray-800 mb-4 flex items-center gap-2"><span class="w-2 h-2 bg-purple-600 rounded-full inline-block"></span> 资质证书图片（3张）</h3>
+          <div class="grid sm:grid-cols-3 gap-4">
+            <div>
+              <div class="field-label">证书图1</div>
+              <input type="url" id="img_cert_1" placeholder="https://..." />
+              <img id="prev_cert_1" class="img-preview hidden" />
+            </div>
+            <div>
+              <div class="field-label">证书图2</div>
+              <input type="url" id="img_cert_2" placeholder="https://..." />
+              <img id="prev_cert_2" class="img-preview hidden" />
+            </div>
+            <div>
+              <div class="field-label">证书图3</div>
+              <input type="url" id="img_cert_3" placeholder="https://..." />
+              <img id="prev_cert_3" class="img-preview hidden" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-4 mt-2 mb-10">
+        <button onclick="saveImages()" class="btn-primary flex items-center gap-2">
+          <i class="fas fa-save"></i> 保存图片设置到网站
+        </button>
+        <span class="text-xs text-gray-400">保存后约 1-2 分钟网站生效</span>
+      </div>
+    </div>
+
+    <!-- ===== 视频链接 Tab ===== -->
+    <div id="tab-video" class="tab-content hidden">
+      <div class="section-card max-w-2xl">
+        <h3 class="font-bold text-gray-800 mb-2 text-lg">YouTube 视频设置</h3>
+        <p class="text-gray-500 text-sm mb-6">设置产品区展示的 YouTube 视频。请使用 <strong>embed</strong> 格式链接。</p>
+
+        <div class="space-y-5">
+          <div>
+            <div class="field-label">YouTube Embed 链接（嵌入视频用）</div>
+            <input type="url" id="video_youtube_embed" placeholder="https://www.youtube.com/embed/VIDEO_ID" />
+            <p class="text-xs text-gray-400 mt-1">格式：https://www.youtube.com/embed/你的视频ID</p>
+          </div>
+          <div>
+            <div class="field-label">YouTube 普通链接（"在YouTube查看"按钮跳转）</div>
+            <input type="url" id="video_youtube_link" placeholder="https://www.youtube.com/watch?v=VIDEO_ID" />
+            <p class="text-xs text-gray-400 mt-1">格式：https://www.youtube.com/watch?v=你的视频ID</p>
+          </div>
+
+          <!-- 视频ID快捷输入 -->
+          <div class="p-4 bg-blue-50 rounded-lg border border-blue-200">
+            <div class="field-label text-blue-800 mb-2">快捷填写：只输入视频ID，自动生成两个链接</div>
+            <div class="flex gap-2">
+              <input type="text" id="videoIdInput" placeholder="例如: dQw4w9WgXcQ" class="flex-1" />
+              <button onclick="fillVideoLinks()" class="btn-primary text-sm px-4">自动填写</button>
+            </div>
+          </div>
+        </div>
+
+        <button onclick="saveVideo()" class="btn-primary flex items-center gap-2 mt-6">
+          <i class="fas fa-save"></i> 保存视频设置到网站
+        </button>
+      </div>
+    </div>
+
+    <!-- ===== 展会信息 Tab ===== -->
+    <div id="tab-exhibitions" class="tab-content hidden">
+      <div class="flex justify-between items-center mb-4">
+        <h3 class="font-bold text-gray-800 text-lg">展会信息管理</h3>
+        <button onclick="addExhibition()" class="btn-add flex items-center gap-2">
+          <i class="fas fa-plus"></i> 新增展会
+        </button>
+      </div>
+
+      <div id="exhibitions-editor" class="space-y-4"></div>
+
+      <div class="flex items-center gap-4 mt-6 mb-10">
+        <button onclick="saveExhibitions()" class="btn-primary flex items-center gap-2">
+          <i class="fas fa-save"></i> 保存展会信息到网站
+        </button>
+        <span class="text-xs text-gray-400">支持添加/删除/编辑任意展会</span>
+      </div>
+    </div>
+
+  </div><!-- end max-w -->
+</div><!-- end adminPage -->
+
+<script>
+// ===== 全局状态 =====
+let CONFIG = {
+  owner: '',
+  repo: '',
+  token: '',
+  dataPath: 'data.json'
+};
+let currentData = null;
+let currentSHA = '';
+
+// ===== Toast =====
+function showToast(msg, type = 'loading', duration = 3000) {
+  const t = document.getElementById('toast');
+  t.className = `toast ${type} show`;
+  t.innerHTML = type === 'loading'
+    ? `<i class="fas fa-spinner fa-spin mr-2"></i>${msg}`
+    : type === 'success'
+    ? `<i class="fas fa-check-circle mr-2"></i>${msg}`
+    : `<i class="fas fa-times-circle mr-2"></i>${msg}`;
+  if (duration > 0) setTimeout(() => t.classList.remove('show'), duration);
+}
+
+// ===== Tab切换 =====
+function switchTab(name) {
+  document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+  document.querySelectorAll('.tab-btn').forEach(el => {
+    el.classList.remove('active');
+    el.classList.add('text-gray-600');
+  });
+  document.getElementById('tab-' + name).classList.remove('hidden');
+  event.target.classList.add('active');
+  event.target.classList.remove('text-gray-600');
+}
+
+// ===== 登录 =====
+function doLogin() {
+  const owner = document.getElementById('githubOwner').value.trim();
+  const repo = document.getElementById('githubRepo').value.trim();
+  const token = document.getElementById('githubToken').value.trim();
+  const dataPath = document.getElementById('dataPath').value.trim() || 'data.json';
+
+  if (!owner || !repo || !token) {
+    showToast('请填写所有必填项', 'error');
+    return;
+  }
+
+  CONFIG = { owner, repo, token, dataPath };
+  localStorage.setItem('aultrastea_cfg', JSON.stringify(CONFIG));
+
+  showToast('正在连接 GitHub...', 'loading', 0);
+  fetchDataJson();
+}
+
+function doLogout() {
+  localStorage.removeItem('aultrastea_cfg');
+  document.getElementById('loginPage').classList.remove('hidden');
+  document.getElementById('adminPage').classList.add('hidden');
+  currentData = null;
+}
+
+// ===== 从 GitHub 读取 data.json =====
+async function fetchDataJson() {
+  try {
+    const url = `https://api.github.com/repos/${CONFIG.owner}/${CONFIG.repo}/contents/${CONFIG.dataPath}`;
+    const res = await fetch(url, {
+      headers: {
+        'Authorization': `token ${CONFIG.token}`,
+        'Accept': 'application/vnd.github.v3+json'
+      }
+    });
+    if (!res.ok) {
+      const err = await res.json();
+      throw new Error(err.message || `HTTP ${res.status}`);
+    }
+    const json = await res.json();
+    currentSHA = json.sha;
+    const decoded = atob(json.content.replace(/\n/g, ''));
+    currentData = JSON.parse(decoded);
+
+    showToast('连接成功！', 'success');
+    document.getElementById('loginPage').classList.add('hidden');
+    document.getElementById('adminPage').classList.remove('hidden');
+    document.getElementById('repoTag').textContent = `${CONFIG.owner}/${CONFIG.repo}`;
+    document.getElementById('previewLink').href = `https://${CONFIG.owner}.github.io/${CONFIG.repo !== CONFIG.owner + '.github.io' ? CONFIG.repo : ''}`;
+
+    populateForm();
+  } catch(e) {
+    showToast('连接失败：' + e.message, 'error');
+  }
+}
+
+// ===== 填充表单 =====
+function populateForm() {
+  if (!currentData) return;
+  const imgs = currentData.images || {};
+  Object.entries(imgs).forEach(([key, val]) => {
+    const input = document.getElementById('img_' + key);
+    if (input) {
+      input.value = val || '';
+      setupPreview(input, 'prev_' + key);
+    }
+  });
+
+  // 视频
+  const vid = currentData.video || {};
+  const embedIn = document.getElementById('video_youtube_embed');
+  const linkIn = document.getElementById('video_youtube_link');
+  if (embedIn) embedIn.value = vid.youtube_embed || '';
+  if (linkIn) linkIn.value = vid.youtube_link || '';
+
+  // 展会
+  renderExhibitionsEditor(currentData.exhibitions || []);
+}
+
+// ===== 图片预览 =====
+function setupPreview(input, prevId) {
+  const prev = document.getElementById(prevId);
+  if (!prev) return;
+  const update = () => {
+    if (input.value.trim()) {
+      prev.src = input.value.trim();
+      prev.classList.remove('hidden');
+      prev.onerror = () => prev.classList.add('hidden');
+    } else {
+      prev.classList.add('hidden');
+    }
+  };
+  input.addEventListener('input', update);
+  update();
+}
+
+// ===== 收集图片数据 =====
+function collectImages() {
+  const keys = [
+    'hero_bg','hero_main',
+    'about_1','about_2','about_3','about_4',
+    'product_green','product_black','product_white','product_oolong','product_special',
+    'cert_1','cert_2','cert_3'
+  ];
+  const images = {};
+  keys.forEach(k => {
+    const el = document.getElementById('img_' + k);
+    images[k] = el ? el.value.trim() : '';
+  });
+  return images;
+}
+
+// ===== 保存图片 =====
+async function saveImages() {
+  currentData.images = collectImages();
+  await pushDataJson('图片设置已保存并推送到 GitHub ✅');
+}
+
+// ===== 保存视频 =====
+async function saveVideo() {
+  currentData.video = {
+    youtube_embed: document.getElementById('video_youtube_embed').value.trim(),
+    youtube_link: document.getElementById('video_youtube_link').value.trim()
+  };
+  await pushDataJson('视频设置已保存并推送到 GitHub ✅');
+}
+
+// ===== 视频ID快捷填写 =====
+function fillVideoLinks() {
+  const id = document.getElementById('videoIdInput').value.trim();
+  if (!id) return;
+  document.getElementById('video_youtube_embed').value = `https://www.youtube.com/embed/${id}`;
+  document.getElementById('video_youtube_link').value = `https://www.youtube.com/watch?v=${id}`;
+  showToast('链接已自动填写', 'success');
+}
+
+// ===== 展会编辑器渲染 =====
+function renderExhibitionsEditor(exhs) {
+  const container = document.getElementById('exhibitions-editor');
+  container.innerHTML = '';
+  exhs.forEach((exh, i) => {
+    const div = document.createElement('div');
+    div.className = 'section-card border-l-4 border-green-700';
+    div.innerHTML = `
+      <div class="flex items-center justify-between mb-4">
+        <h4 class="font-bold text-gray-700 flex items-center gap-2">
+          <i class="fas fa-calendar-check text-green-700"></i>
+          展会 ${i + 1}
+          <span class="${exh.status === 'confirmed' ? 'badge-confirm' : 'badge-upcoming'}">${exh.status === 'confirmed' ? '已确认' : '待定'}</span>
+        </h4>
+        <button class="btn-danger" onclick="removeExhibition(${i})"><i class="fas fa-trash mr-1"></i>删除</button>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div>
+          <div class="field-label">展会名称</div>
+          <input type="text" data-exh="${i}" data-field="name" value="${exh.name || ''}" />
+        </div>
+        <div>
+          <div class="field-label">日期（显示文字）</div>
+          <input type="text" data-exh="${i}" data-field="date" value="${exh.date || ''}" placeholder="例如: 1 - 3 April 2026 或 Coming Soon" />
+        </div>
+        <div>
+          <div class="field-label">展会地点</div>
+          <input type="text" data-exh="${i}" data-field="location" value="${exh.location || ''}" />
+        </div>
+        <div>
+          <div class="field-label">展位号</div>
+          <input type="text" data-exh="${i}" data-field="booth" value="${exh.booth || ''}" placeholder="例如: F92 或 TBA" />
+        </div>
+        <div>
+          <div class="field-label">状态</div>
+          <select data-exh="${i}" data-field="status" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm outline-none focus:border-green-700">
+            <option value="confirmed" ${exh.status === 'confirmed' ? 'selected' : ''}>已确认（显示具体日期）</option>
+            <option value="upcoming" ${exh.status === 'upcoming' ? 'selected' : ''}>待定（显示 Coming Soon）</option>
+          </select>
+        </div>
+      </div>
+    `;
+    container.appendChild(div);
+  });
+}
+
+// ===== 新增展会 =====
+function addExhibition() {
+  if (!currentData.exhibitions) currentData.exhibitions = [];
+  currentData.exhibitions.push({
+    id: Date.now(),
+    date: 'Coming Soon',
+    name: '新展会',
+    location: '城市, 国家',
+    booth: 'TBA',
+    status: 'upcoming'
+  });
+  renderExhibitionsEditor(currentData.exhibitions);
+}
+
+// ===== 删除展会 =====
+function removeExhibition(idx) {
+  if (!confirm('确认删除这个展会信息？')) return;
+  currentData.exhibitions.splice(idx, 1);
+  renderExhibitionsEditor(currentData.exhibitions);
+}
+
+// ===== 收集展会数据 =====
+function collectExhibitions() {
+  const inputs = document.querySelectorAll('#exhibitions-editor [data-exh]');
+  const exhs = [];
+  inputs.forEach(el => {
+    const i = parseInt(el.dataset.exh);
+    if (!exhs[i]) exhs[i] = {};
+    exhs[i][el.dataset.field] = el.value;
+  });
+  return exhs.filter(Boolean);
+}
+
+// ===== 保存展会 =====
+async function saveExhibitions() {
+  currentData.exhibitions = collectExhibitions();
+  await pushDataJson('展会信息已保存并推送到 GitHub ✅');
+}
+
+// ===== 推送 data.json 到 GitHub =====
+async function pushDataJson(successMsg) {
+  showToast('正在推送到 GitHub...', 'loading', 0);
+  try {
+    const content = btoa(unescape(encodeURIComponent(JSON.stringify(currentData, null, 2))));
+    const url = `https://api.github.com/repos/${CONFIG.owner}/${CONFIG.repo}/contents/${CONFIG.dataPath}`;
+    const body = {
+      message: `chore: update site content via admin panel [${new Date().toISOString()}]`,
+      content: content,
+      sha: currentSHA
+    };
+    const res = await fetch(url, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `token ${CONFIG.token}`,
+        'Accept': 'application/vnd.github.v3+json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(body)
+    });
+    if (!res.ok) {
+      const err = await res.json();
+      throw new Error(err.message || `HTTP ${res.status}`);
+    }
+    const result = await res.json();
+    currentSHA = result.content.sha;
+    showToast(successMsg, 'success');
+  } catch(e) {
+    showToast('推送失败：' + e.message, 'error');
+  }
+}
+
+// ===== 初始化 =====
+window.addEventListener('DOMContentLoaded', () => {
+  // 自动填充上次的配置
+  const saved = localStorage.getItem('aultrastea_cfg');
+  if (saved) {
+    try {
+      const cfg = JSON.parse(saved);
+      document.getElementById('githubOwner').value = cfg.owner || '';
+      document.getElementById('githubRepo').value = cfg.repo || '';
+      document.getElementById('githubToken').value = cfg.token || '';
+      document.getElementById('dataPath').value = cfg.dataPath || 'data.json';
+    } catch(e) {}
+  }
+
+  // 所有图片输入绑定预览
+  const imgKeys = [
+    'hero_bg','hero_main',
+    'about_1','about_2','about_3','about_4',
+    'product_green','product_black','product_white','product_oolong','product_special',
+    'cert_1','cert_2','cert_3'
+  ];
+  imgKeys.forEach(k => {
+    const input = document.getElementById('img_' + k);
+    if (input) setupPreview(input, 'prev_' + k);
+  });
+});
+</script>
+</body>
+</html>
