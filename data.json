@@ -36,7 +36,21 @@
     {
       "name": "Gulfood 2026",
       "date": "Coming Soon",
-      "location": "Dubai, UAE",
+      "location": "中国湖南湘潭",
+      "booth": "TBA",
+      "status": "upcoming"
+    },
+    {
+      "name": "新展会",
+      "date": "Coming Soon",
+      "location": "中国湖南岳阳",
+      "booth": "TBA",
+      "status": "upcoming"
+    },
+    {
+      "name": "新展会",
+      "date": "Coming Soon",
+      "location": "城市, 国家",
       "booth": "TBA",
       "status": "upcoming"
     }
