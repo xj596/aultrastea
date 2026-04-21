@@ -6,7 +6,7 @@
     "about_2": "https://picsum.photos/id/493/400/300",
     "about_3": "https://picsum.photos/id/287/400/300",
     "about_4": "https://picsum.photos/id/488/400/500",
-    "product_green": "https://i.postimg.cc/mrRs8ttk/huang-jin-cha-xin-pin-zheng-shi-tu.png",
+    "product_green": "https://picsum.photos/id/493/600/400",
     "product_black": "https://picsum.photos/id/312/600/400",
     "product_white": "https://picsum.photos/id/488/600/400",
     "product_oolong": "https://picsum.photos/id/225/600/400",
@@ -16,7 +16,7 @@
     "cert_3": "https://picsum.photos/id/240/400/300"
   },
   "video": {
-    "embed_code": "<div style=\"position:relative; width:100%; height:0px; padding-bottom:56.250%\"><iframe allow=\"fullscreen\" allowfullscreen height=\"100%\" src=\"https://streamable.com/e/1p8szp?muted=1&nocontrols=1\" width=\"100%\" style=\"border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden;\"></iframe></div>"
+    "embed_code": "<div style=\"position:relative; width:100%; height:0px; padding-bottom:56.250%\"><iframe allow=\"fullscreen;autoplay\" allowfullscreen height=\"100%\" src=\"https://streamable.com/e/1p8szp?autoplay=1&nocontrols=1\" width=\"100%\" style=\"border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden;\"></iframe></div>"
   },
   "exhibitions": [
     {
