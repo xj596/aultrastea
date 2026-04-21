@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-lang="meta_title">Green Tea | AultrasTea Premium Products</title>
+  <meta name="description" content="Premium organic green tea from China - Chunmee, Gunpowder, Dragon Well, Sencha, Mao Feng. Wholesale supplier with international certifications.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0F4C3A',
+            secondary: '#D4AF37',
+            light: '#F8F5F0',
+            dark: '#1A1A1A',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['"Noto Serif SC"', 'serif'],
+          },
+        },
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
+      .fade-in.visible { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { overflow-x: hidden; background-color: #F8F5F0; color: #1A1A1A; font-family: "Inter", sans-serif; }
+    .nav-link { position: relative; }
+    .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: #D4AF37; transition: width 0.3s ease; }
+    .nav-link:hover::after { width: 100%; }
+  </style>
+</head>
+<body>
+  <!-- 导航栏 -->
+  <header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-500 py-3 bg-light/95 backdrop-blur-md shadow-sm">
+    <div class="container mx-auto px-4 md:px-6">
+      <nav class="flex items-center justify-between">
+        <a href="index.html" class="text-2xl font-bold text-primary flex items-center gap-2">
+          <i class="fas fa-leaf"></i>
+          <span>AultrasTea</span>
+        </a>
+        <ul class="hidden md:flex items-center gap-8">
+          <li><a href="index.html#home" class="nav-link text-dark hover:text-primary transition-colors font-medium" data-lang="nav_home">Home</a></li>
+          <li><a href="index.html#about" class="nav-link text-dark hover:text-primary transition-colors font-medium" data-lang="nav_about">About Us</a></li>
+          <li><a href="index.html#products" class="nav-link text-dark hover:text-primary transition-colors font-medium" data-lang="nav_products">Products</a></li>
+          <li><a href="index.html#certificates" class="nav-link text-dark hover:text-primary transition-colors font-medium" data-lang="nav_certificates">Certificates</a></li>
+          <li><a href="index.html#contact" class="nav-link text-dark hover:text-primary transition-colors font-medium" data-lang="nav_contact">Contact Us</a></li>
+        </ul>
+        <div class="flex items-center gap-4">
+          <select id="langSelect" class="px-3 py-1.5 rounded-lg border border-primary/30 text-primary bg-white font-medium outline-none">
+            <option value="en">English</option>
+            <option value="zh">中文</option>
+            <option value="ru">Русский</option>
+            <option value="de">Deutsch</option>
+          </select>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 面包屑导航 -->
+  <div class="pt-24 pb-6 bg-white border-b border-gray-100">
+    <div class="container mx-auto px-4 md:px-6">
+      <nav class="flex items-center gap-2 text-sm">
+        <a href="index.html" class="text-primary hover:underline" data-lang="breadcrumb_home">Home</a>
+        <i class="fas fa-chevron-right text-gray-400 text-xs"></i>
+        <a href="index.html#products" class="text-primary hover:underline" data-lang="breadcrumb_products">Products</a>
+        <i class="fas fa-chevron-right text-gray-400 text-xs"></i>
+        <span class="text-gray-500" data-lang="breadcrumb_current">Green Tea</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- 产品详情主体 -->
+  <section class="py-12 md:py-16">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="grid lg:grid-cols-2 gap-12 items-start">
+        
+        <!-- 左侧：产品图片 -->
+        <div class="fade-in">
+          <div class="bg-white rounded-2xl overflow-hidden shadow-lg">
+            <img id="product_image" src="" alt="Green Tea" class="w-full h-[500px] object-cover">
+          </div>
+          <!-- 缩略图 -->
+          <div class="grid grid-cols-4 gap-4 mt-4">
+            <div class="bg-white rounded-lg overflow-hidden shadow-md cursor-pointer hover:shadow-lg transition-all border-2 border-transparent hover:border-primary">
+              <img id="product_thumb_1" src="" alt="Thumbnail 1" class="w-full h-20 object-cover">
+            </div>
+            <div class="bg-white rounded-lg overflow-hidden shadow-md cursor-pointer hover:shadow-lg transition-all border-2 border-transparent hover:border-primary">
+              <img id="product_thumb_2" src="" alt="Thumbnail 2" class="w-full h-20 object-cover">
+            </div>
+            <div class="bg-white rounded-lg overflow-hidden shadow-md cursor-pointer hover:shadow-lg transition-all border-2 border-transparent hover:border-primary">
+              <img id="product_thumb_3" src="" alt="Thumbnail 3" class="w-full h-20 object-cover">
+            </div>
+            <div class="bg-white rounded-lg overflow-hidden shadow-md cursor-pointer hover:shadow-lg transition-all border-2 border-transparent hover:border-primary">
+              <img id="product_thumb_4" src="" alt="Thumbnail 4" class="w-full h-20 object-cover">
+            </div>
+          </div>
+        </div>
+
+        <!-- 右侧：产品信息 -->
+        <div class="fade-in delay-100">
+          <div class="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4" data-lang="badge">Organic Certified</div>
+          <h1 class="text-3xl md:text-4xl font-bold mb-4 text-primary" data-lang="title">Green Tea</h1>
+          <p class="text-dark/70 text-lg mb-6 leading-relaxed" data-lang="subtitle">Premium Organic Green Tea From Guizhou, China</p>
+          
+          <div class="space-y-4 mb-8">
+            <div class="flex items-center gap-3">
+              <i class="fas fa-check-circle text-secondary"></i>
+              <span data-lang="feature_1">Chunmee, Gunpowder, Dragon Well, Sencha, Mao Feng</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <i class="fas fa-check-circle text-secondary"></i>
+              <span data-lang="feature_2">EU & US Organic Certified</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <i class="fas fa-check-circle text-secondary"></i>
+              <span data-lang="feature_3">High Altitude Tea Gardens (800-1500m)</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <i class="fas fa-check-circle text-secondary"></i>
+              <span data-lang="feature_4">Custom Packaging & Private Label Available</span>
+            </div>
+          </div>
+
+          <!-- 规格选项 -->
+          <div class="bg-white rounded-xl p-6 shadow-md mb-8">
+            <h3 class="font-bold text-dark mb-4" data-lang="specs_title">Product Specifications</h3>
+            <div class="grid grid-cols-2 gap-4 text-sm">
+              <div class="flex justify-between"><span class="text-gray-500" data-lang="spec_grade">Grade:</span><span class="font-medium" data-lang="spec_grade_val">Premium</span></div>
+              <div class="flex justify-between"><span class="text-gray-500" data-lang="spec_origin">Origin:</span><span class="font-medium" data-lang="spec_origin_val">Guizhou, China</span></div>
+              <div class="flex justify-between"><span class="text-gray-500" data-lang="spec_altitude">Altitude:</span><span class="font-medium">800-1500m</span></div>
+              <div class="flex justify-between"><span class="text-gray-500" data-lang="spec_process">Process:</span><span class="font-medium" data-lang="spec_process_val">Hand-picked, Shade-dried</span></div>
+            </div>
+          </div>
+
+          <!-- 询价按钮 -->
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="index.html#contact" class="flex-1 px-8 py-4 bg-primary text-white rounded-xl font-medium hover:bg-primary/90 transition-all shadow-lg shadow-primary/20 text-center">
+              <i class="fas fa-envelope mr-2"></i><span data-lang="btn_inquiry">Send Inquiry Now</span>
+            </a>
+            <a href="index.html#products" class="px-8 py-4 border-2 border-primary text-primary rounded-xl font-medium hover:bg-primary/5 transition-all text-center">
+              <i class="fas fa-arrow-left mr-2"></i><span data-lang="btn_back">Back to Products</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 产品价值展示 -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="text-center mb-12 fade-in">
+        <h2 class="text-2xl md:text-3xl font-bold mb-4 text-primary" data-lang="value_title">Why Choose Our Green Tea</h2>
+        <div class="w-24 h-1 bg-secondary mx-auto"></div>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- 原料来源 -->
+        <div class="fade-in text-center p-6">
+          <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-seedling text-primary text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3 text-dark" data-lang="value_1_title">Premium Origin</h3>
+          <p class="text-dark/70 leading-relaxed" data-lang="value_1_desc">Sourced from high-altitude organic tea gardens in Guizhou province, where the clean air and mineral-rich soil create exceptional tea leaves with superior flavor profiles.</p>
+        </div>
+        
+        <!-- 制作工艺 -->
+        <div class="fade-in delay-100 text-center p-6">
+          <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-fire text-primary text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3 text-dark" data-lang="value_2_title">Traditional Craft</h3>
+          <p class="text-dark/70 leading-relaxed" data-lang="value_2_desc">Expert artisans use traditional processing methods including pan-firing, rolling, and careful drying to preserve the natural antioxidants and distinctive fresh aroma of green tea.</p>
+        </div>
+        
+        <!-- 感官体验 -->
+        <div class="fade-in delay-200 text-center p-6">
+          <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-glass-cheers text-primary text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3 text-dark" data-lang="value_3_title">Exceptional Taste</h3>
+          <p class="text-dark/70 leading-relaxed" data-lang="value_3_desc">Our green teas offer a perfect balance of sweetness, umami, and refreshing grassy notes. Each variety has its unique character - from mellow Chunmee to bold Gunpowder.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 冲泡指南 -->
+  <section class="py-16 bg-light">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="text-center mb-12 fade-in">
+        <h2 class="text-2xl md:text-3xl font-bold mb-4 text-primary" data-lang="brew_title">Brewing Guide</h2>
+        <div class="w-24 h-1 bg-secondary mx-auto"></div>
+      </div>
+      
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="fade-in bg-white rounded-xl p-6 text-center shadow-md">
+          <div class="text-4xl font-bold text-secondary mb-2">80°C</div>
+          <p class="text-dark/70" data-lang="brew_temp">Water Temperature</p>
+        </div>
+        <div class="fade-in delay-100 bg-white rounded-xl p-6 text-center shadow-md">
+          <div class="text-4xl font-bold text-secondary mb-2">3-5g</div>
+          <p class="text-dark/70" data-lang="brew_amount">Tea Amount</p>
+        </div>
+        <div class="fade-in delay-200 bg-white rounded-xl p-6 text-center shadow-md">
+          <div class="text-4xl font-bold text-secondary mb-2">2-3min</div>
+          <p class="text-dark/70" data-lang="brew_time">Steeping Time</p>
+        </div>
+        <div class="fade-in delay-300 bg-white rounded-xl p-6 text-center shadow-md">
+          <div class="text-4xl font-bold text-secondary mb-2">3-4</div>
+          <p class="text-dark/70" data-lang="brew_cups">Cups per Serving</p>
+        </div>
+      </div>
+      
+      <div class="fade-in mt-8 bg-white rounded-xl p-6 shadow-md">
+        <h3 class="font-bold text-dark mb-4" data-lang="brew_tips_title">Pro Tips</h3>
+        <ul class="space-y-2 text-dark/70">
+          <li class="flex items-start gap-2"><i class="fas fa-star text-secondary mt-1"></i><span data-lang="brew_tip_1">Use fresh, filtered water for the best taste</span></li>
+          <li class="flex items-start gap-2"><i class="fas fa-star text-secondary mt-1"></i><span data-lang="brew_tip_2">Do not use boiling water - it will make the tea bitter</span></li>
+          <li class="flex items-start gap-2"><i class="fas fa-star text-secondary mt-1"></i><span data-lang="brew_tip_3">Green tea can be re-steeped 2-3 times, each with slightly longer time</span></li>
+          <li class="flex items-start gap-2"><i class="fas fa-star text-secondary mt-1"></i><span data-lang="brew_tip_4">Store in a cool, dry place away from sunlight</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 客户评价 -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="text-center mb-12 fade-in">
+        <h2 class="text-2xl md:text-3xl font-bold mb-4 text-primary" data-lang="review_title">Customer Reviews</h2>
+        <div class="w-24 h-1 bg-secondary mx-auto"></div>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="fade-in bg-light rounded-xl p-6 shadow-md">
+          <div class="flex items-center gap-1 mb-3">
+            <i class="fas fa-star text-secondary"></i>
+            <i class="fas fa-star text-secondary"></i>
+            <i class="fas fa-star text-secondary"></i>
+            <i class="fas fa-star text-secondary"></i>
+            <i class="fas fa-star text-secondary"></i>
+          </div>
+          <p class="text-dark/70 mb-4 italic" data-lang="review_1_text">"Excellent quality Chunmee green tea. Our customers love it. Fast shipping and great communication."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center"><i class="fas fa-user text-primary"></i></div>
+            <div><p class="font-medium text-dark">Michael B.</p><p class="text-sm text-gray-500">Tea Importer, Germany</p></div>
+          </div>
+        </div>
+        
+        <div class="fade-in delay-100 bg-light rounded-xl p-6 shadow-md">
+          <div class="flex items-center gap-1 mb-3">
+            <i class="fas fa-star text-secondary"></i>
+            <i class="fas fa-star text-secondary"></i>
+            <i class="fas fa-star text-secondary"></i>
+            <i class="fas fa-star text-secondary"></i>
+            <i class="fas fa-star text-secondary"></i>
+          </div>
+          <p class="text-dark/70 mb-4 italic" data-lang="review_2_text">"We've been sourcing Gunpowder tea from AultrasTea for 3 years. Consistent quality every time."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center"><i class="fas fa-user text-primary"></i></div>
+            <div><p class="font-medium text-dark">Sarah K.</p><p class="text-sm text-gray-500">Wholesale Buyer, USA</p></div>
+          </div>
+        </div>
+        
+        <div class="fade-in delay-200 bg-light rounded-xl p-6 shadow-md">
+          <div class="flex items-center gap-1 mb-3">
+            <i class="fas fa-star text-secondary"></i>
+            <i class="fas fa-star text-secondary"></i>
+            <i class="fas fa-star text-secondary"></i>
+            <i class="fas fa-star text-secondary"></i>
+            <i class="fas fa-star-half-alt text-secondary"></i>
+          </div>
+          <p class="text-dark/70 mb-4 italic" data-lang="review_3_text">"Beautiful Dragon Well tea with perfect packaging. Very professional service and competitive prices."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center"><i class="fas fa-user text-primary"></i></div>
+            <div><p class="font-medium text-dark">James L.</p><p class="text-sm text-gray-500">Online Retailer, UK</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 相关产品 -->
+  <section class="py-16 bg-light">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="text-center mb-12 fade-in">
+        <h2 class="text-2xl md:text-3xl font-bold mb-4 text-primary" data-lang="related_title">Related Products</h2>
+        <div class="w-24 h-1 bg-secondary mx-auto"></div>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <a href="product-black.html" class="fade-in bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all group">
+          <div class="h-48 overflow-hidden">
+            <img id="img_related_black" src="" alt="Black Tea" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-6">
+            <h3 class="text-lg font-bold text-primary mb-2" data-lang="related_black">Black Tea</h3>
+            <p class="text-dark/70 text-sm" data-lang="related_black_desc">CTC, Golden Snail, Mao Feng...</p>
+          </div>
+        </a>
+        
+        <a href="index.html#products" class="fade-in delay-100 bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all group">
+          <div class="h-48 overflow-hidden">
+            <img id="img_related_white" src="" alt="White Tea" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-6">
+            <h3 class="text-lg font-bold text-primary mb-2" data-lang="related_white">White Tea</h3>
+            <p class="text-dark/70 text-sm" data-lang="related_white_desc">White Peony, Silver Needle...</p>
+          </div>
+        </a>
+        
+        <a href="index.html#products" class="fade-in delay-200 bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all group">
+          <div class="h-48 overflow-hidden">
+            <img id="img_related_oolong" src="" alt="Oolong Tea" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-6">
+            <h3 class="text-lg font-bold text-primary mb-2" data-lang="related_oolong">Oolong Tea</h3>
+            <p class="text-dark/70 text-sm" data-lang="related_oolong_desc">Da Hong Pao, Tie Guan Yin...</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="py-10 bg-primary text-white">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4 flex items-center gap-2"><i class="fas fa-leaf"></i> AultrasTea</h3>
+          <p class="text-white/70 mb-4" data-lang="footer_desc">Professional Chinese tea manufacturer and exporter.</p>
+        </div>
+        <div>
+          <h4 class="text-lg font-bold mb-4" data-lang="footer_quick">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a href="index.html#home" class="text-white/70 hover:text-white transition-colors" data-lang="nav_home">Home</a></li>
+            <li><a href="index.html#products" class="text-white/70 hover:text-white transition-colors" data-lang="nav_products">Products</a></li>
+            <li><a href="index.html#contact" class="text-white/70 hover:text-white transition-colors" data-lang="nav_contact">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-bold mb-4" data-lang="footer_contact">Contact</h4>
+          <ul class="space-y-2">
+            <li class="flex items-center gap-2 text-white/70"><i class="fas fa-envelope"></i> admin@aultrastea.com</li>
+            <li class="flex items-center gap-2 text-white/70"><i class="fas fa-phone"></i> +86 731 8465 2476</li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-white/20 pt-6 text-center">
+        <p class="text-white/60">© <span id="year"></span> GUIZHOU AULTRAS TEA CO.,LTD. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 语言包 -->
+  <script>
+    const langPack = {
+      en: {
+        meta_title:"Green Tea | AultrasTea Premium Products",
+        nav_home:"Home",nav_about:"About Us",nav_products:"Products",nav_certificates:"Certificates",nav_contact:"Contact Us",
+        breadcrumb_home:"Home",breadcrumb_products:"Products",breadcrumb_current:"Green Tea",
+        badge:"Organic Certified",
+        title:"Green Tea",
+        subtitle:"Premium Organic Green Tea From Guizhou, China",
+        feature_1:"Chunmee, Gunpowder, Dragon Well, Sencha, Mao Feng",
+        feature_2:"EU & US Organic Certified",
+        feature_3:"High Altitude Tea Gardens (800-1500m)",
+        feature_4:"Custom Packaging & Private Label Available",
+        specs_title:"Product Specifications",
+        spec_grade:"Grade:",spec_grade_val:"Premium",
+        spec_origin:"Origin:",spec_origin_val:"Guizhou, China",
+        altitude:"Altitude:",altitude_val:"800-1500m",
+        spec_process:"Process:",spec_process_val:"Hand-picked, Shade-dried",
+        btn_inquiry:"Send Inquiry Now",btn_back:"Back to Products",
+        value_title:"Why Choose Our Green Tea",
+        value_1_title:"Premium Origin",value_1_desc:"Sourced from high-altitude organic tea gardens in Guizhou province, where the clean air and mineral-rich soil create exceptional tea leaves.",
+        value_2_title:"Traditional Craft",value_2_desc:"Expert artisans use traditional processing methods including pan-firing, rolling, and careful drying to preserve natural antioxidants.",
+        value_3_title:"Exceptional Taste",value_3_desc:"Perfect balance of sweetness, umami, and refreshing grassy notes. Each variety has its unique character.",
+        brew_title:"Brewing Guide",
+        brew_temp:"Water Temperature",brew_amount:"Tea Amount",brew_time:"Steeping Time",brew_cups:"Cups per Serving",
+        brew_tips_title:"Pro Tips",
+        brew_tip_1:"Use fresh, filtered water for the best taste",
+        brew_tip_2:"Do not use boiling water - it will make the tea bitter",
+        brew_tip_3:"Green tea can be re-steeped 2-3 times",
+        brew_tip_4:"Store in a cool, dry place away from sunlight",
+        review_title:"Customer Reviews",
+        review_1_text:'"Excellent quality Chunmee green tea. Our customers love it."',
+        review_2_text:'"We\'ve been sourcing Gunpowder tea for 3 years. Consistent quality."',
+        review_3_text:'"Beautiful Dragon Well tea with perfect packaging."',
+        related_title:"Related Products",
+        related_black:"Black Tea",related_black_desc:"CTC, Golden Snail, Mao Feng...",
+        related_white:"White Tea",related_white_desc:"White Peony, Silver Needle...",
+        related_oolong:"Oolong Tea",related_oolong_desc:"Da Hong Pao, Tie Guan Yin...",
+        footer_desc:"Professional Chinese tea manufacturer and exporter.",
+        footer_quick:"Quick Links",footer_contact:"Contact"
+      },
+      zh: {
+        meta_title:"绿茶 | AultrasTea 优质产品",
+        nav_home:"首页",nav_about:"关于我们",nav_products:"产品中心",nav_certificates:"公司资质",nav_contact:"联系我们",
+        breadcrumb_home:"首页",breadcrumb_products:"产品中心",breadcrumb_current:"绿茶",
+        badge:"有机认证",
+        title:"绿茶",
+        subtitle:"来自中国贵州的优质有机绿茶",
+        feature_1:"珍眉、珠茶、龙井茶、煎茶、毛峰",
+        feature_2:"欧盟及美国有机认证",
+        feature_3:"高海拔茶园（800-1500米）",
+        feature_4:"支持定制包装和自有品牌",
+        specs_title:"产品规格",
+        spec_grade:"等级：",spec_grade_val:"特级",
+        spec_origin:"产地：",spec_origin_val:"中国贵州",
+        altitude:"海拔：",altitude_val:"800-1500米",
+        spec_process:"工艺：",spec_process_val:"手工采摘、阴干",
+        btn_inquiry:"立即询价",btn_back:"返回产品",
+        value_title:"为什么选择我们的绿茶",
+        value_1_title:"优质产地",value_1_desc:"源自贵州高海拔有机茶园，清新的空气和富含矿物质的土壤造就了卓越的茶叶品质。",
+        value_2_title:"传统工艺",value_2_desc:"制茶大师采用传统工艺，包括杀青、揉捻和精心的干燥工序，保留茶叶的天然抗氧化剂。",
+        value_3_title:"独特口感",value_3_desc:"甜味、鲜味和清爽草香的完美平衡。每个品种都有其独特的风味特征。",
+        brew_title:"冲泡指南",
+        brew_temp:"水温",brew_amount:"投茶量",brew_time:"浸泡时间",brew_cups:"可冲泡杯数",
+        brew_tips_title:"冲泡技巧",
+        brew_tip_1:"使用新鲜过滤水以获得最佳口感",
+        brew_tip_2:"不要用沸水——会让茶变苦",
+        brew_tip_3:"绿茶可续杯2-3次",
+        brew_tip_4:"存放于阴凉干燥处，避免阳光直射",
+        review_title:"客户评价",
+        review_1_text:'"珍眉绿茶品质优异，客户非常喜欢。"',
+        review_2_text:'"我们已经从AultrasTea采购珠茶3年了，品质始终如一。"',
+        review_3_text:'"龙井茶品质上乘，包装精美。"',
+        related_title:"相关产品",
+        related_black:"红茶",related_black_desc:"CTC、金螺、毛峰红茶...",
+        related_white:"白茶",related_white_desc:"白牡丹、白毫银针...",
+        related_oolong:"乌龙茶",related_oolong_desc:"大红袍、铁观音...",
+        footer_desc:"专业的中国茶叶生产出口商",
+        footer_quick:"快速导航",footer_contact:"联系我们"
+      },
+      ru: {
+        meta_title:"Зеленый чай | AultrasTea",
+        nav_home:"Главная",nav_about:"О нас",nav_products:"Продукция",nav_certificates:"Сертификаты",nav_contact:"Контакты",
+        breadcrumb_home:"Главная",breadcrumb_products:"Продукция",breadcrumb_current:"Зеленый чай",
+        badge:"Органический",
+        title:"Зеленый чай",
+        subtitle:"Премиальный органический зеленый чай из Китая",
+        feature_1:"Чунмэй, Ганпаудер, Драконий колодец, Сенча",
+        feature_2:"Сертификаты EU и US Organic",
+        feature_3:"Высокогорные плантации (800-1500м)",
+        feature_4:"Индивидуальная упаковка",
+        specs_title:"Характеристики",
+        spec_grade:"Сорт:",spec_grade_val:"Премиум",
+        spec_origin:"Происхождение:",spec_origin_val:"Гуйчжоу, Китай",
+        altitude:"Высота:",altitude_val:"800-1500м",
+        spec_process:"Обработка:",spec_process_val:"Ручной сбор",
+        btn_inquiry:"Запрос цены",btn_back:"К продуктам",
+        value_title:"Почему выбирают наш зеленый чай",
+        value_1_title:"Премиум происхождение",value_1_desc:"С высокогорных органических плантаций.",
+        value_2_title:"Традиционное производство",value_2_desc:"Традиционные методы обработки.",
+        value_3_title:"Отличный вкус",value_3_desc:"Идеальный баланс сладости и свежести.",
+        brew_title:"Заваривание",
+        brew_temp:"Температура",brew_amount:"Количество",brew_time:"Время",brew_cups:"Чашек",
+        brew_tips_title:"Советы",
+        brew_tip_1:"Используйте свежую воду",
+        brew_tip_2:"Не используйте кипяток",
+        brew_tip_3:"Можно заваривать 2-3 раза",
+        brew_tip_4:"Храните в прохладном месте",
+        review_title:"Отзывы клиентов",
+        review_1_text:'"Отличное качество!"',
+        review_2_text:'"Заказываем уже 3 года."',
+        review_3_text:'"Прекрасный чай!"',
+        related_title:"Похожие продукты",
+        related_black:"Черный чай",related_black_desc:"CTC, Золотая улитка...",
+        related_white:"Белый чай",related_white_desc:"Белый пион...",
+        related_oolong:"Улун",related_oolong_desc:"Да Хун Пао...",
+        footer_desc:"Производитель и экспортер чая из Китая.",
+        footer_quick:"Быстрые ссылки",footer_contact:"Контакты"
+      },
+      de: {
+        meta_title:"Grüntee | AultrasTea Premium Produkte",
+        nav_home:"Startseite",nav_about:"Über Uns",nav_products:"Produkte",nav_certificates:"Zertifikate",nav_contact:"Kontakt",
+        breadcrumb_home:"Startseite",breadcrumb_products:"Produkte",breadcrumb_current:"Grüntee",
+        badge:"Bio Zertifiziert",
+        title:"Grüntee",
+        subtitle:"Premium Bio-Grüntee aus Guizhou, China",
+        feature_1:"Chunmee, Gunpowder, Dragon Well, Sencha",
+        feature_2:"EU & US Bio Zertifiziert",
+        feature_3:"Hochland-Teeplantagen (800-1500m)",
+        feature_4:"Individuelle Verpackung möglich",
+        specs_title:"Spezifikationen",
+        spec_grade:"Qualität:",spec_grade_val:"Premium",
+        spec_origin:"Herkunft:",spec_origin_val:"Guizhou, China",
+        altitude:"Höhe:",altitude_val:"800-1500m",
+        spec_process:"Verarbeitung:",spec_process_val:"Handpflückung",
+        btn_inquiry:"Anfrage senden",btn_back:"Zurück zu Produkten",
+        value_title:"Warum unseren Grüntee wählen",
+        value_1_title:"Premium Herkunft",value_1_desc:"Von Bio-Teeplantagen in Guizhou.",
+        value_2_title:"Traditionelle Verarbeitung",value_2_desc:"Traditionelle Produktionsmethoden.",
+        value_3_title:"Hervorragender Geschmack",value_3_desc:"Perfekte Balance von Süße und Frische.",
+        brew_title:"Zubereitung",
+        brew_temp:"Temperatur",brew_amount:"Menge",brew_time:"Ziehzeit",brew_cups:"Tassen",
+        brew_tips_title:"Tipps",
+        brew_tip_1:"Frisches Wasser verwenden",
+        brew_tip_2:"Kein kochendes Wasser",
+        brew_tip_3:"2-3 mal aufgießen möglich",
+        brew_tip_4:"Kühl und trocken lagern",
+        review_title:"Kundenbewertungen",
+        review_1_text:'"Ausgezeichnete Qualität!"',
+        review_2_text:'"Bestellen seit 3 Jahren."',
+        review_3_text:'"Wunderschöner Tee!"',
+        related_title:"Ähnliche Produkte",
+        related_black:"Schwarztee",related_black_desc:"CTC, Goldene Schnecke...",
+        related_white:"Weißtee",related_white_desc:"Weiße Pfingstrose...",
+        related_oolong:"Oolong Tee",related_oolong_desc:"Da Hong Pao...",
+        footer_desc:"Professioneller Tee-Hersteller aus China.",
+        footer_quick:"Schnellzugriff",footer_contact:"Kontakt"
+      }
+    };
+
+    // ===== 从 data.json 动态加载图片 =====
+    async function loadProductData() {
+      try {
+        const res = await fetch('./data.json?t=' + Date.now());
+        const data = await res.json();
+        const imgs = data.images;
+        
+        document.getElementById('product_image').src = imgs.product_green;
+        // 缩略图使用同一张图片（实际可替换为不同图片）
+        document.getElementById('product_thumb_1').src = imgs.product_green;
+        document.getElementById('product_thumb_2').src = imgs.about_1 || imgs.product_green;
+        document.getElementById('product_thumb_3').src = imgs.about_2 || imgs.product_green;
+        document.getElementById('product_thumb_4').src = imgs.about_3 || imgs.product_green;
+        
+        // 相关产品图片
+        document.getElementById('img_related_black').src = imgs.product_black;
+        document.getElementById('img_related_white').src = imgs.product_white;
+        document.getElementById('img_related_oolong').src = imgs.product_oolong;
+      } catch(e) {
+        console.warn('data.json 加载失败');
+      }
+    }
+
+    // ===== 语言切换 =====
+    const langSelect = document.getElementById('langSelect');
+    function switchLang(lang) {
+      document.querySelectorAll('[data-lang]').forEach(el => {
+        const key = el.getAttribute('data-lang');
+        if(langPack[lang] && langPack[lang][key]) el.textContent = langPack[lang][key];
+      });
+      document.title = langPack[lang].meta_title;
+    }
+    langSelect.addEventListener('change', () => switchLang(langSelect.value));
+
+    // ===== 渐入动画 =====
+    const fadeElements = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => entry.isIntersecting && entry.target.classList.add('visible'));
+    }, { threshold: 0.1 });
+    fadeElements.forEach(el => observer.observe(el));
+
+    // ===== 年份 =====
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // ===== 初始化 =====
+    loadProductData();
+  </script>
+</body>
+</html>
