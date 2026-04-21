@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-lang="meta_title">Black Tea | AultrasTea Premium Products</title>
+  <meta name="description" content="Premium organic black tea from China - CTC Black Tea, Golden Snail, Black Fannings, Mao Feng Black Tea. Wholesale supplier with international certifications.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0F4C3A',
+            secondary: '#D4AF37',
+            light: '#F8F5F0',
+            dark: '#1A1A1A',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['"Noto Serif SC"', 'serif'],
+          },
+        },
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
+      .fade-in.visible { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { overflow-x: hidden; background-color: #F8F5F0; color: #1A1A1A; font-family: "Inter", sans-serif; }
+    .nav-link { position: relative; }
+    .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: #D4AF37; transition: width 0.3s ease; }
+    .nav-link:hover::after { width: 100%; }
+  </style>
+</head>
+<body>
+  <!-- 导航栏 -->
+  <header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-500 py-3 bg-light/95 backdrop-blur-md shadow-sm">
+    <div class="container mx-auto px-4 md:px-6">
+      <nav class="flex items-center justify-between">
+        <a href="index.html" class="text-2xl font-bold text-primary flex items-center gap-2">
+          <i class="fas fa-leaf"></i>
+          <span>AultrasTea</span>
+        </a>
+        <ul class="hidden md:flex items-center gap-8">
+          <li><a href="index.html#home" class="nav-link text-dark hover:text-primary transition-colors font-medium" data-lang="nav_home">Home</a></li>
+          <li><a href="index.html#about" class="nav-link text-dark hover:text-primary transition-colors font-medium" data-lang="nav_about">About Us</a></li>
+          <li><a href="index.html#products" class="nav-link text-dark hover:text-primary transition-colors font-medium" data-lang="nav_products">Products</a></li>
+          <li><a href="index.html#certificates" class="nav-link text-dark hover:text-primary transition-colors font-medium" data-lang="nav_certificates">Certificates</a></li>
+          <li><a href="index.html#contact" class="nav-link text-dark hover:text-primary transition-colors font-medium" data-lang="nav_contact">Contact Us</a></li>
+        </ul>
+        <div class="flex items-center gap-4">
+          <select id="langSelect" class="px-3 py-1.5 rounded-lg border border-primary/30 text-primary bg-white font-medium outline-none">
+            <option value="en">English</option>
+            <option value="zh">中文</option>
+            <option value="ru">Русский</option>
+            <option value="de">Deutsch</option>
+          </select>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 面包屑导航 -->
+  <div class="pt-24 pb-6 bg-white border-b border-gray-100">
+    <div class="container mx-auto px-4 md:px-6">
+      <nav class="flex items-center gap-2 text-sm">
+        <a href="index.html" class="text-primary hover:underline" data-lang="breadcrumb_home">Home</a>
+        <i class="fas fa-chevron-right text-gray-400 text-xs"></i>
+        <a href="index.html#products" class="text-primary hover:underline" data-lang="breadcrumb_products">Products</a>
+        <i class="fas fa-chevron-right text-gray-400 text-xs"></i>
+        <span class="text-gray-500" data-lang="breadcrumb_current">Black Tea</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- 产品详情主体 -->
+  <section class="py-12 md:py-16">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="grid lg:grid-cols-2 gap-12 items-start">
+        
+        <!-- 左侧：产品图片 -->
+        <div class="fade-in">
+          <div class="bg-white rounded-2xl overflow-hidden shadow-lg">
+            <img id="product_image" src="" alt="Black Tea" class="w-full h-[500px] object-cover">
+          </div>
+          <!-- 缩略图 -->
+          <div class="grid grid-cols-4 gap-4 mt-4">
+            <div class="bg-white rounded-lg overflow-hidden shadow-md cursor-pointer hover:shadow-lg transition-all border-2 border-transparent hover:border-primary">
+              <img id="product_thumb_1" src="" alt="Thumbnail 1" class="w-full h-20 object-cover">
+            </div>
+            <div class="bg-white rounded-lg overflow-hidden shadow-md cursor-pointer hover:shadow-lg transition-all border-2 border-transparent hover:border-primary">
+              <img id="product_thumb_2" src="" alt="Thumbnail 2" class="w-full h-20 object-cover">
+            </div>
+            <div class="bg-white rounded-lg overflow-hidden shadow-md cursor-pointer hover:shadow-lg transition-all border-2 border-transparent hover:border-primary">
+              <img id="product_thumb_3" src="" alt="Thumbnail 3" class="w-full h-20 object-cover">
+            </div>
+            <div class="bg-white rounded-lg overflow-hidden shadow-md cursor-pointer hover:shadow-lg transition-all border-2 border-transparent hover:border-primary">
+              <img id="product_thumb_4" src="" alt="Thumbnail 4" class="w-full h-20 object-cover">
+            </div>
+          </div>
+        </div>
+
+        <!-- 右侧：产品信息 -->
+        <div class="fade-in delay-100">
+          <div class="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4" data-lang="badge">Organic Certified</div>
+          <h1 class="text-3xl md:text-4xl font-bold mb-4 text-primary" data-lang="title">Black Tea</h1>
+          <p class="text-dark/70 text-lg mb-6 leading-relaxed" data-lang="subtitle">Premium Organic Black Tea From Hunan & Guizhou, China</p>
+          
+          <div class="space-y-4 mb-8">
+            <div class="flex items-center gap-3">
+              <i class="fas fa-check-circle text-secondary"></i>
+              <span data-lang="feature_1">CTC Black Tea, Golden Snail, Black Fannings, Mao Feng Black Tea</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <i class="fas fa-check-circle text-secondary"></i>
+              <span data-lang="feature_2">EU & US Organic Certified</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <i class="fas fa-check-circle text-secondary"></i>
+              <span data-lang="feature_3">Full-Fermented, Rich Malty Flavor</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <i class="fas fa-check-circle text-secondary"></i>
+              <span data-lang="feature_4">Ideal for Tea Bags, Blends & Beverages</span>
+            </div>
+          </div>
+
+          <!-- 规格选项 -->
+          <div class="bg-white rounded-xl p-6 shadow-md mb-8">
+            <h3 class="font-bold text-dark mb-4" data-lang="specs_title">Product Specifications</h3>
+            <div class="grid grid-cols-2 gap-4 text-sm">
+              <div class="flex justify-between"><span class="text-gray-500" data-lang="spec_grade">Grade:</span><span class="font-medium" data-lang="spec_grade_val">Premium</span></div>
+              <div class="flex justify-between"><span class="text-gray-500" data-lang="spec_origin">Origin:</span><span class="font-medium" data-lang="spec_origin_val">Hunan & Guizhou, China</span></div>
+              <div class="flex justify-between"><span class="text-gray-500" data-lang="spec_type">Type:</span><span class="font-medium" data-lang="spec_type_val">Fully Fermented</span></div>
+              <div class="flex justify-between"><span class="text-gray-500" data-lang="spec_process">Process:</span><span class="font-medium" data-lang="spec_process_val">CTC & Orthodox</span></div>
+            </div>
+          </div>
+
+          <!-- 询价按钮 -->
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="index.html#contact" class="flex-1 px-8 py-4 bg-primary text-white rounded-xl font-medium hover:bg-primary/90 transition-all shadow-lg shadow-primary/20 text-center">
+              <i class="fas fa-envelope mr-2"></i><span data-lang="btn_inquiry">Send Inquiry Now</span>
+            </a>
+            <a href="index.html#products" class="px-8 py-4 border-2 border-primary text-primary rounded-xl font-medium hover:bg-primary/5 transition-all text-center">
+              <i class="fas fa-arrow-left mr-2"></i><span data-lang="btn_back">Back to Products</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 产品价值展示 -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="text-center mb-12 fade-in">
+        <h2 class="text-2xl md:text-3xl font-bold mb-4 text-primary" data-lang="value_title">Why Choose Our Black Tea</h2>
+        <div class="w-24 h-1 bg-secondary mx-auto"></div>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- 原料来源 -->
+        <div class="fade-in text-center p-6">
+          <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-mountain text-primary text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3 text-dark" data-lang="value_1_title">Prime Growing Regions</h3>
+          <p class="text-dark/70 leading-relaxed" data-lang="value_1_desc">Our black teas come from the renowned tea-producing provinces of Hunan and Guizhou, known for their ideal climate, rich soil, and centuries of tea-making heritage.</p>
+        </div>
+        
+        <!-- 制作工艺 -->
+        <div class="fade-in delay-100 text-center p-6">
+          <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-cogs text-primary text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3 text-dark" data-lang="value_2_title">Modern & Traditional Methods</h3>
+          <p class="text-dark/70 leading-relaxed" data-lang="value_2_desc">We offer both CTC (Crush, Tear, Curl) for quick-brewing tea bags and Orthodox processing for whole-leaf teas, ensuring consistent quality for every application.</p>
+        </div>
+        
+        <!-- 感官体验 -->
+        <div class="fade-in delay-200 text-center p-6">
+          <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-wine-glass-alt text-primary text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3 text-dark" data-lang="value_3_title">Rich, Smooth Flavor</h3>
+          <p class="text-dark/70 leading-relaxed" data-lang="value_3_desc">Our black teas are fully fermented to develop their signature malty sweetness, brisk astringency, and deep amber liquor. Perfect for everyday drinking or premium blends.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 冲泡指南 -->
+  <section class="py-16 bg-light">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="text-center mb-12 fade-in">
+        <h2 class="text-2xl md:text-3xl font-bold mb-4 text-primary" data-lang="brew_title">Brewing Guide</h2>
+        <div class="w-24 h-1 bg-secondary mx-auto"></div>
+      </div>
+      
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="fade-in bg-white rounded-xl p-6 text-center shadow-md">
+          <div class="text-4xl font-bold text-secondary mb-2">100°C</div>
+          <p class="text-dark/70" data-lang="brew_temp">Water Temperature</p>
+        </div>
+        <div class="fade-in delay-100 bg-white rounded-xl p-6 text-center shadow-md">
+          <div class="text-4xl font-bold text-secondary mb-2">3-5g</div>
+          <p class="text-dark/70" data-lang="brew_amount">Tea Amount</p>
+        </div>
+        <div class="fade-in delay-200 bg-white rounded-xl p-6 text-center shadow-md">
+          <div class="text-4xl font-bold text-secondary mb-2">3-5min</div>
+          <p class="text-dark/70" data-lang="brew_time">Steeping Time</p>
+        </div>
+        <div class="fade-in delay-300 bg-white rounded-xl p-6 text-center shadow-md">
+          <div class="text-4xl font-bold text-secondary mb-2">4-5</div>
+          <p class="text-dark/70" data-lang="brew_cups">Cups per Serving</p>
+        </div>
+      </div>
+      
+      <div class="fade-in mt-8 bg-white rounded-xl p-6 shadow-md">
+        <h3 class="font-bold text-dark mb-4" data-lang="brew_tips_title">Pro Tips</h3>
+        <ul class="space-y-2 text-dark/70">
+          <li class="flex items-start gap-2"><i class="fas fa-star text-secondary mt-1"></i><span data-lang="brew_tip_1">Use boiling water for full flavor extraction</span></li>
+          <li class="flex items-start gap-2"><i class="fas fa-star text-secondary mt-1"></i><span data-lang="brew_tip_2">Add milk or lemon to enhance the flavor profile</span></li>
+          <li class="flex items-start gap-2"><i class="fas fa-star text-secondary mt-1"></i><span data-lang="brew_tip_3">Black tea can be served hot or iced</span></li>
+          <li class="flex items-start gap-2"><i class="fas fa-star text-secondary mt-1"></i><span data-lang="brew_tip_4">Store in airtight container away from strong odors</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 客户评价 -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="text-center mb-12 fade-in">
+        <h2 class="text-2xl md:text-3xl font-bold mb-4 text-primary" data-lang="review_title">Customer Reviews</h2>
+        <div class="w-24 h-1 bg-secondary mx-auto"></div>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="fade-in bg-light rounded-xl p-6 shadow-md">
+          <div class="flex items-center gap-1 mb-3">
+            <i class="fas fa-star text-secondary"></i>
+            <i class="fas fa-star text-secondary"></i>
+            <i class="fas fa-star text-secondary"></i>
+            <i class="fas fa-star text-secondary"></i>
+            <i class="fas fa-star text-secondary"></i>
+          </div>
+          <p class="text-dark/70 mb-4 italic" data-lang="review_1_text">"Outstanding CTC black tea for our tea bags. Perfect color and flavor. Very reliable supplier."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center"><i class="fas fa-user text-primary"></i></div>
+            <div><p class="font-medium text-dark">Anna M.</p><p class="text-sm text-gray-500">Tea Bag Manufacturer, Poland</p></div>
+          </div>
+        </div>
+        
+        <div class="fade-in delay-100 bg-light rounded-xl p-6 shadow-md">
+          <div class="flex items-center gap-1 mb-3">
+            <i class="fas fa-star text-secondary"></i>
+            <i class="fas fa-star text-secondary"></i>
+            <i class="fas fa-star text-secondary"></i>
+            <i class="fas fa-star text-secondary"></i>
+            <i class="fas fa-star text-secondary"></i>
+          </div>
+          <p class="text-dark/70 mb-4 italic" data-lang="review_2_text">"The Golden Snail black tea is absolutely divine. Our customers keep coming back for more."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center"><i class="fas fa-user text-primary"></i></div>
+            <div><p class="font-medium text-dark">David W.</p><p class="text-sm text-gray-500">Tea Shop Owner, Australia</p></div>
+          </div>
+        </div>
+        
+        <div class="fade-in delay-200 bg-light rounded-xl p-6 shadow-md">
+          <div class="flex items-center gap-1 mb-3">
+            <i class="fas fa-star text-secondary"></i>
+            <i class="fas fa-star text-secondary"></i>
+            <i class="fas fa-star text-secondary"></i>
+            <i class="fas fa-star text-secondary"></i>
+            <i class="fas fa-star-half-alt text-secondary"></i>
+          </div>
+          <p class="text-dark/70 mb-4 italic" data-lang="review_3_text">"Great quality Mao Feng black tea with beautiful leaves. Excellent packaging and fast delivery."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center"><i class="fas fa-user text-primary"></i></div>
+            <div><p class="font-medium text-dark">Emma R.</p><p class="text-sm text-gray-500">Wholesale Distributor, France</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 相关产品 -->
+  <section class="py-16 bg-light">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="text-center mb-12 fade-in">
+        <h2 class="text-2xl md:text-3xl font-bold mb-4 text-primary" data-lang="related_title">Related Products</h2>
+        <div class="w-24 h-1 bg-secondary mx-auto"></div>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <a href="product-green.html" class="fade-in bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all group">
+          <div class="h-48 overflow-hidden">
+            <img id="img_related_green" src="" alt="Green Tea" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-6">
+            <h3 class="text-lg font-bold text-primary mb-2" data-lang="related_green">Green Tea</h3>
+            <p class="text-dark/70 text-sm" data-lang="related_green_desc">Chunmee, Gunpowder, Dragon Well...</p>
+          </div>
+        </a>
+        
+        <a href="index.html#products" class="fade-in delay-100 bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all group">
+          <div class="h-48 overflow-hidden">
+            <img id="img_related_white" src="" alt="White Tea" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-6">
+            <h3 class="text-lg font-bold text-primary mb-2" data-lang="related_white">White Tea</h3>
+            <p class="text-dark/70 text-sm" data-lang="related_white_desc">White Peony, Silver Needle...</p>
+          </div>
+        </a>
+        
+        <a href="index.html#products" class="fade-in delay-200 bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all group">
+          <div class="h-48 overflow-hidden">
+            <img id="img_related_oolong" src="" alt="Oolong Tea" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-6">
+            <h3 class="text-lg font-bold text-primary mb-2" data-lang="related_oolong">Oolong Tea</h3>
+            <p class="text-dark/70 text-sm" data-lang="related_oolong_desc">Da Hong Pao, Tie Guan Yin...</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="py-10 bg-primary text-white">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4 flex items-center gap-2"><i class="fas fa-leaf"></i> AultrasTea</h3>
+          <p class="text-white/70 mb-4" data-lang="footer_desc">Professional Chinese tea manufacturer and exporter.</p>
+        </div>
+        <div>
+          <h4 class="text-lg font-bold mb-4" data-lang="footer_quick">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a href="index.html#home" class="text-white/70 hover:text-white transition-colors" data-lang="nav_home">Home</a></li>
+            <li><a href="index.html#products" class="text-white/70 hover:text-white transition-colors" data-lang="nav_products">Products</a></li>
+            <li><a href="index.html#contact" class="text-white/70 hover:text-white transition-colors" data-lang="nav_contact">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-bold mb-4" data-lang="footer_contact">Contact</h4>
+          <ul class="space-y-2">
+            <li class="flex items-center gap-2 text-white/70"><i class="fas fa-envelope"></i> admin@aultrastea.com</li>
+            <li class="flex items-center gap-2 text-white/70"><i class="fas fa-phone"></i> +86 731 8465 2476</li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-white/20 pt-6 text-center">
+        <p class="text-white/60">© <span id="year"></span> GUIZHOU AULTRAS TEA CO.,LTD. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 语言包 -->
+  <script>
+    const langPack = {
+      en: {
+        meta_title:"Black Tea | AultrasTea Premium Products",
+        nav_home:"Home",nav_about:"About Us",nav_products:"Products",nav_certificates:"Certificates",nav_contact:"Contact Us",
+        breadcrumb_home:"Home",breadcrumb_products:"Products",breadcrumb_current:"Black Tea",
+        badge:"Organic Certified",
+        title:"Black Tea",
+        subtitle:"Premium Organic Black Tea From Hunan & Guizhou, China",
+        feature_1:"CTC Black Tea, Golden Snail, Black Fannings, Mao Feng Black Tea",
+        feature_2:"EU & US Organic Certified",
+        feature_3:"Full-Fermented, Rich Malty Flavor",
+        feature_4:"Ideal for Tea Bags, Blends & Beverages",
+        specs_title:"Product Specifications",
+        spec_grade:"Grade:",spec_grade_val:"Premium",
+        spec_origin:"Origin:",spec_origin_val:"Hunan & Guizhou, China",
+        spec_type:"Type:",spec_type_val:"Fully Fermented",
+        spec_process:"Process:",spec_process_val:"CTC & Orthodox",
+        btn_inquiry:"Send Inquiry Now",btn_back:"Back to Products",
+        value_title:"Why Choose Our Black Tea",
+        value_1_title:"Prime Growing Regions",value_1_desc:"From Hunan and Guizhou provinces, known for ideal climate and centuries of tea-making heritage.",
+        value_2_title:"Modern & Traditional Methods",value_2_desc:"CTC for tea bags and Orthodox processing for whole-leaf teas, ensuring consistent quality.",
+        value_3_title:"Rich, Smooth Flavor",value_3_desc:"Signature malty sweetness with brisk astringency. Perfect for everyday drinking or premium blends.",
+        brew_title:"Brewing Guide",
+        brew_temp:"Water Temperature",brew_amount:"Tea Amount",brew_time:"Steeping Time",brew_cups:"Cups per Serving",
+        brew_tips_title:"Pro Tips",
+        brew_tip_1:"Use boiling water for full flavor extraction",
+        brew_tip_2:"Add milk or lemon to enhance the flavor profile",
+        brew_tip_3:"Black tea can be served hot or iced",
+        brew_tip_4:"Store in airtight container away from strong odors",
+        review_title:"Customer Reviews",
+        review_1_text:'"Outstanding CTC black tea for our tea bags. Perfect color and flavor."',
+        review_2_text:'"The Golden Snail black tea is absolutely divine."',
+        review_3_text:'"Great quality Mao Feng black tea with beautiful leaves."',
+        related_title:"Related Products",
+        related_green:"Green Tea",related_green_desc:"Chunmee, Gunpowder, Dragon Well...",
+        related_white:"White Tea",related_white_desc:"White Peony, Silver Needle...",
+        related_oolong:"Oolong Tea",related_oolong_desc:"Da Hong Pao, Tie Guan Yin...",
+        footer_desc:"Professional Chinese tea manufacturer and exporter.",
+        footer_quick:"Quick Links",footer_contact:"Contact"
+      },
+      zh: {
+        meta_title:"红茶 | AultrasTea 优质产品",
+        nav_home:"首页",nav_about:"关于我们",nav_products:"产品中心",nav_certificates:"公司资质",nav_contact:"联系我们",
+        breadcrumb_home:"首页",breadcrumb_products:"产品中心",breadcrumb_current:"红茶",
+        badge:"有机认证",
+        title:"红茶",
+        subtitle:"来自中国湖南和贵州的优质有机红茶",
+        feature_1:"CTC红茶、金螺、红茶片、毛峰红茶",
+        feature_2:"欧盟及美国有机认证",
+        feature_3:"全发酵，醇厚麦香",
+        feature_4:"适用于茶包、调配和饮品",
+        specs_title:"产品规格",
+        spec_grade:"等级：",spec_grade_val:"特级",
+        spec_origin:"产地：",spec_origin_val:"中国湖南及贵州",
+        spec_type:"类型：",spec_type_val:"全发酵",
+        spec_process:"工艺：",spec_process_val:"CTC及传统工艺",
+        btn_inquiry:"立即询价",btn_back:"返回产品",
+        value_title:"为什么选择我们的红茶",
+        value_1_title:"优质产区",value_1_desc:"产自湖南和贵州两大著名茶产区，拥有理想的种植气候和数百年的制茶传统。",
+        value_2_title:"现代与传统工艺",value_2_desc:"提供CTC茶包工艺和传统工艺全叶茶，确保品质稳定。",
+        value_3_title:"醇厚口感",value_3_desc:"全发酵工艺带来标志性的麦香甜味和清爽涩感，适合日常饮用或调配。",
+        brew_title:"冲泡指南",
+        brew_temp:"水温",brew_amount:"投茶量",brew_time:"浸泡时间",brew_cups:"可冲泡杯数",
+        brew_tips_title:"冲泡技巧",
+        brew_tip_1:"使用沸水以充分提取风味",
+        brew_tip_2:"可加入牛奶或柠檬提升风味",
+        brew_tip_3:"红茶可热饮或冷饮",
+        brew_tip_4:"存放于密封容器，远离异味",
+        review_title:"客户评价",
+        review_1_text:'"CTC红茶品质卓越，非常适合我们的茶包。"',
+        review_2_text:'"金螺红茶太棒了！顾客赞不绝口。"',
+        review_3_text:'"毛峰红茶品质上乘，包装精美。"',
+        related_title:"相关产品",
+        related_green:"绿茶",related_green_desc:"珍眉、珠茶、龙井茶...",
+        related_white:"白茶",related_white_desc:"白牡丹、白毫银针...",
+        related_oolong:"乌龙茶",related_oolong_desc:"大红袍、铁观音...",
+        footer_desc:"专业的中国茶叶生产出口商",
+        footer_quick:"快速导航",footer_contact:"联系我们"
+      },
+      ru: {
+        meta_title:"Черный чай | AultrasTea",
+        nav_home:"Главная",nav_about:"О нас",nav_products:"Продукция",nav_certificates:"Сертификаты",nav_contact:"Контакты",
+        breadcrumb_home:"Главная",breadcrumb_products:"Продукция",breadcrumb_current:"Черный чай",
+        badge:"Органический",
+        title:"Черный чай",
+        subtitle:"Премиальный органический черный чай из Китая",
+        feature_1:"CTC, Золотая улитка, Черный чай, Мао Фэн",
+        feature_2:"Сертификаты EU и US Organic",
+        feature_3:"Полная ферментация, насыщенный вкус",
+        feature_4:"Идеален для чайных пакетиков",
+        specs_title:"Характеристики",
+        spec_grade:"Сорт:",spec_grade_val:"Премиум",
+        spec_origin:"Происхождение:",spec_origin_val:"Хунань и Гуйчжоу",
+        spec_type:"Тип:",spec_type_val:"Полная ферментация",
+        spec_process:"Обработка:",spec_process_val:"CTC и традиционная",
+        btn_inquiry:"Запрос цены",btn_back:"К продуктам",
+        value_title:"Почему выбирают наш черный чай",
+        value_1_title:"Лучшие регионы",value_1_desc:"Известные чаеводческие провинции.",
+        value_2_title:"Современные методы",value_2_desc:"CTC и традиционная обработка.",
+        value_3_title:"Богатый вкус",value_3_desc:"Солодкая сладость с освежающей терпкостью.",
+        brew_title:"Заваривание",
+        brew_temp:"Температура",brew_amount:"Количество",brew_time:"Время",brew_cups:"Чашек",
+        brew_tips_title:"Советы",
+        brew_tip_1:"Используйте кипяток",
+        brew_tip_2:"Можно добавить молоко",
+        brew_tip_3:"Подавать горячим или холодным",
+        brew_tip_4:"Хранить в герметичной упаковке",
+        review_title:"Отзывы клиентов",
+        review_1_text:'"Отличный CTC чай для пакетиков!"',
+        review_2_text:'"Золотая улитка восхитительна!"',
+        review_3_text:'"Прекрасный Мао Фэн!"',
+        related_title:"Похожие продукты",
+        related_green:"Зеленый чай",related_green_desc:"Чунмэй, Ганпаудер...",
+        related_white:"Белый чай",related_white_desc:"Белый пион...",
+        related_oolong:"Улун",related_oolong_desc:"Да Хун Пао...",
+        footer_desc:"Производитель и экспортер чая из Китая.",
+        footer_quick:"Быстрые ссылки",footer_contact:"Контакты"
+      },
+      de: {
+        meta_title:"Schwarztee | AultrasTea Premium Produkte",
+        nav_home:"Startseite",nav_about:"Über Uns",nav_products:"Produkte",nav_certificates:"Zertifikate",nav_contact:"Kontakt",
+        breadcrumb_home:"Startseite",breadcrumb_products:"Produkte",breadcrumb_current:"Schwarztee",
+        badge:"Bio Zertifiziert",
+        title:"Schwarztee",
+        subtitle:"Premium Bio-Schwarztee aus China",
+        feature_1:"CTC, Goldene Schnecke, Schwarztee, Mao Feng",
+        feature_2:"EU & US Bio Zertifiziert",
+        feature_3:"Vollfermentiert, reichhaltiger Geschmack",
+        feature_4:"Ideal für Teebeutel",
+        specs_title:"Spezifikationen",
+        spec_grade:"Qualität:",spec_grade_val:"Premium",
+        spec_origin:"Herkunft:",spec_origin_val:"Hunan & Guizhou",
+        spec_type:"Typ:",spec_type_val:"Vollfermentiert",
+        spec_process:"Verarbeitung:",spec_process_val:"CTC & Orthodox",
+        btn_inquiry:"Anfrage senden",btn_back:"Zurück zu Produkten",
+        value_title:"Warum unseren Schwarztee wählen",
+        value_1_title:"Beste Anbauregionen",value_1_desc:"Aus den besten Teeanbauregionen.",
+        value_2_title:"Moderne Methoden",value_2_desc:"CTC und traditionelle Verarbeitung.",
+        value_3_title:"Reicher Geschmack",value_3_desc:"Süße mit herzhafter Note.",
+        brew_title:"Zubereitung",
+        brew_temp:"Temperatur",brew_amount:"Menge",brew_time:"Ziehzeit",brew_cups:"Tassen",
+        brew_tips_title:"Tipps",
+        brew_tip_1:"Kochendes Wasser verwenden",
+        brew_tip_2:"Milch oder Zitrone hinzufügen",
+        brew_tip_3:"Heiß oder kalt servieren",
+        brew_tip_4:"Luftdicht lagern",
+        review_title:"Kundenbewertungen",
+        review_1_text:'"Ausgezeichneter CTC Tee für Beutel!"',
+        review_2_text:'"Goldene Schnecke ist wunderbar!"',
+        review_3_text:'"Toller Mao Feng Tee!"',
+        related_title:"Ähnliche Produkte",
+        related_green:"Grüntee",related_green_desc:"Chunmee, Gunpowder...",
+        related_white:"Weißtee",related_white_desc:"Weiße Pfingstrose...",
+        related_oolong:"Oolong Tee",related_oolong_desc:"Da Hong Pao...",
+        footer_desc:"Professioneller Tee-Hersteller aus China.",
+        footer_quick:"Schnellzugriff",footer_contact:"Kontakt"
+      }
+    };
+
+    // ===== 从 data.json 动态加载图片 =====
+    async function loadProductData() {
+      try {
+        const res = await fetch('./data.json?t=' + Date.now());
+        const data = await res.json();
+        const imgs = data.images;
+        
+        document.getElementById('product_image').src = imgs.product_black;
+        // 缩略图使用同一张图片（实际可替换为不同图片）
+        document.getElementById('product_thumb_1').src = imgs.product_black;
+        document.getElementById('product_thumb_2').src = imgs.about_1 || imgs.product_black;
+        document.getElementById('product_thumb_3').src = imgs.about_2 || imgs.product_black;
+        document.getElementById('product_thumb_4').src = imgs.about_3 || imgs.product_black;
+        
+        // 相关产品图片
+        document.getElementById('img_related_green').src = imgs.product_green;
+        document.getElementById('img_related_white').src = imgs.product_white;
+        document.getElementById('img_related_oolong').src = imgs.product_oolong;
+      } catch(e) {
+        console.warn('data.json 加载失败');
+      }
+    }
+
+    // ===== 语言切换 =====
+    const langSelect = document.getElementById('langSelect');
+    function switchLang(lang) {
+      document.querySelectorAll('[data-lang]').forEach(el => {
+        const key = el.getAttribute('data-lang');
+        if(langPack[lang] && langPack[lang][key]) el.textContent = langPack[lang][key];
+      });
+      document.title = langPack[lang].meta_title;
+    }
+    langSelect.addEventListener('change', () => switchLang(langSelect.value));
+
+    // ===== 渐入动画 =====
+    const fadeElements = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => entry.isIntersecting && entry.target.classList.add('visible'));
+    }, { threshold: 0.1 });
+    fadeElements.forEach(el => observer.observe(el));
+
+    // ===== 年份 =====
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // ===== 初始化 =====
+    loadProductData();
+  </script>
+</body>
+</html>
