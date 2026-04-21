@@ -365,7 +365,10 @@ async function fetchDataJson() {
     document.getElementById('loginPage').classList.add('hidden');
     document.getElementById('adminPage').classList.remove('hidden');
     document.getElementById('repoTag').textContent = `${CONFIG.owner}/${CONFIG.repo}`;
-    document.getElementById('previewLink').href = `https://${CONFIG.owner}.github.io/${CONFIG.repo !== CONFIG.owner + '.github.io' ? CONFIG.repo : ''}`;
+    const isUserPages = CONFIG.repo === CONFIG.owner + '.github.io';
+    document.getElementById('previewLink').href = isUserPages
+      ? `https://${CONFIG.owner}.github.io/`
+      : `https://${CONFIG.owner}.github.io/${CONFIG.repo}/`;
 
     populateForm();
   } catch(e) {
