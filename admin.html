@@ -107,7 +107,7 @@
         <i class="fas fa-images mr-1.5"></i> 图片管理
       </button>
       <button class="tab-btn px-5 py-2.5 rounded-lg font-medium text-sm transition-all text-gray-600 hover:bg-gray-100" onclick="switchTab('video')">
-        <i class="fab fa-youtube mr-1.5"></i> 视频链接
+        <i class="fas fa-video mr-1.5"></i> 视频设置
       </button>
       <button class="tab-btn px-5 py-2.5 rounded-lg font-medium text-sm transition-all text-gray-600 hover:bg-gray-100" onclick="switchTab('exhibitions')">
         <i class="fas fa-calendar-alt mr-1.5"></i> 展会信息
@@ -225,31 +225,23 @@
       </div>
     </div>
 
-    <!-- ===== 视频链接 Tab ===== -->
+    <!-- ===== 视频设置 Tab ===== -->
     <div id="tab-video" class="tab-content hidden">
       <div class="section-card max-w-2xl">
-        <h3 class="font-bold text-gray-800 mb-2 text-lg">YouTube 视频设置</h3>
-        <p class="text-gray-500 text-sm mb-6">设置产品区展示的 YouTube 视频。请使用 <strong>embed</strong> 格式链接。</p>
+        <h3 class="font-bold text-gray-800 mb-2 text-lg">视频嵌入代码</h3>
+        <p class="text-gray-500 text-sm mb-6">粘贴从视频平台获取的完整 iframe 嵌入代码，支持 Streamable、YouTube 等所有平台。</p>
 
         <div class="space-y-5">
           <div>
-            <div class="field-label">YouTube Embed 链接（嵌入视频用）</div>
-            <input type="url" id="video_youtube_embed" placeholder="https://www.youtube.com/embed/VIDEO_ID" />
-            <p class="text-xs text-gray-400 mt-1">格式：https://www.youtube.com/embed/你的视频ID</p>
+            <div class="field-label">iframe 嵌入代码</div>
+            <textarea id="video_embed_code" rows="4" placeholder='<div style="position:relative; width:100%; height:0px; padding-bottom:56.250%"><iframe ...></iframe></div>'></textarea>
+            <p class="text-xs text-gray-400 mt-1">从 Streamable 等平台复制完整的 iframe 代码粘贴至此</p>
           </div>
+          
+          <!-- 实时预览 -->
           <div>
-            <div class="field-label">YouTube 普通链接（"在YouTube查看"按钮跳转）</div>
-            <input type="url" id="video_youtube_link" placeholder="https://www.youtube.com/watch?v=VIDEO_ID" />
-            <p class="text-xs text-gray-400 mt-1">格式：https://www.youtube.com/watch?v=你的视频ID</p>
-          </div>
-
-          <!-- 视频ID快捷输入 -->
-          <div class="p-4 bg-blue-50 rounded-lg border border-blue-200">
-            <div class="field-label text-blue-800 mb-2">快捷填写：只输入视频ID，自动生成两个链接</div>
-            <div class="flex gap-2">
-              <input type="text" id="videoIdInput" placeholder="例如: dQw4w9WgXcQ" class="flex-1" />
-              <button onclick="fillVideoLinks()" class="btn-primary text-sm px-4">自动填写</button>
-            </div>
+            <div class="field-label mb-2">实时预览</div>
+            <div id="video_preview" class="w-full aspect-video bg-gray-100 rounded-lg overflow-hidden border border-gray-200"></div>
           </div>
         </div>
 
@@ -390,10 +382,12 @@ function populateForm() {
 
   // 视频
   const vid = currentData.video || {};
-  const embedIn = document.getElementById('video_youtube_embed');
-  const linkIn = document.getElementById('video_youtube_link');
-  if (embedIn) embedIn.value = vid.youtube_embed || '';
-  if (linkIn) linkIn.value = vid.youtube_link || '';
+  const embedIn = document.getElementById('video_embed_code');
+  if (embedIn) {
+    embedIn.value = vid.embed_code || '';
+    // 初始化预览
+    updateVideoPreview();
+  }
 
   // 展会
   renderExhibitionsEditor(currentData.exhibitions || []);
@@ -441,19 +435,20 @@ async function saveImages() {
 // ===== 保存视频 =====
 async function saveVideo() {
   currentData.video = {
-    youtube_embed: document.getElementById('video_youtube_embed').value.trim(),
-    youtube_link: document.getElementById('video_youtube_link').value.trim()
+    embed_code: document.getElementById('video_embed_code').value.trim()
   };
   await pushDataJson('视频设置已保存并推送到 GitHub ✅');
 }
 
-// ===== 视频ID快捷填写 =====
-function fillVideoLinks() {
-  const id = document.getElementById('videoIdInput').value.trim();
-  if (!id) return;
-  document.getElementById('video_youtube_embed').value = `https://www.youtube.com/embed/${id}`;
-  document.getElementById('video_youtube_link').value = `https://www.youtube.com/watch?v=${id}`;
-  showToast('链接已自动填写', 'success');
+// ===== 视频预览更新 =====
+function updateVideoPreview() {
+  const code = document.getElementById('video_embed_code').value.trim();
+  const preview = document.getElementById('video_preview');
+  if (code) {
+    preview.innerHTML = code;
+  } else {
+    preview.innerHTML = '<div class="flex items-center justify-center h-full text-gray-400 text-sm">粘贴 iframe 代码后在此预览</div>';
+  }
 }
 
 // ===== 展会编辑器渲染 =====
@@ -598,6 +593,13 @@ window.addEventListener('DOMContentLoaded', () => {
     const input = document.getElementById('img_' + k);
     if (input) setupPreview(input, 'prev_' + k);
   });
+
+  // 视频预览实时更新
+  const videoInput = document.getElementById('video_embed_code');
+  if (videoInput) {
+    videoInput.addEventListener('input', updateVideoPreview);
+    updateVideoPreview();
+  }
 });
 </script>
 </body>
