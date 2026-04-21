@@ -230,16 +230,12 @@
         </div>
         <!-- 视频卡片 -->
         <div class="product-card bg-white rounded-xl overflow-hidden shadow-md fade-in delay-200">
-          <div class="relative h-60 overflow-hidden bg-dark">
-            <iframe id="video_youtube" width="100%" height="100%" src="" title="AultrasTea Product Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="absolute inset-0"></iframe>
+          <div id="video_container" class="relative h-60 overflow-hidden bg-dark">
+            <!-- 视频将动态插入这里 -->
           </div>
           <div class="p-6">
             <h3 class="text-xl font-bold mb-3 text-primary" data-lang="product_video">Our Production Process</h3>
-            <p class="text-dark/70 mb-4" data-lang="product_video_desc">Watch our tea production process and tea garden tour on YouTube, learn more about our quality control.</p>
-            <a id="link_youtube" href="#" target="_blank" class="text-secondary font-medium flex items-center gap-2 hover:gap-3 transition-all">
-              <span data-lang="product_youtube">View on YouTube</span>
-              <i class="fas fa-external-link-alt"></i>
-            </a>
+            <p class="text-dark/70 mb-4" data-lang="product_video_desc">Watch our tea production process and tea garden tour, learn more about our quality control.</p>
           </div>
         </div>
       </div>
@@ -404,12 +400,10 @@
         setImg('img_cert_2', imgs.cert_2);
         setImg('img_cert_3', imgs.cert_3);
 
-        // 视频
-        if(data.video) {
-          const iframe = document.getElementById('video_youtube');
-          if(iframe && data.video.youtube_embed) iframe.src = data.video.youtube_embed;
-          const link = document.getElementById('link_youtube');
-          if(link && data.video.youtube_link) link.href = data.video.youtube_link;
+        // 视频（通用嵌入代码）
+        const videoContainer = document.getElementById('video_container');
+        if(videoContainer && data.video && data.video.embed_code) {
+          videoContainer.innerHTML = data.video.embed_code;
         }
 
         // 展会
