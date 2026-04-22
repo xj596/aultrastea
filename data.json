@@ -20,25 +20,22 @@
   },
   "exhibitions": [
     {
-      "id": 1,
+      "name": "UzFood 3026",
       "date": "1 - 3 April 2026",
-      "name": "UzFood 2026",
-      "location": "Uzexpocentre NEC, Tashkent, Uzbekistan",
+      "location": "中国湖南长沙",
       "booth": "F92",
       "status": "confirmed"
     },
     {
-      "id": 2,
-      "date": "Coming Soon",
       "name": "BIOFACH 2026",
+      "date": "Coming Soon",
       "location": "Nuremberg, Germany",
       "booth": "TBA",
       "status": "upcoming"
     },
     {
-      "id": 3,
-      "date": "Coming Soon",
       "name": "Gulfood 2026",
+      "date": "Coming Soon",
       "location": "Dubai, UAE",
       "booth": "TBA",
       "status": "upcoming"
