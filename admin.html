@@ -114,6 +114,12 @@
       <button class="tab-btn px-4 py-2.5 rounded-lg font-medium text-sm transition-all text-gray-600 hover:bg-gray-100" onclick="switchTab('product-detail')">
         <i class="fas fa-box-open mr-1.5"></i> 产品图（4图）
       </button>
+      <button class="tab-btn px-4 py-2.5 rounded-lg font-medium text-sm transition-all text-gray-600 hover:bg-gray-100" onclick="switchTab('certificates')">
+        <i class="fas fa-certificate mr-1.5"></i> 公司资质图
+      </button>
+      <button class="tab-btn px-4 py-2.5 rounded-lg font-medium text-sm transition-all text-gray-600 hover:bg-gray-100" onclick="switchTab('contact-info')">
+        <i class="fas fa-address-card mr-1.5"></i> 联系方式
+      </button>
       <button class="tab-btn px-4 py-2.5 rounded-lg font-medium text-sm transition-all text-gray-600 hover:bg-gray-100" onclick="switchTab('exhibitions')">
         <i class="fas fa-calendar-alt mr-1.5"></i> 展会信息
       </button>
@@ -185,24 +191,14 @@
           </div>
         </div>
 
-        <!-- 证书图片 -->
+        <!-- 证书图片提示 -->
         <div class="section-card md:col-span-2">
-          <h3 class="font-bold text-gray-800 mb-4 flex items-center gap-2"><span class="w-2 h-2 bg-purple-600 rounded-full inline-block"></span> 资质证书图片（3张）</h3>
-          <div class="grid sm:grid-cols-3 gap-4">
+          <h3 class="font-bold text-gray-800 mb-2 flex items-center gap-2"><span class="w-2 h-2 bg-purple-600 rounded-full inline-block"></span> 资质证书图片（最多20张）</h3>
+          <div class="p-4 bg-purple-50 rounded-lg border border-purple-200 text-sm text-purple-800 flex items-center gap-3">
+            <i class="fas fa-certificate text-2xl text-purple-400"></i>
             <div>
-              <div class="field-label">证书图1</div>
-              <input type="url" id="img_cert_1" placeholder="https://..." />
-              <img id="prev_cert_1" class="img-preview hidden" />
-            </div>
-            <div>
-              <div class="field-label">证书图2</div>
-              <input type="url" id="img_cert_2" placeholder="https://..." />
-              <img id="prev_cert_2" class="img-preview hidden" />
-            </div>
-            <div>
-              <div class="field-label">证书图3</div>
-              <input type="url" id="img_cert_3" placeholder="https://..." />
-              <img id="prev_cert_3" class="img-preview hidden" />
+              <strong>证书图片现已升级为轮播展示（最多20张）</strong><br>
+              请前往 <button onclick="switchTabByName('certificates')" class="underline text-purple-700 font-medium">📋 公司资质图</button> 标签进行管理。
             </div>
           </div>
         </div>
@@ -271,6 +267,72 @@
           </button>
           <span class="text-xs text-gray-400">图片链接填好后点保存即可</span>
         </div>
+      </div>
+    </div>
+
+    <!-- ===== 公司资质图 Tab ===== -->
+    <div id="tab-certificates" class="tab-content hidden">
+      <div class="section-card">
+        <h3 class="font-bold text-gray-800 mb-2 text-lg">公司资质图片管理</h3>
+        <p class="text-gray-500 text-sm mb-6">最多支持 <strong>20 张</strong>资质证书图片展示。前端以 6 框轮播形式展示，超出自动分页。图片留空则不显示。</p>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5" id="cert-imgs-editor">
+          <!-- 由JS渲染 -->
+        </div>
+        <div class="flex items-center gap-4 mt-6 mb-4">
+          <button onclick="saveCertImages()" class="btn-primary flex items-center gap-2">
+            <i class="fas fa-save"></i> 保存资质图片到网站
+          </button>
+          <span class="text-xs text-gray-400">图片链接填好后点保存即可，空白项自动忽略</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== 联系方式 Tab ===== -->
+    <div id="tab-contact-info" class="tab-content hidden">
+      <div class="section-card max-w-2xl">
+        <h3 class="font-bold text-gray-800 mb-2 text-lg">联系方式管理</h3>
+        <p class="text-gray-500 text-sm mb-6">此处修改的内容将同步更新网站首页和页脚的邮箱、电话、地址信息。</p>
+
+        <div class="space-y-5">
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <div class="field-label">主邮箱</div>
+              <input type="text" id="ci_email_1" placeholder="admin@aultrastea.com" />
+            </div>
+            <div>
+              <div class="field-label">备用邮箱（可留空）</div>
+              <input type="text" id="ci_email_2" placeholder="tea@xf-tea.com" />
+            </div>
+          </div>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <div class="field-label">主电话 / WhatsApp</div>
+              <input type="text" id="ci_phone_1" placeholder="+86 731 8465 2476" />
+            </div>
+            <div>
+              <div class="field-label">备用电话（可留空）</div>
+              <input type="text" id="ci_phone_2" placeholder="+86 731 8465 2208" />
+            </div>
+          </div>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <div class="field-label">主地址</div>
+              <input type="text" id="ci_address_1" placeholder="Changsha, Hunan Province, China" />
+            </div>
+            <div>
+              <div class="field-label">备用地址（可留空）</div>
+              <input type="text" id="ci_address_2" placeholder="Anshun, Guizhou Province, China" />
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200 text-xs text-blue-800">
+          💡 <strong>生效范围：</strong>修改后，首页"联系我们"区域及网页底部页脚的邮箱和电话将自动更新。
+        </div>
+
+        <button onclick="saveContactInfo()" class="btn-primary flex items-center gap-2 mt-6">
+          <i class="fas fa-save"></i> 保存联系方式到网站
+        </button>
       </div>
     </div>
 
@@ -431,8 +493,8 @@ function populateForm() {
   if (!currentData) return;
   const imgs = currentData.images || {};
 
-  // 图片
-  const imgKeys = ['hero_bg','hero_main','product_green','product_black','product_oolong','product_white','product_yellow','product_dark','product_flower','cert_1','cert_2','cert_3'];
+  // 图片（Hero + 产品封面）
+  const imgKeys = ['hero_bg','hero_main','product_green','product_black','product_oolong','product_white','product_yellow','product_dark','product_flower'];
   imgKeys.forEach(k => {
     const input = document.getElementById('img_' + k);
     if (input) { input.value = imgs[k] || ''; setupPreview(input, 'prev_' + k); }
@@ -442,6 +504,12 @@ function populateForm() {
   const aboutVid = currentData.about_video || {};
   const avInput = document.getElementById('about_video_embed_code');
   if (avInput) { avInput.value = aboutVid.embed_code || ''; updateAboutVideoPreview(); }
+
+  // 证书图片
+  renderCertImgsEditor(imgs);
+
+  // 联系方式
+  populateContactInfo(currentData.contact_info || {});
 
   // 展会
   renderExhibitionsEditor(currentData.exhibitions || []);
@@ -470,7 +538,7 @@ function setupPreview(input, prevId) {
 
 // ===== 收集图片数据 =====
 function collectImages() {
-  const keys = ['hero_bg','hero_main','product_green','product_black','product_oolong','product_white','product_yellow','product_dark','product_flower','cert_1','cert_2','cert_3'];
+  const keys = ['hero_bg','hero_main','product_green','product_black','product_oolong','product_white','product_yellow','product_dark','product_flower'];
   const images = currentData.images || {};
   keys.forEach(k => {
     const el = document.getElementById('img_' + k);
@@ -483,6 +551,85 @@ function collectImages() {
 async function saveImages() {
   currentData.images = collectImages();
   await pushDataJson('图片设置已保存并推送到 GitHub ✅');
+}
+
+// ===== 证书图片管理（20张）=====
+function renderCertImgsEditor(imgs) {
+  const container = document.getElementById('cert-imgs-editor');
+  if (!container) return;
+  let html = '';
+  for (let i = 1; i <= 20; i++) {
+    const key = 'cert_' + i;
+    const val = imgs[key] || '';
+    html += `<div>
+      <div class="field-label text-xs">证书图 ${i}</div>
+      <input type="url" id="ci_cert_${i}" value="${val}" placeholder="https://..." />
+      <img src="${val}" id="prev_cert_${i}" class="img-preview ${val ? '' : 'hidden'}" onerror="this.classList.add('hidden')" />
+    </div>`;
+  }
+  container.innerHTML = html;
+  // 绑定预览
+  for (let i = 1; i <= 20; i++) {
+    const input = document.getElementById('ci_cert_' + i);
+    if (input) setupPreview(input, 'prev_cert_' + i);
+  }
+}
+
+function collectCertImages() {
+  if (!currentData.images) currentData.images = {};
+  for (let i = 1; i <= 20; i++) {
+    const el = document.getElementById('ci_cert_' + i);
+    if (el) currentData.images['cert_' + i] = el.value.trim();
+  }
+}
+
+async function saveCertImages() {
+  collectCertImages();
+  await pushDataJson('资质证书图片已保存并推送到 GitHub ✅');
+}
+
+// ===== 联系方式管理 =====
+function populateContactInfo(ci) {
+  const setVal = (id, val) => { const el = document.getElementById(id); if (el) el.value = val || ''; };
+  setVal('ci_email_1', ci.email_1);
+  setVal('ci_email_2', ci.email_2);
+  setVal('ci_phone_1', ci.phone_1);
+  setVal('ci_phone_2', ci.phone_2);
+  setVal('ci_address_1', ci.address_1);
+  setVal('ci_address_2', ci.address_2);
+}
+
+function collectContactInfo() {
+  return {
+    email_1: document.getElementById('ci_email_1')?.value.trim() || '',
+    email_2: document.getElementById('ci_email_2')?.value.trim() || '',
+    phone_1: document.getElementById('ci_phone_1')?.value.trim() || '',
+    phone_2: document.getElementById('ci_phone_2')?.value.trim() || '',
+    address_1: document.getElementById('ci_address_1')?.value.trim() || '',
+    address_2: document.getElementById('ci_address_2')?.value.trim() || ''
+  };
+}
+
+async function saveContactInfo() {
+  currentData.contact_info = collectContactInfo();
+  await pushDataJson('联系方式已保存并推送到 GitHub ✅');
+}
+
+// ===== switchTabByName（用于跨Tab跳转按钮）=====
+function switchTabByName(name) {
+  document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+  document.querySelectorAll('.tab-btn').forEach(el => {
+    el.classList.remove('active');
+    el.classList.add('text-gray-600');
+  });
+  document.getElementById('tab-' + name).classList.remove('hidden');
+  // 找对应按钮激活
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    if (btn.getAttribute('onclick') && btn.getAttribute('onclick').includes("'" + name + "'")) {
+      btn.classList.add('active');
+      btn.classList.remove('text-gray-600');
+    }
+  });
 }
 
 // ===== 关于视频预览 =====
@@ -737,8 +884,8 @@ window.addEventListener('DOMContentLoaded', () => {
     } catch(e) {}
   }
 
-  // 图片预览绑定
-  ['hero_bg','hero_main','product_green','product_black','product_oolong','product_white','product_yellow','product_dark','product_flower','cert_1','cert_2','cert_3'].forEach(k => {
+  // 图片预览绑定（Hero + 产品封面）
+  ['hero_bg','hero_main','product_green','product_black','product_oolong','product_white','product_yellow','product_dark','product_flower'].forEach(k => {
     const input = document.getElementById('img_' + k);
     if (input) setupPreview(input, 'prev_' + k);
   });
