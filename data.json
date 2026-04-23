@@ -80,6 +80,13 @@
       "location": "Dubai, UAE",
       "booth": "TBA",
       "status": "confirmed"
+    },
+    {
+      "name": "俄罗斯展会",
+      "date": "Coming Soon",
+      "location": "俄罗斯，莫斯科",
+      "booth": "TBA",
+      "status": "confirmed"
     }
   ]
 }
