@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="html-root">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Black Tea | AultrasTea</title>
-  <meta name="description" content="Premium Organic Black Tea From Hunan & Guizhou, China - AultrasTea premium organic tea from China.">
+  <title id="page-title">Black Tea | AultrasTea</title>
+  <meta name="description" id="page-desc" content="Premium Organic Black Tea From Hunan & Guizhou, China - AultrasTea premium organic tea from China.">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
   <script>
     tailwind.config = {
       theme: {
@@ -17,8 +17,11 @@
             secondary: '#D4AF37',
             light: '#F8F5F0',
             dark: '#1A1A1A',
-          }
-        }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+        },
       }
     }
   </script>
@@ -28,90 +31,70 @@
     .nav-link { position: relative; }
     .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: #D4AF37; transition: width 0.3s ease; }
     .nav-link:hover::after { width: 100%; }
-    .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.7s ease; }
+    .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1); }
     .fade-in.visible { opacity: 1; transform: translateY(0); }
-    .product-detail-img { display: block; min-height: 112px; }
-    /* Lightbox */
-    #lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 9999; align-items: center; justify-content: center; }
-    #lightbox.active { display: flex; }
-    #lightbox img { max-width: 90vw; max-height: 90vh; border-radius: 8px; }
-    #lightbox-close { position: absolute; top: 20px; right: 24px; color: white; font-size: 2rem; cursor: pointer; }
+    .product-detail-img { background: #e5e7eb; min-height: 7rem; }
   </style>
 </head>
 <body>
-
-  <!-- Lightbox -->
-  <div id="lightbox" onclick="closeLightbox()">
-    <span id="lightbox-close"><i class="fas fa-times"></i></span>
-    <img id="lightbox-img" src="" alt="">
-  </div>
-
   <!-- 导航栏 -->
-  <header class="fixed w-full top-0 z-50 py-3 bg-light/95 backdrop-blur-md shadow-sm">
+  <header class="fixed w-full top-0 z-50 transition-all duration-500 py-3 bg-light/95 backdrop-blur-md shadow-sm">
     <div class="container mx-auto px-4 md:px-6">
       <nav class="flex items-center justify-between">
         <a href="index.html" class="text-2xl font-bold text-primary flex items-center gap-2">
           <i class="fas fa-leaf"></i><span>AultrasTea</span>
         </a>
         <ul class="hidden md:flex items-center gap-8">
-          <li><a href="index.html#home" class="nav-link text-dark hover:text-primary font-medium">Home</a></li>
-          <li><a href="index.html#products" class="nav-link text-dark hover:text-primary font-medium">Products</a></li>
-          <li><a href="index.html#certificates" class="nav-link text-dark hover:text-primary font-medium">Certificates</a></li>
-          <li><a href="index.html#contact" class="nav-link text-dark hover:text-primary font-medium">Contact Us</a></li>
+          <li><a href="index.html#home" class="nav-link text-dark hover:text-primary font-medium" data-lang="nav_home">Home</a></li>
+          <li><a href="index.html#products" class="nav-link text-dark hover:text-primary font-medium" data-lang="nav_products">Products</a></li>
+          <li><a href="index.html#certificates" class="nav-link text-dark hover:text-primary font-medium" data-lang="nav_cert">Certificates</a></li>
+          <li><a href="index.html#contact" class="nav-link text-dark hover:text-primary font-medium" data-lang="nav_contact">Contact Us</a></li>
         </ul>
         <div class="flex items-center gap-3">
-          <a href="index.html#contact" class="px-5 py-2 bg-primary text-white rounded-full text-sm font-medium hover:bg-primary/90 transition-all hidden md:block">
-            <i class="fas fa-envelope mr-1"></i> Get Quote
+          <select id="langSelect" class="px-3 py-1.5 rounded-lg border border-primary/30 text-primary bg-white font-medium outline-none text-sm" onchange="switchLang(this.value)">
+            <option value="en">English</option>
+            <option value="zh">中文</option>
+            <option value="ru">Русский</option>
+            <option value="de">Deutsch</option>
+          </select>
+          <a href="index.html#contact" class="px-5 py-2 bg-primary text-white rounded-full text-sm font-medium hover:bg-primary/90 transition-all hidden md:inline-flex items-center gap-1">
+            <i class="fas fa-envelope mr-1"></i><span data-lang="inquiry">Get Quote</span>
           </a>
-          <button id="menuToggle" class="md:hidden text-2xl text-primary"><i class="fas fa-bars"></i></button>
         </div>
       </nav>
-      <div id="mobileMenu" class="md:hidden hidden bg-white mt-4 rounded-xl border border-primary/10 p-5 absolute left-4 right-4 shadow-lg z-50">
-        <ul class="flex flex-col gap-4">
-          <li><a href="index.html#home" class="block py-1 text-dark hover:text-primary font-medium">Home</a></li>
-          <li><a href="index.html#products" class="block py-1 text-dark hover:text-primary font-medium">Products</a></li>
-          <li><a href="index.html#contact" class="block py-1 text-dark hover:text-primary font-medium">Contact Us</a></li>
-        </ul>
-      </div>
     </div>
   </header>
 
   <!-- Hero Banner -->
   <div class="pt-20">
-    <div class="bg-primary text-white py-14">
+    <div class="bg-primary text-white py-16">
       <div class="container mx-auto px-4 md:px-6">
         <nav class="flex items-center gap-2 text-sm text-white/60 mb-6">
-          <a href="index.html" class="hover:text-white">Home</a>
+          <a href="index.html" class="hover:text-white transition-colors" data-lang="nav_home">Home</a>
           <i class="fas fa-chevron-right text-xs"></i>
-          <a href="index.html#products" class="hover:text-white">Products</a>
+          <a href="index.html#products" class="hover:text-white transition-colors" data-lang="nav_products">Products</a>
           <i class="fas fa-chevron-right text-xs"></i>
-          <span class="text-white">Black Tea</span>
+          <span class="text-white" id="breadcrumb-cat">Black Tea</span>
         </nav>
         <div class="grid md:grid-cols-2 gap-10 items-center">
           <div class="fade-in">
-            <div class="inline-block px-3 py-1 bg-white/20 text-white rounded-full text-sm font-medium mb-4">Organic Certified</div>
-            <h1 class="text-4xl md:text-5xl font-bold mb-2">Black Tea</h1>
-            <p class="text-white/60 text-xl mb-5">红茶</p>
-            <p class="text-white/80 text-lg leading-relaxed mb-7">Premium Organic Black Tea From Hunan & Guizhou, China</p>
-            <div class="space-y-3 mb-8">
-              <div class="flex items-center gap-3"><i class="fas fa-check-circle text-secondary"></i><span>CTC Black Tea, Golden Snail, Black Fannings, Mao Feng Black Tea</span></div>
-              <div class="flex items-center gap-3"><i class="fas fa-check-circle text-secondary"></i><span>EU & US Organic Certified</span></div>
-              <div class="flex items-center gap-3"><i class="fas fa-check-circle text-secondary"></i><span>Full-Fermented, Rich Malty Flavor</span></div>
-              <div class="flex items-center gap-3"><i class="fas fa-check-circle text-secondary"></i><span>Ideal for Tea Bags, Blends & Beverages</span></div>
-              
-            </div>
+            <div class="inline-block px-3 py-1 bg-white/20 text-white rounded-full text-sm font-medium mb-4" data-lang="badge">Organic Certified</div>
+            <h1 class="text-4xl md:text-5xl font-bold mb-3" id="cat-name-en">Black Tea</h1>
+            <p class="text-white/60 text-xl mb-6" id="cat-name-zh">红茶</p>
+            <p class="text-white/80 text-lg leading-relaxed mb-6" id="cat-subtitle" data-lang="subtitle">Premium Organic Black Tea From Hunan & Guizhou, China</p>
+            <div class="space-y-3 mb-8" id="features-list"></div>
             <div class="flex gap-4 flex-wrap">
               <a href="index.html#contact" class="px-8 py-3 bg-secondary text-white rounded-full font-medium hover:bg-secondary/90 transition-all shadow-lg">
-                <i class="fas fa-envelope mr-2"></i>Send Inquiry Now
+                <i class="fas fa-envelope mr-2"></i><span data-lang="inquiry">Send Inquiry Now</span>
               </a>
               <a href="index.html#products" class="px-8 py-3 border-2 border-white/40 text-white rounded-full font-medium hover:border-white transition-all">
-                <i class="fas fa-arrow-left mr-2"></i>All Products
+                <i class="fas fa-arrow-left mr-2"></i><span data-lang="view_all">All Products</span>
               </a>
             </div>
           </div>
           <div class="fade-in">
-            <div class="rounded-2xl overflow-hidden shadow-2xl">
-              <img id="cat_hero_img" src="" alt="Black Tea" class="w-full h-72 object-cover bg-white/20">
+            <div class="rounded-2xl overflow-hidden shadow-2xl aspect-video bg-white/10">
+              <img id="cat_hero_img" src="" alt="Black Tea" class="w-full h-full object-cover">
             </div>
           </div>
         </div>
@@ -119,263 +102,29 @@
     </div>
   </div>
 
-  <!-- 8产品展示区 -->
+  <!-- 产品展示区 -->
   <section class="py-16">
     <div class="container mx-auto px-4 md:px-6">
       <div class="text-center mb-12 fade-in">
-        <h2 class="text-3xl font-bold mb-3 text-primary">Product Range</h2>
-        <p class="text-dark/60 max-w-2xl mx-auto text-sm">Each product features 4 images: Gift Box / Dry Leaf / Tea Liquor / Leaf Base. Click any image to enlarge.</p>
-        <div class="w-20 h-1 bg-secondary mx-auto mt-4"></div>
+        <h2 class="text-3xl font-bold mb-4 text-primary" data-lang="product_range_title">Product Range</h2>
+        <p class="text-dark/60 max-w-2xl mx-auto" id="range-desc" data-lang="product_range_desc">Each product is shown with Gift Box / Dry Leaf / Tea Liquor / Leaf Base — 4 images per item.</p>
+        <div class="w-24 h-1 bg-secondary mx-auto mt-4"></div>
       </div>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        
-        <div class="product-item bg-white rounded-2xl overflow-hidden shadow-md fade-in">
-          <div class="p-4">
-            <h3 class="text-base font-bold text-primary mb-3">CTC Black Tea <span class="text-dark/50 font-normal text-sm">/ CTC红茶</span></h3>
-            <div class="grid grid-cols-2 gap-2 mb-3">
-              <div class="relative group cursor-pointer" onclick="openLightbox(this)">
-                <img src="" data-key="product_black_0_gift" alt="Gift Box" class="w-full h-28 object-cover rounded-lg bg-gray-200 product-detail-img">
-                <span class="absolute bottom-1 left-1 bg-black/60 text-white text-xs px-1.5 py-0.5 rounded-sm pointer-events-none">Gift Box</span>
-              </div>
-              <div class="relative group cursor-pointer" onclick="openLightbox(this)">
-                <img src="" data-key="product_black_0_dry" alt="Dry Tea" class="w-full h-28 object-cover rounded-lg bg-gray-200 product-detail-img">
-                <span class="absolute bottom-1 left-1 bg-black/60 text-white text-xs px-1.5 py-0.5 rounded-sm pointer-events-none">Dry Leaf</span>
-              </div>
-              <div class="relative group cursor-pointer" onclick="openLightbox(this)">
-                <img src="" data-key="product_black_0_liquor" alt="Tea Liquor" class="w-full h-28 object-cover rounded-lg bg-gray-200 product-detail-img">
-                <span class="absolute bottom-1 left-1 bg-black/60 text-white text-xs px-1.5 py-0.5 rounded-sm pointer-events-none">Tea Liquor</span>
-              </div>
-              <div class="relative group cursor-pointer" onclick="openLightbox(this)">
-                <img src="" data-key="product_black_0_leaf" alt="Leaf Base" class="w-full h-28 object-cover rounded-lg bg-gray-200 product-detail-img">
-                <span class="absolute bottom-1 left-1 bg-black/60 text-white text-xs px-1.5 py-0.5 rounded-sm pointer-events-none">Leaf Base</span>
-              </div>
-            </div>
-            <p class="text-dark/70 text-sm leading-relaxed">Machine-cut black tea pellets, quick-brewing, ideal for commercial tea bags.</p>
-          </div>
-          <div class="px-4 py-3 border-t border-gray-100 flex justify-between items-center">
-            <a href="index.html#contact" class="text-secondary font-medium flex items-center gap-1 text-sm hover:gap-2 transition-all">
-              <span>Inquiry Now</span><i class="fas fa-arrow-right text-xs"></i>
-            </a>
-          </div>
-        </div>
-        <div class="product-item bg-white rounded-2xl overflow-hidden shadow-md fade-in">
-          <div class="p-4">
-            <h3 class="text-base font-bold text-primary mb-3">Golden Snail <span class="text-dark/50 font-normal text-sm">/ 金螺红茶</span></h3>
-            <div class="grid grid-cols-2 gap-2 mb-3">
-              <div class="relative group cursor-pointer" onclick="openLightbox(this)">
-                <img src="" data-key="product_black_1_gift" alt="Gift Box" class="w-full h-28 object-cover rounded-lg bg-gray-200 product-detail-img">
-                <span class="absolute bottom-1 left-1 bg-black/60 text-white text-xs px-1.5 py-0.5 rounded-sm pointer-events-none">Gift Box</span>
-              </div>
-              <div class="relative group cursor-pointer" onclick="openLightbox(this)">
-                <img src="" data-key="product_black_1_dry" alt="Dry Tea" class="w-full h-28 object-cover rounded-lg bg-gray-200 product-detail-img">
-                <span class="absolute bottom-1 left-1 bg-black/60 text-white text-xs px-1.5 py-0.5 rounded-sm pointer-events-none">Dry Leaf</span>
-              </div>
-              <div class="relative group cursor-pointer" onclick="openLightbox(this)">
-                <img src="" data-key="product_black_1_liquor" alt="Tea Liquor" class="w-full h-28 object-cover rounded-lg bg-gray-200 product-detail-img">
-                <span class="absolute bottom-1 left-1 bg-black/60 text-white text-xs px-1.5 py-0.5 rounded-sm pointer-events-none">Tea Liquor</span>
-              </div>
-              <div class="relative group cursor-pointer" onclick="openLightbox(this)">
-                <img src="" data-key="product_black_1_leaf" alt="Leaf Base" class="w-full h-28 object-cover rounded-lg bg-gray-200 product-detail-img">
-                <span class="absolute bottom-1 left-1 bg-black/60 text-white text-xs px-1.5 py-0.5 rounded-sm pointer-events-none">Leaf Base</span>
-              </div>
-            </div>
-            <p class="text-dark/70 text-sm leading-relaxed">Premium curly golden-tipped black tea with natural honey sweetness.</p>
-          </div>
-          <div class="px-4 py-3 border-t border-gray-100 flex justify-between items-center">
-            <a href="index.html#contact" class="text-secondary font-medium flex items-center gap-1 text-sm hover:gap-2 transition-all">
-              <span>Inquiry Now</span><i class="fas fa-arrow-right text-xs"></i>
-            </a>
-          </div>
-        </div>
-        <div class="product-item bg-white rounded-2xl overflow-hidden shadow-md fade-in">
-          <div class="p-4">
-            <h3 class="text-base font-bold text-primary mb-3">Black Fannings <span class="text-dark/50 font-normal text-sm">/ 红茶片</span></h3>
-            <div class="grid grid-cols-2 gap-2 mb-3">
-              <div class="relative group cursor-pointer" onclick="openLightbox(this)">
-                <img src="" data-key="product_black_2_gift" alt="Gift Box" class="w-full h-28 object-cover rounded-lg bg-gray-200 product-detail-img">
-                <span class="absolute bottom-1 left-1 bg-black/60 text-white text-xs px-1.5 py-0.5 rounded-sm pointer-events-none">Gift Box</span>
-              </div>
-              <div class="relative group cursor-pointer" onclick="openLightbox(this)">
-                <img src="" data-key="product_black_2_dry" alt="Dry Tea" class="w-full h-28 object-cover rounded-lg bg-gray-200 product-detail-img">
-                <span class="absolute bottom-1 left-1 bg-black/60 text-white text-xs px-1.5 py-0.5 rounded-sm pointer-events-none">Dry Leaf</span>
-              </div>
-              <div class="relative group cursor-pointer" onclick="openLightbox(this)">
-                <img src="" data-key="product_black_2_liquor" alt="Tea Liquor" class="w-full h-28 object-cover rounded-lg bg-gray-200 product-detail-img">
-                <span class="absolute bottom-1 left-1 bg-black/60 text-white text-xs px-1.5 py-0.5 rounded-sm pointer-events-none">Tea Liquor</span>
-              </div>
-              <div class="relative group cursor-pointer" onclick="openLightbox(this)">
-                <img src="" data-key="product_black_2_leaf" alt="Leaf Base" class="w-full h-28 object-cover rounded-lg bg-gray-200 product-detail-img">
-                <span class="absolute bottom-1 left-1 bg-black/60 text-white text-xs px-1.5 py-0.5 rounded-sm pointer-events-none">Leaf Base</span>
-              </div>
-            </div>
-            <p class="text-dark/70 text-sm leading-relaxed">Fine-grade black tea ideal for blending and mass-market tea bags.</p>
-          </div>
-          <div class="px-4 py-3 border-t border-gray-100 flex justify-between items-center">
-            <a href="index.html#contact" class="text-secondary font-medium flex items-center gap-1 text-sm hover:gap-2 transition-all">
-              <span>Inquiry Now</span><i class="fas fa-arrow-right text-xs"></i>
-            </a>
-          </div>
-        </div>
-        <div class="product-item bg-white rounded-2xl overflow-hidden shadow-md fade-in">
-          <div class="p-4">
-            <h3 class="text-base font-bold text-primary mb-3">Black BOP <span class="text-dark/50 font-normal text-sm">/ BOP红茶</span></h3>
-            <div class="grid grid-cols-2 gap-2 mb-3">
-              <div class="relative group cursor-pointer" onclick="openLightbox(this)">
-                <img src="" data-key="product_black_3_gift" alt="Gift Box" class="w-full h-28 object-cover rounded-lg bg-gray-200 product-detail-img">
-                <span class="absolute bottom-1 left-1 bg-black/60 text-white text-xs px-1.5 py-0.5 rounded-sm pointer-events-none">Gift Box</span>
-              </div>
-              <div class="relative group cursor-pointer" onclick="openLightbox(this)">
-                <img src="" data-key="product_black_3_dry" alt="Dry Tea" class="w-full h-28 object-cover rounded-lg bg-gray-200 product-detail-img">
-                <span class="absolute bottom-1 left-1 bg-black/60 text-white text-xs px-1.5 py-0.5 rounded-sm pointer-events-none">Dry Leaf</span>
-              </div>
-              <div class="relative group cursor-pointer" onclick="openLightbox(this)">
-                <img src="" data-key="product_black_3_liquor" alt="Tea Liquor" class="w-full h-28 object-cover rounded-lg bg-gray-200 product-detail-img">
-                <span class="absolute bottom-1 left-1 bg-black/60 text-white text-xs px-1.5 py-0.5 rounded-sm pointer-events-none">Tea Liquor</span>
-              </div>
-              <div class="relative group cursor-pointer" onclick="openLightbox(this)">
-                <img src="" data-key="product_black_3_leaf" alt="Leaf Base" class="w-full h-28 object-cover rounded-lg bg-gray-200 product-detail-img">
-                <span class="absolute bottom-1 left-1 bg-black/60 text-white text-xs px-1.5 py-0.5 rounded-sm pointer-events-none">Leaf Base</span>
-              </div>
-            </div>
-            <p class="text-dark/70 text-sm leading-relaxed">Broken Orange Pekoe with full, robust flavor and deep amber liquor.</p>
-          </div>
-          <div class="px-4 py-3 border-t border-gray-100 flex justify-between items-center">
-            <a href="index.html#contact" class="text-secondary font-medium flex items-center gap-1 text-sm hover:gap-2 transition-all">
-              <span>Inquiry Now</span><i class="fas fa-arrow-right text-xs"></i>
-            </a>
-          </div>
-        </div>
-        <div class="product-item bg-white rounded-2xl overflow-hidden shadow-md fade-in">
-          <div class="p-4">
-            <h3 class="text-base font-bold text-primary mb-3">Mao Feng Black <span class="text-dark/50 font-normal text-sm">/ 毛峰红茶</span></h3>
-            <div class="grid grid-cols-2 gap-2 mb-3">
-              <div class="relative group cursor-pointer" onclick="openLightbox(this)">
-                <img src="" data-key="product_black_4_gift" alt="Gift Box" class="w-full h-28 object-cover rounded-lg bg-gray-200 product-detail-img">
-                <span class="absolute bottom-1 left-1 bg-black/60 text-white text-xs px-1.5 py-0.5 rounded-sm pointer-events-none">Gift Box</span>
-              </div>
-              <div class="relative group cursor-pointer" onclick="openLightbox(this)">
-                <img src="" data-key="product_black_4_dry" alt="Dry Tea" class="w-full h-28 object-cover rounded-lg bg-gray-200 product-detail-img">
-                <span class="absolute bottom-1 left-1 bg-black/60 text-white text-xs px-1.5 py-0.5 rounded-sm pointer-events-none">Dry Leaf</span>
-              </div>
-              <div class="relative group cursor-pointer" onclick="openLightbox(this)">
-                <img src="" data-key="product_black_4_liquor" alt="Tea Liquor" class="w-full h-28 object-cover rounded-lg bg-gray-200 product-detail-img">
-                <span class="absolute bottom-1 left-1 bg-black/60 text-white text-xs px-1.5 py-0.5 rounded-sm pointer-events-none">Tea Liquor</span>
-              </div>
-              <div class="relative group cursor-pointer" onclick="openLightbox(this)">
-                <img src="" data-key="product_black_4_leaf" alt="Leaf Base" class="w-full h-28 object-cover rounded-lg bg-gray-200 product-detail-img">
-                <span class="absolute bottom-1 left-1 bg-black/60 text-white text-xs px-1.5 py-0.5 rounded-sm pointer-events-none">Leaf Base</span>
-              </div>
-            </div>
-            <p class="text-dark/70 text-sm leading-relaxed">Delicate Mao Feng-style black tea with smooth taste and floral notes.</p>
-          </div>
-          <div class="px-4 py-3 border-t border-gray-100 flex justify-between items-center">
-            <a href="index.html#contact" class="text-secondary font-medium flex items-center gap-1 text-sm hover:gap-2 transition-all">
-              <span>Inquiry Now</span><i class="fas fa-arrow-right text-xs"></i>
-            </a>
-          </div>
-        </div>
-        <div class="product-item bg-white rounded-2xl overflow-hidden shadow-md fade-in">
-          <div class="p-4">
-            <h3 class="text-base font-bold text-primary mb-3">Dianhong Golden Bud <span class="text-dark/50 font-normal text-sm">/ 滇红金芽</span></h3>
-            <div class="grid grid-cols-2 gap-2 mb-3">
-              <div class="relative group cursor-pointer" onclick="openLightbox(this)">
-                <img src="" data-key="product_black_5_gift" alt="Gift Box" class="w-full h-28 object-cover rounded-lg bg-gray-200 product-detail-img">
-                <span class="absolute bottom-1 left-1 bg-black/60 text-white text-xs px-1.5 py-0.5 rounded-sm pointer-events-none">Gift Box</span>
-              </div>
-              <div class="relative group cursor-pointer" onclick="openLightbox(this)">
-                <img src="" data-key="product_black_5_dry" alt="Dry Tea" class="w-full h-28 object-cover rounded-lg bg-gray-200 product-detail-img">
-                <span class="absolute bottom-1 left-1 bg-black/60 text-white text-xs px-1.5 py-0.5 rounded-sm pointer-events-none">Dry Leaf</span>
-              </div>
-              <div class="relative group cursor-pointer" onclick="openLightbox(this)">
-                <img src="" data-key="product_black_5_liquor" alt="Tea Liquor" class="w-full h-28 object-cover rounded-lg bg-gray-200 product-detail-img">
-                <span class="absolute bottom-1 left-1 bg-black/60 text-white text-xs px-1.5 py-0.5 rounded-sm pointer-events-none">Tea Liquor</span>
-              </div>
-              <div class="relative group cursor-pointer" onclick="openLightbox(this)">
-                <img src="" data-key="product_black_5_leaf" alt="Leaf Base" class="w-full h-28 object-cover rounded-lg bg-gray-200 product-detail-img">
-                <span class="absolute bottom-1 left-1 bg-black/60 text-white text-xs px-1.5 py-0.5 rounded-sm pointer-events-none">Leaf Base</span>
-              </div>
-            </div>
-            <p class="text-dark/70 text-sm leading-relaxed">Yunnan sun-dried golden buds with thick malt aroma and deep sweetness.</p>
-          </div>
-          <div class="px-4 py-3 border-t border-gray-100 flex justify-between items-center">
-            <a href="index.html#contact" class="text-secondary font-medium flex items-center gap-1 text-sm hover:gap-2 transition-all">
-              <span>Inquiry Now</span><i class="fas fa-arrow-right text-xs"></i>
-            </a>
-          </div>
-        </div>
-        <div class="product-item bg-white rounded-2xl overflow-hidden shadow-md fade-in">
-          <div class="p-4">
-            <h3 class="text-base font-bold text-primary mb-3">Lapsang Souchong <span class="text-dark/50 font-normal text-sm">/ 正山小种</span></h3>
-            <div class="grid grid-cols-2 gap-2 mb-3">
-              <div class="relative group cursor-pointer" onclick="openLightbox(this)">
-                <img src="" data-key="product_black_6_gift" alt="Gift Box" class="w-full h-28 object-cover rounded-lg bg-gray-200 product-detail-img">
-                <span class="absolute bottom-1 left-1 bg-black/60 text-white text-xs px-1.5 py-0.5 rounded-sm pointer-events-none">Gift Box</span>
-              </div>
-              <div class="relative group cursor-pointer" onclick="openLightbox(this)">
-                <img src="" data-key="product_black_6_dry" alt="Dry Tea" class="w-full h-28 object-cover rounded-lg bg-gray-200 product-detail-img">
-                <span class="absolute bottom-1 left-1 bg-black/60 text-white text-xs px-1.5 py-0.5 rounded-sm pointer-events-none">Dry Leaf</span>
-              </div>
-              <div class="relative group cursor-pointer" onclick="openLightbox(this)">
-                <img src="" data-key="product_black_6_liquor" alt="Tea Liquor" class="w-full h-28 object-cover rounded-lg bg-gray-200 product-detail-img">
-                <span class="absolute bottom-1 left-1 bg-black/60 text-white text-xs px-1.5 py-0.5 rounded-sm pointer-events-none">Tea Liquor</span>
-              </div>
-              <div class="relative group cursor-pointer" onclick="openLightbox(this)">
-                <img src="" data-key="product_black_6_leaf" alt="Leaf Base" class="w-full h-28 object-cover rounded-lg bg-gray-200 product-detail-img">
-                <span class="absolute bottom-1 left-1 bg-black/60 text-white text-xs px-1.5 py-0.5 rounded-sm pointer-events-none">Leaf Base</span>
-              </div>
-            </div>
-            <p class="text-dark/70 text-sm leading-relaxed">Famous smoked black tea with distinctive pine-smoke aroma.</p>
-          </div>
-          <div class="px-4 py-3 border-t border-gray-100 flex justify-between items-center">
-            <a href="index.html#contact" class="text-secondary font-medium flex items-center gap-1 text-sm hover:gap-2 transition-all">
-              <span>Inquiry Now</span><i class="fas fa-arrow-right text-xs"></i>
-            </a>
-          </div>
-        </div>
-        <div class="product-item bg-white rounded-2xl overflow-hidden shadow-md fade-in">
-          <div class="p-4">
-            <h3 class="text-base font-bold text-primary mb-3">Custom Blends <span class="text-dark/50 font-normal text-sm">/ 定制红茶</span></h3>
-            <div class="grid grid-cols-2 gap-2 mb-3">
-              <div class="relative group cursor-pointer" onclick="openLightbox(this)">
-                <img src="" data-key="product_black_7_gift" alt="Gift Box" class="w-full h-28 object-cover rounded-lg bg-gray-200 product-detail-img">
-                <span class="absolute bottom-1 left-1 bg-black/60 text-white text-xs px-1.5 py-0.5 rounded-sm pointer-events-none">Gift Box</span>
-              </div>
-              <div class="relative group cursor-pointer" onclick="openLightbox(this)">
-                <img src="" data-key="product_black_7_dry" alt="Dry Tea" class="w-full h-28 object-cover rounded-lg bg-gray-200 product-detail-img">
-                <span class="absolute bottom-1 left-1 bg-black/60 text-white text-xs px-1.5 py-0.5 rounded-sm pointer-events-none">Dry Leaf</span>
-              </div>
-              <div class="relative group cursor-pointer" onclick="openLightbox(this)">
-                <img src="" data-key="product_black_7_liquor" alt="Tea Liquor" class="w-full h-28 object-cover rounded-lg bg-gray-200 product-detail-img">
-                <span class="absolute bottom-1 left-1 bg-black/60 text-white text-xs px-1.5 py-0.5 rounded-sm pointer-events-none">Tea Liquor</span>
-              </div>
-              <div class="relative group cursor-pointer" onclick="openLightbox(this)">
-                <img src="" data-key="product_black_7_leaf" alt="Leaf Base" class="w-full h-28 object-cover rounded-lg bg-gray-200 product-detail-img">
-                <span class="absolute bottom-1 left-1 bg-black/60 text-white text-xs px-1.5 py-0.5 rounded-sm pointer-events-none">Leaf Base</span>
-              </div>
-            </div>
-            <p class="text-dark/70 text-sm leading-relaxed">Tailored black tea blends to meet specific flavor and brewing requirements.</p>
-          </div>
-          <div class="px-4 py-3 border-t border-gray-100 flex justify-between items-center">
-            <a href="index.html#contact" class="text-secondary font-medium flex items-center gap-1 text-sm hover:gap-2 transition-all">
-              <span>Inquiry Now</span><i class="fas fa-arrow-right text-xs"></i>
-            </a>
-          </div>
-        </div>
-      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="products-grid"></div>
     </div>
   </section>
 
   <!-- CTA -->
-  <section class="py-14 bg-primary text-white">
+  <section class="py-16 bg-primary text-white">
     <div class="container mx-auto px-4 md:px-6 text-center">
-      <h2 class="text-3xl font-bold mb-3">Ready to Order?</h2>
-      <p class="text-white/70 text-lg mb-8 max-w-xl mx-auto">Contact us for samples, pricing, and custom packaging solutions. Reply within 24 hours.</p>
+      <h2 class="text-3xl font-bold mb-4" data-lang="cta_title">Ready to Order?</h2>
+      <p class="text-white/70 text-lg mb-8 max-w-xl mx-auto" id="cta-desc" data-lang="cta_desc">Contact us for samples, pricing, and custom packaging solutions.</p>
       <div class="flex flex-wrap gap-4 justify-center">
         <a href="index.html#contact" class="px-10 py-4 bg-secondary text-white rounded-full font-bold hover:bg-secondary/90 transition-all shadow-lg text-lg">
-          <i class="fas fa-envelope mr-2"></i>Send Inquiry
+          <i class="fas fa-envelope mr-2"></i><span data-lang="send_inquiry">Send Inquiry</span>
         </a>
         <a href="mailto:admin@aultrastea.com" class="px-10 py-4 border-2 border-white/40 text-white rounded-full font-bold hover:border-white transition-all text-lg">
-          <i class="fas fa-at mr-2"></i>Email Us
+          <i class="fas fa-at mr-2"></i><span data-lang="email_us">Email Us</span>
         </a>
       </div>
     </div>
@@ -383,54 +132,105 @@
 
   <!-- 页脚 -->
   <footer class="py-8 bg-dark text-white/60">
-    <div class="container mx-auto px-4 md:px-6 flex flex-col md:flex-row justify-between items-center gap-3 text-sm">
-      <p>© <span id="year"></span> GUIZHOU AULTRAS TEA CO.,LTD. All Rights Reserved.</p>
-      <div class="flex gap-4">
-        <a href="index.html#home" class="hover:text-white transition-colors">Home</a>
-        <a href="index.html#products" class="hover:text-white transition-colors">Products</a>
-        <a href="index.html#contact" class="hover:text-white transition-colors">Contact</a>
-      </div>
+    <div class="container mx-auto px-4 md:px-6 text-center">
+      <p>© <span id="year"></span> GUIZHOU AULTRAS TEA CO.,LTD. <span data-lang="footer_copy">All Rights Reserved.</span></p>
     </div>
   </footer>
 
   <script>
+    // ===== 语言包 =====
+    const langPack = {'en': {'title': 'Black Tea | AultrasTea', 'subtitle': 'Premium Organic Black Tea From Hunan & Guizhou, China', 'badge': 'Organic Certified', 'nav_home': 'Home', 'nav_products': 'Products', 'nav_cert': 'Certificates', 'nav_contact': 'Contact Us', 'view_all': 'All Products', 'inquiry': 'Send Inquiry Now', 'product_range_title': 'Product Range', 'product_range_desc': 'Each product is shown with Gift Box / Dry Leaf / Tea Liquor / Leaf Base — 4 images per item.', 'gift_box': 'Gift Box', 'dry_leaf': 'Dry Leaf', 'liquor': 'Liquor', 'leaf_base': 'Leaf Base', 'inquiry_btn': 'Inquiry Now', 'cta_title': 'Ready to Order?', 'cta_desc': 'Contact us for samples, pricing, and custom packaging solutions. We reply within 24 hours.', 'send_inquiry': 'Send Inquiry', 'email_us': 'Email Us', 'cat_en': 'Black Tea', 'cat_zh': '红茶', 'footer_copy': 'All Rights Reserved.', 'products': [{'name': 'CTC Black Tea', 'desc': 'Machine-cut black tea pellets, quick-brewing, ideal for commercial tea bags.'}, {'name': 'Golden Snail', 'desc': 'Premium curly golden-tipped black tea with natural honey sweetness.'}, {'name': 'Black Fannings', 'desc': 'Fine-grade black tea ideal for blending and mass-market tea bags.'}, {'name': 'Black BOP', 'desc': 'Broken Orange Pekoe with full, robust flavor and deep amber liquor.'}, {'name': 'Mao Feng Black', 'desc': 'Delicate Mao Feng-style black tea with smooth taste and floral notes.'}, {'name': 'Dianhong Golden Bud', 'desc': 'Yunnan sun-dried golden buds with thick malt aroma and deep sweetness.'}, {'name': 'Lapsang Souchong', 'desc': 'Famous smoked black tea with distinctive pine-smoke aroma.'}, {'name': 'Custom Blends', 'desc': 'Tailored black tea blends to meet specific flavor and brewing requirements.'}]}, 'zh': {'title': '红茶 | AultrasTea', 'subtitle': '来自中国湖南与贵州的优质有机红茶', 'badge': '有机认证', 'nav_home': '首页', 'nav_products': '产品中心', 'nav_cert': '公司资质', 'nav_contact': '联系我们', 'view_all': '全部产品', 'inquiry': '立即询价', 'product_range_title': '产品系列', 'product_range_desc': '每款产品展示礼盒/干茶/茶汤/叶底四张图，图片均可通过后台管理更新。', 'gift_box': '礼盒', 'dry_leaf': '干茶', 'liquor': '茶汤', 'leaf_base': '叶底', 'inquiry_btn': '立即咨询', 'cta_title': '准备下单？', 'cta_desc': '联系我们获取样品、报价和定制包装方案，我们24小时内回复。', 'send_inquiry': '发送询盘', 'email_us': '发邮件', 'cat_en': 'Black Tea', 'cat_zh': '红茶', 'footer_copy': '版权所有。', 'products': [{'name': 'CTC红茶', 'desc': '机器切碎制成颗粒，快速出汤，适合商业茶包。'}, {'name': '金螺红茶', 'desc': '金毫卷曲，天然蜜香，口感醇厚甘甜。'}, {'name': '红茶片', 'desc': '细碎茶叶，适合大众茶包和调配红茶。'}, {'name': 'BOP红茶', 'desc': '橙黄碎片，汤色深红，口感浓强。'}, {'name': '毛峰红茶', 'desc': '毛峰工艺红茶，口感顺滑，带花香。'}, {'name': '滇红金芽', 'desc': '云南金芽，麦香浓厚，入口甘甜绵长。'}, {'name': '正山小种', 'desc': '正宗烟熏红茶，独特松烟香，历史名茶。'}, {'name': '定制红茶', 'desc': '根据客户需求定制配比，满足不同口味和用途。'}]}, 'ru': {'title': 'Чёрный чай | AultrasTea', 'subtitle': 'Органический чёрный чай высшего качества из Хунани и Гуйчжоу, Китай', 'badge': 'Органический', 'nav_home': 'Главная', 'nav_products': 'Продукция', 'nav_cert': 'Сертификаты', 'nav_contact': 'Контакты', 'view_all': 'Все продукты', 'inquiry': 'Запросить цену', 'product_range_title': 'Ассортимент', 'product_range_desc': 'Каждый продукт представлен 4 фото: подарочная коробка, сухой чай, настой, лист.', 'gift_box': 'Подарок', 'dry_leaf': 'Сухой лист', 'liquor': 'Настой', 'leaf_base': 'Лист', 'inquiry_btn': 'Запрос цены', 'cta_title': 'Готовы заказать?', 'cta_desc': 'Свяжитесь с нами для образцов и цен. Ответим в течение 24 часов.', 'send_inquiry': 'Отправить запрос', 'email_us': 'Написать письмо', 'cat_en': 'Black Tea', 'cat_zh': '红茶', 'footer_copy': 'Все права защищены.', 'products': [{'name': 'CTC чёрный чай', 'desc': 'Механически нарезанные гранулы, быстрое заваривание.'}, {'name': 'Золотая улитка', 'desc': 'Скрученный чай с золотистыми почками и натуральным медовым вкусом.'}, {'name': 'Гранулы чёрного чая', 'desc': 'Мелкий чай для смешивания и массового рынка.'}, {'name': 'Чёрный BOP', 'desc': 'Ломаный оранжевый пеко, насыщенный вкус и янтарный настой.'}, {'name': 'Мао Фэн чёрный', 'desc': 'Нежный чёрный чай стиля Мао Фэн с цветочными нотками.'}, {'name': 'Дяньхун Золотая почка', 'desc': 'Юньнаньские золотые почки с насыщенным солодовым ароматом.'}, {'name': 'Лапсанг Сушонг', 'desc': 'Знаменитый копчёный чёрный чай с характерным ароматом сосны.'}, {'name': 'Индивидуальные смеси', 'desc': 'Индивидуальные смеси для конкретных требований.'}]}, 'de': {'title': 'Schwarztee | AultrasTea', 'subtitle': 'Premium Bio-Schwarztee aus Hunan und Guizhou, China', 'badge': 'Bio-zertifiziert', 'nav_home': 'Startseite', 'nav_products': 'Produkte', 'nav_cert': 'Zertifikate', 'nav_contact': 'Kontakt', 'view_all': 'Alle Produkte', 'inquiry': 'Jetzt Anfragen', 'product_range_title': 'Produktsortiment', 'product_range_desc': 'Jedes Produkt wird mit 4 Bildern gezeigt: Geschenkbox / Trockenes Blatt / Aufguss / Blattboden.', 'gift_box': 'Geschenkbox', 'dry_leaf': 'Trockenes Blatt', 'liquor': 'Aufguss', 'leaf_base': 'Blattboden', 'inquiry_btn': 'Jetzt Anfragen', 'cta_title': 'Bereit zu bestellen?', 'cta_desc': 'Kontaktieren Sie uns für Muster, Preise und individuelle Verpackung. Wir antworten innerhalb von 24 Stunden.', 'send_inquiry': 'Anfrage senden', 'email_us': 'E-Mail senden', 'cat_en': 'Black Tea', 'cat_zh': '红茶', 'footer_copy': 'Alle Rechte vorbehalten.', 'products': [{'name': 'CTC Schwarztee', 'desc': 'Maschinell verarbeitete Pellets, schnell brühend, für Teebeutel.'}, {'name': 'Goldene Schnecke', 'desc': 'Gerollter Schwarztee mit goldenen Spitzen und Honigsüße.'}, {'name': 'Schwarztee-Fannings', 'desc': 'Feiner Schwarztee für Mischungen und Massenmarkt.'}, {'name': 'Schwarztee BOP', 'desc': 'Broken Orange Pekoe, kräftiger Geschmack und tiefer Bernsteinaufguss.'}, {'name': 'Mao Feng Schwarztee', 'desc': 'Feiner Schwarztee im Mao-Feng-Stil mit floralen Noten.'}, {'name': 'Dianhong Golden Bud', 'desc': 'Yunnan Goldknospen mit reichem Malzaroma und tiefer Süße.'}, {'name': 'Lapsang Souchong', 'desc': 'Berühmter geräucherter Schwarztee mit charakteristischem Kieferrauch.'}, {'name': 'Individuelle Mischungen', 'desc': 'Maßgeschneiderte Schwarztee-Mischungen nach Ihren Anforderungen.'}]}};
+    const catFeatures = {'en': ['CTC Black Tea, Golden Snail, Black Fannings, Mao Feng Black Tea', 'EU & US Organic Certified', 'Full-Fermented, Rich Malty Flavor', 'Ideal for Tea Bags, Blends & Beverages'], 'zh': ['CTC红茶、金螺、红茶片、毛峰红茶', '欧盟及美国有机认证', '全发酵，醇厚麦香', '适用于茶包、调配和饮品'], 'ru': ['CTC чёрный чай, Золотая улитка, гранулы, Мао Фэн чёрный', 'Органические сертификаты ЕС и США', 'Полная ферментация, насыщенный солодовый вкус', 'Идеально для пакетиков, смесей и напитков'], 'de': ['CTC Schwarztee, Goldene Schnecke, Fannings, Mao Feng Schwarztee', 'EU & US Bio-zertifiziert', 'Vollfermentiert, reicher malziger Geschmack', 'Ideal für Teebeutel, Mischungen & Getränke']};
+
+    let currentLang = 'en';
+
+    function switchLang(lang) {
+      currentLang = lang;
+      const pack = langPack[lang];
+      if (!pack) return;
+
+      document.getElementById('html-root').lang = lang;
+      document.getElementById('page-title').textContent = pack.title;
+      document.title = pack.title;
+
+      // data-lang 元素
+      document.querySelectorAll('[data-lang]').forEach(el => {
+        const key = el.getAttribute('data-lang');
+        if (pack[key] !== undefined) el.textContent = pack[key];
+      });
+
+      // 品类名
+      document.getElementById('cat-name-en').textContent = pack.cat_en;
+      document.getElementById('cat-name-zh').textContent = pack.cat_zh;
+      document.getElementById('breadcrumb-cat').textContent = pack.cat_en;
+
+      // 特性列表
+      renderFeatures(lang);
+
+      // 产品网格
+      renderProducts(lang);
+    }
+
+    function renderFeatures(lang) {
+      const features = catFeatures[lang] || catFeatures['en'];
+      const list = document.getElementById('features-list');
+      list.innerHTML = features.map(f =>
+        `<div class="flex items-center gap-3"><i class="fas fa-check-circle text-secondary"></i><span>${f}</span></div>`
+      ).join('');
+    }
+
+    function renderProducts(lang) {
+      const pack = langPack[lang];
+      const imgs = window._siteImages || {};
+      const grid = document.getElementById('products-grid');
+      const catKey = 'black';
+      const labels = [pack.gift_box, pack.dry_leaf, pack.liquor, pack.leaf_base];
+      const suffixes = ['gift','dry','liquor','leaf'];
+
+      grid.innerHTML = pack.products.map((p, i) => {
+        const imgCards = suffixes.map((suf, si) => {
+          const key = `product_${catKey}_${i}_${suf}`;
+          const src = imgs[key] || '';
+          return `<div class="relative">
+            <img src="${src}" data-key="${key}" alt="${labels[si]}" class="w-full h-28 object-cover rounded-lg bg-gray-100 product-detail-img">
+            <span class="absolute bottom-1 left-1 bg-black/50 text-white text-xs px-1.5 py-0.5 rounded">${labels[si]}</span>
+          </div>`;
+        }).join('');
+
+        return `<div class="bg-white rounded-2xl overflow-hidden shadow-md fade-in">
+          <div class="p-4">
+            <h3 class="text-lg font-bold text-primary mb-3">${p.name}</h3>
+            <div class="grid grid-cols-2 gap-2 mb-3">${imgCards}</div>
+            <p class="text-dark/70 text-sm leading-relaxed">${p.desc}</p>
+          </div>
+          <div class="px-4 py-3 border-t border-gray-100">
+            <a href="index.html#contact" class="text-secondary font-medium flex items-center gap-2 hover:gap-3 transition-all text-sm">
+              <span>${pack.inquiry_btn}</span><i class="fas fa-arrow-right text-xs"></i>
+            </a>
+          </div>
+        </div>`;
+      }).join('');
+
+      // 重新绑定渐入
+      document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    }
+
     // ===== 从 data.json 加载图片 =====
     async function loadProductImages() {
       try {
         const res = await fetch('./data.json?t=' + Date.now());
         const data = await res.json();
+        window._siteImages = data.images || {};
         const heroImg = document.getElementById('cat_hero_img');
-        if(heroImg && data.images && data.images['product_black']) {
-          heroImg.src = data.images['product_black'];
+        if (heroImg && window._siteImages['product_black']) {
+          heroImg.src = window._siteImages['product_black'];
         }
-        document.querySelectorAll('[data-key]').forEach(el => {
-          const key = el.getAttribute('data-key');
-          if(data.images && data.images[key]) {
-            el.src = data.images[key];
-          }
-        });
       } catch(e) {
-        console.warn('data.json load failed', e);
+        window._siteImages = {};
+        console.warn('data.json 加载失败', e);
       }
-    }
-
-    // ===== Lightbox =====
-    function openLightbox(wrap) {
-      const img = wrap.querySelector('img');
-      if(!img || !img.src || img.src === location.href) return;
-      document.getElementById('lightbox-img').src = img.src;
-      document.getElementById('lightbox').classList.add('active');
-    }
-    function closeLightbox() {
-      document.getElementById('lightbox').classList.remove('active');
-    }
-    document.addEventListener('keydown', e => e.key === 'Escape' && closeLightbox());
-
-    // ===== 移动端菜单 =====
-    const menuToggle = document.getElementById('menuToggle');
-    const mobileMenu = document.getElementById('mobileMenu');
-    if(menuToggle) {
-      menuToggle.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+      renderFeatures(currentLang);
+      renderProducts(currentLang);
     }
 
     // ===== 渐入动画 =====
@@ -440,7 +240,17 @@
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // ===== 初始化 =====
     loadProductImages();
+
+    // 语言选择器自动还原
+    const savedLang = localStorage.getItem('aultrastea_lang') || 'en';
+    document.getElementById('langSelect').value = savedLang;
+    document.getElementById('langSelect').addEventListener('change', e => {
+      localStorage.setItem('aultrastea_lang', e.target.value);
+    });
+    switchLang(savedLang);
   </script>
 </body>
 </html>
