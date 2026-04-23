@@ -2,40 +2,62 @@
   "images": {
     "hero_bg": "https://picsum.photos/id/225/1920/1080",
     "hero_main": "https://picsum.photos/id/430/800/1000",
-    "about_1": "https://picsum.photos/id/304/400/500",
-    "about_2": "https://picsum.photos/id/493/400/300",
-    "about_3": "https://picsum.photos/id/287/400/300",
-    "about_4": "https://picsum.photos/id/488/400/500",
-    "product_green": "https://i.postimg.cc/mrRs8ttk/huang-jin-cha-xin-pin-zheng-shi-tu.png",
-    "product_black": "https://i.postimg.cc/d14cQy8Y/4yue1ri-(1).jpg",
-    "product_white": "https://picsum.photos/id/488/600/400",
+    "product_green": "https://picsum.photos/id/493/600/400",
+    "product_black": "https://picsum.photos/id/312/600/400",
     "product_oolong": "https://picsum.photos/id/225/600/400",
-    "product_special": "https://picsum.photos/id/431/600/400",
+    "product_white": "https://picsum.photos/id/488/600/400",
+    "product_yellow": "https://picsum.photos/id/442/600/400",
+    "product_dark": "https://picsum.photos/id/431/600/400",
+    "product_flower": "https://picsum.photos/id/287/600/400",
     "cert_1": "https://picsum.photos/id/237/400/300",
     "cert_2": "https://picsum.photos/id/239/400/300",
     "cert_3": "https://picsum.photos/id/240/400/300"
   },
+  "about_video": {
+    "embed_code": "<div style=\"position:relative; width:100%; height:0px; padding-bottom:56.250%\"><iframe allow=\"fullscreen;autoplay\" allowfullscreen height=\"100%\" src=\"https://streamable.com/e/1p8szp?autoplay=1&nocontrols=1\" width=\"100%\" style=\"border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden;\"></iframe></div>"
+  },
   "video": {
     "embed_code": "<div style=\"position:relative; width:100%; height:0px; padding-bottom:56.250%\"><iframe allow=\"fullscreen;autoplay\" allowfullscreen height=\"100%\" src=\"https://streamable.com/e/1p8szp?autoplay=1&nocontrols=1\" width=\"100%\" style=\"border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden;\"></iframe></div>"
   },
+  "social_links": [
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/@XiangfengTea"
+    },
+    {
+      "platform": "linkedin",
+      "url": "https://cn.linkedin.com/company/%E6%B9%98%E4%B8%B0%E8%8C%B6%E4%B8%9A%E9%9B%86%E5%9B%A2%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8"
+    },
+    {
+      "platform": "whatsapp",
+      "url": "https://wa.me/8673184652476"
+    },
+    {
+      "platform": "wechat",
+      "url": "#contact"
+    }
+  ],
   "exhibitions": [
     {
-      "name": "UzFood 3026",
+      "id": 1,
       "date": "1 - 3 April 2026",
-      "location": "中国湖南长沙",
+      "name": "UzFood 2026",
+      "location": "Uzexpocentre NEC, Tashkent, Uzbekistan",
       "booth": "F92",
       "status": "confirmed"
     },
     {
-      "name": "BIOFACH 2026",
+      "id": 2,
       "date": "Coming Soon",
+      "name": "BIOFACH 2026",
       "location": "Nuremberg, Germany",
       "booth": "TBA",
       "status": "upcoming"
     },
     {
-      "name": "Gulfood 2026",
+      "id": 3,
       "date": "Coming Soon",
+      "name": "Gulfood 2026",
       "location": "Dubai, UAE",
       "booth": "TBA",
       "status": "upcoming"
