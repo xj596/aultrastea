@@ -60,6 +60,15 @@
     /* 关于我们视频 */
     .about-video-wrap { position: relative; width: 100%; aspect-ratio: 16/9; border-radius: 1rem; overflow: hidden; background: #0F4C3A; box-shadow: 0 25px 50px rgba(15,76,58,0.25); }
     .about-video-wrap iframe, .about-video-wrap video { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
+
+    /* 资质证书轮播 */
+    .cert-track-wrap { overflow: hidden; }
+    .cert-track { display: flex; transition: transform 0.5s ease; }
+    .cert-slide { min-width: calc(16.666% - 10px); margin-right: 12px; flex-shrink: 0; }
+    @media (max-width: 640px) { .cert-slide { min-width: calc(50% - 6px); margin-right: 12px; } }
+    @media (min-width: 641px) and (max-width: 1023px) { .cert-slide { min-width: calc(33.333% - 8px); margin-right: 12px; } }
+    .cert-dot { width: 8px; height: 8px; border-radius: 50%; background: #d1d5db; transition: background 0.3s; cursor: pointer; }
+    .cert-dot.active { background: #0F4C3A; }
   </style>
 </head>
 <body>
@@ -323,18 +332,31 @@
         <p class="text-dark/70 max-w-2xl mx-auto mb-4" data-lang="cert_desc">Our products have passed multiple international certifications.</p>
         <div class="w-24 h-1 bg-secondary mx-auto"></div>
       </div>
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 fade-in">
+
+      <!-- 认证徽标行 -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 fade-in mb-12">
         <div class="text-center p-4 border border-primary/10 rounded-lg hover:border-primary/30 transition-all"><i class="fas fa-certificate text-4xl text-primary mb-3"></i><p class="font-medium" data-lang="cert_eu">EU Organic</p></div>
         <div class="text-center p-4 border border-primary/10 rounded-lg hover:border-primary/30 transition-all"><i class="fas fa-certificate text-4xl text-primary mb-3"></i><p class="font-medium" data-lang="cert_us">US Organic</p></div>
         <div class="text-center p-4 border border-primary/10 rounded-lg hover:border-primary/30 transition-all"><i class="fas fa-certificate text-4xl text-primary mb-3"></i><p class="font-medium" data-lang="cert_haccp">HACCP</p></div>
         <div class="text-center p-4 border border-primary/10 rounded-lg hover:border-primary/30 transition-all"><i class="fas fa-certificate text-4xl text-primary mb-3"></i><p class="font-medium" data-lang="cert_iso">ISO 9001</p></div>
         <div class="text-center p-4 border border-primary/10 rounded-lg hover:border-primary/30 transition-all"><i class="fas fa-certificate text-4xl text-primary mb-3"></i><p class="font-medium" data-lang="cert_fairtrade">Fair Trade</p></div>
       </div>
-      <div class="grid md:grid-cols-3 gap-6 mt-12 fade-in delay-100">
-        <img id="img_cert_1" src="" alt="Certificate 1" class="rounded-lg shadow-md w-full h-48 object-cover border border-gray-200">
-        <img id="img_cert_2" src="" alt="Certificate 2" class="rounded-lg shadow-md w-full h-48 object-cover border border-gray-200">
-        <img id="img_cert_3" src="" alt="Certificate 3" class="rounded-lg shadow-md w-full h-48 object-cover border border-gray-200">
+
+      <!-- 证书图片轮播（6框，支持20+张） -->
+      <div class="fade-in delay-100 relative">
+        <div class="cert-track-wrap">
+          <div id="cert-track" class="cert-track"></div>
+        </div>
+        <!-- 箭头 -->
+        <button id="cert-prev" onclick="certSlide(-1)" class="hidden absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all z-10">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button id="cert-next" onclick="certSlide(1)" class="hidden absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all z-10">
+          <i class="fas fa-chevron-right"></i>
+        </button>
       </div>
+      <!-- 指示点 -->
+      <div id="cert-dots" class="flex justify-center gap-2 mt-6 hidden"></div>
     </div>
   </section>
 
@@ -385,15 +407,15 @@
             </div>
             <div class="flex items-start gap-4">
               <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0"><i class="fas fa-envelope text-primary text-xl"></i></div>
-              <div><p class="text-dark/60 text-sm mb-1" data-lang="contact_email">Email</p><p class="font-medium text-dark">admin@aultrastea.com</p><p class="font-medium text-dark">tea@xf-tea.com</p></div>
+              <div><p class="text-dark/60 text-sm mb-1" data-lang="contact_email">Email</p><p class="font-medium text-dark" id="contact_email_1">admin@aultrastea.com</p><p class="font-medium text-dark" id="contact_email_2">tea@xf-tea.com</p></div>
             </div>
             <div class="flex items-start gap-4">
               <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0"><i class="fas fa-phone text-primary text-xl"></i></div>
-              <div><p class="text-dark/60 text-sm mb-1" data-lang="contact_phone">Phone / WhatsApp</p><p class="font-medium text-dark">+86 731 8465 2476</p><p class="font-medium text-dark">+86 731 8465 2208</p></div>
+              <div><p class="text-dark/60 text-sm mb-1" data-lang="contact_phone">Phone / WhatsApp</p><p class="font-medium text-dark" id="contact_phone_1">+86 731 8465 2476</p><p class="font-medium text-dark" id="contact_phone_2">+86 731 8465 2208</p></div>
             </div>
             <div class="flex items-start gap-4">
               <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0"><i class="fas fa-map-marker-alt text-primary text-xl"></i></div>
-              <div><p class="text-dark/60 text-sm mb-1" data-lang="contact_address">Address</p><p class="font-medium text-dark">Changsha, Hunan Province, China</p><p class="font-medium text-dark">Anshun, Guizhou Province, China</p></div>
+              <div><p class="text-dark/60 text-sm mb-1" data-lang="contact_address">Address</p><p class="font-medium text-dark" id="contact_address_1">Changsha, Hunan Province, China</p><p class="font-medium text-dark" id="contact_address_2">Anshun, Guizhou Province, China</p></div>
             </div>
           </div>
           <div>
@@ -439,8 +461,8 @@
         <div>
           <h4 class="text-lg font-bold mb-4" data-lang="footer_contact">Contact</h4>
           <ul class="space-y-2">
-            <li class="flex items-center gap-2 text-white/70"><i class="fas fa-envelope"></i> admin@aultrastea.com</li>
-            <li class="flex items-center gap-2 text-white/70"><i class="fas fa-phone"></i> +86 731 8465 2476</li>
+            <li class="flex items-center gap-2 text-white/70"><i class="fas fa-envelope"></i> <span id="footer_email">admin@aultrastea.com</span></li>
+            <li class="flex items-center gap-2 text-white/70"><i class="fas fa-phone"></i> <span id="footer_phone">+86 731 8465 2476</span></li>
           </ul>
         </div>
       </div>
@@ -536,7 +558,73 @@
       updateExhSlider();
     }
 
-    window.addEventListener('resize', () => updateExhSlider());
+    // ===== 证书图片轮播 =====
+    let certIndex = 0;
+    let certTotal = 0;
+    const CERT_VISIBLE = () => window.innerWidth >= 1024 ? 6 : window.innerWidth >= 641 ? 3 : 2;
+
+    function renderCertificates(certUrls) {
+      const track = document.getElementById('cert-track');
+      const dots = document.getElementById('cert-dots');
+      if (!track) return;
+      certTotal = certUrls.length;
+      if (certTotal === 0) return;
+
+      track.innerHTML = certUrls.map((url, i) => `
+        <div class="cert-slide">
+          <div class="rounded-xl overflow-hidden shadow-md border border-gray-100 bg-gray-50" style="aspect-ratio:3/4; display:flex; align-items:center; justify-content:center;">
+            ${url
+              ? `<img src="${url}" alt="Certificate ${i+1}" class="w-full h-full object-cover">`
+              : `<div style="display:flex;flex-direction:column;align-items:center;gap:8px;color:#d1d5db;padding:16px;text-align:center"><i class="fas fa-certificate" style="font-size:2.5rem"></i><span style="font-size:11px">Certificate ${i+1}</span></div>`
+            }
+          </div>
+        </div>`
+      ).join('');
+
+      const visible = CERT_VISIBLE();
+      const maxPages = Math.max(0, Math.ceil(certTotal / visible) - 1);
+      if (certTotal > visible) {
+        dots.innerHTML = '';
+        dots.classList.remove('hidden');
+        for (let i = 0; i <= maxPages; i++) {
+          const dot = document.createElement('div');
+          dot.className = 'cert-dot' + (i === 0 ? ' active' : '');
+          const pageStart = i * visible;
+          dot.onclick = () => { certIndex = pageStart; updateCertSlider(); };
+          dots.appendChild(dot);
+        }
+        document.getElementById('cert-prev').classList.remove('hidden');
+        document.getElementById('cert-next').classList.remove('hidden');
+      } else {
+        dots.classList.add('hidden');
+        document.getElementById('cert-prev').classList.add('hidden');
+        document.getElementById('cert-next').classList.add('hidden');
+      }
+      updateCertSlider();
+    }
+
+    function updateCertSlider() {
+      const track = document.getElementById('cert-track');
+      const slides = track ? track.querySelectorAll('.cert-slide') : [];
+      if (!slides.length) return;
+      const visible = CERT_VISIBLE();
+      const maxIndex = Math.max(0, certTotal - visible);
+      certIndex = Math.min(certIndex, maxIndex);
+      const slideWidth = slides[0].offsetWidth + 12;
+      track.style.transform = `translateX(-${certIndex * slideWidth}px)`;
+      document.querySelectorAll('.cert-dot').forEach((d, i) => {
+        d.classList.toggle('active', Math.floor(certIndex / visible) === i);
+      });
+    }
+
+    function certSlide(dir) {
+      const visible = CERT_VISIBLE();
+      const maxIndex = Math.max(0, certTotal - visible);
+      certIndex = Math.max(0, Math.min(certIndex + visible * dir, maxIndex));
+      updateCertSlider();
+    }
+
+    window.addEventListener('resize', () => { updateExhSlider(); updateCertSlider(); });
 
     // ===== 从 data.json 动态加载内容 =====
     async function loadSiteData() {
@@ -556,9 +644,32 @@
         setImg('img_product_yellow', imgs.product_yellow);
         setImg('img_product_dark', imgs.product_dark);
         setImg('img_product_flower', imgs.product_flower);
-        setImg('img_cert_1', imgs.cert_1);
-        setImg('img_cert_2', imgs.cert_2);
-        setImg('img_cert_3', imgs.cert_3);
+
+        // 资质证书轮播（最多20张，key: cert_1 ~ cert_20）
+        const certUrls = [];
+        for (let i = 1; i <= 20; i++) {
+          if (imgs['cert_' + i]) certUrls.push(imgs['cert_' + i]);
+        }
+        if (certUrls.length > 0) renderCertificates(certUrls);
+
+        // 联系方式动态替换
+        if (data.contact_info) {
+          const ci = data.contact_info;
+          const setTxt = (id, val) => { const el = document.getElementById(id); if(el && val) el.textContent = val; };
+          const setHref = (id, val) => { const el = document.getElementById(id); if(el && val) el.href = val; };
+          setTxt('contact_email_1', ci.email_1);
+          setTxt('contact_email_2', ci.email_2);
+          setTxt('contact_phone_1', ci.phone_1);
+          setTxt('contact_phone_2', ci.phone_2);
+          setTxt('contact_address_1', ci.address_1);
+          setTxt('contact_address_2', ci.address_2);
+          setTxt('footer_email', ci.email_1);
+          setTxt('footer_phone', ci.phone_1);
+          if (ci.email_1) {
+            const el = document.getElementById('contact_email_link');
+            if (el) el.href = 'mailto:' + ci.email_1;
+          }
+        }
 
         // 关于我们视频
         const aboutVC = document.getElementById('about_video_container');
