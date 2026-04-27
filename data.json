@@ -1,7 +1,7 @@
 {
   "images": {
-    "hero_bg": "https://picsum.photos/id/225/1920/1080",
-    "hero_main": "https://picsum.photos/id/430/800/1000",
+    "hero_bg": "https://ik.imagekit.io/taclov2ip/%E5%9B%BE%E7%89%87/%E7%AC%AC%E5%9B%9B%E9%95%9C%E9%A6%96%E5%B8%A7.jpg",
+    "hero_main": "https://ik.imagekit.io/taclov2ip/%E5%9B%BE%E7%89%87/%E7%AC%AC%E4%B8%89%E9%95%9C%E9%A6%96%E5%B8%A7.jpg",
     "product_green": "https://i.postimg.cc/mrRs8ttk/huang-jin-cha-xin-pin-zheng-shi-tu.png",
     "product_black": "https://picsum.photos/id/312/600/400",
     "product_oolong": "https://picsum.photos/id/225/600/400",
@@ -114,9 +114,9 @@
       "status": "upcoming"
     },
     {
-      "name": "超级创新展会",
+      "name": "è¶çº§åæ°å±ä¼",
       "date": "Coming Soon",
-      "location": "湖南长沙",
+      "location": "æ¹åé¿æ²",
       "booth": "TBA",
       "status": "confirmed"
     }
