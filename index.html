@@ -86,12 +86,31 @@
     .cert-dot { width: 7px; height: 7px; border-radius: 50%; background: #d1d5db; transition: all 0.3s; cursor: pointer; }
     .cert-dot.active { background: #0F4C3A; transform: scale(1.3); }
 
-    /* 新闻板块 */
-    .news-item { border-left: 3px solid #D4AF37; padding: 12px 16px; background: white; border-radius: 0 8px 8px 0; transition: all 0.2s; }
-    .news-item:hover { border-left-color: #0F4C3A; box-shadow: 0 2px 10px rgba(15,76,58,0.1); transform: translateX(3px); }
-    .news-page-btn { width: 34px; height: 34px; border-radius: 8px; border: 1px solid #d1d5db; background: white; cursor: pointer; font-size: 13px; font-weight: 600; color: #374151; transition: all 0.2s; display: inline-flex; align-items: center; justify-content: center; }
-    .news-page-btn:hover, .news-page-btn.active { background: #0F4C3A; color: white; border-color: #0F4C3A; }
-    .news-page-btn.ellipsis { cursor: default; background: transparent; border: none; color: #9ca3af; }
+    /* 首页展会弹窗 */
+    #exh-popup {
+      position: fixed; bottom: 24px; left: 24px; z-index: 9000;
+      width: clamp(280px, 25vw, 360px);
+      background: white; border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(15,76,58,0.18), 0 2px 8px rgba(0,0,0,0.1);
+      overflow: hidden; transform: translateY(120%); opacity: 0;
+      transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+      border: 1px solid rgba(15,76,58,0.12);
+    }
+    #exh-popup.show { transform: translateY(0); opacity: 1; }
+    .exh-popup-header {
+      background: linear-gradient(135deg, #0F4C3A 0%, #1a6b54 100%);
+      padding: 12px 16px; display: flex; align-items: center; justify-content: space-between;
+    }
+    .exh-popup-body { padding: 16px; }
+    .exh-popup-badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 700; letter-spacing: 0.5px; }
+    .exh-popup-badge.confirmed { background: #dcfce7; color: #15803d; }
+    .exh-popup-badge.upcoming  { background: #fef9c3; color: #a16207; }
+    .exh-popup-close {
+      width: 22px; height: 22px; border-radius: 50%; background: rgba(255,255,255,0.2);
+      border: none; cursor: pointer; color: white; display: flex; align-items: center; justify-content: center;
+      font-size: 12px; transition: background 0.2s; flex-shrink: 0;
+    }
+    .exh-popup-close:hover { background: rgba(255,255,255,0.35); }
   </style>
 </head>
 <body>
@@ -108,7 +127,6 @@
           <li><a href="#about" class="nav-link text-dark hover:text-primary transition-colors font-medium" data-lang="nav_about">About Us</a></li>
           <li><a href="#products" class="nav-link text-dark hover:text-primary transition-colors font-medium" data-lang="nav_products">Products</a></li>
           <li><a href="#certificates" class="nav-link text-dark hover:text-primary transition-colors font-medium" data-lang="nav_certificates">Certificates</a></li>
-          <li><a href="#news" class="nav-link text-dark hover:text-primary transition-colors font-medium" data-lang="nav_news">News</a></li>
           <li><a href="#exhibitions" class="nav-link text-dark hover:text-primary transition-colors font-medium" data-lang="nav_exhibitions">Exhibitions</a></li>
           <li><a href="#contact" class="nav-link text-dark hover:text-primary transition-colors font-medium" data-lang="nav_contact">Contact Us</a></li>
         </ul>
@@ -130,7 +148,6 @@
           <li><a href="#about" class="block py-2 text-dark hover:text-primary transition-colors font-medium" data-lang="nav_about">About Us</a></li>
           <li><a href="#products" class="block py-2 text-dark hover:text-primary transition-colors font-medium" data-lang="nav_products">Products</a></li>
           <li><a href="#certificates" class="block py-2 text-dark hover:text-primary transition-colors font-medium" data-lang="nav_certificates">Certificates</a></li>
-          <li><a href="#news" class="block py-2 text-dark hover:text-primary transition-colors font-medium" data-lang="nav_news">News</a></li>
           <li><a href="#exhibitions" class="block py-2 text-dark hover:text-primary transition-colors font-medium" data-lang="nav_exhibitions">Exhibitions</a></li>
           <li><a href="#contact" class="block py-2 text-dark hover:text-primary transition-colors font-medium" data-lang="nav_contact">Contact Us</a></li>
         </ul>
@@ -180,43 +197,6 @@
         <div class="fade-in delay-200 relative">
           <div class="relative rounded-2xl overflow-hidden shadow-2xl">
             <img id="img_hero_main" src="" alt="Premium Tea Products" class="w-full h-full object-cover">
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 关于我们（视频版） -->
-  <section id="about" class="py-20 bg-white">
-    <div class="container mx-auto px-4 md:px-6">
-      <div class="text-center mb-16 fade-in">
-        <h2 class="text-[clamp(1.8rem,5vw,3rem)] font-bold mb-4 text-primary" data-lang="about_title">About AultrasTea</h2>
-        <div class="w-24 h-1 bg-secondary mx-auto"></div>
-      </div>
-      <div class="grid md:grid-cols-2 gap-12 items-center">
-        <!-- 左侧：视频展示 -->
-        <div class="fade-in relative order-2 md:order-1">
-          <div class="about-video-wrap" id="about_video_container">
-            <!-- 占位提示，视频由 data.json 注入 -->
-            <div class="absolute inset-0 flex flex-col items-center justify-center text-white/60 text-sm gap-3">
-              <i class="fas fa-play-circle text-5xl text-white/30"></i>
-              <p>Brand Video</p>
-            </div>
-          </div>
-        </div>
-        <!-- 右侧：文字信息 -->
-        <div class="fade-in delay-200 order-1 md:order-2">
-          <p class="text-dark/70 mb-6 leading-relaxed" data-lang="about_p1">
-            Guizhou Aultras Tea Co., Ltd. is a professional tea enterprise integrating tea planting, production, processing and export.
-          </p>
-          <p class="text-dark/70 mb-6 leading-relaxed" data-lang="about_p2">
-            We have our own organic tea plantations in Guizhou and Hunan, with a complete production system and strict quality control system.
-          </p>
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 mb-8">
-            <div class="text-center"><h4 class="text-3xl font-bold text-primary mb-2">20+</h4><p class="text-dark/60" data-lang="about_year">Years Experience</p></div>
-            <div class="text-center"><h4 class="text-3xl font-bold text-primary mb-2">70+</h4><p class="text-dark/60" data-lang="about_country">Countries Exported</p></div>
-            <div class="text-center"><h4 class="text-3xl font-bold text-primary mb-2">10+</h4><p class="text-dark/60" data-lang="about_cert">International Certificates</p></div>
-            <div class="text-center"><h4 class="text-3xl font-bold text-primary mb-2">50+</h4><p class="text-dark/60" data-lang="about_product">Tea Products</p></div>
           </div>
         </div>
       </div>
@@ -347,17 +327,20 @@
 
 
         <!-- 产品手册 -->
-        <div class="product-card bg-white rounded-xl overflow-hidden shadow-md fade-in delay-200">
-          <div class="relative h-52 overflow-hidden bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center">
-            <i class="fas fa-file-pdf text-6xl text-primary/30"></i>
+        <div class="product-card bg-white rounded-xl overflow-hidden shadow-md fade-in delay-100">
+          <div class="relative h-52 overflow-hidden bg-gradient-to-br from-primary/5 to-secondary/10 flex items-center justify-center">
+            <div class="text-center">
+              <i class="fas fa-file-pdf text-6xl text-primary/40 mb-2"></i>
+              <p class="text-primary/50 text-sm font-medium">Product Brochure</p>
+            </div>
           </div>
           <div class="p-5">
             <h3 class="text-lg font-bold mb-1 text-primary" data-lang="product_brochure">Product Brochure</h3>
             <p class="text-dark/60 text-xs mb-1 uppercase tracking-wide">产品手册</p>
-            <p class="text-dark/70 text-sm mb-4" data-lang="product_brochure_desc">Download our full product catalog, including specifications, certifications and packaging information.</p>
+            <p class="text-dark/70 text-sm mb-4" data-lang="product_brochure_desc">Full catalog of AultrasTea products — specifications, packaging, and MOQ details.</p>
             <div class="flex items-center justify-between flex-wrap gap-2">
               <a href="#contact" class="text-secondary font-medium flex items-center gap-1 text-sm hover:gap-2 transition-all"><span data-lang="product_inquiry">Inquiry Now</span><i class="fas fa-arrow-right text-xs"></i></a>
-              <a id="brochure-download-btn" href="#" download class="inline-flex items-center gap-1 bg-primary text-white text-xs font-medium px-3 py-1.5 rounded-full hover:bg-primary/90 transition-colors"><i class="fas fa-download text-xs"></i><span data-lang="download_brochure">Download PDF</span></a>
+              <a id="brochure-download-btn" href="#" onclick="downloadBrochure(event)" class="inline-flex items-center gap-1 bg-primary text-white text-xs font-medium px-3 py-1 rounded-full hover:bg-primary/90 transition-colors"><i class="fas fa-download text-xs mr-1"></i><span data-lang="btn_download_pdf">Download PDF</span></a>
             </div>
           </div>
         </div>
@@ -366,30 +349,8 @@
     </div>
   </section>
 
-  <!-- 最新动态（新闻板块） -->
-  <section id="news" class="py-20 bg-light">
-    <div class="container mx-auto px-4 md:px-6">
-      <div class="text-center mb-14 fade-in">
-        <h2 class="text-[clamp(1.8rem,5vw,3rem)] font-bold mb-4 text-primary" data-lang="news_title">Latest News</h2>
-        <p class="text-dark/70 max-w-2xl mx-auto mb-4" data-lang="news_desc">Stay updated with the latest news and announcements from AultrasTea.</p>
-        <div class="w-24 h-1 bg-secondary mx-auto"></div>
-      </div>
-
-      <!-- 新闻列表容器 -->
-      <div id="news-list" class="space-y-3 max-w-4xl mx-auto fade-in">
-        <!-- 由 JS 渲染 -->
-        <div class="text-center py-12 text-dark/40">
-          <i class="fas fa-newspaper text-4xl mb-3"></i>
-          <p data-lang="news_empty">No news yet. Check back soon.</p>
-        </div>
-      </div>
-
-      <!-- 分页控制 -->
-      <div id="news-pagination" class="flex justify-center items-center gap-2 mt-8 hidden"></div>
-    </div>
-  </section>
-
-  <!-- 资质证书 -->  <section id="certificates" class="py-20 bg-white">
+  <!-- 资质证书 -->
+  <section id="certificates" class="py-20 bg-white">
     <div class="container mx-auto px-4 md:px-6">
       <div class="text-center mb-16 fade-in">
         <h2 class="text-[clamp(1.8rem,5vw,3rem)] font-bold mb-4 text-primary" data-lang="cert_title">Our Certificates</h2>
@@ -451,6 +412,44 @@
       <div id="exh-dots" class="flex justify-center gap-2 mt-8 hidden"></div>
     </div>
   </section>
+
+  <!-- 关于我们（视频版） -->
+  <section id="about" class="py-20 bg-white">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="text-center mb-16 fade-in">
+        <h2 class="text-[clamp(1.8rem,5vw,3rem)] font-bold mb-4 text-primary" data-lang="about_title">About AultrasTea</h2>
+        <div class="w-24 h-1 bg-secondary mx-auto"></div>
+      </div>
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <!-- 左侧：视频展示 -->
+        <div class="fade-in relative order-2 md:order-1">
+          <div class="about-video-wrap" id="about_video_container">
+            <!-- 占位提示，视频由 data.json 注入 -->
+            <div class="absolute inset-0 flex flex-col items-center justify-center text-white/60 text-sm gap-3">
+              <i class="fas fa-play-circle text-5xl text-white/30"></i>
+              <p>Brand Video</p>
+            </div>
+          </div>
+        </div>
+        <!-- 右侧：文字信息 -->
+        <div class="fade-in delay-200 order-1 md:order-2">
+          <p class="text-dark/70 mb-6 leading-relaxed" data-lang="about_p1">
+            Guizhou Aultras Tea Co., Ltd. is a professional tea enterprise integrating tea planting, production, processing and export.
+          </p>
+          <p class="text-dark/70 mb-6 leading-relaxed" data-lang="about_p2">
+            We have our own organic tea plantations in Guizhou and Hunan, with a complete production system and strict quality control system.
+          </p>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 mb-8">
+            <div class="text-center"><h4 class="text-3xl font-bold text-primary mb-2">20+</h4><p class="text-dark/60" data-lang="about_year">Years Experience</p></div>
+            <div class="text-center"><h4 class="text-3xl font-bold text-primary mb-2">70+</h4><p class="text-dark/60" data-lang="about_country">Countries Exported</p></div>
+            <div class="text-center"><h4 class="text-3xl font-bold text-primary mb-2">10+</h4><p class="text-dark/60" data-lang="about_cert">International Certificates</p></div>
+            <div class="text-center"><h4 class="text-3xl font-bold text-primary mb-2">50+</h4><p class="text-dark/60" data-lang="about_product">Tea Products</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
 
   <!-- 联系我们 -->
   <section id="contact" class="py-20 bg-white">
@@ -536,6 +535,39 @@
     </div>
   </footer>
 
+
+  <!-- 展会弹窗（左下角） -->
+  <div id="exh-popup">
+    <div class="exh-popup-header">
+      <div class="flex items-center gap-2">
+        <i class="fas fa-calendar-check text-white/80 text-sm"></i>
+        <span class="text-white font-semibold text-sm" id="popup-section-title">Latest Exhibition</span>
+      </div>
+      <button class="exh-popup-close" onclick="closeExhPopup()"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="exh-popup-body">
+      <div class="flex items-start justify-between mb-2">
+        <h4 class="font-bold text-primary text-base leading-tight" id="popup-exh-name">Exhibition Name</h4>
+        <span class="exh-popup-badge confirmed ml-2 flex-shrink-0" id="popup-exh-badge">Confirmed</span>
+      </div>
+      <p class="text-dark/60 text-sm mb-1 flex items-center gap-1.5">
+        <i class="fas fa-calendar-alt text-secondary text-xs"></i>
+        <span id="popup-exh-date">Date</span>
+      </p>
+      <p class="text-dark/60 text-sm mb-1 flex items-center gap-1.5">
+        <i class="fas fa-map-marker-alt text-secondary text-xs"></i>
+        <span id="popup-exh-location">Location</span>
+      </p>
+      <p class="text-dark/60 text-sm mb-4 flex items-center gap-1.5">
+        <i class="fas fa-door-open text-secondary text-xs"></i>
+        <span data-lang="exh_booth">Booth No.</span>&nbsp;<span id="popup-exh-booth">TBA</span>
+      </p>
+      <a href="#exhibitions" onclick="closeExhPopup()" class="block w-full text-center bg-primary text-white rounded-lg py-2 text-sm font-semibold hover:bg-primary/90 transition-colors">
+        <span data-lang="exh_contact">Make an Appointment</span> →
+      </a>
+    </div>
+  </div>
+
   <button id="backToTop" class="fixed bottom-6 right-6 w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center opacity-0 invisible transition-all z-40 hover:bg-secondary shadow-lg">
     <i class="fas fa-arrow-up"></i>
   </button>
@@ -543,70 +575,11 @@
   <!-- 语言包 -->
   <script>
     const langPack = {
-      en: { meta_title:"AultrasTea | Premium Tea Supplier From China | Organic Tea Wholesale",meta_desc:"AultrasTea, professional Chinese tea manufacturer and exporter.",nav_home:"Home",nav_about:"About Us",nav_products:"Products",nav_certificates:"Certificates",nav_exhibitions:"Exhibitions",nav_contact:"Contact Us",hero_subtitle:"GUIZHOU AULTRAS TEA CO.,LTD",hero_title1:"Premium Tea",hero_title2:"From China To The World",hero_desc:"Professional tea manufacturer and exporter with over 20 years of experience. We supply organic green tea, black tea, white tea, oolong tea and more to 70+ countries worldwide.",hero_btn1:"View Products",hero_btn2:"Contact Us",about_title:"About AultrasTea",about_p1:"Guizhou Aultras Tea Co., Ltd. is a professional tea enterprise integrating tea planting, production, processing and export. We are affiliated to Xiangfeng Tea Group, one of the largest tea enterprises in China, with more than 20 years of experience in tea production and international trade.",about_p2:"We have our own organic tea plantations in Guizhou and Hunan, with a complete production system and strict quality control system. Our products have passed EU organic, US organic, HACCP, ISO and other international certifications, and are exported to more than 70 countries and regions around the world.",about_year:"Years Experience",about_country:"Countries Exported",about_cert:"International Certificates",about_product:"Tea Products",products_title:"Our Products",products_desc:"We provide a full range of tea products, support customized packaging and private labeling, welcome wholesale and bulk orders.",product_green:"Green Tea",product_green_desc:"Chunmee, Gunpowder, Dragon Well, Sencha, Mao Feng etc.",product_black:"Black Tea",product_black_desc:"CTC Black Tea, Golden Snail, Black Fannings, Mao Feng Black Tea etc.",product_oolong:"Oolong Tea",product_oolong_desc:"Da Hong Pao, Tie Guan Yin, Milk Oolong, Ginseng Oolong etc.",product_white:"White Tea",product_white_desc:"White Peony, Silver Needle, Yunnan White Peony etc.",product_yellow:"Yellow Tea",product_yellow_desc:"Jun Shan Yin Zhen, Meng Ding Huang Ya, Huo Shan Huang Ya etc.",product_dark:"Dark Tea",product_dark_desc:"Pu-erh, Liu Bao, Fu Brick, An Hua Dark Tea etc.",product_flower:"Flower Tea",product_flower_desc:"Jasmine Pearls, Blooming Tea, Jasmine Silver Needle, Rose Tea etc.",product_inquiry:"Inquiry Now",view_detail:"View Details",cert_title:"Our Certificates",cert_desc:"Our products have passed multiple international certifications.",cert_eu:"EU Organic",cert_us:"US Organic",cert_haccp:"HACCP",cert_iso:"ISO 9001",cert_fairtrade:"Fair Trade",exh_title:"Upcoming Exhibitions",exh_desc:"We sincerely invite you to visit our booth at the exhibitions.",exh_booth:"Booth No.",exh_contact:"Make an Appointment",contact_title:"Contact Us",contact_desc:"If you have any inquiry about our products, please feel free to contact us, we will reply you within 24 hours.",contact_info:"Contact Information",contact_company:"Company Name",contact_email:"Email",contact_phone:"Phone / WhatsApp",contact_address:"Address",contact_social:"Follow Us",footer_desc:"Professional Chinese tea manufacturer and exporter, supply premium organic tea to the world.",footer_quick:"Quick Links",footer_product:"Product Categories",footer_contact:"Contact",footer_disclaimer:"Disclaimer: This website is for product display and international trade communication only." ,nav_news:"News",news_title:"Latest News",news_desc:"Stay updated with the latest news and announcements from AultrasTea.",news_empty:"No news yet. Check back soon.",product_brochure:"Product Brochure",product_brochure_desc:"Download our full product catalog, including specifications, certifications and packaging information.",download_brochure:"Download PDF"},
-      zh: { meta_title:"AultrasTea | 中国优质茶叶供应商 | 有机茶叶批发",meta_desc:"AultrasTea，专业茶叶生产出口商。",nav_home:"首页",nav_about:"关于我们",nav_products:"产品中心",nav_certificates:"公司资质",nav_exhibitions:"展会动态",nav_contact:"联系我们",hero_subtitle:"贵州湘丰瀑布茶业有限公司",hero_title1:"优质好茶",hero_title2:"从中国走向世界",hero_desc:"拥有20余年行业经验的专业茶叶生产出口商，我们为全球70多个国家供应有机绿茶、红茶、白茶、乌龙茶等全品类茶叶产品。",hero_btn1:"查看产品",hero_btn2:"联系我们",about_title:"关于AultrasTea",about_p1:"贵州湘丰瀑布茶业有限公司是一家集茶叶种植、生产、加工、出口于一体的专业茶叶企业，隶属于中国大型茶叶企业湘丰茶业集团，拥有20余年茶叶生产与国际贸易经验。",about_p2:"我们在贵州、湖南拥有自有有机茶园，完整的生产体系和严格的品控体系，产品通过欧盟有机、美国有机、HACCP、ISO等多项国际认证，出口全球70多个国家和地区。",about_year:"年行业经验",about_country:"出口国家",about_cert:"国际认证",about_product:"茶叶产品",products_title:"我们的产品",products_desc:"我们提供全品类茶叶产品，支持定制包装和自有品牌，欢迎批发和大宗订单咨询。",product_green:"绿茶",product_green_desc:"珍眉、珠茶、龙井茶、煎茶、毛峰等",product_black:"红茶",product_black_desc:"CTC红茶、金螺、红茶片、毛峰红茶等",product_oolong:"乌龙茶",product_oolong_desc:"大红袍、铁观音、奶香乌龙、人参乌龙等",product_white:"白茶",product_white_desc:"白牡丹、白毫银针、云南白牡丹等",product_yellow:"黄茶",product_yellow_desc:"君山银针、蒙顶黄芽、霍山黄芽等",product_dark:"黑茶",product_dark_desc:"普洱茶、六堡茶、茯砖茶、安化黑茶等",product_flower:"工艺茶",product_flower_desc:"茉莉龙珠、工艺花茶、茉莉银针、玫瑰花茶等",product_inquiry:"立即咨询",view_detail:"查看详情",cert_title:"我们的资质",cert_desc:"产品通过多项国际认证，确保每一批茶叶的品质与安全。",cert_eu:"欧盟有机认证",cert_us:"美国有机认证",cert_haccp:"HACCP认证",cert_iso:"ISO 9001认证",cert_fairtrade:"公平贸易认证",exh_title:"即将参加的展会",exh_desc:"我们诚挚邀请您莅临展会展位，与我们面对面交流合作。",exh_booth:"展位号",exh_contact:"预约见面",contact_title:"联系我们",contact_desc:"如果您对我们的产品有任何咨询，欢迎随时联系我们，我们将在24小时内给您回复。",contact_info:"联系方式",contact_company:"公司名称",contact_email:"邮箱",contact_phone:"电话 / WhatsApp",contact_address:"地址",contact_social:"关注我们",footer_desc:"专业的中国茶叶生产出口商，为全球供应优质有机茶叶。",footer_quick:"快速导航",footer_product:"产品分类",footer_contact:"联系我们",footer_disclaimer:"免责声明：本网站仅用于产品展示与国际贸易沟通使用。" ,nav_news:"新闻动态",news_title:"最新动态",news_desc:"了解AultrasTea的最新资讯与公告。",news_empty:"暂无新闻，敬请期待。",product_brochure:"产品手册",product_brochure_desc:"下载我们完整的产品目录，包含规格参数、认证证书和包装信息。",download_brochure:"下载PDF"},
-      ru: { meta_title:"AultrasTea | Поставщик чая из Китая",meta_desc:"AultrasTea, профессиональный производитель и экспортер чая.",nav_home:"Главная",nav_about:"О нас",nav_products:"Продукция",nav_certificates:"Сертификаты",nav_exhibitions:"Выставки",nav_contact:"Контакты",hero_subtitle:"ГУЙЧЖОУ АУЛЬТРАС ЧАЙ КО.,ЛТД",hero_title1:"Премиальный чай",hero_title2:"Из Китая по всему миру",hero_desc:"Профессиональный производитель и экспортер чая с более чем 20-летним опытом.",hero_btn1:"Посмотреть продукцию",hero_btn2:"Связаться с нами",about_title:"О компании AultrasTea",about_p1:"Guizhou Aultras Tea Co., Ltd. — профессиональное чайное предприятие.",about_p2:"У нас есть собственные органические чайные плантации в Гуйчжоу и Хунани.",about_year:"Лет опыта",about_country:"Стран экспорта",about_cert:"Международные сертификаты",about_product:"Виды чая",products_title:"Наша продукция",products_desc:"Полный ассортимент чайной продукции.",product_green:"Зеленый чай",product_green_desc:"Чунмэй, Ганпаудер, Драконий колодец, Сенча и др.",product_black:"Черный чай",product_black_desc:"Черный чай CTC, Золотая улитка и др.",product_oolong:"Улун",product_oolong_desc:"Да Хун Пао, Те Гуань Инь и др.",product_white:"Белый чай",product_white_desc:"Белый пион, Серебряная игла и др.",product_yellow:"Желтый чай",product_yellow_desc:"Цзюньшань Иньчжэнь, Мэндин Хуан Я и др.",product_dark:"Темный чай",product_dark_desc:"Пуэр, Лю Бао, Фу Кирпич и др.",product_flower:"Цветочный чай",product_flower_desc:"Жасминовые жемчужины, цветущий чай и др.",product_inquiry:"Запросить цену",view_detail:"Подробнее",cert_title:"Наши сертификаты",cert_desc:"Международные сертификации качества.",cert_eu:"Органический ЕС",cert_us:"Органический США",cert_haccp:"HACCP",cert_iso:"ISO 9001",cert_fairtrade:"Справедливая торговля",exh_title:"Предстоящие выставки",exh_desc:"Приглашаем посетить наш стенд.",exh_booth:"Номер стенда",exh_contact:"Записаться на встречу",contact_title:"Связаться с нами",contact_desc:"Свяжитесь с нами, мы ответим в течение 24 часов.",contact_info:"Контактная информация",contact_company:"Название компании",contact_email:"Электронная почта",contact_phone:"Телефон / WhatsApp",contact_address:"Адрес",contact_social:"Подписывайтесь на нас",footer_desc:"Профессиональный производитель и экспортер чая из Китая.",footer_quick:"Быстрые ссылки",footer_product:"Категории продукции",footer_contact:"Контакты",footer_disclaimer:"Этот сайт предназначен только для демонстрации продукции." ,nav_news:"Новости",news_title:"Последние новости",news_desc:"Следите за последними новостями AultrasTea.",news_empty:"Новостей пока нет. Загляните позже.",product_brochure:"Каталог продукции",product_brochure_desc:"Скачайте наш полный каталог продукции с характеристиками и сертификатами.",download_brochure:"Скачать PDF"},
-      de: { meta_title:"AultrasTea | Premium Tee aus China",meta_desc:"AultrasTea, professioneller Tee Hersteller und Exporteur.",nav_home:"Startseite",nav_about:"Über Uns",nav_products:"Produkte",nav_certificates:"Zertifikate",nav_exhibitions:"Messen",nav_contact:"Kontakt",hero_subtitle:"GUIZHOU AULTRAS TEA CO.,LTD",hero_title1:"Premium Tee",hero_title2:"Aus China in die Welt",hero_desc:"Professioneller Tee Hersteller und Exporteur mit über 20 Jahren Erfahrung.",hero_btn1:"Produkte Ansehen",hero_btn2:"Kontakt Aufnehmen",about_title:"Über AultrasTea",about_p1:"Guizhou Aultras Tea Co., Ltd. ist ein professionelles Tee-Unternehmen.",about_p2:"Wir haben eigene Bio-Teeplantagen in Guizhou und Hunan.",about_year:"Jahre Erfahrung",about_country:"Exportländer",about_cert:"Internationale Zertifikate",about_product:"Teesorten",products_title:"Unsere Produkte",products_desc:"Vollständiges Sortiment an Tee-Produkten.",product_green:"Grüntee",product_green_desc:"Chunmee, Gunpowder, Dragon Well usw.",product_black:"Schwarztee",product_black_desc:"CTC Schwarztee, Goldene Schnecke usw.",product_oolong:"Oolong Tee",product_oolong_desc:"Da Hong Pao, Tie Guan Yin usw.",product_white:"Weißtee",product_white_desc:"Weiße Pfingstrose, Silberne Nadel usw.",product_yellow:"Gelbtee",product_yellow_desc:"Jun Shan Yin Zhen, Meng Ding Huang Ya usw.",product_dark:"Dunkeltee",product_dark_desc:"Pu Erh, Liu Bao, Fu Backsteinweise usw.",product_flower:"Blumentee",product_flower_desc:"Jasminperlen, blühender Tee usw.",product_inquiry:"Jetzt Anfragen",view_detail:"Mehr Details",cert_title:"Unsere Zertifikate",cert_desc:"Internationale Zertifizierungen.",cert_eu:"EU Bio",cert_us:"US Bio",cert_haccp:"HACCP",cert_iso:"ISO 9001",cert_fairtrade:"Fairer Handel",exh_title:"Anstehende Messen",exh_desc:"Besuchen Sie unseren Stand auf den Messen.",exh_booth:"Standnummer",exh_contact:"Termin Vereinbaren",contact_title:"Kontaktieren Sie Uns",contact_desc:"Kontaktieren Sie uns, wir antworten innerhalb von 24 Stunden.",contact_info:"Kontaktinformationen",contact_company:"Firmenname",contact_email:"E-Mail",contact_phone:"Telefon / WhatsApp",contact_address:"Adresse",contact_social:"Folgen Sie Uns",footer_desc:"Professioneller Tee Hersteller und Exporteur aus China.",footer_quick:"Schnellzugriff",footer_product:"Produktkategorien",footer_contact:"Kontakt",footer_disclaimer:"Diese Website dient nur der Produktpräsentation." ,nav_news:"Neuigkeiten",news_title:"Aktuelle Neuigkeiten",news_desc:"Bleiben Sie über AultrasTea auf dem Laufenden.",news_empty:"Noch keine Neuigkeiten. Schauen Sie bald wieder vorbei.",product_brochure:"Produktkatalog",product_brochure_desc:"Laden Sie unseren vollständigen Produktkatalog mit Spezifikationen und Zertifikaten herunter.",download_brochure:"PDF herunterladen"}
+      en: { meta_title:"AultrasTea | Premium Tea Supplier From China | Organic Tea Wholesale",meta_desc:"AultrasTea, professional Chinese tea manufacturer and exporter.",nav_home:"Home",nav_about:"About Us",nav_products:"Products",nav_certificates:"Certificates",nav_exhibitions:"Exhibitions",nav_contact:"Contact Us",hero_subtitle:"GUIZHOU AULTRAS TEA CO.,LTD",hero_title1:"Premium Tea",hero_title2:"From China To The World",hero_desc:"Professional tea manufacturer and exporter with over 20 years of experience. We supply organic green tea, black tea, white tea, oolong tea and more to 70+ countries worldwide.",hero_btn1:"View Products",hero_btn2:"Contact Us",about_title:"About AultrasTea",about_p1:"Guizhou Aultras Tea Co., Ltd. is a professional tea enterprise integrating tea planting, production, processing and export. We are affiliated to Xiangfeng Tea Group, one of the largest tea enterprises in China, with more than 20 years of experience in tea production and international trade.",about_p2:"We have our own organic tea plantations in Guizhou and Hunan, with a complete production system and strict quality control system. Our products have passed EU organic, US organic, HACCP, ISO and other international certifications, and are exported to more than 70 countries and regions around the world.",about_year:"Years Experience",about_country:"Countries Exported",about_cert:"International Certificates",about_product:"Tea Products",products_title:"Our Products",products_desc:"We provide a full range of tea products, support customized packaging and private labeling, welcome wholesale and bulk orders.",product_green:"Green Tea",product_green_desc:"Chunmee, Gunpowder, Dragon Well, Sencha, Mao Feng etc.",product_black:"Black Tea",product_black_desc:"CTC Black Tea, Golden Snail, Black Fannings, Mao Feng Black Tea etc.",product_oolong:"Oolong Tea",product_oolong_desc:"Da Hong Pao, Tie Guan Yin, Milk Oolong, Ginseng Oolong etc.",product_white:"White Tea",product_white_desc:"White Peony, Silver Needle, Yunnan White Peony etc.",product_yellow:"Yellow Tea",product_yellow_desc:"Jun Shan Yin Zhen, Meng Ding Huang Ya, Huo Shan Huang Ya etc.",product_dark:"Dark Tea",product_dark_desc:"Pu-erh, Liu Bao, Fu Brick, An Hua Dark Tea etc.",product_flower:"Flower Tea",product_flower_desc:"Jasmine Pearls, Blooming Tea, Jasmine Silver Needle, Rose Tea etc.",product_inquiry:"Inquiry Now",view_detail:"View Details",cert_title:"Certificates & Honors",cert_desc:"Our products have passed multiple international certifications.",cert_eu:"EU Organic",cert_us:"US Organic",cert_haccp:"HACCP",cert_iso:"ISO 9001",cert_fairtrade:"Fair Trade",exh_title:"Upcoming Exhibitions",exh_desc:"We sincerely invite you to visit our booth at the exhibitions.",exh_booth:"Booth No.",exh_contact:"Make an Appointment",contact_title:"Contact Us",contact_desc:"If you have any inquiry about our products, please feel free to contact us, we will reply you within 24 hours.",contact_info:"Contact Information",contact_company:"Company Name",contact_email:"Email",contact_phone:"Phone / WhatsApp",contact_address:"Address",contact_social:"Follow Us",footer_desc:"Professional Chinese tea manufacturer and exporter, supply premium organic tea to the world.",footer_quick:"Quick Links",footer_product:"Product Categories",footer_contact:"Contact",footer_disclaimer:"Disclaimer: This website is for product display and international trade communication only." },
+      zh: { meta_title:"AultrasTea | 中国优质茶叶供应商 | 有机茶叶批发",meta_desc:"AultrasTea，专业茶叶生产出口商。",nav_home:"首页",nav_about:"关于我们",nav_products:"产品中心",nav_certificates:"公司资质",nav_exhibitions:"展会动态",nav_contact:"联系我们",hero_subtitle:"贵州湘丰瀑布茶业有限公司",hero_title1:"优质好茶",hero_title2:"从中国走向世界",hero_desc:"拥有20余年行业经验的专业茶叶生产出口商，我们为全球70多个国家供应有机绿茶、红茶、白茶、乌龙茶等全品类茶叶产品。",hero_btn1:"查看产品",hero_btn2:"联系我们",about_title:"关于AultrasTea",about_p1:"贵州湘丰瀑布茶业有限公司是一家集茶叶种植、生产、加工、出口于一体的专业茶叶企业，隶属于中国大型茶叶企业湘丰茶业集团，拥有20余年茶叶生产与国际贸易经验。",about_p2:"我们在贵州、湖南拥有自有有机茶园，完整的生产体系和严格的品控体系，产品通过欧盟有机、美国有机、HACCP、ISO等多项国际认证，出口全球70多个国家和地区。",about_year:"年行业经验",about_country:"出口国家",about_cert:"国际认证",about_product:"茶叶产品",products_title:"我们的产品",products_desc:"我们提供全品类茶叶产品，支持定制包装和自有品牌，欢迎批发和大宗订单咨询。",product_green:"绿茶",product_green_desc:"珍眉、珠茶、龙井茶、煎茶、毛峰等",product_black:"红茶",product_black_desc:"CTC红茶、金螺、红茶片、毛峰红茶等",product_oolong:"乌龙茶",product_oolong_desc:"大红袍、铁观音、奶香乌龙、人参乌龙等",product_white:"白茶",product_white_desc:"白牡丹、白毫银针、云南白牡丹等",product_yellow:"黄茶",product_yellow_desc:"君山银针、蒙顶黄芽、霍山黄芽等",product_dark:"黑茶",product_dark_desc:"普洱茶、六堡茶、茯砖茶、安化黑茶等",product_flower:"工艺茶",product_flower_desc:"茉莉龙珠、工艺花茶、茉莉银针、玫瑰花茶等",product_inquiry:"立即咨询",view_detail:"查看详情",cert_title:"我们的资质",cert_desc:"产品通过多项国际认证，确保每一批茶叶的品质与安全。",cert_eu:"欧盟有机认证",cert_us:"美国有机认证",cert_haccp:"HACCP认证",cert_iso:"ISO 9001认证",cert_fairtrade:"公平贸易认证",exh_title:"即将参加的展会",exh_desc:"我们诚挚邀请您莅临展会展位，与我们面对面交流合作。",exh_booth:"展位号",exh_contact:"预约见面",contact_title:"联系我们",contact_desc:"如果您对我们的产品有任何咨询，欢迎随时联系我们，我们将在24小时内给您回复。",contact_info:"联系方式",contact_company:"公司名称",contact_email:"邮箱",contact_phone:"电话 / WhatsApp",contact_address:"地址",contact_social:"关注我们",footer_desc:"专业的中国茶叶生产出口商，为全球供应优质有机茶叶。",footer_quick:"快速导航",footer_product:"产品分类",footer_contact:"联系我们",footer_disclaimer:"免责声明：本网站仅用于产品展示与国际贸易沟通使用。" },
+      ru: { meta_title:"AultrasTea | Поставщик чая из Китая",meta_desc:"AultrasTea, профессиональный производитель и экспортер чая.",nav_home:"Главная",nav_about:"О нас",nav_products:"Продукция",nav_certificates:"Сертификаты",nav_exhibitions:"Выставки",nav_contact:"Контакты",hero_subtitle:"ГУЙЧЖОУ АУЛЬТРАС ЧАЙ КО.,ЛТД",hero_title1:"Премиальный чай",hero_title2:"Из Китая по всему миру",hero_desc:"Профессиональный производитель и экспортер чая с более чем 20-летним опытом.",hero_btn1:"Посмотреть продукцию",hero_btn2:"Связаться с нами",about_title:"О компании AultrasTea",about_p1:"Guizhou Aultras Tea Co., Ltd. — профессиональное чайное предприятие.",about_p2:"У нас есть собственные органические чайные плантации в Гуйчжоу и Хунани.",about_year:"Лет опыта",about_country:"Стран экспорта",about_cert:"Международные сертификаты",about_product:"Виды чая",products_title:"Наша продукция",products_desc:"Полный ассортимент чайной продукции.",product_green:"Зеленый чай",product_green_desc:"Чунмэй, Ганпаудер, Драконий колодец, Сенча и др.",product_black:"Черный чай",product_black_desc:"Черный чай CTC, Золотая улитка и др.",product_oolong:"Улун",product_oolong_desc:"Да Хун Пао, Те Гуань Инь и др.",product_white:"Белый чай",product_white_desc:"Белый пион, Серебряная игла и др.",product_yellow:"Желтый чай",product_yellow_desc:"Цзюньшань Иньчжэнь, Мэндин Хуан Я и др.",product_dark:"Темный чай",product_dark_desc:"Пуэр, Лю Бао, Фу Кирпич и др.",product_flower:"Цветочный чай",product_flower_desc:"Жасминовые жемчужины, цветущий чай и др.",product_inquiry:"Запросить цену",view_detail:"Подробнее",cert_title:"Наши сертификаты",cert_desc:"Международные сертификации качества.",cert_eu:"Органический ЕС",cert_us:"Органический США",cert_haccp:"HACCP",cert_iso:"ISO 9001",cert_fairtrade:"Справедливая торговля",exh_title:"Предстоящие выставки",exh_desc:"Приглашаем посетить наш стенд.",exh_booth:"Номер стенда",exh_contact:"Записаться на встречу",contact_title:"Связаться с нами",contact_desc:"Свяжитесь с нами, мы ответим в течение 24 часов.",contact_info:"Контактная информация",contact_company:"Название компании",contact_email:"Электронная почта",contact_phone:"Телефон / WhatsApp",contact_address:"Адрес",contact_social:"Подписывайтесь на нас",footer_desc:"Профессиональный производитель и экспортер чая из Китая.",footer_quick:"Быстрые ссылки",footer_product:"Категории продукции",footer_contact:"Контакты",footer_disclaimer:"Этот сайт предназначен только для демонстрации продукции." },
+      de: { meta_title:"AultrasTea | Premium Tee aus China",meta_desc:"AultrasTea, professioneller Tee Hersteller und Exporteur.",nav_home:"Startseite",nav_about:"Über Uns",nav_products:"Produkte",nav_certificates:"Zertifikate",nav_exhibitions:"Messen",nav_contact:"Kontakt",hero_subtitle:"GUIZHOU AULTRAS TEA CO.,LTD",hero_title1:"Premium Tee",hero_title2:"Aus China in die Welt",hero_desc:"Professioneller Tee Hersteller und Exporteur mit über 20 Jahren Erfahrung.",hero_btn1:"Produkte Ansehen",hero_btn2:"Kontakt Aufnehmen",about_title:"Über AultrasTea",about_p1:"Guizhou Aultras Tea Co., Ltd. ist ein professionelles Tee-Unternehmen.",about_p2:"Wir haben eigene Bio-Teeplantagen in Guizhou und Hunan.",about_year:"Jahre Erfahrung",about_country:"Exportländer",about_cert:"Internationale Zertifikate",about_product:"Teesorten",products_title:"Unsere Produkte",products_desc:"Vollständiges Sortiment an Tee-Produkten.",product_green:"Grüntee",product_green_desc:"Chunmee, Gunpowder, Dragon Well usw.",product_black:"Schwarztee",product_black_desc:"CTC Schwarztee, Goldene Schnecke usw.",product_oolong:"Oolong Tee",product_oolong_desc:"Da Hong Pao, Tie Guan Yin usw.",product_white:"Weißtee",product_white_desc:"Weiße Pfingstrose, Silberne Nadel usw.",product_yellow:"Gelbtee",product_yellow_desc:"Jun Shan Yin Zhen, Meng Ding Huang Ya usw.",product_dark:"Dunkeltee",product_dark_desc:"Pu Erh, Liu Bao, Fu Backsteinweise usw.",product_flower:"Blumentee",product_flower_desc:"Jasminperlen, blühender Tee usw.",product_inquiry:"Jetzt Anfragen",view_detail:"Mehr Details",cert_title:"Zertifikate & Auszeichnungen",cert_desc:"Internationale Zertifizierungen.",cert_eu:"EU Bio",cert_us:"US Bio",cert_haccp:"HACCP",cert_iso:"ISO 9001",cert_fairtrade:"Fairer Handel",exh_title:"Anstehende Messen",exh_desc:"Besuchen Sie unseren Stand auf den Messen.",exh_booth:"Standnummer",exh_contact:"Termin Vereinbaren",contact_title:"Kontaktieren Sie Uns",contact_desc:"Kontaktieren Sie uns, wir antworten innerhalb von 24 Stunden.",contact_info:"Kontaktinformationen",contact_company:"Firmenname",contact_email:"E-Mail",contact_phone:"Telefon / WhatsApp",contact_address:"Adresse",contact_social:"Folgen Sie Uns",footer_desc:"Professioneller Tee Hersteller und Exporteur aus China.",footer_quick:"Schnellzugriff",footer_product:"Produktkategorien",footer_contact:"Kontakt",footer_disclaimer:"Diese Website dient nur der Produktpräsentation." }
     };
-
-
-    // ===== 新闻板块（分页，20条/页）=====
-    let newsData = [];
-    const NEWS_PER_PAGE = 20;
-    let newsCurrentPage = 1;
-
-    function renderNews(page) {
-      newsCurrentPage = page;
-      const listEl = document.getElementById('news-list');
-      const pagEl  = document.getElementById('news-pagination');
-      const lang   = document.getElementById('langSelect')?.value || 'en';
-
-      if (!newsData.length) {
-        listEl.innerHTML = `<div class="text-center py-12 text-dark/40">
-          <i class="fas fa-newspaper text-4xl mb-3"></i>
-          <p>${(langPack[lang] && langPack[lang]['news_empty']) || 'No news yet.'}</p>
-        </div>`;
-        pagEl.classList.add('hidden');
-        return;
-      }
-
-      const total = newsData.length;
-      const totalPages = Math.ceil(total / NEWS_PER_PAGE);
-      const p = Math.max(1, Math.min(page, totalPages));
-      const start = (p - 1) * NEWS_PER_PAGE;
-      const items = newsData.slice(start, start + NEWS_PER_PAGE);
-
-      listEl.innerHTML = items.map(n => `
-        <div class="news-item flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-4">
-          <span class="text-xs text-dark/40 whitespace-nowrap pt-0.5 min-w-[90px]">${n.date || ''}</span>
-          <div class="flex-1">
-            <p class="text-dark font-medium text-sm leading-snug">${n.title || ''}</p>
-            ${n.summary ? `<p class="text-dark/60 text-xs mt-1">${n.summary}</p>` : ''}
-          </div>
-          ${n.link ? `<a href="${n.link}" target="_blank" rel="noopener" class="text-xs text-primary hover:text-secondary font-medium whitespace-nowrap flex items-center gap-1 mt-1 sm:mt-0"><span>Read More</span><i class="fas fa-external-link-alt text-xs"></i></a>` : ''}
-        </div>`).join('');
-
-      // 分页按钮
-      if (totalPages > 1) {
-        pagEl.classList.remove('hidden');
-        let paginationHtml = '';
-        // 上一页
-        paginationHtml += `<button class="news-page-btn ${p===1?'opacity-40 cursor-not-allowed':''}" onclick="renderNews(${p-1})" ${p===1?'disabled':''}><i class="fas fa-chevron-left text-xs"></i></button>`;
-        // 页码
-        for (let i = 1; i <= totalPages; i++) {
-          if (i === 1 || i === totalPages || (i >= p - 1 && i <= p + 1)) {
-            paginationHtml += `<button class="news-page-btn ${i===p?'active':''}" onclick="renderNews(${i})">${i}</button>`;
-          } else if (i === p - 2 || i === p + 2) {
-            paginationHtml += `<span class="news-page-btn ellipsis">…</span>`;
-          }
-        }
-        // 下一页
-        paginationHtml += `<button class="news-page-btn ${p===totalPages?'opacity-40 cursor-not-allowed':''}" onclick="renderNews(${p+1})" ${p===totalPages?'disabled':''}><i class="fas fa-chevron-right text-xs"></i></button>`;
-        pagEl.innerHTML = paginationHtml;
-      } else {
-        pagEl.classList.add('hidden');
-      }
-    }
 
     // ===== 展会轮播 =====
     let exhIndex = 0;
@@ -786,18 +759,6 @@
         }
         if (certUrls.length > 0) renderCertificates(certUrls);
 
-
-        // 新闻动态
-        if (data.news && data.news.length) {
-          newsData = data.news.slice().reverse(); // 最新的在前
-          renderNews(1);
-        }
-
-        // 产品手册下载链接
-        if (data.brochure_url) {
-          const btn = document.getElementById('brochure-download-btn');
-          if (btn) btn.href = data.brochure_url;
-        }
         // 联系方式动态替换
         if (data.contact_info) {
           const ci = data.contact_info;
@@ -817,15 +778,41 @@
           }
         }
 
-        // 关于我们视频
+        // 关于我们视频（支持 direct_url MP4 直链 和 embed_code iframe 两种）
         const aboutVC = document.getElementById('about_video_container');
-        if(aboutVC && data.about_video && data.about_video.embed_code) {
-          aboutVC.innerHTML = data.about_video.embed_code;
+        if (aboutVC && data.about_video) {
+          const durl = data.about_video.direct_url;
+          const embed = data.about_video.embed_code;
+          if (durl && durl.trim()) {
+            aboutVC.innerHTML = '<video src="' + durl + '" autoplay muted loop playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border:none;"></video>';
+          } else if (embed && embed.trim()) {
+            aboutVC.innerHTML = embed;
+          }
         }
 
         // 展会
         if(data.exhibitions && data.exhibitions.length) {
           renderExhibitions(data.exhibitions);
+          showExhPopup(data.exhibitions);
+        }
+
+
+        // 产品手册 PDF 下载链接
+        if (data.brochure_url) {
+          const btn = document.getElementById('brochure-download-btn');
+          if (btn) btn.href = data.brochure_url;
+        }
+
+        // 资质认证徽标图标（支持图片替换）
+        if (data.cert_icons) {
+          const certIconKeys = ['cert_eu','cert_us','cert_haccp','cert_iso','cert_fairtrade'];
+          certIconKeys.forEach(key => {
+            const url = data.cert_icons[key];
+            const container = document.querySelector('[data-cert-icon="' + key + '"]');
+            if (container && url) {
+              container.innerHTML = '<img src="' + url + '" alt="' + key + '" class="w-16 h-16 object-contain mx-auto mb-3">';
+            }
+          });
         }
 
         // 社媒链接
@@ -859,8 +846,6 @@
     // ===== 语言切换 =====
     const langSelect = document.getElementById('langSelect');
     function switchLang(lang) {
-      // 刷新新闻列表（empty 提示可能需要翻译）
-      if (newsData && newsData.length === 0) setTimeout(() => renderNews(newsCurrentPage), 0);
       document.querySelectorAll('[data-lang]').forEach(el => {
         const key = el.getAttribute('data-lang');
         if(langPack[lang] && langPack[lang][key]) el.textContent = langPack[lang][key];
