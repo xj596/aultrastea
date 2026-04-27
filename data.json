@@ -39,8 +39,8 @@
     "address_2": "Anshun, Guizhou Province, China"
   },
   "about_video": {
-    "embed_code": "<div style=\"position:relative; width:100%; height:0px; padding-bottom:56.250%\"><iframe allow=\"fullscreen;autoplay\" allowfullscreen height=\"100%\" src=\"https://streamable.com/e/1p8szp?autoplay=1&nocontrols=1\" width=\"100%\" style=\"border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden;\"></iframe></div>",
-    "direct_url": ""
+    "embed_code": "",
+    "direct_url": "https://ik.imagekit.io/taclov2ip/jimeng-2026-04-17-3848-要求不生成背景音乐_只生成音效_正向提示词%20首帧与参考图%20100_%20完全统一_国....mp4?tr=orig"
   },
   "social_links": [
     {
@@ -99,13 +99,13 @@
       "id": 1,
       "date": "2026-04-01",
       "title_en": "AultrasTea Debuts at UzFood 2026 in Tashkent",
-      "title_zh": "AultrasTea亮相2026塔什干乌兹别克食品展",
-      "title_ru": "AultrasTea дебютирует на UzFood 2026 в Ташкенте",
-      "title_de": "AultrasTea debütiert auf der UzFood 2026 in Taschkent",
+      "title_zh": "AultrasTeaäº®ç¸2026å¡ä»å¹²ä¹å¹å«åé£åå±",
+      "title_ru": "AultrasTea Ð´ÐµÐ±ÑÑÐ¸ÑÑÐµÑ Ð½Ð° UzFood 2026 Ð² Ð¢Ð°ÑÐºÐµÐ½ÑÐµ",
+      "title_de": "AultrasTea debÃ¼tiert auf der UzFood 2026 in Taschkent",
       "summary_en": "Our team successfully participated in UzFood 2026, showcasing our premium organic tea series and connecting with buyers from Central Asia.",
-      "summary_zh": "我们的团队成功参加了2026年乌兹别克斯坦食品展，展示了有机茶叶系列产品，与来自中亚各国的采购商深入交流。",
-      "summary_ru": "Наша команда успешно приняла участие в UzFood 2026, представив серию органических чаёв и познакомившись с покупателями из Центральной Азии.",
-      "summary_de": "Unser Team nahm erfolgreich an der UzFood 2026 teil und präsentierte unsere Premium-Bio-Tee-Serie.",
+      "summary_zh": "æä»¬çå¢éæååå äº2026å¹´ä¹å¹å«åæ¯å¦é£åå±ï¼å±ç¤ºäºææºè¶å¶ç³»åäº§åï¼ä¸æ¥èªä¸­äºåå½çéè´­åæ·±å¥äº¤æµã",
+      "summary_ru": "ÐÐ°ÑÐ° ÐºÐ¾Ð¼Ð°Ð½Ð´Ð° ÑÑÐ¿ÐµÑÐ½Ð¾ Ð¿ÑÐ¸Ð½ÑÐ»Ð° ÑÑÐ°ÑÑÐ¸Ðµ Ð² UzFood 2026, Ð¿ÑÐµÐ´ÑÑÐ°Ð²Ð¸Ð² ÑÐµÑÐ¸Ñ Ð¾ÑÐ³Ð°Ð½Ð¸ÑÐµÑÐºÐ¸Ñ ÑÐ°ÑÐ² Ð¸ Ð¿Ð¾Ð·Ð½Ð°ÐºÐ¾Ð¼Ð¸Ð²ÑÐ¸ÑÑ Ñ Ð¿Ð¾ÐºÑÐ¿Ð°ÑÐµÐ»ÑÐ¼Ð¸ Ð¸Ð· Ð¦ÐµÐ½ÑÑÐ°Ð»ÑÐ½Ð¾Ð¹ ÐÐ·Ð¸Ð¸.",
+      "summary_de": "Unser Team nahm erfolgreich an der UzFood 2026 teil und prÃ¤sentierte unsere Premium-Bio-Tee-Serie.",
       "image": "",
       "link": ""
     },
@@ -113,13 +113,13 @@
       "id": 2,
       "date": "2026-03-15",
       "title_en": "AultrasTea Launches New Organic Green Tea Line",
-      "title_zh": "AultrasTea推出全新有机绿茶系列",
-      "title_ru": "AultrasTea запускает новую линейку органического зелёного чая",
-      "title_de": "AultrasTea bringt neue Bio-Grüntee-Linie auf den Markt",
+      "title_zh": "AultrasTeaæ¨åºå¨æ°ææºç»¿è¶ç³»å",
+      "title_ru": "AultrasTea Ð·Ð°Ð¿ÑÑÐºÐ°ÐµÑ Ð½Ð¾Ð²ÑÑ Ð»Ð¸Ð½ÐµÐ¹ÐºÑ Ð¾ÑÐ³Ð°Ð½Ð¸ÑÐµÑÐºÐ¾Ð³Ð¾ Ð·ÐµÐ»ÑÐ½Ð¾Ð³Ð¾ ÑÐ°Ñ",
+      "title_de": "AultrasTea bringt neue Bio-GrÃ¼ntee-Linie auf den Markt",
       "summary_en": "We are proud to introduce our latest organic green tea collection, featuring Chunmee and Gunpowder varieties certified by EU and USDA organic standards.",
-      "summary_zh": "我们自豪地推出最新有机绿茶系列，包含珍眉和珠茶品种，已获得欧盟及美国农业部有机认证。",
-      "summary_ru": "С гордостью представляем новую коллекцию органического зелёного чая с сортами Чунмэй и Ганпаудер.",
-      "summary_de": "Wir stellen unsere neueste Bio-Grüntee-Kollektion vor, mit Chunmee- und Gunpowder-Sorten.",
+      "summary_zh": "æä»¬èªè±ªå°æ¨åºææ°ææºç»¿è¶ç³»åï¼åå«ççåç è¶åç§ï¼å·²è·å¾æ¬§çåç¾å½åä¸é¨ææºè®¤è¯ã",
+      "summary_ru": "Ð¡ Ð³Ð¾ÑÐ´Ð¾ÑÑÑÑ Ð¿ÑÐµÐ´ÑÑÐ°Ð²Ð»ÑÐµÐ¼ Ð½Ð¾Ð²ÑÑ ÐºÐ¾Ð»Ð»ÐµÐºÑÐ¸Ñ Ð¾ÑÐ³Ð°Ð½Ð¸ÑÐµÑÐºÐ¾Ð³Ð¾ Ð·ÐµÐ»ÑÐ½Ð¾Ð³Ð¾ ÑÐ°Ñ Ñ ÑÐ¾ÑÑÐ°Ð¼Ð¸ Ð§ÑÐ½Ð¼ÑÐ¹ Ð¸ ÐÐ°Ð½Ð¿Ð°ÑÐ´ÐµÑ.",
+      "summary_de": "Wir stellen unsere neueste Bio-GrÃ¼ntee-Kollektion vor, mit Chunmee- und Gunpowder-Sorten.",
       "image": "",
       "link": ""
     }
