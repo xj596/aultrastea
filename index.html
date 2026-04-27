@@ -340,7 +340,7 @@
             <p class="text-dark/70 text-sm mb-4" data-lang="product_brochure_desc">Full catalog of AultrasTea products — specifications, packaging, and MOQ details.</p>
             <div class="flex items-center justify-between flex-wrap gap-2">
               <a href="#contact" class="text-secondary font-medium flex items-center gap-1 text-sm hover:gap-2 transition-all"><span data-lang="product_inquiry">Inquiry Now</span><i class="fas fa-arrow-right text-xs"></i></a>
-              <a id="brochure-download-btn" href="#" onclick="downloadBrochure(event)" class="inline-flex items-center gap-1 bg-primary text-white text-xs font-medium px-3 py-1 rounded-full hover:bg-primary/90 transition-colors"><i class="fas fa-download text-xs mr-1"></i><span data-lang="btn_download_pdf">Download PDF</span></a>
+              <a id="brochure-download-btn" href="#" target="_blank" rel="noopener" onclick="openBrochure(event)" class="inline-flex items-center gap-1 bg-primary text-white text-xs font-medium px-3 py-1 rounded-full hover:bg-primary/90 transition-colors"><i class="fas fa-download text-xs mr-1"></i><span data-lang="btn_download_pdf">Download PDF</span></a>
             </div>
           </div>
         </div>
@@ -358,13 +358,13 @@
         <div class="w-24 h-1 bg-secondary mx-auto"></div>
       </div>
 
-      <!-- 认证徽标行 -->
+      <!-- 认证徽标行：data-cert-icon 属性供 JS 替换图片使用 -->
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 fade-in mb-12">
-        <div class="text-center p-4 border border-primary/10 rounded-lg hover:border-primary/30 transition-all"><i class="fas fa-certificate text-4xl text-primary mb-3"></i><p class="font-medium" data-lang="cert_eu">EU Organic</p></div>
-        <div class="text-center p-4 border border-primary/10 rounded-lg hover:border-primary/30 transition-all"><i class="fas fa-certificate text-4xl text-primary mb-3"></i><p class="font-medium" data-lang="cert_us">US Organic</p></div>
-        <div class="text-center p-4 border border-primary/10 rounded-lg hover:border-primary/30 transition-all"><i class="fas fa-certificate text-4xl text-primary mb-3"></i><p class="font-medium" data-lang="cert_haccp">HACCP</p></div>
-        <div class="text-center p-4 border border-primary/10 rounded-lg hover:border-primary/30 transition-all"><i class="fas fa-certificate text-4xl text-primary mb-3"></i><p class="font-medium" data-lang="cert_iso">ISO 9001</p></div>
-        <div class="text-center p-4 border border-primary/10 rounded-lg hover:border-primary/30 transition-all"><i class="fas fa-certificate text-4xl text-primary mb-3"></i><p class="font-medium" data-lang="cert_fairtrade">Fair Trade</p></div>
+        <div class="text-center p-4 border border-primary/10 rounded-lg hover:border-primary/30 transition-all" data-cert-icon="cert_eu"><div class="cert-icon-wrap"><i class="fas fa-certificate text-4xl text-primary mb-3"></i></div><p class="font-medium" data-lang="cert_eu">EU Organic</p></div>
+        <div class="text-center p-4 border border-primary/10 rounded-lg hover:border-primary/30 transition-all" data-cert-icon="cert_us"><div class="cert-icon-wrap"><i class="fas fa-certificate text-4xl text-primary mb-3"></i></div><p class="font-medium" data-lang="cert_us">US Organic</p></div>
+        <div class="text-center p-4 border border-primary/10 rounded-lg hover:border-primary/30 transition-all" data-cert-icon="cert_haccp"><div class="cert-icon-wrap"><i class="fas fa-certificate text-4xl text-primary mb-3"></i></div><p class="font-medium" data-lang="cert_haccp">HACCP</p></div>
+        <div class="text-center p-4 border border-primary/10 rounded-lg hover:border-primary/30 transition-all" data-cert-icon="cert_iso"><div class="cert-icon-wrap"><i class="fas fa-certificate text-4xl text-primary mb-3"></i></div><p class="font-medium" data-lang="cert_iso">ISO 9001</p></div>
+        <div class="text-center p-4 border border-primary/10 rounded-lg hover:border-primary/30 transition-all" data-cert-icon="cert_fairtrade"><div class="cert-icon-wrap"><i class="fas fa-certificate text-4xl text-primary mb-3"></i></div><p class="font-medium" data-lang="cert_fairtrade">Fair Trade</p></div>
       </div>
 
       <!-- 证书图片轮播（6列网格，支持20+张） -->
@@ -733,6 +733,55 @@
       renderCertPage();
     });
 
+    // ===== PDF 打开（在新标签展示） =====
+    function openBrochure(e) {
+      const btn = document.getElementById('brochure-download-btn');
+      const url = btn ? btn.href : '';
+      if (!url || url === '#' || url === window.location.href + '#') {
+        e.preventDefault();
+        alert('Product brochure link is not configured yet. Please contact us for the catalog.');
+        return;
+      }
+      // href 已设置为完整链接，target="_blank" 会自动新标签打开，此处不阻止
+    }
+
+    // ===== 展会弹窗显示 =====
+    let _exhPopupShown = false;
+    function showExhPopup(exhs) {
+      if (_exhPopupShown) return;
+      if (!exhs || exhs.length === 0) return;
+      // 优先展示 confirmed 状态的展会，否则取第一条
+      const target = exhs.find(e => e.status === 'confirmed') || exhs[0];
+      const popup = document.getElementById('exh-popup');
+      if (!popup) return;
+
+      // 填充弹窗内容
+      const nameEl = document.getElementById('popup-exh-name');
+      const dateEl = document.getElementById('popup-exh-date');
+      const locationEl = document.getElementById('popup-exh-location');
+      const boothEl = document.getElementById('popup-exh-booth');
+      const badgeEl = document.getElementById('popup-exh-badge');
+      if (nameEl) nameEl.textContent = target.name || '';
+      if (dateEl) dateEl.textContent = target.date || '';
+      if (locationEl) locationEl.textContent = target.location || '';
+      if (boothEl) boothEl.textContent = target.booth || 'TBA';
+      if (badgeEl) {
+        badgeEl.textContent = target.status === 'confirmed' ? 'Confirmed' : 'Upcoming';
+        badgeEl.className = 'exh-popup-badge ' + (target.status === 'confirmed' ? 'confirmed' : 'upcoming') + ' ml-2 flex-shrink-0';
+      }
+
+      // 延迟 1.5 秒后弹出
+      setTimeout(() => {
+        popup.classList.add('show');
+        _exhPopupShown = true;
+      }, 1500);
+    }
+
+    function closeExhPopup() {
+      const popup = document.getElementById('exh-popup');
+      if (popup) popup.classList.remove('show');
+    }
+
     // ===== 从 data.json 动态加载内容 =====
     async function loadSiteData() {
       try {
@@ -797,21 +846,25 @@
         }
 
 
-        // 产品手册 PDF 下载链接
-        if (data.brochure_url) {
+        // 产品手册 PDF 链接（点击直接在新标签打开PDF）
+        if (data.brochure_url && data.brochure_url.trim()) {
           const btn = document.getElementById('brochure-download-btn');
-          if (btn) btn.href = data.brochure_url;
+          if (btn) btn.href = data.brochure_url.trim();
         }
 
-        // 资质认证徽标图标（支持图片替换）
+        // 资质认证徽标图标（有图片则替换图标区域内容，无图片则保留默认图标）
         if (data.cert_icons) {
           const certIconKeys = ['cert_eu','cert_us','cert_haccp','cert_iso','cert_fairtrade'];
           certIconKeys.forEach(key => {
-            const url = data.cert_icons[key];
-            const container = document.querySelector('[data-cert-icon="' + key + '"]');
-            if (container && url) {
-              container.innerHTML = '<img src="' + url + '" alt="' + key + '" class="w-16 h-16 object-contain mx-auto mb-3">';
+            const url = (data.cert_icons[key] || '').trim();
+            const card = document.querySelector('[data-cert-icon="' + key + '"]');
+            if (!card) return;
+            const wrap = card.querySelector('.cert-icon-wrap');
+            if (url && wrap) {
+              // 有图片链接 → 显示图片，隐藏默认图标
+              wrap.innerHTML = '<img src="' + url + '" alt="' + key + '" style="width:64px;height:64px;object-fit:contain;margin:0 auto 12px;">';
             }
+            // 无图片则保留默认图标，不做任何操作
           });
         }
 
