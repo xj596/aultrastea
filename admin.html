@@ -30,6 +30,10 @@
     .field-label { font-size: 13px; font-weight: 600; color: #374151; margin-bottom: 4px; }
     .social-card { border: 1px solid #e5e7eb; border-radius: 10px; padding: 16px; margin-bottom: 12px; background: #fafafa; }
     .product-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .sub-tab-btn { transition: all 0.2s; }
+    .news-summary-item { border-left: 4px solid #3b82f6; }
+    .news-detail-item { border-left: 4px solid #16a34a; }
+    .news-editor-section { background: #f9fafb; border-radius: 12px; padding: 16px; margin-bottom: 16px; }
   </style>
 </head>
 <body>
@@ -462,27 +466,65 @@
       </div>
     </div>
 
-    <!-- ===== 新闻管理 Tab ===== -->
+    <!-- ===== 新闻管理 Tab（分为首页版和详情版）===== -->
     <div id="tab-news" class="tab-content hidden">
-      <div class="flex justify-between items-center mb-4">
-        <div>
-          <h3 class="font-bold text-gray-800 text-lg">新闻动态管理</h3>
-          <p class="text-sm text-gray-500 mt-1">
-            新闻按日期自动降序排列（最新在最前）。前端每页展示 6 条，超出自动分页。
-          </p>
-        </div>
-        <button onclick="addNews()" class="btn-add flex items-center gap-2">
-          <i class="fas fa-plus"></i> 新增新闻
+      <div class="mb-4">
+        <h3 class="font-bold text-gray-800 text-lg mb-2">新闻动态管理</h3>
+        <p class="text-sm text-gray-500">新闻分为两部分管理：<strong>首页展示</strong>（精简卡片）和<strong>详情页面</strong>（完整内容）。</p>
+      </div>
+
+      <!-- 新闻子Tab切换 -->
+      <div class="flex gap-2 mb-6">
+        <button id="subtab-summary" class="sub-tab-btn active px-4 py-2.5 rounded-lg font-medium text-sm transition-all bg-primary text-white" onclick="switchNewsSubTab('summary')">
+          <i class="fas fa-th-large mr-1.5"></i> 首页新闻（news_summary）
+        </button>
+        <button id="subtab-detail" class="sub-tab-btn px-4 py-2.5 rounded-lg font-medium text-sm transition-all bg-gray-100 text-gray-600 hover:bg-gray-200" onclick="switchNewsSubTab('detail')">
+          <i class="fas fa-file-alt mr-1.5"></i> 新闻详情（news_detail）
         </button>
       </div>
 
-      <div id="news-editor" class="space-y-4"></div>
+      <!-- 首页新闻编辑器（news_summary） -->
+      <div id="news-summary-editor">
+        <div class="flex justify-between items-center mb-4">
+          <div>
+            <h4 class="font-bold text-gray-700 flex items-center gap-2"><span class="w-2 h-2 bg-blue-500 rounded-full inline-block"></span> 首页新闻展示</h4>
+            <p class="text-xs text-gray-500 mt-1">用于前端首页的精简卡片：图片 + 标题 + 摘要 + 查看详情链接</p>
+          </div>
+          <button onclick="addNewsSummary()" class="btn-add flex items-center gap-2">
+            <i class="fas fa-plus"></i> 新增新闻
+          </button>
+        </div>
 
-      <div class="flex items-center gap-4 mt-6 mb-10">
-        <button onclick="saveNews()" class="btn-primary flex items-center gap-2">
-          <i class="fas fa-save"></i> 保存新闻到网站
-        </button>
-        <span class="text-xs text-gray-400">支持添加/删除/编辑任意新闻，前端自动按日期排序</span>
+        <div id="news-summary-list" class="space-y-4"></div>
+
+        <div class="flex items-center gap-4 mt-6 mb-10">
+          <button onclick="saveNewsSummary()" class="btn-primary flex items-center gap-2">
+            <i class="fas fa-save"></i> 保存首页新闻
+          </button>
+          <span class="text-xs text-gray-400">首页最多展示6个新闻卡片，超出部分在"新闻详情"页面查看</span>
+        </div>
+      </div>
+
+      <!-- 新闻详情编辑器（news_detail） -->
+      <div id="news-detail-editor" class="hidden">
+        <div class="flex justify-between items-center mb-4">
+          <div>
+            <h4 class="font-bold text-gray-700 flex items-center gap-2"><span class="w-2 h-2 bg-green-500 rounded-full inline-block"></span> 新闻详情页面</h4>
+            <p class="text-xs text-gray-500 mt-1">用于"新闻"子级页面的完整内容：大图 + 正文 + 插图 + 外链</p>
+          </div>
+          <button onclick="addNewsDetail()" class="btn-add flex items-center gap-2">
+            <i class="fas fa-plus"></i> 新增新闻
+          </button>
+        </div>
+
+        <div id="news-detail-list" class="space-y-4"></div>
+
+        <div class="flex items-center gap-4 mt-6 mb-10">
+          <button onclick="saveNewsDetail()" class="btn-primary flex items-center gap-2">
+            <i class="fas fa-save"></i> 保存新闻详情
+          </button>
+          <span class="text-xs text-gray-400">新闻详情页面支持左侧按日期导航，含大图、正文、两张插图</span>
+        </div>
       </div>
     </div>
 </div><!-- end adminPage -->
@@ -613,8 +655,9 @@ function populateForm() {
   // 产品手册 PDF
   populateBrochureUrl(currentData.brochure_url || '');
 
-  // 新闻
-  renderNewsEditor(currentData.news || []);
+  // 新闻（分别渲染首页版和详情版）
+  renderNewsSummaryEditor(currentData.news_summary || currentData.news || []);
+  renderNewsDetailEditor(currentData.news_detail || currentData.news || []);
 
   // 产品4图
   renderProductDetailEditor();
@@ -998,9 +1041,35 @@ async function saveBrochureUrl() {
   await pushDataJson('产品手册 PDF 链接已保存并推送到 GitHub ✅');
 }
 
-// ===== 新闻管理 =====
-function renderNewsEditor(news) {
-  const container = document.getElementById('news-editor');
+// ===== 新闻管理（两个编辑器） =====
+
+// 子Tab切换
+function switchNewsSubTab(tab) {
+  const summaryBtn = document.getElementById('subtab-summary');
+  const detailBtn = document.getElementById('subtab-detail');
+  const summaryEditor = document.getElementById('news-summary-editor');
+  const detailEditor = document.getElementById('news-detail-editor');
+
+  if (tab === 'summary') {
+    summaryBtn.classList.remove('bg-gray-100', 'text-gray-600', 'hover:bg-gray-200');
+    summaryBtn.classList.add('bg-primary', 'text-white');
+    detailBtn.classList.remove('bg-primary', 'text-white');
+    detailBtn.classList.add('bg-gray-100', 'text-gray-600', 'hover:bg-gray-200');
+    summaryEditor.classList.remove('hidden');
+    detailEditor.classList.add('hidden');
+  } else {
+    detailBtn.classList.remove('bg-gray-100', 'text-gray-600', 'hover:bg-gray-200');
+    detailBtn.classList.add('bg-primary', 'text-white');
+    summaryBtn.classList.remove('bg-primary', 'text-white');
+    summaryBtn.classList.add('bg-gray-100', 'text-gray-600', 'hover:bg-gray-200');
+    detailEditor.classList.remove('hidden');
+    summaryEditor.classList.add('hidden');
+  }
+}
+
+// ===== 首页新闻编辑器（news_summary） =====
+function renderNewsSummaryEditor(news) {
+  const container = document.getElementById('news-summary-list');
   if (!container) return;
   container.innerHTML = '';
   if (!news || news.length === 0) {
@@ -1009,31 +1078,27 @@ function renderNewsEditor(news) {
   }
   news.forEach((item, i) => {
     const div = document.createElement('div');
-    div.className = 'section-card border-l-4 border-blue-500';
+    div.className = 'news-summary-item section-card';
     div.innerHTML = `
       <div class="flex items-center justify-between mb-4">
         <h4 class="font-bold text-gray-700 flex items-center gap-2">
           <i class="fas fa-newspaper text-blue-500"></i>
-          新闻 ${i + 1}
+          首页新闻 ${i + 1}
           <span class="text-xs bg-blue-50 text-blue-600 px-2 py-0.5 rounded-full">${item.date || '未设置日期'}</span>
         </h4>
-        <button class="btn-danger" onclick="removeNews(${i})"><i class="fas fa-trash mr-1"></i>删除</button>
+        <button class="btn-danger" onclick="removeNewsSummary(${i})"><i class="fas fa-trash mr-1"></i>删除</button>
       </div>
 
-      <!-- 日期 + 外链 -->
+      <!-- 日期 + 图片 -->
       <div class="grid sm:grid-cols-2 gap-4 mb-4">
         <div>
           <div class="field-label">日期 <span class="text-gray-400 font-normal text-xs">（格式: 2026-04-01，用于排序）</span></div>
-          <input type="text" data-news="${i}" data-field="date" value="${item.date || ''}" placeholder="2026-04-01" />
+          <input type="text" data-summary="${i}" data-field="date" value="${item.date || ''}" placeholder="2026-04-01" />
         </div>
         <div>
-          <div class="field-label">封面图片链接 <span class="text-gray-400 font-normal text-xs">（可留空）</span></div>
-          <input type="url" data-news="${i}" data-field="image" value="${item.image || ''}" placeholder="https://..." />
+          <div class="field-label">封面图片链接 <span class="text-gray-400 font-normal text-xs">（首页卡片展示图）</span></div>
+          <input type="url" data-summary="${i}" data-field="image" value="${item.image || ''}" placeholder="https://..." />
         </div>
-      </div>
-      <div class="mb-4">
-        <div class="field-label">新闻外链 <span class="text-gray-400 font-normal text-xs">（可留空，留空则显示"立即咨询"按钮）</span></div>
-        <input type="url" data-news="${i}" data-field="link" value="${item.link || ''}" placeholder="https://..." />
       </div>
 
       <!-- 标题（4语言） -->
@@ -1042,42 +1107,42 @@ function renderNewsEditor(news) {
         <div class="grid sm:grid-cols-2 gap-3">
           <div>
             <div class="field-label text-xs">🇬🇧 英文标题</div>
-            <input type="text" data-news="${i}" data-field="title_en" value="${item.title_en || ''}" placeholder="News title in English" />
+            <input type="text" data-summary="${i}" data-field="title_en" value="${item.title_en || ''}" placeholder="News title in English" />
           </div>
           <div>
             <div class="field-label text-xs">🇨🇳 中文标题</div>
-            <input type="text" data-news="${i}" data-field="title_zh" value="${item.title_zh || ''}" placeholder="中文新闻标题" />
+            <input type="text" data-summary="${i}" data-field="title_zh" value="${item.title_zh || ''}" placeholder="中文新闻标题" />
           </div>
           <div>
             <div class="field-label text-xs">🇷🇺 俄文标题</div>
-            <input type="text" data-news="${i}" data-field="title_ru" value="${item.title_ru || ''}" placeholder="Заголовок новости" />
+            <input type="text" data-summary="${i}" data-field="title_ru" value="${item.title_ru || ''}" placeholder="Заголовок новости" />
           </div>
           <div>
             <div class="field-label text-xs">🇩🇪 德文标题</div>
-            <input type="text" data-news="${i}" data-field="title_de" value="${item.title_de || ''}" placeholder="Nachrichtentitel" />
+            <input type="text" data-summary="${i}" data-field="title_de" value="${item.title_de || ''}" placeholder="Nachrichtentitel" />
           </div>
         </div>
       </div>
 
       <!-- 摘要（4语言） -->
       <div>
-        <div class="font-semibold text-gray-600 text-sm mb-2 flex items-center gap-2"><i class="fas fa-align-left text-gray-400"></i> 新闻摘要（4语言）</div>
+        <div class="font-semibold text-gray-600 text-sm mb-2 flex items-center gap-2"><i class="fas fa-align-left text-gray-400"></i> 新闻摘要（4语言，用于首页卡片）</div>
         <div class="grid sm:grid-cols-2 gap-3">
           <div>
             <div class="field-label text-xs">🇬🇧 英文摘要</div>
-            <textarea data-news="${i}" data-field="summary_en" rows="3" placeholder="Summary in English...">${item.summary_en || ''}</textarea>
+            <textarea data-summary="${i}" data-field="summary_en" rows="2" placeholder="Brief summary for homepage card...">${item.summary_en || ''}</textarea>
           </div>
           <div>
             <div class="field-label text-xs">🇨🇳 中文摘要</div>
-            <textarea data-news="${i}" data-field="summary_zh" rows="3" placeholder="中文摘要...">${item.summary_zh || ''}</textarea>
+            <textarea data-summary="${i}" data-field="summary_zh" rows="2" placeholder="首页卡片显示的中文摘要...">${item.summary_zh || ''}</textarea>
           </div>
           <div>
             <div class="field-label text-xs">🇷🇺 俄文摘要</div>
-            <textarea data-news="${i}" data-field="summary_ru" rows="3" placeholder="Краткое содержание...">${item.summary_ru || ''}</textarea>
+            <textarea data-summary="${i}" data-field="summary_ru" rows="2" placeholder="Краткое описание...">${item.summary_ru || ''}</textarea>
           </div>
           <div>
             <div class="field-label text-xs">🇩🇪 德文摘要</div>
-            <textarea data-news="${i}" data-field="summary_de" rows="3" placeholder="Zusammenfassung...">${item.summary_de || ''}</textarea>
+            <textarea data-summary="${i}" data-field="summary_de" rows="2" placeholder="Kurze Zusammenfassung...">${item.summary_de || ''}</textarea>
           </div>
         </div>
       </div>`;
@@ -1085,10 +1150,10 @@ function renderNewsEditor(news) {
   });
 }
 
-function addNews() {
-  if (!currentData.news) currentData.news = [];
+function addNewsSummary() {
+  if (!currentData.news_summary) currentData.news_summary = [];
   const today = new Date().toISOString().slice(0, 10);
-  currentData.news.push({
+  currentData.news_summary.push({
     id: Date.now(),
     date: today,
     title_en: '',
@@ -1099,41 +1164,191 @@ function addNews() {
     summary_zh: '',
     summary_ru: '',
     summary_de: '',
-    image: '',
-    link: ''
+    image: ''
   });
-  renderNewsEditor(currentData.news);
-  // 滚动到新增的条目
-  const container = document.getElementById('news-editor');
+  renderNewsSummaryEditor(currentData.news_summary);
+  const container = document.getElementById('news-summary-list');
   if (container && container.lastElementChild) {
     container.lastElementChild.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 }
 
-function removeNews(idx) {
+function removeNewsSummary(idx) {
   if (!confirm('确认删除这条新闻？此操作保存前可撤销。')) return;
-  currentData.news.splice(idx, 1);
-  renderNewsEditor(currentData.news);
+  currentData.news_summary.splice(idx, 1);
+  renderNewsSummaryEditor(currentData.news_summary);
 }
 
-function collectNews() {
-  const inputs = document.querySelectorAll('#news-editor [data-news]');
+function collectNewsSummary() {
+  const inputs = document.querySelectorAll('#news-summary-list [data-summary]');
   const news = [];
   inputs.forEach(el => {
-    const i = parseInt(el.dataset.news);
+    const i = parseInt(el.dataset.summary);
     if (!news[i]) news[i] = {};
     news[i][el.dataset.field] = el.value.trim();
   });
-  // 补全 id
   return news.filter(Boolean).map((item, i) => ({
-    id: (currentData.news && currentData.news[i] && currentData.news[i].id) || Date.now() + i,
+    id: (currentData.news_summary && currentData.news_summary[i] && currentData.news_summary[i].id) || Date.now() + i,
     ...item
   }));
 }
 
-async function saveNews() {
-  currentData.news = collectNews();
-  await pushDataJson('新闻动态已保存并推送到 GitHub ✅');
+async function saveNewsSummary() {
+  currentData.news_summary = collectNewsSummary();
+  await pushDataJson('首页新闻已保存并推送到 GitHub ✅');
+}
+
+// ===== 新闻详情编辑器（news_detail） =====
+function renderNewsDetailEditor(news) {
+  const container = document.getElementById('news-detail-list');
+  if (!container) return;
+  container.innerHTML = '';
+  if (!news || news.length === 0) {
+    container.innerHTML = '<div class="section-card text-center text-gray-400 py-8"><i class="fas fa-file-alt text-3xl mb-3"></i><p>暂无新闻详情，点击右上角"新增新闻"开始添加</p></div>';
+    return;
+  }
+  news.forEach((item, i) => {
+    const div = document.createElement('div');
+    div.className = 'news-detail-item section-card';
+    div.innerHTML = `
+      <div class="flex items-center justify-between mb-4">
+        <h4 class="font-bold text-gray-700 flex items-center gap-2">
+          <i class="fas fa-file-alt text-green-500"></i>
+          新闻详情 ${i + 1}
+          <span class="text-xs bg-green-50 text-green-600 px-2 py-0.5 rounded-full">${item.date || '未设置日期'}</span>
+        </h4>
+        <button class="btn-danger" onclick="removeNewsDetail(${i})"><i class="fas fa-trash mr-1"></i>删除</button>
+      </div>
+
+      <!-- 日期 + 图片 -->
+      <div class="grid sm:grid-cols-3 gap-4 mb-4">
+        <div>
+          <div class="field-label">日期 <span class="text-gray-400 font-normal text-xs">（格式: 2026-04-01，用于排序和导航）</span></div>
+          <input type="text" data-detail="${i}" data-field="date" value="${item.date || ''}" placeholder="2026-04-01" />
+        </div>
+        <div>
+          <div class="field-label">主图链接 <span class="text-gray-400 font-normal text-xs">（顶部大图）</span></div>
+          <input type="url" data-detail="${i}" data-field="image" value="${item.image || ''}" placeholder="https://..." />
+        </div>
+        <div>
+          <div class="field-label">外链 <span class="text-gray-400 font-normal text-xs">（可留空）</span></div>
+          <input type="url" data-detail="${i}" data-field="link" value="${item.link || ''}" placeholder="https://..." />
+        </div>
+      </div>
+
+      <!-- 两张插图 -->
+      <div class="grid sm:grid-cols-2 gap-4 mb-4">
+        <div>
+          <div class="field-label">插图1链接 <span class="text-gray-400 font-normal text-xs">（插入正文中间）</span></div>
+          <input type="url" data-detail="${i}" data-field="image2" value="${item.image2 || ''}" placeholder="https://..." />
+        </div>
+        <div>
+          <div class="field-label">插图2链接 <span class="text-gray-400 font-normal text-xs">（插入正文中间）</span></div>
+          <input type="url" data-detail="${i}" data-field="image3" value="${item.image3 || ''}" placeholder="https://..." />
+        </div>
+      </div>
+
+      <!-- 标题（4语言） -->
+      <div class="mb-3">
+        <div class="font-semibold text-gray-600 text-sm mb-2 flex items-center gap-2"><i class="fas fa-heading text-gray-400"></i> 新闻标题（4语言）</div>
+        <div class="grid sm:grid-cols-2 gap-3">
+          <div>
+            <div class="field-label text-xs">🇬🇧 英文标题</div>
+            <input type="text" data-detail="${i}" data-field="title_en" value="${item.title_en || ''}" placeholder="News title in English" />
+          </div>
+          <div>
+            <div class="field-label text-xs">🇨🇳 中文标题</div>
+            <input type="text" data-detail="${i}" data-field="title_zh" value="${item.title_zh || ''}" placeholder="中文新闻标题" />
+          </div>
+          <div>
+            <div class="field-label text-xs">🇷🇺 俄文标题</div>
+            <input type="text" data-detail="${i}" data-field="title_ru" value="${item.title_ru || ''}" placeholder="Заголовок новости" />
+          </div>
+          <div>
+            <div class="field-label text-xs">🇩🇪 德文标题</div>
+            <input type="text" data-detail="${i}" data-field="title_de" value="${item.title_de || ''}" placeholder="Nachrichtentitel" />
+          </div>
+        </div>
+      </div>
+
+      <!-- 正文内容（4语言） -->
+      <div>
+        <div class="font-semibold text-gray-600 text-sm mb-2 flex items-center gap-2">
+          <i class="fas fa-file-lines text-gray-400"></i> 新闻正文内容（4语言）
+          <span class="text-xs text-gray-400 ml-2">（可在正文中插入 {{img2}} 和 {{img3}} 标记来控制图片位置）</span>
+        </div>
+        <div class="space-y-3">
+          <div>
+            <div class="field-label text-xs">🇬🇧 英文正文</div>
+            <textarea data-detail="${i}" data-field="content_en" rows="5" placeholder="Full news content in English...">${item.content_en || ''}</textarea>
+          </div>
+          <div>
+            <div class="field-label text-xs">🇨🇳 中文正文</div>
+            <textarea data-detail="${i}" data-field="content_zh" rows="5" placeholder="完整的中文新闻正文内容...">${item.content_zh || ''}</textarea>
+          </div>
+          <div>
+            <div class="field-label text-xs">🇷🇺 俄文正文</div>
+            <textarea data-detail="${i}" data-field="content_ru" rows="5" placeholder="Полный текст новости...">${item.content_ru || ''}</textarea>
+          </div>
+          <div>
+            <div class="field-label text-xs">🇩🇪 德文正文</div>
+            <textarea data-detail="${i}" data-field="content_de" rows="5" placeholder="Vollständiger Nachrichtentext...">${item.content_de || ''}</textarea>
+          </div>
+        </div>
+      </div>`;
+    container.appendChild(div);
+  });
+}
+
+function addNewsDetail() {
+  if (!currentData.news_detail) currentData.news_detail = [];
+  const today = new Date().toISOString().slice(0, 10);
+  currentData.news_detail.push({
+    id: Date.now(),
+    date: today,
+    title_en: '',
+    title_zh: '',
+    title_ru: '',
+    title_de: '',
+    content_en: '',
+    content_zh: '',
+    content_ru: '',
+    content_de: '',
+    image: '',
+    image2: '',
+    image3: '',
+    link: ''
+  });
+  renderNewsDetailEditor(currentData.news_detail);
+  const container = document.getElementById('news-detail-list');
+  if (container && container.lastElementChild) {
+    container.lastElementChild.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+
+function removeNewsDetail(idx) {
+  if (!confirm('确认删除这条新闻详情？此操作保存前可撤销。')) return;
+  currentData.news_detail.splice(idx, 1);
+  renderNewsDetailEditor(currentData.news_detail);
+}
+
+function collectNewsDetail() {
+  const inputs = document.querySelectorAll('#news-detail-list [data-detail]');
+  const news = [];
+  inputs.forEach(el => {
+    const i = parseInt(el.dataset.detail);
+    if (!news[i]) news[i] = {};
+    news[i][el.dataset.field] = el.value.trim();
+  });
+  return news.filter(Boolean).map((item, i) => ({
+    id: (currentData.news_detail && currentData.news_detail[i] && currentData.news_detail[i].id) || Date.now() + i,
+    ...item
+  }));
+}
+
+async function saveNewsDetail() {
+  currentData.news_detail = collectNewsDetail();
+  await pushDataJson('新闻详情已保存并推送到 GitHub ✅');
 }
 
 // ===== 推送 data.json 到 GitHub =====
