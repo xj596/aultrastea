@@ -49,7 +49,7 @@
         <i class="fas fa-leaf text-white text-2xl"></i>
       </div>
       <h1 class="text-2xl font-bold text-gray-800">AultrasTea 后台管理</h1>
-      <p class="text-gray-500 text-sm mt-1">填写 GitHub 信息以开始管理网站内容</p>
+      <p class="text-gray-500 text-sm mt-1">填写 GitHub 信息以管理网站内容（通过 GitHub API 更新，Cloudflare Pages 自动部署）</p>
     </div>
 
     <div class="space-y-4">
@@ -608,10 +608,7 @@ async function fetchDataJson() {
     document.getElementById('loginPage').classList.add('hidden');
     document.getElementById('adminPage').classList.remove('hidden');
     document.getElementById('repoTag').textContent = `${CONFIG.owner}/${CONFIG.repo}`;
-    const isUserPages = CONFIG.repo === CONFIG.owner + '.github.io';
-    document.getElementById('previewLink').href = isUserPages
-      ? `https://${CONFIG.owner}.github.io/`
-      : `https://${CONFIG.owner}.github.io/${CONFIG.repo}/`;
+    document.getElementById('previewLink').href = 'https://aultrastea.15842823831.workers.dev/';
     populateForm();
   } catch(e) {
     showToast('连接失败：' + e.message, 'error');
