@@ -92,7 +92,7 @@
       <nav class="flex items-center justify-between">
         <a href="index.html" class="text-2xl font-bold text-primary flex items-center gap-2">
           <i class="fas fa-leaf"></i>
-          <span>AultrasTea</span>
+          <span id="navbar-brand" data-lang="navbar_brand">AultrasTea</span>
         </a>
         <ul class="hidden md:flex items-center gap-8">
           <li><a href="index.html#home" class="nav-link text-dark hover:text-primary transition-colors font-medium" data-lang="nav_home">Home</a></li>
@@ -201,7 +201,7 @@
     <div class="container mx-auto px-4 md:px-6">
       <div class="grid md:grid-cols-4 gap-8 mb-8">
         <div>
-          <h3 class="text-xl font-bold mb-4 flex items-center gap-2"><i class="fas fa-leaf"></i> AultrasTea</h3>
+          <h3 class="text-xl font-bold mb-4 flex items-center gap-2"><i class="fas fa-leaf"></i> <span data-lang="navbar_brand">AultrasTea</span></h3>
           <p class="text-white/70 mb-4" data-lang="footer_desc">Professional Chinese tea manufacturer and exporter, supply premium organic tea to the world.</p>
         </div>
         <div>
@@ -231,7 +231,7 @@
           <h4 class="text-lg font-bold mb-4" data-lang="footer_contact">Contact</h4>
           <ul class="space-y-2">
             <li class="flex items-center gap-2 text-white/70"><i class="fas fa-envelope"></i> <span id="footer_email">admin@aultrastea.com</span></li>
-            <li class="flex items-center gap-2 text-white/70"><i class="fas fa-phone"></i> <span id="footer_phone">+86 731 8465 2476</span></li>
+            <li class="flex items-center gap-2 text-white/70"><i class="fas fa-phone"></i> <span id="footer_phone">400-059-8108</span></li>
           </ul>
         </div>
       </div>
@@ -251,6 +251,7 @@
     // ===== 语言包 =====
     const langPack = {
       en: {
+        navbar_brand: "AultrasTea",
         meta_title: "News | AultrasTea - Latest Updates & Events",
         meta_desc: "Stay updated with the latest news and events from AultrasTea.",
         nav_home: "Home", nav_about: "About Us", nav_products: "Products", nav_certificates: "Certificates",
@@ -265,11 +266,12 @@
         read_more: "Read More", close_detail: "Close", external_link: "External Link"
       },
       zh: {
-        meta_title: "新闻动态 | AultrasTea - 最新资讯与活动",
-        meta_desc: "了解AultrasTea的最新动态与行业资讯。",
+        navbar_brand: "湘丰瀑布AULTRAS",
+        meta_title: "新闻动态 | 贵州湘丰瀑布茶业有限公司 - 最新资讯与活动",
+        meta_desc: "了解贵州湘丰瀑布茶业的最新动态与行业资讯。",
         nav_home: "首页", nav_about: "关于我们", nav_products: "产品中心", nav_certificates: "公司资质",
         nav_exhibitions: "展会动态", nav_news: "新闻动态", nav_contact: "联系我们",
-        page_title: "新闻动态", page_desc: "了解AultrasTea的最新动态与行业资讯。",
+        page_title: "新闻动态", page_desc: "了解贵州湘丰瀑布茶业的最新动态与行业资讯。",
         back_to_home: "返回首页", nav_archive: "归档", empty_msg: "暂无新闻。",
         footer_desc: "专业的中国茶叶生产出口商，为全球供应优质有机茶叶。",
         footer_quick: "快速导航", footer_product: "产品分类", footer_contact: "联系我们",
@@ -279,6 +281,7 @@
         read_more: "阅读更多", close_detail: "关闭详情", external_link: "外部链接"
       },
       ru: {
+        navbar_brand: "AultrasTea",
         meta_title: "Новости | AultrasTea - Последние обновления и события",
         meta_desc: "Будьте в курсе последних новостей и событий AultrasTea.",
         nav_home: "Главная", nav_about: "О нас", nav_products: "Продукция", nav_certificates: "Сертификаты",
@@ -293,6 +296,7 @@
         read_more: "Подробнее", close_detail: "Закрыть", external_link: "Внешняя ссылка"
       },
       de: {
+        navbar_brand: "AultrasTea",
         meta_title: "Neuigkeiten | AultrasTea - Neueste Updates & Veranstaltungen",
         meta_desc: "Bleiben Sie über die neuesten Nachrichten und Ereignisse von AultrasTea informiert.",
         nav_home: "Startseite", nav_about: "Über Uns", nav_products: "Produkte", nav_certificates: "Zertifikate",
