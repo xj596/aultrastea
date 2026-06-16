@@ -215,11 +215,15 @@
       document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
     }
 
+    // 防御性UTF-8双重编码自动修复
+    function fixDoubleEncoded(obj){if(typeof obj==='string'){try{const f=decodeURIComponent(escape(obj));if(f!==obj&&/[\u4e00-\u9fff\u0400-\u04ff\u00c0-\u024f]/.test(f))return f}catch(e){}return obj}if(Array.isArray(obj))return obj.map(i=>fixDoubleEncoded(i));if(obj&&typeof obj==='object'){const r={};for(const k in obj)r[k]=fixDoubleEncoded(obj[k]);return r}return obj}
+
     // ===== 从 data.json 加载图片 =====
     async function loadProductImages() {
       try {
         const res = await fetch('./data.json?t=' + Date.now());
-        const data = await res.json();
+        let data = await res.json();
+        data = fixDoubleEncoded(data);
         window._siteImages = data.images || {};
         const heroImg = document.getElementById('cat_hero_img');
         if (heroImg && window._siteImages['product_white']) {
