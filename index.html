@@ -967,11 +967,41 @@
       if (popup) popup.classList.remove('show');
     }
 
+    // ===== 防御性UTF-8双重编码自动修复 =====
+    // 当后台管理系统因旧Bug导致data.json中文字段被双重编码时，
+    // 前端读取后自动修复，确保页面正常显示中文
+    function fixDoubleEncoded(obj) {
+      if (typeof obj === 'string') {
+        try {
+          // 检测是否被双重编码：如果字符串可以被latin-1编码再utf-8解码且结果不同，说明是双重编码
+          const fixed = decodeURIComponent(escape(obj));
+          // 简单判断：如果修复后的字符串包含中文字符(常见范围)，说明修复成功
+          if (fixed !== obj && /[\u4e00-\u9fff\u0400-\u04ff\u00c0-\u024f]/.test(fixed)) {
+            return fixed;
+          }
+        } catch(e) { /* 不是双重编码，原样返回 */ }
+        return obj;
+      }
+      if (Array.isArray(obj)) {
+        return obj.map(item => fixDoubleEncoded(item));
+      }
+      if (obj && typeof obj === 'object') {
+        const fixed = {};
+        for (const key in obj) {
+          fixed[key] = fixDoubleEncoded(obj[key]);
+        }
+        return fixed;
+      }
+      return obj;
+    }
+
     // ===== 从 data.json 动态加载内容 =====
     async function loadSiteData() {
       try {
         const res = await fetch('./data.json?t=' + Date.now());
-        const data = await res.json();
+        let data = await res.json();
+        // 自动修复双重编码字段
+        data = fixDoubleEncoded(data);
 
         // 图片
         const imgs = data.images || {};
