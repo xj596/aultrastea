@@ -523,32 +523,36 @@
         <p class="text-dark/70 max-w-2xl mx-auto mb-4" data-lang="contact_desc">If you have any inquiry about our products, please feel free to contact us, we will reply you within 24 hours.</p>
         <div class="w-24 h-1 bg-secondary mx-auto"></div>
       </div>
-      <div class="grid md:grid-cols-1 gap-12">
-        <div class="fade-in flex flex-col justify-center">
-          <h3 class="text-2xl font-bold mb-8 text-primary" data-lang="contact_info">Contact Information</h3>
-          <div class="space-y-6 mb-10">
-            <div class="flex items-start gap-4">
-              <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0"><i class="fas fa-building text-primary text-xl"></i></div>
-              <div><p class="text-dark/60 text-sm mb-1" data-lang="contact_company">Company Name</p><p class="font-medium text-dark" data-lang="contact_company_name">GUIZHOU AULTRAS TEA CO.,LTD.</p></div>
-            </div>
-            <div class="flex items-start gap-4">
-              <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0"><i class="fas fa-envelope text-primary text-xl"></i></div>
-              <div><p class="text-dark/60 text-sm mb-1" data-lang="contact_email">Email</p><p class="font-medium text-dark" id="contact_email_1">admin@aultrastea.com</p><p class="font-medium text-dark" id="contact_email_2">tea@xf-tea.com</p></div>
-            </div>
-            <div class="flex items-start gap-4">
-              <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0"><i class="fas fa-phone text-primary text-xl"></i></div>
-              <div><p class="text-dark/60 text-sm mb-1" data-lang="contact_phone">Phone / WhatsApp</p><p class="font-medium text-dark" id="contact_phone_1">400-059-8108</p><p class="font-medium text-dark" id="contact_phone_2">+86 731 8465 2208</p></div>
-            </div>
-            <div class="flex items-start gap-4">
-              <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0"><i class="fas fa-map-marker-alt text-primary text-xl"></i></div>
-              <div><p class="text-dark/60 text-sm mb-1" data-lang="contact_address">Address</p><p class="font-medium text-dark" id="contact_address_1">贵州省安顺市西秀区</p><p class="font-medium text-dark" id="contact_address_2">鸡场乡鑫堡村茶果场</p></div>
-            </div>
-          </div>
-          <div>
-            <p class="text-dark/60 mb-4 font-medium" data-lang="contact_social">Follow Us</p>
-            <div id="social-links" class="flex gap-4">
-              <!-- 社媒图标由 data.json 动态渲染 -->
-            </div>
+      <!-- 横向紧凑布局：参考多列footer样式 -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-6 max-w-4xl mx-auto fade-in">
+        <!-- 公司名称 -->
+        <div>
+          <p class="text-dark/50 text-sm mb-1" data-lang="contact_company">Company Name</p>
+          <p class="font-medium text-dark text-sm leading-relaxed" data-lang="contact_company_name">GUIZHOU AULTRAS TEA CO.,LTD.</p>
+        </div>
+        <!-- 邮箱 -->
+        <div>
+          <p class="text-dark/50 text-sm mb-1" data-lang="contact_email">Email</p>
+          <p class="font-medium text-dark text-sm leading-relaxed" id="contact_email_1">admin@aultrastea.com</p>
+          <p class="font-medium text-dark text-sm leading-relaxed" id="contact_email_2">tea@xf-tea.com</p>
+        </div>
+        <!-- 电话 -->
+        <div>
+          <p class="text-dark/50 text-sm mb-1" data-lang="contact_phone">Phone / WhatsApp</p>
+          <p class="font-medium text-dark text-sm leading-relaxed" id="contact_phone_1">400-059-8108</p>
+          <p class="font-medium text-dark text-sm leading-relaxed" id="contact_phone_2">+86 731 8465 2208</p>
+        </div>
+        <!-- 地址 -->
+        <div>
+          <p class="text-dark/50 text-sm mb-1" data-lang="contact_address">Address</p>
+          <p class="font-medium text-dark text-sm leading-relaxed" id="contact_address_1">贵州省安顺市西秀区</p>
+          <p class="font-medium text-dark text-sm leading-relaxed" id="contact_address_2">鸡场乡鑫堡村茶果场</p>
+        </div>
+        <!-- 社交媒体（跨两列） -->
+        <div class="col-span-2 md:col-span-4 flex items-center gap-3 pt-2 border-t border-gray-100">
+          <p class="text-dark/50 text-sm font-medium shrink-0" data-lang="contact_social">Follow Us</p>
+          <div id="social-links" class="flex gap-4">
+            <!-- 社媒图标由 data.json 动态渲染 -->
           </div>
         </div>
       </div>
