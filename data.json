@@ -1752,8 +1752,8 @@
               "has_liquor": true,
               "images": {
                 "conventional": {
-                  "dry": "",
-                  "liquor": ""
+                  "dry": "blob:https://dash.cloudflare.com/046e27e4-b4b3-46cc-b4d7-9666ef12f068",
+                  "liquor": "blob:https://dash.cloudflare.com/503fcb47-dd3a-433a-9335-8c39abf60816"
                 },
                 "eu": {
                   "dry": "",
