@@ -361,7 +361,7 @@
               "has_liquor": true,
               "images": {
                 "conventional": {
-                  "dry": "https://ik.imagekit.io/Lemon/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-3505-1_1.jpg",
+                  "dry": "blob:https://dash.cloudflare.com/04acdc74-53e8-47a2-bf0c-9ca03b3505ed",
                   "liquor": "https://ik.imagekit.io/Lemon/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-3505-1_2.jpg"
                 },
                 "eu": {
