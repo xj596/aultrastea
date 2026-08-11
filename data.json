@@ -192,18 +192,17 @@
   "contact_info": {
     "email_1": "admin@aultrastea.com",
     "email_2": "tea@xf-tea.com",
-    "phone_1": "86-731-84652476",
-    "phone_2": "86-731-84652476",
+    "phone_1": "收集中",
+    "phone_1_en": "To be collected",
+    "phone_1_ru": "Уточняется",
+    "phone_1_de": "Wird noch bekannt gegeben",
+    "phone_2": "收集中",
+    "phone_2_en": "To be collected",
     "address_1": "贵州省安顺市西秀区",
-    "address_2": "鸡场乡鑫堡村茶果场",
-    "phone_1_en": "86-731-84652476",
-    "phone_2_en": "86-731-84652476",
-    "phone_1_ru": "86-731-84652476",
-    "phone_1_de": "86-731-84652476",
-    "phone_2_ru": "86-731-84652476",
-    "phone_2_de": "86-731-84652476",
     "address_1_en": "Chaguochang, Xinbao Village, Jichang Town, Xixiu District,",
-    "address_2_en": "Anshun City, Guizhou Province"
+    "address_2": "鸡场乡鑫堡村茶果场",
+    "address_2_en": "Anshun City, Guizhou Province",
+    "email": "admin@aultrastea.com"
   },
   "about_video": {
     "embed_code": "",
@@ -338,8 +337,8 @@
               "has_liquor": true,
               "images": {
                 "conventional": {
-                  "dry": "https://video.aultras-tea.com/Green%20tea/1%E7%8F%A0%E8%8C%B6Gunpowder/1-3505-A05/1-3505-A05-1-1_1.jpg",
-                  "liquor": "https://video.aultras-tea.com/Green%20tea/1%E7%8F%A0%E8%8C%B6Gunpowder/1-3505-A05/1-3505-A05-1-1_2.jpg"
+                  "dry": "https://ik.imagekit.io/Lemon/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-3505-1_1.jpg",
+                  "liquor": "https://ik.imagekit.io/Lemon/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-3505-1_2.jpg"
                 },
                 "eu": {
                   "dry": "",
@@ -361,7 +360,7 @@
               "has_liquor": true,
               "images": {
                 "conventional": {
-                  "dry": "blob:https://dash.cloudflare.com/04acdc74-53e8-47a2-bf0c-9ca03b3505ed",
+                  "dry": "https://ik.imagekit.io/Lemon/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-3505-1_1.jpg",
                   "liquor": "https://ik.imagekit.io/Lemon/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-3505-1_2.jpg"
                 },
                 "eu": {
@@ -384,8 +383,8 @@
               "has_liquor": true,
               "images": {
                 "conventional": {
-                  "dry": "https://video.aultras-tea.com/Green%20tea/1%E7%8F%A0%E8%8C%B6Gunpowder/2-3505AAA/2-3505AAA-1.jpg",
-                  "liquor": ""
+                  "dry": "https://ik.imagekit.io/Lemon/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-3505-1_1.jpg",
+                  "liquor": "https://ik.imagekit.io/Lemon/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-3505-1_2.jpg"
                 },
                 "eu": {
                   "dry": "",
@@ -1752,8 +1751,8 @@
               "has_liquor": true,
               "images": {
                 "conventional": {
-                  "dry": "blob:https://dash.cloudflare.com/046e27e4-b4b3-46cc-b4d7-9666ef12f068",
-                  "liquor": "https://video.aultras-tea.com/Green%20tea%202/9%E5%85%B6%E4%BB%96others/7-8810/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-%E8%8C%B6%E5%9D%AF-%E5%A4%A7%E5%8F%B6%E7%A7%8D-6_2.jpg"
+                  "dry": "",
+                  "liquor": ""
                 },
                 "eu": {
                   "dry": "",
