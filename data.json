@@ -2626,7 +2626,7 @@
                 "eu": true,
                 "organic": true
               },
-              "shape": "strip",
+              "shape": "crumb",
               "origin": ""
             },
             {
@@ -2687,10 +2687,10 @@
               },
               "standards": {
                 "conventional": true,
-                "eu": false,
-                "organic": false
+                "eu": true,
+                "organic": true
               },
-              "shape": "strip",
+              "shape": "granule",
               "origin": ""
             }
           ]
@@ -2723,15 +2723,17 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
+                },
+                "dry": "https://video.aultras-tea.com/Black%20tea/2%E7%BA%A2%E6%9D%A1%E8%8C%B6Black-Tea/1-Premium-Dian-Hong-Black-Tea/%E5%A4%96%E8%B4%B8-%E7%BA%A2%E8%8C%B6-%E5%A4%A7%E5%8F%B6%E7%BA%A2%E6%9D%A11_1.jpg",
+                "liquor": "https://video.aultras-tea.com/Black%20tea/2%E7%BA%A2%E6%9D%A1%E8%8C%B6Black-Tea/1-Premium-Dian-Hong-Black-Tea/%E5%A4%96%E8%B4%B8-%E7%BA%A2%E8%8C%B6-%E5%A4%A7%E5%8F%B6%E7%BA%A2%E6%9D%A11_2.jpg"
               },
               "standards": {
-                "conventional": false,
-                "eu": false,
-                "organic": false
+                "conventional": true,
+                "eu": true,
+                "organic": true
               },
               "shape": "strip",
-              "origin": ""
+              "origin": "云南"
             },
             {
               "name": {
@@ -2783,12 +2785,14 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
+                },
+                "dry": "https://video.aultras-tea.com/Black%20tea/2%E7%BA%A2%E6%9D%A1%E8%8C%B6Black-Tea/3-Black-Tea-Grade-5/29-Black-Tea-Grade-5-1-1.jpg",
+                "liquor": "https://video.aultras-tea.com/Black%20tea/2%E7%BA%A2%E6%9D%A1%E8%8C%B6Black-Tea/3-Black-Tea-Grade-5/29-Black-Tea-Grade-5-1-2.jpg"
               },
               "standards": {
-                "conventional": false,
-                "eu": false,
-                "organic": false
+                "conventional": true,
+                "eu": true,
+                "organic": true
               },
               "shape": "strip",
               "origin": ""
@@ -2813,12 +2817,14 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
+                },
+                "dry": "https://video.aultras-tea.com/Black%20tea/2%E7%BA%A2%E6%9D%A1%E8%8C%B6Black-Tea/4-Black-Tea-Grade-4/%E5%A4%96%E8%B4%B8-%E7%BA%A2%E8%8C%B6-%E5%A4%A7%E5%8F%B6%E7%BA%A2%E6%9D%A13_1.jpg",
+                "liquor": "https://video.aultras-tea.com/Black%20tea/2%E7%BA%A2%E6%9D%A1%E8%8C%B6Black-Tea/4-Black-Tea-Grade-4/%E5%A4%96%E8%B4%B8-%E7%BA%A2%E8%8C%B6-%E5%A4%A7%E5%8F%B6%E7%BA%A2%E6%9D%A13_2.jpg"
               },
               "standards": {
-                "conventional": false,
-                "eu": false,
-                "organic": false
+                "conventional": true,
+                "eu": true,
+                "organic": true
               },
               "shape": "strip",
               "origin": ""
@@ -2843,12 +2849,14 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
+                },
+                "dry": "https://video.aultras-tea.com/Black%20tea/2%E7%BA%A2%E6%9D%A1%E8%8C%B6Black-Tea/5-Black-Tea-Grade-3/%E5%A4%96%E8%B4%B8-%E7%BA%A2%E8%8C%B6-%E5%A4%A7%E5%8F%B6%E7%BA%A2%E6%9D%A14_1.jpg",
+                "liquor": "https://video.aultras-tea.com/Black%20tea/2%E7%BA%A2%E6%9D%A1%E8%8C%B6Black-Tea/5-Black-Tea-Grade-3/%E5%A4%96%E8%B4%B8-%E7%BA%A2%E8%8C%B6-%E5%A4%A7%E5%8F%B6%E7%BA%A2%E6%9D%A14_2.jpg"
               },
               "standards": {
-                "conventional": false,
-                "eu": false,
-                "organic": false
+                "conventional": true,
+                "eu": true,
+                "organic": true
               },
               "shape": "strip",
               "origin": ""
@@ -2873,12 +2881,14 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
+                },
+                "dry": "https://video.aultras-tea.com/Black%20tea/2%E7%BA%A2%E6%9D%A1%E8%8C%B6Black-Tea/6-Black-Tea-Grade-2/29-Black-Tea-Grade-5-2-1.jpg",
+                "liquor": "https://video.aultras-tea.com/Black%20tea/2%E7%BA%A2%E6%9D%A1%E8%8C%B6Black-Tea/6-Black-Tea-Grade-2/29-Black-Tea-Grade-5-2-2.jpg"
               },
               "standards": {
-                "conventional": false,
-                "eu": false,
-                "organic": false
+                "conventional": true,
+                "eu": true,
+                "organic": true
               },
               "shape": "strip",
               "origin": ""
@@ -2903,12 +2913,14 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
+                },
+                "dry": "https://video.aultras-tea.com/Black%20tea/2%E7%BA%A2%E6%9D%A1%E8%8C%B6Black-Tea/7-Black-Tea-Grade-1/%E5%A4%96%E8%B4%B8-%E7%BA%A2%E8%8C%B6-%E5%A4%A7%E5%8F%B6%E7%BA%A2%E6%9D%A15_1.jpg",
+                "liquor": "https://video.aultras-tea.com/Black%20tea/2%E7%BA%A2%E6%9D%A1%E8%8C%B6Black-Tea/7-Black-Tea-Grade-1/%E5%A4%96%E8%B4%B8-%E7%BA%A2%E8%8C%B6-%E5%A4%A7%E5%8F%B6%E7%BA%A2%E6%9D%A15_2.jpg"
               },
               "standards": {
-                "conventional": false,
-                "eu": false,
-                "organic": false
+                "conventional": true,
+                "eu": true,
+                "organic": true
               },
               "shape": "strip",
               "origin": ""
@@ -2933,12 +2945,14 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
+                },
+                "dry": "https://video.aultras-tea.com/Black%20tea/2%E7%BA%A2%E6%9D%A1%E8%8C%B6Black-Tea/8-Black-Tea-Grade-1/%E5%A4%96%E8%B4%B8-%E7%BA%A2%E8%8C%B6-%E5%A4%A7%E5%8F%B6%E7%BA%A2%E6%9D%A12_1.jpg",
+                "liquor": "https://video.aultras-tea.com/Black%20tea/2%E7%BA%A2%E6%9D%A1%E8%8C%B6Black-Tea/8-Black-Tea-Grade-1/%E5%A4%96%E8%B4%B8-%E7%BA%A2%E8%8C%B6-%E5%A4%A7%E5%8F%B6%E7%BA%A2%E6%9D%A12_2.jpg"
               },
               "standards": {
-                "conventional": false,
-                "eu": false,
-                "organic": false
+                "conventional": true,
+                "eu": true,
+                "organic": true
               },
               "shape": "strip",
               "origin": ""
