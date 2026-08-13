@@ -2092,7 +2092,7 @@
                 "liquor": "https://video.aultras-tea.com/Green%20tea%202/9%E5%85%B6%E4%BB%96others/1-Xiao-Maojian-No.1/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-%E8%8C%B6%E5%9D%AF-%E5%A4%A7%E5%8F%B6%E7%A7%8D-1_2.jpg"
               },
               "standards": {
-                "conventional": false,
+                "conventional": true,
                 "eu": false,
                 "organic": false
               },
@@ -2119,10 +2119,12 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
+                },
+                "dry": "https://video.aultras-tea.com/Green%20tea%202/9%E5%85%B6%E4%BB%96others/2-Stir-fried-Green-Tea-Super-Premium/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-%E8%8C%B6%E5%9D%AF-%E5%A4%A7%E5%8F%B6%E7%A7%8D-2_1.jpg",
+                "liquor": "https://video.aultras-tea.com/Green%20tea%202/9%E5%85%B6%E4%BB%96others/2-Stir-fried-Green-Tea-Super-Premium/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-%E8%8C%B6%E5%9D%AF-%E5%A4%A7%E5%8F%B6%E7%A7%8D-2_2.jpg"
               },
               "standards": {
-                "conventional": false,
+                "conventional": true,
                 "eu": false,
                 "organic": false
               },
@@ -2149,10 +2151,12 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
+                },
+                "dry": "https://video.aultras-tea.com/Green%20tea%202/9%E5%85%B6%E4%BB%96others/3-Stir-fried-Green-Tea-A/20-Stir-fried-Green-Tea-A-1.jpg",
+                "liquor": "https://video.aultras-tea.com/Green%20tea%202/9%E5%85%B6%E4%BB%96others/3-Stir-fried-Green-Tea-A/20-Stir-fried-Green-Tea-A-2.jpg"
               },
               "standards": {
-                "conventional": false,
+                "conventional": true,
                 "eu": false,
                 "organic": false
               },
@@ -2179,15 +2183,17 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
+                },
+                "dry": "https://video.aultras-tea.com/Green%20tea%202/9%E5%85%B6%E4%BB%96others/4-Yunnan-Baked-Xiao-Maojian/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-%E8%8C%B6%E5%9D%AF-%E5%A4%A7%E5%8F%B6%E7%A7%8D-4_1.jpg",
+                "liquor": "https://video.aultras-tea.com/Green%20tea%202/9%E5%85%B6%E4%BB%96others/4-Yunnan-Baked-Xiao-Maojian/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-%E8%8C%B6%E5%9D%AF-%E5%A4%A7%E5%8F%B6%E7%A7%8D-4_2.jpg"
               },
               "standards": {
-                "conventional": false,
+                "conventional": true,
                 "eu": false,
                 "organic": false
               },
               "shape": "strip",
-              "origin": ""
+              "origin": "云南"
             },
             {
               "name": {
@@ -2209,15 +2215,17 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
+                },
+                "dry": "https://video.aultras-tea.com/Green%20tea%202/9%E5%85%B6%E4%BB%96others/5-Yunnan-Straight-Leaf-Green-Tea/21-Yunnan-Straight-Leaf-Green-Tea-1.jpg",
+                "liquor": "https://video.aultras-tea.com/Green%20tea%202/9%E5%85%B6%E4%BB%96others/5-Yunnan-Straight-Leaf-Green-Tea/21-Yunnan-Straight-Leaf-Green-Tea-2.jpg"
               },
               "standards": {
-                "conventional": false,
+                "conventional": true,
                 "eu": false,
                 "organic": false
               },
               "shape": "strip",
-              "origin": ""
+              "origin": "云南"
             },
             {
               "name": {
@@ -2239,10 +2247,12 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
+                },
+                "dry": "https://video.aultras-tea.com/Green%20tea%202/9%E5%85%B6%E4%BB%96others/6-Yunnan-Straight-Leaf-Green-Tea-Grade-1/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-%E8%8C%B6%E5%9D%AF-%E5%A4%A7%E5%8F%B6%E7%A7%8D-7_1.jpg",
+                "liquor": "https://video.aultras-tea.com/Green%20tea%202/9%E5%85%B6%E4%BB%96others/6-Yunnan-Straight-Leaf-Green-Tea-Grade-1/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-%E8%8C%B6%E5%9D%AF-%E5%A4%A7%E5%8F%B6%E7%A7%8D-7_2.jpg"
               },
               "standards": {
-                "conventional": false,
+                "conventional": true,
                 "eu": false,
                 "organic": false
               },
@@ -2269,10 +2279,12 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
+                },
+                "dry": "https://video.aultras-tea.com/Green%20tea%202/9%E5%85%B6%E4%BB%96others/7-8810/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-%E8%8C%B6%E5%9D%AF-%E5%A4%A7%E5%8F%B6%E7%A7%8D-6_1.jpg",
+                "liquor": "https://video.aultras-tea.com/Green%20tea%202/9%E5%85%B6%E4%BB%96others/7-8810/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-%E8%8C%B6%E5%9D%AF-%E5%A4%A7%E5%8F%B6%E7%A7%8D-6_2.jpg"
               },
               "standards": {
-                "conventional": false,
+                "conventional": true,
                 "eu": false,
                 "organic": false
               },
