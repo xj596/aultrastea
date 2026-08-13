@@ -2987,11 +2987,13 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
+                },
+                "dry": "https://video.aultras-tea.com/Black%20tea/3%E5%90%8D%E4%BC%98%E7%BA%A2%E8%8C%B6Premium-Famous-Black-Teas/1-Red-Maofeng/%E5%A4%96%E8%B4%B8-%E7%BA%A2%E8%8C%B6-%E5%90%8D%E4%BC%98%E8%8C%B61_1.jpg",
+                "liquor": "https://video.aultras-tea.com/Black%20tea/3%E5%90%8D%E4%BC%98%E7%BA%A2%E8%8C%B6Premium-Famous-Black-Teas/1-Red-Maofeng/%E5%A4%96%E8%B4%B8-%E7%BA%A2%E8%8C%B6-%E5%90%8D%E4%BC%98%E8%8C%B61_2.jpg"
               },
               "standards": {
-                "conventional": false,
-                "eu": false,
+                "conventional": true,
+                "eu": true,
                 "organic": false
               },
               "shape": "strip",
@@ -3017,10 +3019,12 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
+                },
+                "dry": "https://video.aultras-tea.com/Black%20tea/3%E5%90%8D%E4%BC%98%E7%BA%A2%E8%8C%B6Premium-Famous-Black-Teas/2-Golden-Needle-Black-Tea/%E5%A4%96%E8%B4%B8-%E7%BA%A2%E8%8C%B6-%E5%90%8D%E4%BC%98%E8%8C%B62_1.jpg",
+                "liquor": "https://video.aultras-tea.com/Black%20tea/3%E5%90%8D%E4%BC%98%E7%BA%A2%E8%8C%B6Premium-Famous-Black-Teas/2-Golden-Needle-Black-Tea/%E5%A4%96%E8%B4%B8-%E7%BA%A2%E8%8C%B6-%E5%90%8D%E4%BC%98%E8%8C%B62_2.jpg"
               },
               "standards": {
-                "conventional": false,
+                "conventional": true,
                 "eu": false,
                 "organic": false
               },
@@ -3047,10 +3051,12 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
+                },
+                "dry": "https://video.aultras-tea.com/Black%20tea/3%E5%90%8D%E4%BC%98%E7%BA%A2%E8%8C%B6Premium-Famous-Black-Teas/3-Floral-Souchong/%E5%A4%96%E8%B4%B8-%E7%BA%A2%E8%8C%B6-%E5%90%8D%E4%BC%98%E8%8C%B63_1.jpg",
+                "liquor": "https://video.aultras-tea.com/Black%20tea/3%E5%90%8D%E4%BC%98%E7%BA%A2%E8%8C%B6Premium-Famous-Black-Teas/3-Floral-Souchong/%E5%A4%96%E8%B4%B8-%E7%BA%A2%E8%8C%B6-%E5%90%8D%E4%BC%98%E8%8C%B63_2.jpg"
               },
               "standards": {
-                "conventional": false,
+                "conventional": true,
                 "eu": false,
                 "organic": false
               },
@@ -3077,10 +3083,12 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
+                },
+                "dry": "https://video.aultras-tea.com/Black%20tea/3%E5%90%8D%E4%BC%98%E7%BA%A2%E8%8C%B6Premium-Famous-Black-Teas/4-Golden-Peony-No.1/%E5%A4%96%E8%B4%B8-%E7%BA%A2%E8%8C%B6-%E5%90%8D%E4%BC%98%E8%8C%B64_1.jpg",
+                "liquor": "https://video.aultras-tea.com/Black%20tea/3%E5%90%8D%E4%BC%98%E7%BA%A2%E8%8C%B6Premium-Famous-Black-Teas/4-Golden-Peony-No.1/%E5%A4%96%E8%B4%B8-%E7%BA%A2%E8%8C%B6-%E5%90%8D%E4%BC%98%E8%8C%B64_2.jpg"
               },
               "standards": {
-                "conventional": false,
+                "conventional": true,
                 "eu": false,
                 "organic": false
               },
