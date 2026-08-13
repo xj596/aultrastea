@@ -3129,8 +3129,17 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
-              }
+                },
+                "dry": "https://video.aultras-tea.com/Dark%20tea/1-%E7%86%9F%E7%A2%8E%E7%9B%AE%E8%8C%B6(%E6%99%AE%E6%B4%B1%E7%A2%8E)%EF%BC%9APu%E2%80%99er-Tea-Fannings/%E5%A4%96%E8%B4%B8-%E5%9B%BD%E6%A0%87-%E9%BB%91%E8%8C%B6-1_1.jpg",
+                "liquor": "https://video.aultras-tea.com/Dark%20tea/1-%E7%86%9F%E7%A2%8E%E7%9B%AE%E8%8C%B6(%E6%99%AE%E6%B4%B1%E7%A2%8E)%EF%BC%9APu%E2%80%99er-Tea-Fannings/%E5%A4%96%E8%B4%B8-%E5%9B%BD%E6%A0%87-%E9%BB%91%E8%8C%B6-1_2.jpg"
+              },
+              "standards": {
+                "conventional": true,
+                "eu": true,
+                "organic": true
+              },
+              "shape": "crumb",
+              "origin": ""
             }
           ]
         },
@@ -3162,8 +3171,17 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
-              }
+                },
+                "dry": "https://video.aultras-tea.com/Dark%20tea/2-%E7%86%9F%E6%99%AE-Fermented-Pu%E2%80%99er/%E5%A4%96%E8%B4%B8-%E5%9B%BD%E6%A0%87-%E9%BB%91%E8%8C%B6-3_1.jpg",
+                "liquor": "https://video.aultras-tea.com/Dark%20tea/2-%E7%86%9F%E6%99%AE-Fermented-Pu%E2%80%99er/%E5%A4%96%E8%B4%B8-%E5%9B%BD%E6%A0%87-%E9%BB%91%E8%8C%B6-3_2.jpg"
+              },
+              "standards": {
+                "conventional": true,
+                "eu": true,
+                "organic": true
+              },
+              "shape": "strip",
+              "origin": ""
             }
           ]
         },
@@ -3195,8 +3213,16 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
-              }
+                },
+                "dry": "https://video.aultras-tea.com/Dark%20tea/3-%E8%8C%B6%E5%8C%96%E7%9F%B3Tea-Fossil/%E5%A4%96%E8%B4%B8-%E5%9B%BD%E6%A0%87-%E9%BB%91%E8%8C%B6-4_1.jpg"
+              },
+              "standards": {
+                "conventional": true,
+                "eu": false,
+                "organic": false
+              },
+              "shape": "granule",
+              "origin": ""
             }
           ]
         },
@@ -3229,7 +3255,14 @@
                   "dry": "",
                   "liquor": ""
                 }
-              }
+              },
+              "standards": {
+                "conventional": true,
+                "eu": false,
+                "organic": false
+              },
+              "shape": "granule",
+              "origin": ""
             },
             {
               "name": {
@@ -3252,7 +3285,14 @@
                   "dry": "",
                   "liquor": ""
                 }
-              }
+              },
+              "standards": {
+                "conventional": true,
+                "eu": false,
+                "organic": false
+              },
+              "shape": "granule",
+              "origin": ""
             },
             {
               "name": {
@@ -3275,7 +3315,14 @@
                   "dry": "",
                   "liquor": ""
                 }
-              }
+              },
+              "standards": {
+                "conventional": true,
+                "eu": false,
+                "organic": false
+              },
+              "shape": "granule",
+              "origin": ""
             }
           ]
         }
