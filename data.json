@@ -1099,14 +1099,16 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
+                },
+                "dry": "https://video.aultras-tea.com/Green%20tea/3%E7%A7%80%E7%9C%89XIU-MEI/1-XIU-MEI-A/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-%E7%A7%80%E7%9C%89-1_1.jpg",
+                "liquor": "https://video.aultras-tea.com/Green%20tea/3%E7%A7%80%E7%9C%89XIU-MEI/1-XIU-MEI-A/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-%E7%A7%80%E7%9C%89-1_2.jpg"
               },
               "standards": {
                 "conventional": true,
                 "eu": false,
                 "organic": false
               },
-              "shape": "strip",
+              "shape": "crumb",
               "origin": ""
             },
             {
@@ -1129,14 +1131,16 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
+                },
+                "dry": "https://video.aultras-tea.com/Green%20tea/3%E7%A7%80%E7%9C%89XIU-MEI/2-XIU-MEI/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-%E7%A7%80%E7%9C%89-2_1.jpg",
+                "liquor": "https://video.aultras-tea.com/Green%20tea/3%E7%A7%80%E7%9C%89XIU-MEI/2-XIU-MEI/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-%E7%A7%80%E7%9C%89-2_2.jpg"
               },
               "standards": {
-                "conventional": false,
+                "conventional": true,
                 "eu": false,
                 "organic": false
               },
-              "shape": "strip",
+              "shape": "crumb",
               "origin": ""
             }
           ]
