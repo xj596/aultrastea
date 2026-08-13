@@ -3574,12 +3574,14 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
+                },
+                "dry": "https://video.aultras-tea.com/White%20tea/3-%E7%99%BD%E9%BE%99%E7%8F%A0White-Dragon-Pearl/White-Dragon-Pearl/32-White-Dragon-Pearl-2.jpg",
+                "liquor": "https://video.aultras-tea.com/White%20tea/3-%E7%99%BD%E9%BE%99%E7%8F%A0White-Dragon-Pearl/White-Dragon-Pearl/32-White-Dragon-Pearl-3.jpg"
               },
               "standards": {
-                "conventional": false,
+                "conventional": true,
                 "eu": false,
-                "organic": false
+                "organic": true
               },
               "shape": "strip",
               "origin": ""
@@ -3614,14 +3616,16 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
+                },
+                "dry": "https://video.aultras-tea.com/White%20tea/4-%E7%99%BD%E8%8C%B6%E7%A2%8EWhite-tea-Fannings/1-White-tea-Fannings-A/33-White-tea-Fannings-A-1.jpg",
+                "liquor": "https://video.aultras-tea.com/White%20tea/4-%E7%99%BD%E8%8C%B6%E7%A2%8EWhite-tea-Fannings/1-White-tea-Fannings-A/33-White-tea-Fannings-A-2.jpg"
               },
               "standards": {
-                "conventional": false,
-                "eu": false,
-                "organic": false
+                "conventional": true,
+                "eu": true,
+                "organic": true
               },
-              "shape": "strip",
+              "shape": "crumb",
               "origin": ""
             },
             {
