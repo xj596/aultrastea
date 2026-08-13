@@ -3362,8 +3362,17 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
-              }
+                },
+                "dry": "https://video.aultras-tea.com/White%20tea/1-%E7%99%BD%E6%AF%AB%E9%93%B6%E9%92%88Silver-Needle/1-Silver-Needle-AA/30-Silver-Needle-AA-1.jpg",
+                "liquor": "https://video.aultras-tea.com/White%20tea/1-%E7%99%BD%E6%AF%AB%E9%93%B6%E9%92%88Silver-Needle/1-Silver-Needle-AA/30-Silver-Needle-AA-2.jpg"
+              },
+              "standards": {
+                "conventional": true,
+                "eu": true,
+                "organic": true
+              },
+              "shape": "strip",
+              "origin": ""
             },
             {
               "name": {
@@ -3385,8 +3394,17 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
-              }
+                },
+                "dry": "https://video.aultras-tea.com/White%20tea/1-%E7%99%BD%E6%AF%AB%E9%93%B6%E9%92%88Silver-Needle/2-Silver-Needle-A/%E5%A4%96%E8%B4%B8-%E5%9B%BD%E6%A0%87-%E7%99%BD%E6%AF%AB%E9%93%B6%E9%92%88-1_1.jpg",
+                "liquor": "https://video.aultras-tea.com/White%20tea/1-%E7%99%BD%E6%AF%AB%E9%93%B6%E9%92%88Silver-Needle/2-Silver-Needle-A/%E5%A4%96%E8%B4%B8-%E5%9B%BD%E6%A0%87-%E7%99%BD%E6%AF%AB%E9%93%B6%E9%92%88-1_2.jpg"
+              },
+              "standards": {
+                "conventional": true,
+                "eu": true,
+                "organic": true
+              },
+              "shape": "strip",
+              "origin": ""
             },
             {
               "name": {
@@ -3408,8 +3426,17 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
-              }
+                },
+                "dry": "https://video.aultras-tea.com/White%20tea/1-%E7%99%BD%E6%AF%AB%E9%93%B6%E9%92%88Silver-Needle/3-Silver-Needle/%E5%A4%96%E8%B4%B8-%E5%9B%BD%E6%A0%87-%E7%99%BD%E6%AF%AB%E9%93%B6%E9%92%88-2_1.jpg",
+                "liquor": "https://video.aultras-tea.com/White%20tea/1-%E7%99%BD%E6%AF%AB%E9%93%B6%E9%92%88Silver-Needle/3-Silver-Needle/%E5%A4%96%E8%B4%B8-%E5%9B%BD%E6%A0%87-%E7%99%BD%E6%AF%AB%E9%93%B6%E9%92%88-2_2.jpg"
+              },
+              "standards": {
+                "conventional": true,
+                "eu": true,
+                "organic": true
+              },
+              "shape": "strip",
+              "origin": ""
             }
           ]
         },
@@ -3442,7 +3469,14 @@
                   "dry": "",
                   "liquor": ""
                 }
-              }
+              },
+              "standards": {
+                "conventional": true,
+                "eu": true,
+                "organic": true
+              },
+              "shape": "strip",
+              "origin": ""
             },
             {
               "name": {
@@ -3465,7 +3499,14 @@
                   "dry": "",
                   "liquor": ""
                 }
-              }
+              },
+              "standards": {
+                "conventional": true,
+                "eu": true,
+                "organic": true
+              },
+              "shape": "strip",
+              "origin": ""
             },
             {
               "name": {
@@ -3488,7 +3529,14 @@
                   "dry": "",
                   "liquor": ""
                 }
-              }
+              },
+              "standards": {
+                "conventional": true,
+                "eu": true,
+                "organic": true
+              },
+              "shape": "strip",
+              "origin": ""
             }
           ]
         },
@@ -3521,7 +3569,14 @@
                   "dry": "",
                   "liquor": ""
                 }
-              }
+              },
+              "standards": {
+                "conventional": false,
+                "eu": false,
+                "organic": false
+              },
+              "shape": "strip",
+              "origin": ""
             }
           ]
         },
@@ -3554,7 +3609,14 @@
                   "dry": "",
                   "liquor": ""
                 }
-              }
+              },
+              "standards": {
+                "conventional": false,
+                "eu": false,
+                "organic": false
+              },
+              "shape": "strip",
+              "origin": ""
             },
             {
               "name": {
@@ -3577,7 +3639,14 @@
                   "dry": "",
                   "liquor": ""
                 }
-              }
+              },
+              "standards": {
+                "conventional": false,
+                "eu": false,
+                "organic": false
+              },
+              "shape": "strip",
+              "origin": ""
             }
           ]
         }
