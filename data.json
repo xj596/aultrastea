@@ -3468,11 +3468,13 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
+                },
+                "dry": "https://video.aultras-tea.com/White%20tea/2-%E7%99%BD%E7%89%A1%E4%B8%B9White-Peony/1-White-Peony-AA/31-White-Peony-AA-1.jpg",
+                "liquor": "https://video.aultras-tea.com/White%20tea/2-%E7%99%BD%E7%89%A1%E4%B8%B9White-Peony/1-White-Peony-AA/31-White-Peony-AA-2.jpg"
               },
               "standards": {
-                "conventional": true,
-                "eu": true,
+                "conventional": false,
+                "eu": false,
                 "organic": true
               },
               "shape": "strip",
@@ -3498,12 +3500,14 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
+                },
+                "dry": "https://video.aultras-tea.com/White%20tea/2-%E7%99%BD%E7%89%A1%E4%B8%B9White-Peony/2-White-Peony-A/%E5%A4%96%E8%B4%B8-%E5%9B%BD%E6%A0%87-%E7%99%BD%E7%89%A1%E4%B8%B9-5_1.jpg",
+                "liquor": "https://video.aultras-tea.com/White%20tea/2-%E7%99%BD%E7%89%A1%E4%B8%B9White-Peony/2-White-Peony-A/%E5%A4%96%E8%B4%B8-%E5%9B%BD%E6%A0%87-%E7%99%BD%E7%89%A1%E4%B8%B9-5_2.jpg"
               },
               "standards": {
                 "conventional": true,
                 "eu": true,
-                "organic": true
+                "organic": false
               },
               "shape": "strip",
               "origin": ""
@@ -3528,12 +3532,14 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
+                },
+                "dry": "https://video.aultras-tea.com/White%20tea/2-%E7%99%BD%E7%89%A1%E4%B8%B9White-Peony/3-White-Peony/%E5%A4%96%E8%B4%B8-%E5%9B%BD%E6%A0%87-%E7%99%BD%E7%89%A1%E4%B8%B9-1_1.jpg",
+                "liquor": "https://video.aultras-tea.com/White%20tea/2-%E7%99%BD%E7%89%A1%E4%B8%B9White-Peony/3-White-Peony/%E5%A4%96%E8%B4%B8-%E5%9B%BD%E6%A0%87-%E7%99%BD%E7%89%A1%E4%B8%B9-1_2.jpg"
               },
               "standards": {
                 "conventional": true,
                 "eu": true,
-                "organic": true
+                "organic": false
               },
               "shape": "strip",
               "origin": ""
