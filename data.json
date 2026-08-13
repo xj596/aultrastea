@@ -1555,12 +1555,14 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
+                },
+                "dry": "https://video.aultras-tea.com/Green%20tea%202/7%E8%92%B8%E9%9D%92Sencha/1Sencha-3A/14-Sencha-3A-1.jpg",
+                "liquor": "https://video.aultras-tea.com/Green%20tea%202/7%E8%92%B8%E9%9D%92Sencha/1Sencha-3A/14-Sencha-3A-2.jpg"
               },
               "standards": {
-                "conventional": false,
-                "eu": false,
-                "organic": false
+                "conventional": true,
+                "eu": true,
+                "organic": true
               },
               "shape": "strip",
               "origin": ""
@@ -1585,12 +1587,14 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
+                },
+                "dry": "https://video.aultras-tea.com/Green%20tea%202/7%E8%92%B8%E9%9D%92Sencha/2-Sencha-3A/15-Sencha-3A-1-1.jpg",
+                "liquor": "https://video.aultras-tea.com/Green%20tea%202/7%E8%92%B8%E9%9D%92Sencha/2-Sencha-3A/15-Sencha-3A-1-2.jpg"
               },
               "standards": {
-                "conventional": false,
-                "eu": false,
-                "organic": false
+                "conventional": true,
+                "eu": true,
+                "organic": true
               },
               "shape": "strip",
               "origin": ""
@@ -1615,12 +1619,14 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
+                },
+                "dry": "https://video.aultras-tea.com/Green%20tea%202/7%E8%92%B8%E9%9D%92Sencha/3-Sencha-2A/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-%E8%92%B8%E9%9D%92-1_1.jpg",
+                "liquor": "https://video.aultras-tea.com/Green%20tea%202/7%E8%92%B8%E9%9D%92Sencha/3-Sencha-2A/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-%E8%92%B8%E9%9D%92-1_2.jpg"
               },
               "standards": {
-                "conventional": false,
-                "eu": false,
-                "organic": false
+                "conventional": true,
+                "eu": true,
+                "organic": true
               },
               "shape": "strip",
               "origin": ""
@@ -1645,12 +1651,14 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
+                },
+                "dry": "https://video.aultras-tea.com/Green%20tea%202/7%E8%92%B8%E9%9D%92Sencha/4-Sencha-2A/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-%E8%92%B8%E9%9D%92-4_1.jpg",
+                "liquor": "https://video.aultras-tea.com/Green%20tea%202/7%E8%92%B8%E9%9D%92Sencha/4-Sencha-2A/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-%E8%92%B8%E9%9D%92-4_2.jpg"
               },
               "standards": {
-                "conventional": false,
-                "eu": false,
-                "organic": false
+                "conventional": true,
+                "eu": true,
+                "organic": true
               },
               "shape": "strip",
               "origin": ""
@@ -1675,12 +1683,14 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
+                },
+                "dry": "https://video.aultras-tea.com/Green%20tea%202/7%E8%92%B8%E9%9D%92Sencha/5-Sencha-A/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-%E8%92%B8%E9%9D%92-2_1.jpg",
+                "liquor": "https://video.aultras-tea.com/Green%20tea%202/7%E8%92%B8%E9%9D%92Sencha/5-Sencha-A/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-%E8%92%B8%E9%9D%92-2_2.jpg"
               },
               "standards": {
-                "conventional": false,
-                "eu": false,
-                "organic": false
+                "conventional": true,
+                "eu": true,
+                "organic": true
               },
               "shape": "strip",
               "origin": ""
@@ -1705,12 +1715,14 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
+                },
+                "dry": "https://video.aultras-tea.com/Green%20tea%202/7%E8%92%B8%E9%9D%92Sencha/6-Sencha/15-Sencha-3A-2-1.jpg",
+                "liquor": "https://video.aultras-tea.com/Green%20tea%202/7%E8%92%B8%E9%9D%92Sencha/6-Sencha/15-Sencha-3A-2-2.jpg"
               },
               "standards": {
-                "conventional": false,
-                "eu": false,
-                "organic": false
+                "conventional": true,
+                "eu": true,
+                "organic": true
               },
               "shape": "strip",
               "origin": ""
