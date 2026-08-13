@@ -2489,8 +2489,17 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
-              }
+                },
+                "dry": "https://video.aultras-tea.com/Black%20tea/1%E7%BA%A2%E7%A2%8EBlack-Tea-Fannings/1-Black-Tea-Fannings-2A/22-Black-Tea-Fannings-2A-1.jpg",
+                "liquor": "https://video.aultras-tea.com/Black%20tea/1%E7%BA%A2%E7%A2%8EBlack-Tea-Fannings/1-Black-Tea-Fannings-2A/22-Black-Tea-Fannings-2A-2.jpg"
+              },
+              "standards": {
+                "conventional": true,
+                "eu": true,
+                "organic": true
+              },
+              "shape": "crumb",
+              "origin": ""
             },
             {
               "name": {
@@ -2512,8 +2521,17 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
-              }
+                },
+                "dry": "https://video.aultras-tea.com/Black%20tea/1%E7%BA%A2%E7%A2%8EBlack-Tea-Fannings/2-Black-Tea-Fannings-A/23-Black-Tea-Fannings-A-1.jpg",
+                "liquor": "https://video.aultras-tea.com/Black%20tea/1%E7%BA%A2%E7%A2%8EBlack-Tea-Fannings/2-Black-Tea-Fannings-A/23-Black-Tea-Fannings-A-2.jpg"
+              },
+              "standards": {
+                "conventional": true,
+                "eu": true,
+                "organic": true
+              },
+              "shape": "crumb",
+              "origin": ""
             },
             {
               "name": {
@@ -2535,8 +2553,17 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
-              }
+                },
+                "dry": "https://video.aultras-tea.com/Black%20tea/1%E7%BA%A2%E7%A2%8EBlack-Tea-Fannings/3-Black-Tea-Fannings-A/24-Black-Tea-Fannings-A-1.jpg",
+                "liquor": "https://video.aultras-tea.com/Black%20tea/1%E7%BA%A2%E7%A2%8EBlack-Tea-Fannings/3-Black-Tea-Fannings-A/24-Black-Tea-Fannings-A-2.jpg"
+              },
+              "standards": {
+                "conventional": true,
+                "eu": true,
+                "organic": true
+              },
+              "shape": "crumb",
+              "origin": ""
             },
             {
               "name": {
@@ -2558,8 +2585,17 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
-              }
+                },
+                "dry": "https://video.aultras-tea.com/Black%20tea/1%E7%BA%A2%E7%A2%8EBlack-Tea-Fannings/4-Black-Tea-Fannings/%E5%A4%96%E8%B4%B8-%E7%BA%A2%E8%8C%B6-%E5%A4%A7%E5%8F%B6%E7%BA%A2%E7%A2%8E1_1.jpg",
+                "liquor": "https://video.aultras-tea.com/Black%20tea/1%E7%BA%A2%E7%A2%8EBlack-Tea-Fannings/4-Black-Tea-Fannings/%E5%A4%96%E8%B4%B8-%E7%BA%A2%E8%8C%B6-%E5%A4%A7%E5%8F%B6%E7%BA%A2%E7%A2%8E1_2.jpg"
+              },
+              "standards": {
+                "conventional": true,
+                "eu": true,
+                "organic": true
+              },
+              "shape": "crumb",
+              "origin": ""
             },
             {
               "name": {
@@ -2581,8 +2617,17 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
-              }
+                },
+                "dry": "https://video.aultras-tea.com/Black%20tea/1%E7%BA%A2%E7%A2%8EBlack-Tea-Fannings/5-Black-Tea-Fannings/25-Black-Tea-Fannings-1.jpg",
+                "liquor": "https://video.aultras-tea.com/Black%20tea/1%E7%BA%A2%E7%A2%8EBlack-Tea-Fannings/5-Black-Tea-Fannings/25-Black-Tea-Fannings-2.jpg"
+              },
+              "standards": {
+                "conventional": true,
+                "eu": true,
+                "organic": true
+              },
+              "shape": "strip",
+              "origin": ""
             },
             {
               "name": {
@@ -2604,8 +2649,17 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
-              }
+                },
+                "dry": "https://video.aultras-tea.com/Black%20tea/1%E7%BA%A2%E7%A2%8EBlack-Tea-Fannings/6-Black-Tea-CTC/26-Black-Tea-CTC-1.jpg",
+                "liquor": "https://video.aultras-tea.com/Black%20tea/1%E7%BA%A2%E7%A2%8EBlack-Tea-Fannings/6-Black-Tea-CTC/26-Black-Tea-CTC-2.jpg"
+              },
+              "standards": {
+                "conventional": true,
+                "eu": true,
+                "organic": true
+              },
+              "shape": "crumb",
+              "origin": ""
             },
             {
               "name": {
@@ -2627,8 +2681,17 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
-              }
+                },
+                "dry": "https://video.aultras-tea.com/Black%20tea/1%E7%BA%A2%E7%A2%8EBlack-Tea-Fannings/7-Black-Tea-CTC/27-Black-Tea-CTC-1.jpg",
+                "liquor": "https://video.aultras-tea.com/Black%20tea/1%E7%BA%A2%E7%A2%8EBlack-Tea-Fannings/7-Black-Tea-CTC/27-Black-Tea-CTC-2.jpg"
+              },
+              "standards": {
+                "conventional": true,
+                "eu": false,
+                "organic": false
+              },
+              "shape": "strip",
+              "origin": ""
             }
           ]
         },
@@ -2661,7 +2724,14 @@
                   "dry": "",
                   "liquor": ""
                 }
-              }
+              },
+              "standards": {
+                "conventional": false,
+                "eu": false,
+                "organic": false
+              },
+              "shape": "strip",
+              "origin": ""
             },
             {
               "name": {
@@ -2684,7 +2754,14 @@
                   "dry": "",
                   "liquor": ""
                 }
-              }
+              },
+              "standards": {
+                "conventional": false,
+                "eu": false,
+                "organic": false
+              },
+              "shape": "strip",
+              "origin": ""
             },
             {
               "name": {
@@ -2707,7 +2784,14 @@
                   "dry": "",
                   "liquor": ""
                 }
-              }
+              },
+              "standards": {
+                "conventional": false,
+                "eu": false,
+                "organic": false
+              },
+              "shape": "strip",
+              "origin": ""
             },
             {
               "name": {
@@ -2730,7 +2814,14 @@
                   "dry": "",
                   "liquor": ""
                 }
-              }
+              },
+              "standards": {
+                "conventional": false,
+                "eu": false,
+                "organic": false
+              },
+              "shape": "strip",
+              "origin": ""
             },
             {
               "name": {
@@ -2753,7 +2844,14 @@
                   "dry": "",
                   "liquor": ""
                 }
-              }
+              },
+              "standards": {
+                "conventional": false,
+                "eu": false,
+                "organic": false
+              },
+              "shape": "strip",
+              "origin": ""
             },
             {
               "name": {
@@ -2776,7 +2874,14 @@
                   "dry": "",
                   "liquor": ""
                 }
-              }
+              },
+              "standards": {
+                "conventional": false,
+                "eu": false,
+                "organic": false
+              },
+              "shape": "strip",
+              "origin": ""
             },
             {
               "name": {
@@ -2799,7 +2904,14 @@
                   "dry": "",
                   "liquor": ""
                 }
-              }
+              },
+              "standards": {
+                "conventional": false,
+                "eu": false,
+                "organic": false
+              },
+              "shape": "strip",
+              "origin": ""
             },
             {
               "name": {
@@ -2822,7 +2934,14 @@
                   "dry": "",
                   "liquor": ""
                 }
-              }
+              },
+              "standards": {
+                "conventional": false,
+                "eu": false,
+                "organic": false
+              },
+              "shape": "strip",
+              "origin": ""
             }
           ]
         },
@@ -2855,7 +2974,14 @@
                   "dry": "",
                   "liquor": ""
                 }
-              }
+              },
+              "standards": {
+                "conventional": false,
+                "eu": false,
+                "organic": false
+              },
+              "shape": "strip",
+              "origin": ""
             },
             {
               "name": {
@@ -2878,7 +3004,14 @@
                   "dry": "",
                   "liquor": ""
                 }
-              }
+              },
+              "standards": {
+                "conventional": false,
+                "eu": false,
+                "organic": false
+              },
+              "shape": "strip",
+              "origin": ""
             },
             {
               "name": {
@@ -2901,7 +3034,14 @@
                   "dry": "",
                   "liquor": ""
                 }
-              }
+              },
+              "standards": {
+                "conventional": false,
+                "eu": false,
+                "organic": false
+              },
+              "shape": "strip",
+              "origin": ""
             },
             {
               "name": {
@@ -2924,7 +3064,14 @@
                   "dry": "",
                   "liquor": ""
                 }
-              }
+              },
+              "standards": {
+                "conventional": false,
+                "eu": false,
+                "organic": false
+              },
+              "shape": "strip",
+              "origin": ""
             }
           ]
         }
