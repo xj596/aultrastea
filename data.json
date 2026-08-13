@@ -1449,11 +1449,13 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
+                },
+                "dry": "https://video.aultras-tea.com/Green%20tea%202/6%E9%A6%99%E8%8C%B6WULU/1-WULU-AAA/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-%E9%A6%99%E8%8C%B6-1_1.jpg",
+                "liquor": "https://video.aultras-tea.com/Green%20tea%202/6%E9%A6%99%E8%8C%B6WULU/1-WULU-AAA/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-%E9%A6%99%E8%8C%B6-1_2.jpg"
               },
               "standards": {
-                "conventional": false,
-                "eu": false,
+                "conventional": true,
+                "eu": true,
                 "organic": false
               },
               "shape": "strip",
@@ -1479,11 +1481,13 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
+                },
+                "dry": "https://video.aultras-tea.com/Green%20tea%202/6%E9%A6%99%E8%8C%B6WULU/2-WULU-AA/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-%E9%A6%99%E8%8C%B6-2_1.jpg",
+                "liquor": "https://video.aultras-tea.com/Green%20tea%202/6%E9%A6%99%E8%8C%B6WULU/2-WULU-AA/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-%E9%A6%99%E8%8C%B6-2_2.jpg"
               },
               "standards": {
-                "conventional": false,
-                "eu": false,
+                "conventional": true,
+                "eu": true,
                 "organic": false
               },
               "shape": "strip",
@@ -1509,11 +1513,13 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
+                },
+                "dry": "https://video.aultras-tea.com/Green%20tea%202/6%E9%A6%99%E8%8C%B6WULU/3-WULU/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-%E9%A6%99%E8%8C%B6-3_1.jpg",
+                "liquor": "https://video.aultras-tea.com/Green%20tea%202/6%E9%A6%99%E8%8C%B6WULU/3-WULU/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-%E9%A6%99%E8%8C%B6-3_2.jpg"
               },
               "standards": {
-                "conventional": false,
-                "eu": false,
+                "conventional": true,
+                "eu": true,
                 "organic": false
               },
               "shape": "strip",
