@@ -1279,14 +1279,16 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
+                },
+                "dry": "https://video.aultras-tea.com/Green%20tea%202/5%E7%BB%BF%E7%A2%8EGreen-Tea-Fannings/1Green-Tea-Fannings-3A/10-Green-Tea-Fannings-3A-1.jpg",
+                "liquor": "https://video.aultras-tea.com/Green%20tea%202/5%E7%BB%BF%E7%A2%8EGreen-Tea-Fannings/1Green-Tea-Fannings-3A/10-Green-Tea-Fannings-3A-2.jpg"
               },
               "standards": {
-                "conventional": false,
-                "eu": false,
-                "organic": false
+                "conventional": true,
+                "eu": true,
+                "organic": true
               },
-              "shape": "strip",
+              "shape": "crumb",
               "origin": ""
             },
             {
@@ -1309,14 +1311,16 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
+                },
+                "dry": "https://video.aultras-tea.com/Green%20tea%202/5%E7%BB%BF%E7%A2%8EGreen-Tea-Fannings/2-Green-Tea-Fannings-2A/11-Green-Tea-Fannings-2A-1.jpg",
+                "liquor": "https://video.aultras-tea.com/Green%20tea%202/5%E7%BB%BF%E7%A2%8EGreen-Tea-Fannings/2-Green-Tea-Fannings-2A/11-Green-Tea-Fannings-2A-2.jpg"
               },
               "standards": {
-                "conventional": false,
-                "eu": false,
-                "organic": false
+                "conventional": true,
+                "eu": true,
+                "organic": true
               },
-              "shape": "strip",
+              "shape": "crumb",
               "origin": ""
             },
             {
@@ -1339,14 +1343,16 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
+                },
+                "dry": "https://video.aultras-tea.com/Green%20tea%202/5%E7%BB%BF%E7%A2%8EGreen-Tea-Fannings/3-Green-Tea-Fannings-2A/12-Green-Tea-Fannings-2A-1.jpg",
+                "liquor": "https://video.aultras-tea.com/Green%20tea%202/5%E7%BB%BF%E7%A2%8EGreen-Tea-Fannings/3-Green-Tea-Fannings-2A/12-Green-Tea-Fannings-2A-2.jpg"
               },
               "standards": {
-                "conventional": false,
-                "eu": false,
-                "organic": false
+                "conventional": true,
+                "eu": true,
+                "organic": true
               },
-              "shape": "strip",
+              "shape": "crumb",
               "origin": ""
             },
             {
@@ -1369,14 +1375,16 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
+                },
+                "dry": "https://video.aultras-tea.com/Green%20tea%202/5%E7%BB%BF%E7%A2%8EGreen-Tea-Fannings/4-Green-Tea-Fannings/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-%E7%BB%BF%E7%A2%8E-1_1.jpg",
+                "liquor": "https://video.aultras-tea.com/Green%20tea%202/5%E7%BB%BF%E7%A2%8EGreen-Tea-Fannings/4-Green-Tea-Fannings/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-%E7%BB%BF%E7%A2%8E-1_2.jpg"
               },
               "standards": {
-                "conventional": false,
-                "eu": false,
-                "organic": false
+                "conventional": true,
+                "eu": true,
+                "organic": true
               },
-              "shape": "strip",
+              "shape": "crumb",
               "origin": ""
             },
             {
@@ -1399,14 +1407,16 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
+                },
+                "dry": "https://video.aultras-tea.com/Green%20tea%202/5%E7%BB%BF%E7%A2%8EGreen-Tea-Fannings/5-Green-Tea-Fannings/13-Green-Tea-Fannings-2-1.jpg",
+                "liquor": "https://video.aultras-tea.com/Green%20tea%202/5%E7%BB%BF%E7%A2%8EGreen-Tea-Fannings/5-Green-Tea-Fannings/13-Green-Tea-Fannings-2-2.jpg"
               },
               "standards": {
-                "conventional": false,
-                "eu": false,
-                "organic": false
+                "conventional": true,
+                "eu": true,
+                "organic": true
               },
-              "shape": "strip",
+              "shape": "crumb",
               "origin": ""
             }
           ]
