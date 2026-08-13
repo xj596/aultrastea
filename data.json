@@ -1173,14 +1173,16 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
+                },
+                "dry": "https://video.aultras-tea.com/Green%20tea/4%E7%BB%BF%E8%9E%BAGreen-Snail/1-Green-Snail-3A/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-%E7%BB%BF%E8%9E%BA-1_1.jpg",
+                "liquor": "https://video.aultras-tea.com/Green%20tea/4%E7%BB%BF%E8%9E%BAGreen-Snail/1-Green-Snail-3A/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-%E7%BB%BF%E8%9E%BA-1_2.jpg"
               },
               "standards": {
-                "conventional": false,
-                "eu": false,
+                "conventional": true,
+                "eu": true,
                 "organic": false
               },
-              "shape": "strip",
+              "shape": "granule",
               "origin": ""
             },
             {
@@ -1203,14 +1205,16 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
+                },
+                "dry": "https://video.aultras-tea.com/Green%20tea/4%E7%BB%BF%E8%9E%BAGreen-Snail/2-Green-Snail-2A/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-%E7%BB%BF%E8%9E%BA-2_1.jpg",
+                "liquor": "https://video.aultras-tea.com/Green%20tea/4%E7%BB%BF%E8%9E%BAGreen-Snail/2-Green-Snail-2A/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-%E7%BB%BF%E8%9E%BA-2_2.jpg"
               },
               "standards": {
-                "conventional": false,
-                "eu": false,
+                "conventional": true,
+                "eu": true,
                 "organic": false
               },
-              "shape": "strip",
+              "shape": "granule",
               "origin": ""
             },
             {
@@ -1233,14 +1237,16 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
+                },
+                "dry": "https://video.aultras-tea.com/Green%20tea/4%E7%BB%BF%E8%9E%BAGreen-Snail/3-Green-Snail-A/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-%E7%BB%BF%E8%9E%BA-3_1.jpg",
+                "liquor": "https://video.aultras-tea.com/Green%20tea/4%E7%BB%BF%E8%9E%BAGreen-Snail/3-Green-Snail-A/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-%E7%BB%BF%E8%9E%BA-3_2.jpg"
               },
               "standards": {
-                "conventional": false,
-                "eu": false,
+                "conventional": true,
+                "eu": true,
                 "organic": false
               },
-              "shape": "strip",
+              "shape": "granule",
               "origin": ""
             }
           ]
