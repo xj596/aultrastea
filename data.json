@@ -705,7 +705,9 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
+                },
+                "dry": "https://video.aultras-tea.com/Green%20tea/2%E7%9C%89%E8%8C%B6Chummee/1-41022AAA/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-41022-1_1.jpg",
+                "liquor": "https://video.aultras-tea.com/Green%20tea/2%E7%9C%89%E8%8C%B6Chummee/1-41022AAA/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-41022-1_2.jpg"
               },
               "standards": {
                 "conventional": true,
@@ -735,7 +737,9 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
+                },
+                "dry": "https://video.aultras-tea.com/Green%20tea/2%E7%9C%89%E8%8C%B6Chummee/2-41022AA/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-41022-2_1.jpg",
+                "liquor": "https://video.aultras-tea.com/Green%20tea/2%E7%9C%89%E8%8C%B6Chummee/2-41022AA/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-41022-2_2.jpg"
               },
               "standards": {
                 "conventional": true,
@@ -765,7 +769,9 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
+                },
+                "dry": "https://video.aultras-tea.com/Green%20tea/2%E7%9C%89%E8%8C%B6Chummee/3-41022A/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-41022-3_1.jpg",
+                "liquor": "https://video.aultras-tea.com/Green%20tea/2%E7%9C%89%E8%8C%B6Chummee/3-41022A/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-41022-3_2.jpg"
               },
               "standards": {
                 "conventional": true,
@@ -795,10 +801,12 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
+                },
+                "dry": "https://video.aultras-tea.com/Green%20tea/2%E7%9C%89%E8%8C%B6Chummee/4-9371AA/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-9371-2_1.jpg",
+                "liquor": "https://video.aultras-tea.com/Green%20tea/2%E7%9C%89%E8%8C%B6Chummee/4-9371AA/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-9371-2_2.jpg"
               },
               "standards": {
-                "conventional": false,
+                "conventional": true,
                 "eu": false,
                 "organic": false
               },
@@ -825,10 +833,12 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
+                },
+                "dry": "https://video.aultras-tea.com/Green%20tea/2%E7%9C%89%E8%8C%B6Chummee/5-9371A/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-9371-4_1.jpg",
+                "liquor": "https://video.aultras-tea.com/Green%20tea/2%E7%9C%89%E8%8C%B6Chummee/5-9371A/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-9371-4_2.jpg"
               },
               "standards": {
-                "conventional": false,
+                "conventional": true,
                 "eu": false,
                 "organic": false
               },
@@ -855,10 +865,12 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
+                },
+                "dry": "https://video.aultras-tea.com/Green%20tea/2%E7%9C%89%E8%8C%B6Chummee/6-9370/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-9371-9_1.jpg",
+                "liquor": "https://video.aultras-tea.com/Green%20tea/2%E7%9C%89%E8%8C%B6Chummee/6-9370/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-9371-9_2.jpg"
               },
               "standards": {
-                "conventional": false,
+                "conventional": true,
                 "eu": false,
                 "organic": false
               },
@@ -885,10 +897,12 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
+                },
+                "dry": "https://video.aultras-tea.com/Green%20tea/2%E7%9C%89%E8%8C%B6Chummee/7-9369/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-9369-1_1.jpg",
+                "liquor": "https://video.aultras-tea.com/Green%20tea/2%E7%9C%89%E8%8C%B6Chummee/7-9369/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-9369-1_2.jpg"
               },
               "standards": {
-                "conventional": false,
+                "conventional": true,
                 "eu": false,
                 "organic": false
               },
@@ -915,14 +929,16 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
+                },
+                "dry": "https://video.aultras-tea.com/Green%20tea/2%E7%9C%89%E8%8C%B6Chummee/8-9368/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-9369-2_1.jpg",
+                "liquor": "https://video.aultras-tea.com/Green%20tea/2%E7%9C%89%E8%8C%B6Chummee/8-9368/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-9369-2_2.jpg"
               },
               "standards": {
-                "conventional": false,
+                "conventional": true,
                 "eu": false,
                 "organic": false
               },
-              "shape": "strip",
+              "shape": "crumb",
               "origin": ""
             },
             {
@@ -945,14 +961,16 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
+                },
+                "dry": "https://video.aultras-tea.com/Green%20tea/2%E7%9C%89%E8%8C%B6Chummee/9-9367/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-%E4%BD%8E%E6%A1%A3%E7%9C%89%E8%8C%B6-2_1.jpg",
+                "liquor": "https://video.aultras-tea.com/Green%20tea/2%E7%9C%89%E8%8C%B6Chummee/9-9367/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-%E4%BD%8E%E6%A1%A3%E7%9C%89%E8%8C%B6-2_2.jpg"
               },
               "standards": {
-                "conventional": false,
+                "conventional": true,
                 "eu": false,
                 "organic": false
               },
-              "shape": "strip",
+              "shape": "crumb",
               "origin": ""
             },
             {
@@ -975,14 +993,16 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
+                },
+                "dry": "https://video.aultras-tea.com/Green%20tea/2%E7%9C%89%E8%8C%B6Chummee/10-9366/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-%E4%BD%8E%E6%A1%A3%E7%9C%89%E8%8C%B6-9_1.jpg",
+                "liquor": "https://video.aultras-tea.com/Green%20tea/2%E7%9C%89%E8%8C%B6Chummee/10-9366/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-%E4%BD%8E%E6%A1%A3%E7%9C%89%E8%8C%B6-9_2.jpg"
               },
               "standards": {
-                "conventional": false,
+                "conventional": true,
                 "eu": false,
                 "organic": false
               },
-              "shape": "strip",
+              "shape": "crumb",
               "origin": ""
             },
             {
@@ -1005,14 +1025,16 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
+                },
+                "dry": "https://video.aultras-tea.com/Green%20tea/2%E7%9C%89%E8%8C%B6Chummee/11-3010/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-%E4%BD%8E%E6%A1%A3%E7%9C%89%E8%8C%B6-10_1.jpg",
+                "liquor": "https://video.aultras-tea.com/Green%20tea/2%E7%9C%89%E8%8C%B6Chummee/11-3010/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-%E4%BD%8E%E6%A1%A3%E7%9C%89%E8%8C%B6-10_2.jpg"
               },
               "standards": {
-                "conventional": false,
+                "conventional": true,
                 "eu": false,
                 "organic": false
               },
-              "shape": "strip",
+              "shape": "crumb",
               "origin": ""
             },
             {
@@ -1035,10 +1057,12 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
+                },
+                "dry": "https://video.aultras-tea.com/Green%20tea/2%E7%9C%89%E8%8C%B6Chummee/12-3008/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-%E4%BD%8E%E6%A1%A3%E7%9C%89%E8%8C%B6-1_1.jpg",
+                "liquor": "https://video.aultras-tea.com/Green%20tea/2%E7%9C%89%E8%8C%B6Chummee/12-3008/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-%E4%BD%8E%E6%A1%A3%E7%9C%89%E8%8C%B6-1_2.jpg"
               },
               "standards": {
-                "conventional": false,
+                "conventional": true,
                 "eu": false,
                 "organic": false
               },
@@ -1078,7 +1102,7 @@
                 }
               },
               "standards": {
-                "conventional": false,
+                "conventional": true,
                 "eu": false,
                 "organic": false
               },
