@@ -3648,14 +3648,16 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
+                },
+                "dry": "https://video.aultras-tea.com/White%20tea/4-%E7%99%BD%E8%8C%B6%E7%A2%8EWhite-tea-Fannings/2-White-tea-Fannings/34-White-tea-Fannings-1.jpg",
+                "liquor": "https://video.aultras-tea.com/White%20tea/4-%E7%99%BD%E8%8C%B6%E7%A2%8EWhite-tea-Fannings/2-White-tea-Fannings/34-White-tea-Fannings-2.jpg"
               },
               "standards": {
-                "conventional": false,
-                "eu": false,
-                "organic": false
+                "conventional": true,
+                "eu": true,
+                "organic": true
               },
-              "shape": "strip",
+              "shape": "crumb",
               "origin": ""
             }
           ]
