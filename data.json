@@ -3694,8 +3694,17 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
-              }
+                },
+                "dry": "https://video.aultras-tea.com/Flower%20tea/1-Large-leaf-Scented-Tea/%E5%A4%96%E8%B4%B8-%E7%BA%A2%E8%8C%B6-%E5%A4%A7%E5%8F%B6%E8%8A%B1%E8%8C%B61_1.jpg",
+                "liquor": "https://video.aultras-tea.com/Flower%20tea/1-Large-leaf-Scented-Tea/%E5%A4%96%E8%B4%B8-%E7%BA%A2%E8%8C%B6-%E5%A4%A7%E5%8F%B6%E8%8A%B1%E8%8C%B61_2.jpg"
+              },
+              "standards": {
+                "conventional": true,
+                "eu": false,
+                "organic": false
+              },
+              "shape": "strip",
+              "origin": ""
             }
           ]
         },
@@ -3727,8 +3736,17 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
-              }
+                },
+                "dry": "https://video.aultras-tea.com/Flower%20tea/2-Jasmine-Tea-No.1/35-Jasmine-Tea-No.1-1.jpg",
+                "liquor": "https://video.aultras-tea.com/Flower%20tea/2-Jasmine-Tea-No.1/35-Jasmine-Tea-No.1-2.jpg"
+              },
+              "standards": {
+                "conventional": true,
+                "eu": true,
+                "organic": true
+              },
+              "shape": "strip",
+              "origin": ""
             },
             {
               "name": {
@@ -3750,8 +3768,17 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
-              }
+                },
+                "dry": "https://video.aultras-tea.com/Flower%20tea/3-Jasmine-Tea-No.3/%E5%A4%96%E8%B4%B8-%E7%BA%A2%E8%8C%B6-%E5%B0%8F%E5%8F%B6%E8%8A%B1%E8%8C%B61_1.jpg",
+                "liquor": "https://video.aultras-tea.com/Flower%20tea/3-Jasmine-Tea-No.3/%E5%A4%96%E8%B4%B8-%E7%BA%A2%E8%8C%B6-%E5%B0%8F%E5%8F%B6%E8%8A%B1%E8%8C%B61_2.jpg"
+              },
+              "standards": {
+                "conventional": true,
+                "eu": true,
+                "organic": true
+              },
+              "shape": "strip",
+              "origin": ""
             }
           ]
         },
@@ -3783,8 +3810,17 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
-              }
+                },
+                "dry": "https://video.aultras-tea.com/Flower%20tea/4-Jasmine-Dragon-Pearl/36-Jasmine-Dragon-Pearl-1.jpg",
+                "liquor": "https://video.aultras-tea.com/Flower%20tea/4-Jasmine-Dragon-Pearl/36-Jasmine-Dragon-Pearl-2.jpg"
+              },
+              "standards": {
+                "conventional": false,
+                "eu": true,
+                "organic": true
+              },
+              "shape": "granule",
+              "origin": ""
             }
           ]
         },
@@ -3816,8 +3852,17 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
-              }
+                },
+                "dry": "https://video.aultras-tea.com/Flower%20tea/5-Daqian-Rihong-Lychee/%E5%A4%96%E8%B4%B8-%E5%B7%A5%E8%89%BA%E8%8C%B6-1_1.jpg",
+                "liquor": "https://video.aultras-tea.com/Flower%20tea/5-Daqian-Rihong-Lychee/%E5%A4%96%E8%B4%B8-%E5%B7%A5%E8%89%BA%E8%8C%B6-1_2.jpg"
+              },
+              "standards": {
+                "conventional": true,
+                "eu": false,
+                "organic": false
+              },
+              "shape": "granule",
+              "origin": ""
             },
             {
               "name": {
@@ -3839,8 +3884,17 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
-              }
+                },
+                "dry": "https://video.aultras-tea.com/Flower%20tea/6-Golden-Altar/%E5%A4%96%E8%B4%B8-%E5%B7%A5%E8%89%BA%E8%8C%B6-2_1.jpg",
+                "liquor": "https://video.aultras-tea.com/Flower%20tea/6-Golden-Altar/%E5%A4%96%E8%B4%B8-%E5%B7%A5%E8%89%BA%E8%8C%B6-2_2.jpg"
+              },
+              "standards": {
+                "conventional": true,
+                "eu": false,
+                "organic": false
+              },
+              "shape": "granule",
+              "origin": ""
             },
             {
               "name": {
@@ -3862,8 +3916,17 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
-              }
+                },
+                "dry": "https://video.aultras-tea.com/Flower%20tea/7-Dragon-Pearl/%E5%A4%96%E8%B4%B8-%E5%B7%A5%E8%89%BA%E8%8C%B6-3_1.jpg",
+                "liquor": "https://video.aultras-tea.com/Flower%20tea/7-Dragon-Pearl/%E5%A4%96%E8%B4%B8-%E5%B7%A5%E8%89%BA%E8%8C%B6-3_2.jpg"
+              },
+              "standards": {
+                "conventional": true,
+                "eu": false,
+                "organic": false
+              },
+              "shape": "granule",
+              "origin": ""
             },
             {
               "name": {
@@ -3885,8 +3948,17 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
-              }
+                },
+                "dry": "https://video.aultras-tea.com/Flower%20tea/8-Lily-Fairy-(Jasmine-/%E5%A4%96%E8%B4%B8-%E5%B7%A5%E8%89%BA%E8%8C%B6-4_1.jpg",
+                "liquor": "https://video.aultras-tea.com/Flower%20tea/8-Lily-Fairy-(Jasmine-/%E5%A4%96%E8%B4%B8-%E5%B7%A5%E8%89%BA%E8%8C%B6-4_2.jpg"
+              },
+              "standards": {
+                "conventional": true,
+                "eu": false,
+                "organic": false
+              },
+              "shape": "granule",
+              "origin": ""
             }
           ]
         }
