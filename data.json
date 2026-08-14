@@ -3994,8 +3994,17 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
-              }
+                },
+                "dry": "https://video.aultras-tea.com/Oolong%20tea/1-%E9%97%B5%E5%8C%97%E4%B9%8C%E9%BE%99Minbei-Oolong/1-Floral-Da-Hong-Pao-A/%E5%A4%96%E8%B4%B8-%E4%B9%8C%E9%BE%99%E8%8C%B6-%E9%97%BD%E5%8C%97%E4%B9%8C%E9%BE%99-3_1.jpg",
+                "liquor": "https://video.aultras-tea.com/Oolong%20tea/1-%E9%97%B5%E5%8C%97%E4%B9%8C%E9%BE%99Minbei-Oolong/1-Floral-Da-Hong-Pao-A/%E5%A4%96%E8%B4%B8-%E4%B9%8C%E9%BE%99%E8%8C%B6-%E9%97%BD%E5%8C%97%E4%B9%8C%E9%BE%99-3_2.jpg"
+              },
+              "standards": {
+                "conventional": true,
+                "eu": true,
+                "organic": true
+              },
+              "shape": "strip",
+              "origin": ""
             },
             {
               "name": {
@@ -4017,8 +4026,17 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
-              }
+                },
+                "dry": "https://video.aultras-tea.com/Oolong%20tea/1-%E9%97%B5%E5%8C%97%E4%B9%8C%E9%BE%99Minbei-Oolong/2-Floral-Da-Hong-Pao/%E5%A4%96%E8%B4%B8-%E4%B9%8C%E9%BE%99%E8%8C%B6-%E9%97%BD%E5%8C%97%E4%B9%8C%E9%BE%99-1_1.jpg",
+                "liquor": "https://video.aultras-tea.com/Oolong%20tea/1-%E9%97%B5%E5%8C%97%E4%B9%8C%E9%BE%99Minbei-Oolong/2-Floral-Da-Hong-Pao/%E5%A4%96%E8%B4%B8-%E4%B9%8C%E9%BE%99%E8%8C%B6-%E9%97%BD%E5%8C%97%E4%B9%8C%E9%BE%99-1_2.jpg"
+              },
+              "standards": {
+                "conventional": true,
+                "eu": true,
+                "organic": true
+              },
+              "shape": "strip",
+              "origin": ""
             },
             {
               "name": {
@@ -4040,8 +4058,17 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
-              }
+                },
+                "dry": "https://video.aultras-tea.com/Oolong%20tea/1-%E9%97%B5%E5%8C%97%E4%B9%8C%E9%BE%99Minbei-Oolong/3-Da-Hong-Pao-No.2/37-Da-Hong-Pao-No.2-1.jpg",
+                "liquor": "https://video.aultras-tea.com/Oolong%20tea/1-%E9%97%B5%E5%8C%97%E4%B9%8C%E9%BE%99Minbei-Oolong/3-Da-Hong-Pao-No.2/37-Da-Hong-Pao-No.2-2.jpg"
+              },
+              "standards": {
+                "conventional": true,
+                "eu": true,
+                "organic": true
+              },
+              "shape": "strip",
+              "origin": ""
             },
             {
               "name": {
@@ -4063,8 +4090,17 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
-              }
+                },
+                "dry": "https://video.aultras-tea.com/Oolong%20tea/1-%E9%97%B5%E5%8C%97%E4%B9%8C%E9%BE%99Minbei-Oolong/4-Da-Hong-Pao-No.1/%E5%A4%96%E8%B4%B8-%E4%B9%8C%E9%BE%99%E8%8C%B6-%E9%97%BD%E5%8C%97%E4%B9%8C%E9%BE%99-2_1.jpg",
+                "liquor": "https://video.aultras-tea.com/Oolong%20tea/1-%E9%97%B5%E5%8C%97%E4%B9%8C%E9%BE%99Minbei-Oolong/4-Da-Hong-Pao-No.1/%E5%A4%96%E8%B4%B8-%E4%B9%8C%E9%BE%99%E8%8C%B6-%E9%97%BD%E5%8C%97%E4%B9%8C%E9%BE%99-2_2.jpg"
+              },
+              "standards": {
+                "conventional": true,
+                "eu": true,
+                "organic": true
+              },
+              "shape": "strip",
+              "origin": ""
             }
           ]
         },
@@ -4096,8 +4132,17 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
-              }
+                },
+                "dry": "https://video.aultras-tea.com/Oolong%20tea/2-%E9%97%B5%E5%8D%97%E4%B9%8C%E9%BE%99Minnan-Oolong/1-Dongding-Oolong/%E5%A4%96%E8%B4%B8-%E4%B9%8C%E9%BE%99%E8%8C%B6-%E9%97%BD%E5%8D%97%E4%B9%8C%E9%BE%99-1_1.jpg",
+                "liquor": "https://video.aultras-tea.com/Oolong%20tea/2-%E9%97%B5%E5%8D%97%E4%B9%8C%E9%BE%99Minnan-Oolong/1-Dongding-Oolong/%E5%A4%96%E8%B4%B8-%E4%B9%8C%E9%BE%99%E8%8C%B6-%E9%97%BD%E5%8D%97%E4%B9%8C%E9%BE%99-1_2.jpg"
+              },
+              "standards": {
+                "conventional": true,
+                "eu": true,
+                "organic": false
+              },
+              "shape": "granule",
+              "origin": ""
             },
             {
               "name": {
@@ -4119,8 +4164,17 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
-              }
+                },
+                "dry": "https://video.aultras-tea.com/Oolong%20tea/2-%E9%97%B5%E5%8D%97%E4%B9%8C%E9%BE%99Minnan-Oolong/2-Floral-Tieguanyin-A/%E5%A4%96%E8%B4%B8-%E4%B9%8C%E9%BE%99%E8%8C%B6-%E9%97%BD%E5%8D%97%E4%B9%8C%E9%BE%99-8_1.jpg",
+                "liquor": "https://video.aultras-tea.com/Oolong%20tea/2-%E9%97%B5%E5%8D%97%E4%B9%8C%E9%BE%99Minnan-Oolong/2-Floral-Tieguanyin-A/%E5%A4%96%E8%B4%B8-%E4%B9%8C%E9%BE%99%E8%8C%B6-%E9%97%BD%E5%8D%97%E4%B9%8C%E9%BE%99-8_2.jpg"
+              },
+              "standards": {
+                "conventional": true,
+                "eu": true,
+                "organic": true
+              },
+              "shape": "granule",
+              "origin": ""
             },
             {
               "name": {
@@ -4142,8 +4196,17 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
-              }
+                },
+                "dry": "https://video.aultras-tea.com/Oolong%20tea/2-%E9%97%B5%E5%8D%97%E4%B9%8C%E9%BE%99Minnan-Oolong/3-Floral-Tieguanyin/%E5%A4%96%E8%B4%B8-%E4%B9%8C%E9%BE%99%E8%8C%B6-%E9%97%BD%E5%8D%97%E4%B9%8C%E9%BE%99-2_1.jpg",
+                "liquor": "https://video.aultras-tea.com/Oolong%20tea/2-%E9%97%B5%E5%8D%97%E4%B9%8C%E9%BE%99Minnan-Oolong/3-Floral-Tieguanyin/%E5%A4%96%E8%B4%B8-%E4%B9%8C%E9%BE%99%E8%8C%B6-%E9%97%BD%E5%8D%97%E4%B9%8C%E9%BE%99-2_2.jpg"
+              },
+              "standards": {
+                "conventional": true,
+                "eu": true,
+                "organic": true
+              },
+              "shape": "granule",
+              "origin": ""
             },
             {
               "name": {
@@ -4165,8 +4228,17 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
-              }
+                },
+                "dry": "https://video.aultras-tea.com/Oolong%20tea/2-%E9%97%B5%E5%8D%97%E4%B9%8C%E9%BE%99Minnan-Oolong/4-Green-Oolong-AA/%E5%A4%96%E8%B4%B8-%E4%B9%8C%E9%BE%99%E8%8C%B6-%E9%97%BD%E5%8D%97%E4%B9%8C%E9%BE%99-5_1.jpg",
+                "liquor": "https://video.aultras-tea.com/Oolong%20tea/2-%E9%97%B5%E5%8D%97%E4%B9%8C%E9%BE%99Minnan-Oolong/4-Green-Oolong-AA/%E5%A4%96%E8%B4%B8-%E4%B9%8C%E9%BE%99%E8%8C%B6-%E9%97%BD%E5%8D%97%E4%B9%8C%E9%BE%99-5_2.jpg"
+              },
+              "standards": {
+                "conventional": true,
+                "eu": true,
+                "organic": true
+              },
+              "shape": "granule",
+              "origin": ""
             },
             {
               "name": {
@@ -4188,8 +4260,17 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
-              }
+                },
+                "dry": "https://video.aultras-tea.com/Oolong%20tea/2-%E9%97%B5%E5%8D%97%E4%B9%8C%E9%BE%99Minnan-Oolong/5-Green-Oolong/%E5%A4%96%E8%B4%B8-%E4%B9%8C%E9%BE%99%E8%8C%B6-%E9%97%BD%E5%8D%97%E4%B9%8C%E9%BE%99-6_1.jpg",
+                "liquor": "https://video.aultras-tea.com/Oolong%20tea/2-%E9%97%B5%E5%8D%97%E4%B9%8C%E9%BE%99Minnan-Oolong/5-Green-Oolong/%E5%A4%96%E8%B4%B8-%E4%B9%8C%E9%BE%99%E8%8C%B6-%E9%97%BD%E5%8D%97%E4%B9%8C%E9%BE%99-6_2.jpg"
+              },
+              "standards": {
+                "conventional": true,
+                "eu": true,
+                "organic": true
+              },
+              "shape": "granule",
+              "origin": ""
             },
             {
               "name": {
@@ -4211,8 +4292,17 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
-              }
+                },
+                "dry": "https://video.aultras-tea.com/Oolong%20tea/2-%E9%97%B5%E5%8D%97%E4%B9%8C%E9%BE%99Minnan-Oolong/6-Rich-Aroma-Oolong/%E5%A4%96%E8%B4%B8-%E4%B9%8C%E9%BE%99%E8%8C%B6-%E9%97%BD%E5%8D%97%E4%B9%8C%E9%BE%99-14_1.jpg",
+                "liquor": "https://video.aultras-tea.com/Oolong%20tea/2-%E9%97%B5%E5%8D%97%E4%B9%8C%E9%BE%99Minnan-Oolong/6-Rich-Aroma-Oolong/%E5%A4%96%E8%B4%B8-%E4%B9%8C%E9%BE%99%E8%8C%B6-%E9%97%BD%E5%8D%97%E4%B9%8C%E9%BE%99-14_2.jpg"
+              },
+              "standards": {
+                "conventional": true,
+                "eu": true,
+                "organic": true
+              },
+              "shape": "granule",
+              "origin": ""
             }
           ]
         },
@@ -4244,8 +4334,17 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
-              }
+                },
+                "dry": "https://video.aultras-tea.com/Oolong%20tea/3-%E5%A5%B6%E9%A6%99%E4%B9%8C%E9%BE%99/%E5%A4%96%E8%B4%B8-%E4%B9%8C%E9%BE%99%E8%8C%B6-%E5%A5%B6%E9%A6%99%E4%B9%8C%E9%BE%99-1_1.jpg",
+                "liquor": "https://video.aultras-tea.com/Oolong%20tea/3-%E5%A5%B6%E9%A6%99%E4%B9%8C%E9%BE%99/%E5%A4%96%E8%B4%B8-%E4%B9%8C%E9%BE%99%E8%8C%B6-%E5%A5%B6%E9%A6%99%E4%B9%8C%E9%BE%99-1_2.jpg"
+              },
+              "standards": {
+                "conventional": true,
+                "eu": true,
+                "organic": true
+              },
+              "shape": "granule",
+              "origin": ""
             }
           ]
         },
@@ -4277,8 +4376,17 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
-              }
+                },
+                "dry": "https://video.aultras-tea.com/Oolong%20tea/4-%E4%BA%BA%E5%8F%82%E4%B9%8C%E9%BE%99/%E5%A4%96%E8%B4%B8-%E4%B9%8C%E9%BE%99%E8%8C%B6-%E4%BA%BA%E5%8F%82%E4%B9%8C%E9%BE%99-1_1.jpg",
+                "liquor": "https://video.aultras-tea.com/Oolong%20tea/4-%E4%BA%BA%E5%8F%82%E4%B9%8C%E9%BE%99/%E5%A4%96%E8%B4%B8-%E4%B9%8C%E9%BE%99%E8%8C%B6-%E4%BA%BA%E5%8F%82%E4%B9%8C%E9%BE%99-1_2.jpg"
+              },
+              "standards": {
+                "conventional": true,
+                "eu": false,
+                "organic": false
+              },
+              "shape": "granule",
+              "origin": ""
             }
           ]
         },
@@ -4310,8 +4418,17 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
-              }
+                },
+                "dry": "https://video.aultras-tea.com/Oolong%20tea/5-%E4%B9%8C%E9%BE%99%E7%A2%8E/1-Oolong-tea-Fannings-A/38-Oolong-tea-Fannings-A-1.jpg",
+                "liquor": "https://video.aultras-tea.com/Oolong%20tea/5-%E4%B9%8C%E9%BE%99%E7%A2%8E/1-Oolong-tea-Fannings-A/38-Oolong-tea-Fannings-A-2.jpg"
+              },
+              "standards": {
+                "conventional": true,
+                "eu": true,
+                "organic": true
+              },
+              "shape": "crumb",
+              "origin": ""
             },
             {
               "name": {
@@ -4333,8 +4450,17 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
-              }
+                },
+                "dry": "https://video.aultras-tea.com/Oolong%20tea/5-%E4%B9%8C%E9%BE%99%E7%A2%8E/2-Oolong-tea-Fannings/%E5%A4%96%E8%B4%B8-%E4%B9%8C%E9%BE%99%E8%8C%B6-%E4%B9%8C%E9%BE%99%E7%A2%8E-1_1.jpg",
+                "liquor": "https://video.aultras-tea.com/Oolong%20tea/5-%E4%B9%8C%E9%BE%99%E7%A2%8E/2-Oolong-tea-Fannings/%E5%A4%96%E8%B4%B8-%E4%B9%8C%E9%BE%99%E8%8C%B6-%E4%B9%8C%E9%BE%99%E7%A2%8E-1_2.jpg"
+              },
+              "standards": {
+                "conventional": true,
+                "eu": true,
+                "organic": true
+              },
+              "shape": "crumb",
+              "origin": ""
             }
           ]
         }
