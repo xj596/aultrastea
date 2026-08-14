@@ -224,34 +224,31 @@
   ],
   "exhibitions": [
     {
-      "id": "exh_gulfood_2026",
+      "name": "Gulfood 2026:",
+      "name_zh": "2026年海湾食品展（Gulfood 2026）",
+      "name_en": "Gulfood 2026",
       "date": "Jan 26-30, 2026",
-      "name": "Gulfood 2026: World's Biggest Food Show Even Bigger in 2026\n\nGulfood 2026 is one of the largest and most influential comprehensive exhibitions in the global food and beverage industry. It will be grandly held at the Dubai World Trade Centre (DWTC) and the Dubai Exhibition Centre (DEC) from January 26th to 30th, 2026. As the first annual procurement event, it serves not only as a core platform for industry trend releases and innovation showcases but also as a key hub for global food trade.",
       "location": "Dubai, UAE (DWTC & DEC)",
       "booth": "TBA",
-      "status": "confirmed",
-      "name_zh": "2026年海湾食品展（Gulfood 2026）：全球最大食品展将于2026年进一步扩大规模\n\nGulfood 2026是全球食品饮料行业规模最大、最具影响力的综合性展览之一。该展会将于2026年1月26日至30日在迪拜世界贸易中心和迪拜展览中心隆重举行。作为年度首个采购盛会，它不仅是行业趋势发布和创新展示的核心平台，也是全球食品贸易的关键枢纽。",
-      "name_en": "Gulfood 2026: World's Biggest Food Show Even Bigger in 2026\n\nGulfood 2026 is one of the largest and most influential comprehensive exhibitions in the global food and beverage industry. It will be grandly held at the Dubai World Trade Centre (DWTC) and the Dubai Exhibition Centre (DEC) from January 26th to 30th, 2026. As the first annual procurement event, it serves not only as a core platform for industry trend releases and innovation showcases but also as a key hub for global food trade."
+      "status": "confirmed"
     },
     {
-      "id": "exh_prodexpo_2026",
+      "name": "Prodexpo 2026",
+      "name_zh": "2026年俄罗斯国际食品及饮料展览会（Prodexpo 2026）",
+      "name_en": "Prodexpo 2026",
       "date": "Feb 2026",
-      "name": "Prodexpo 2026: 33rd International Exhibition for Food, Beverages and Food Raw Materials\n\nProdexpo is Russia's largest food trade show for industry professionals. It is distinguished by an abundance of trending new products, extensive business networking, and contracts worth of hundred billions of rubles. Every year there are about 2,000 exhibitors from more than 35 countries. About 70,000 buyers from more than 100 countries find suppliers and sign deals at Prodexpo. The show's products are ranging from everyday food and beverages to gourmet, halal, organic food, sports and functional nutrition, healthy food, and exotic products.",
       "location": "Moscow, Russia",
       "booth": "TBA",
-      "status": "confirmed",
-      "name_zh": "2026年俄罗斯国际食品及饮料展览会（Prodexpo 2026）：第33届国际食品、饮料及食品原料展览会\n\nProdexpo是俄罗斯最大的面向行业专业人士的食品贸易展览会。其特点是新品潮流云集、商务洽谈广泛、合同金额达数千亿卢布。每年有来自超过35个国家的约2000家参展商。来自100多个国家的约70000名买家在Prodexpo寻找供应商并签订协议。展品范围涵盖日常食品饮料，以及美食、清真、有机食品、运动和功能性营养品、健康食品及异域特色产品。",
-      "name_en": "Prodexpo 2026: 33rd International Exhibition for Food, Beverages and Food Raw Materials\n\nProdexpo is Russia's largest food trade show for industry professionals. It is distinguished by an abundance of trending new products, extensive business networking, and contracts worth of hundred billions of rubles. Every year there are about 2,000 exhibitors from more than 35 countries. About 70,000 buyers from more than 100 countries find suppliers and sign deals at Prodexpo. The show's products are ranging from everyday food and beverages to gourmet, halal, organic food, sports and functional nutrition, healthy food, and exotic products."
+      "status": "confirmed"
     },
     {
-      "id": "exh_biofach_2026",
+      "name": "BIOFACH 2026",
+      "name_zh": "2026年德国国际有机食品展（BIOFACH 2026）",
+      "name_en": "BIOFACH 2026",
       "date": "Feb 2026",
-      "name": "BIOFACH 2026: World's Leading Trade Fair for Organic Food\n\nThe World's Leading Trade Fair for Organic Food is an important business event, an emotional event for the sector, and both a get-together and an opportunity for positioning. The leading exhibitions in the BIOFACH World connect organic marketplaces with international demand in 8 key economic regions of the world, and promote the development of regional markets at the same time. They are the meeting places for supply and demand, raw materials and convenience products, manufacturers and buyers, as well as politics and media.",
       "location": "Nuremberg, Germany",
       "booth": "TBA",
-      "status": "confirmed",
-      "name_zh": "2026年德国国际有机食品展（BIOFACH 2026）：世界领先的有机食品贸易展览会\n\n这个世界领先的有机食品贸易展览会，既是一个重要的商业盛会，也是行业的一次情感聚会，同时还是业内交流与定位的机会。BIOFACH世界系列中的领先展会，将全球8大关键经济区域的有机市场与国际需求连接起来，同时促进区域市场的发展。它们是供需双方、原料与便捷产品、制造商与买家，以及政界与媒体的交汇平台。",
-      "name_en": "BIOFACH 2026: World's Leading Trade Fair for Organic Food\n\nThe World's Leading Trade Fair for Organic Food is an important business event, an emotional event for the sector, and both a get-together and an opportunity for positioning. The leading exhibitions in the BIOFACH World connect organic marketplaces with international demand in 8 key economic regions of the world, and promote the development of regional markets at the same time. They are the meeting places for supply and demand, raw materials and convenience products, manufacturers and buyers, as well as politics and media."
+      "status": "confirmed"
     }
   ],
   "brochure_url": "https://ik.imagekit.io/taclov2ip/aultrastea-product-brochure.pdf",
