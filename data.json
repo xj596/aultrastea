@@ -502,10 +502,12 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
+                },
+                "dry": "https://video.aultras-tea.com/4011.9372.black%20op%20%E8%B4%B5%E5%B7%9E/9372/DSC02879-1(1).jpg",
+                "liquor": "https://video.aultras-tea.com/4011.9372.black%20op%20%E8%B4%B5%E5%B7%9E/9372/DSC02879-2(1).jpg"
               },
               "standards": {
-                "conventional": false,
+                "conventional": true,
                 "eu": false,
                 "organic": false
               },
@@ -2308,10 +2310,12 @@
                 "organic": {
                   "dry": "",
                   "liquor": ""
-                }
+                },
+                "dry": "https://video.aultras-tea.com/4011.9372.black%20op%20%E8%B4%B5%E5%B7%9E/4011/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-41022-10_1.jpg",
+                "liquor": "https://video.aultras-tea.com/4011.9372.black%20op%20%E8%B4%B5%E5%B7%9E/4011/%E5%A4%96%E8%B4%B8-%E7%BB%BF%E8%8C%B6-41022-10_2.jpg"
               },
               "standards": {
-                "conventional": false,
+                "conventional": true,
                 "eu": false,
                 "organic": false
               },
