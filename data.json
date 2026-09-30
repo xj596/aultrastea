@@ -249,6 +249,15 @@
       "location": "Nuremberg, Germany",
       "booth": "TBA",
       "status": "confirmed"
+    },
+    {
+      "name": "Come and meet XFTEA at SIEMA FoodExpo in Casablanca!",
+      "name_zh": "欢迎来卡萨布兰卡的SIEMA食品展与XFTEA会面！",
+      "name_en": "SIEMA FoodExpo",
+      "date": "Sep 22–24, 2026 ",
+      "location": "OFEC, Casablanca, Morocco ",
+      "booth": "H24",
+      "status": "confirmed"
     }
   ],
   "brochure_url": "https://ik.imagekit.io/taclov2ip/aultrastea-product-brochure.pdf",
