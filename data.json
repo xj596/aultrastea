@@ -4816,5 +4816,12 @@
       "contact_address_1": "Chaguochang, Xinbao Village, Jichang Town, Xixiu District,",
       "contact_address_2": "Anshun City, Guizhou Province"
     }
+  },
+  "exh_popup": {
+    "name": "王思怡设置的最新展会",
+    "date": "Sep 22–24, 2026",
+    "location": "OFEC, Casablanca, Morocco",
+    "booth": "H24",
+    "status": "confirmed"
   }
 }
